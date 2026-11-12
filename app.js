@@ -58,7 +58,7 @@
     $('speciesSearch').addEventListener('input', renderLibrary);
     $('groupFilter').addEventListener('change', renderLibrary);
     $('clearFilters').addEventListener('click',()=>{ $('speciesSearch').value=''; $('groupFilter').value='';renderLibrary(); });
-    $('randomBtn').addEventListener('click',()=>{const options=animals.filter(x=>x.id!==current); select(options[Math.floor(Math.random()*options.length)].id);});
+    $('randomBtn').addEventListener('click',()=>{const options=animals.filter(x=>x.id!==current && data.links.some(r=>r.food===x.id || r.eater===x.id)); select(options[Math.floor(Math.random()*options.length)].id);});
     document.body.addEventListener('click', (event) => { const b=event.target.closest('[data-animal]'); if (b && items.has(b.dataset.animal)) select(b.dataset.animal); });
     window.addEventListener('hashchange',()=>{ const hash=location.hash.slice(1); if(items.has(hash)) select(hash,false); });
     window.addEventListener('resize',syncAllScrollHints);
@@ -73,6 +73,7 @@
     const restoreChip=active?.matches?.('.species-chip:focus-visible')===true;
     const restoreRelation=active?.matches?.('.relation-card:focus-visible')===true;
     renderLibrary();renderNetwork();
+    if(active?.closest('.chain-flow')) $('explorer').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
     if(restoreChip){
       const selectedChip=[...$('speciesLibrary').querySelectorAll('.species-chip')].find(button=>button.dataset.animal===id);
       selectedChip?.focus({preventScroll:true});
@@ -84,6 +85,7 @@
   function renderLibrary(){
     const term=normalized($('speciesSearch').value.trim()); const group=$('groupFilter').value;
     const visible=animals.filter(x=>(!group || x.group===group) && (!term || normalized(x.name+' '+x.scientific+' '+x.group).includes(term)));
+    $('searchResults').textContent=`${visible.length} animal${visible.length>1?'s':''} trouvé${visible.length>1?'s':''}`;
     $('speciesLibrary').innerHTML=visible.length
       ? visible.map(x=>`<button type="button" class="species-chip" data-animal="${escapeHtml(x.id)}" aria-pressed="${x.id===current}"><span class="chip-emoji" aria-hidden="true">${escapeHtml(x.emoji)}</span>${escapeHtml(x.name)}</button>`).join('')
       : '<p class="empty-library">Aucun animal trouvé. Essaie un autre mot ou efface les filtres.</p>';
