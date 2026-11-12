@@ -1471,9 +1471,9 @@ window.ECO_DATA = {
     {
       "species": "zebre",
       "title": "Prélèvement pour la viande",
-      "region": "nord de la Tanzanie",
+      "region": "plusieurs villes de Tanzanie",
       "note": "Des rapports régionaux documentent la chasse de cette espèce pour la viande. Cela ne signifie ni que toute chasse est illégale, ni que cette pratique se déroule partout : les règles, motifs et niveaux de prélèvement varient selon les lieux.",
-      "sourceUrl": "https://www.traffic.org/publications/reports/from-bush-to-butchery/"
+      "sourceUrl": "https://www.traffic.org/publications/reports/bushmeat-trade-in-urban-centres-in-tanzania-an-analysis-from-dar-es-salaam-morogoro-mbeya-arusha-and-manyara/"
     },
     {
       "species": "gnou",
@@ -1485,9 +1485,9 @@ window.ECO_DATA = {
     {
       "species": "gazelle",
       "title": "Prélèvement pour la viande",
-      "region": "nord de la Tanzanie",
+      "region": "plusieurs villes de Tanzanie",
       "note": "Des rapports régionaux documentent la chasse de cette espèce pour la viande. Cela ne signifie ni que toute chasse est illégale, ni que cette pratique se déroule partout : les règles, motifs et niveaux de prélèvement varient selon les lieux.",
-      "sourceUrl": "https://www.traffic.org/publications/reports/from-bush-to-butchery/"
+      "sourceUrl": "https://www.traffic.org/publications/reports/bushmeat-trade-in-urban-centres-in-tanzania-an-analysis-from-dar-es-salaam-morogoro-mbeya-arusha-and-manyara/"
     },
     {
       "species": "impala",
@@ -1499,9 +1499,9 @@ window.ECO_DATA = {
     {
       "species": "phacochere",
       "title": "Prélèvement pour la viande",
-      "region": "nord de la Tanzanie",
+      "region": "plusieurs villes de Tanzanie",
       "note": "Des rapports régionaux documentent la chasse de cette espèce pour la viande. Cela ne signifie ni que toute chasse est illégale, ni que cette pratique se déroule partout : les règles, motifs et niveaux de prélèvement varient selon les lieux.",
-      "sourceUrl": "https://www.traffic.org/publications/reports/from-bush-to-butchery/"
+      "sourceUrl": "https://www.traffic.org/publications/reports/bushmeat-trade-in-urban-centres-in-tanzania-an-analysis-from-dar-es-salaam-morogoro-mbeya-arusha-and-manyara/"
     },
     {
       "species": "buffle",
