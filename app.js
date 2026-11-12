@@ -14,11 +14,11 @@
   let current = (items.has(location.hash.slice(1)) ? location.hash.slice(1) : 'lion');
   let quizIndex = 0, score = 0, answered = false;
   const questions = [
-    {q:'Quel animal se nourrit notamment de termites ?', options:['zebre','orycterope','crocodile'], correct:'orycterope',why:'L’oryctérope utilise ses griffes et sa longue langue pour trouver des termites.'},
-    {q:'Quelle est la nourriture principale du zèbre des plaines ?',options:['herbes','rongeur','carcasses'],correct:'herbes',why:'Le zèbre est un herbivore qui broute surtout des herbes.'},
-    {q:'Quel animal se nourrit surtout de carcasses ?',options:['vautour','gazelle','guepard'],correct:'vautour',why:'Le vautour est un charognard : il consomme principalement des animaux déjà morts.'},
-    {q:'Parmi ces animaux, lequel peut chasser la gazelle de Thomson ?',options:['termite','guepard','buffle'],correct:'guepard',why:'Le guépard est un prédateur de certaines gazelles et d’autres petites antilopes.'},
-    {q:'Quel organisme se nourrit notamment de matière végétale morte ?',options:['lion','termite','impala'],correct:'termite',why:'De nombreux termites participent à la dégradation des débris végétaux.'}
+    {q:'Dans « Herbes → Zèbre », que signifie la flèche ?',options:[{id:'wrong_arrow',text:'Le zèbre fournit de l’énergie aux herbes.'},{id:'arrow_resource_consumer',text:'Les herbes peuvent être consommées par le zèbre.'},{id:'arrow_growth',text:'Les herbes se transforment en zèbre.'}],correct:'arrow_resource_consumer',why:'La flèche va de la nourriture vers celui qui la consomme : elle représente le transfert de matière et d’énergie.'},
+    {q:'Tu ne vois pas de lien entre deux organismes dans ce réseau. Que peux-tu conclure ?',options:[{id:'no_relation',text:'Ils n’interagissent jamais dans la nature.'},{id:'not_shown',text:'Le modèle ne montre pas ce lien ; il peut être incomplet.'},{id:'same_diet',text:'Ils mangent forcément la même chose.'}],correct:'not_shown',why:'Ce réseau est une sélection d’exemples. Une relation non dessinée n’est pas une preuve qu’elle n’existe pas.'},
+    {q:'Qu’est-ce que la biodiversité ?',options:[{id:'variety',text:'La variété du vivant : milieux, espèces et individus.'},{id:'animals_only',text:'Le nombre d’animaux dans un seul endroit.'},{id:'food_links',text:'Uniquement les liens entre prédateurs et proies.'}],correct:'variety',why:'La biodiversité concerne plusieurs niveaux, dont les milieux, les espèces et la diversité entre individus d’une même espèce.'},
+    {q:'Que deviennent l’énergie et la matière dans un réseau alimentaire ?',options:[{id:'recycle_both',text:'L’énergie et la matière sont toutes deux recyclées.'},{id:'energy_matter',text:'L’énergie circule puis se dissipe ; la matière peut être recyclée.'},{id:'matter_disappears',text:'La matière disparaît après avoir été consommée.'}],correct:'energy_matter',why:'L’énergie passe d’un organisme à l’autre et une partie se dissipe sous forme de chaleur. La matière organique est transformée et recyclée, notamment par les décomposeurs.'},
+    {q:'Pourquoi relier plusieurs organismes dans un réseau ?',options:[{id:'one_food',text:'Pour montrer qu’un organisme peut avoir plusieurs relations alimentaires.'},{id:'fixed_chain',text:'Pour montrer qu’il n’existe qu’une seule chaîne possible.'},{id:'all_essential',text:'Pour prouver que chaque espèce est toujours indispensable.'}],correct:'one_food',why:'Les chaînes se croisent : un organisme peut consommer plusieurs aliments et être consommé par plusieurs organismes. Le modèle ne prouve pas que chaque espèce a le même rôle partout.'}
   ];
   const init = () => {
     $('animalCount').textContent = animals.length;
@@ -58,14 +58,14 @@
     $('preyCount').textContent=foods.length;
     $('predList').innerHTML=consumers.length? consumers.map(r=>relationCard(r,'pred-side')).join('') : '<p class="relation-empty">Aucun consommateur présenté ici pour cette sélection. Le réseau est volontairement simplifié.</p>';
     $('preyList').innerHTML=foods.length?foods.map(r=>relationCard(r,'prey-side')).join(''):'<p class="relation-empty">Aucun aliment représenté ici. Cela ne veut pas dire que cet être vivant ne mange rien !</p>';
-    $('centerAnimal').innerHTML=`<div class="center-icon" aria-hidden="true">${escapeHtml(x.emoji)}</div><span class="center-group">${escapeHtml(x.group)}</span><h3>${escapeHtml(x.name)}</h3><span class="scientific">${escapeHtml(x.scientific||'Ressource naturelle')}</span><span class="center-diet">${escapeHtml(x.diet || 'Base du réseau alimentaire')}</span>`;
+    $('centerAnimal').innerHTML=`<div class="center-icon" aria-hidden="true">${escapeHtml(x.emoji)}</div><span class="center-group">${escapeHtml(x.type==='resource'?'Ressource · '+x.group:x.group)}</span><h3>${escapeHtml(x.name)}</h3><span class="scientific">${escapeHtml(x.scientific||'Ressource naturelle')}</span><span class="center-diet">${escapeHtml(x.diet || 'Base du réseau alimentaire')}</span>`;
     $('profileHeading').textContent='Découvre : '+x.name;
-    const blocks=[['🔎','À connaître',x.description],['🌍','Son rôle dans la nature',x.role],['✨','Le savais-tu ?',x.fun],['🌱','Comment le protéger ?',x.protect]];
+    const blocks=[['🔎','À connaître',x.description],['🌿','Habitat',x.habitat],['🌍','Son rôle dans la nature',x.role],['✨','Le savais-tu ?',x.fun],['🌱','Piste de conservation',x.protect]];
     $('profileContent').innerHTML=blocks.map(b=>`<article class="profile-item"><span class="p-icon" aria-hidden="true">${b[0]}</span><h4>${b[1]}</h4><p>${escapeHtml(b[2])}</p></article>`).join('');
   }
   function relationCard(r,side){
-    const x=r.entity;const action=r.kind==='charognage'?'Charognage':r.kind==='vegetaux'?'Végétal':r.kind==='detritivore'?'Matière morte':r.note||x.group;
-    return `<button type="button" class="relation-card ${side}" data-animal="${escapeHtml(x.id)}" aria-label="Explorer ${escapeHtml(x.name)}"><span class="animal-emoji" aria-hidden="true">${escapeHtml(x.emoji)}</span><span class="rel-meta"><strong>${escapeHtml(x.name)}</strong><small>${escapeHtml(action)}</small></span><span class="rel-arrow" aria-hidden="true">↗</span></button>`;
+    const x=r.entity;const action=r.kind==='charognage'?'Charognage':r.kind==='vegetaux'?'Consommation végétale':r.kind==='detritivore'?'Consommation de matière morte':r.kind==='predation'?'Prédation':'Relation alimentaire';
+    return `<button type="button" class="relation-card ${side}" data-animal="${escapeHtml(x.id)}" aria-label="Explorer ${escapeHtml(x.name)}"><span class="animal-emoji" aria-hidden="true">${escapeHtml(x.emoji)}</span><span class="rel-meta"><strong>${escapeHtml(x.name)}</strong><small>${escapeHtml(action)}${r.note?' · '+escapeHtml(r.note):''}</small></span><span class="rel-arrow" aria-hidden="true">↗</span></button>`;
   }
   function renderQuiz(){
     const q=questions[quizIndex];answered=false;
@@ -74,7 +74,7 @@
     $('quizFeedback').textContent='';
     $('nextQuestion').disabled=true;
     $('nextQuestion').textContent=quizIndex===questions.length-1?'Recommencer le quiz ↻':'Question suivante →';
-    $('quizAnswers').innerHTML=q.options.map(id=>`<button class="answer-btn" data-answer="${id}" type="button">${escapeHtml(items.get(id).emoji)} &nbsp; ${escapeHtml(items.get(id).name)}</button>`).join('');
+    $('quizAnswers').innerHTML=q.options.map(option=>`<button class="answer-btn" data-answer="${escapeHtml(option.id)}" type="button">${escapeHtml(option.text)}</button>`).join('');
     for(const b of $('quizAnswers').querySelectorAll('button')) b.addEventListener('click',()=>answer(b.dataset.answer));
   }
   function answer(id){
@@ -87,7 +87,7 @@
       if(btn.dataset.answer===q.correct)btn.classList.add('correct');
       if(btn.dataset.answer===id && !correct)btn.classList.add('wrong');
     }
-    $('quizFeedback').textContent=(correct?'✓ Bonne réponse ! ':'Pas tout à fait. ')+q.why+(quizIndex===questions.length-1?` Score final : ${score}/${questions.length}.`:'');
+    $('quizFeedback').textContent=(correct?'✓ Bonne réponse ! ':'Pas tout à fait. ')+q.why+(quizIndex===questions.length-1?` Auto-test terminé : ${score}/${questions.length}. Ce score porte seulement sur ces cinq questions.`:'');
     $('nextQuestion').disabled=false;
   }
   init();
