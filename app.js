@@ -12,7 +12,6 @@
   const animals = data.species.filter(x => x.type === 'animal');
   const resources = data.species.filter(x => x.type === 'resource');
   const regionLabels = {west:'Afrique de l’Ouest',central:'Afrique centrale',east:'Afrique de l’Est',south:'Afrique australe',sahel:'Sahel'};
-  const regionMapIds = {west:'mapWest',central:'mapCentral',east:'mapEast',south:'mapSouth',sahel:'mapSahel'};
   function syncScrollHint(contentId,hintId){
     requestAnimationFrame(()=>{const content=$(contentId),hint=$(hintId);if(content&&hint)hint.hidden=content.scrollHeight<=content.clientHeight+1;});
   }
@@ -32,15 +31,354 @@
   }
   let current = (items.has(location.hash.slice(1)) ? location.hash.slice(1) : 'lion');
   let quizIndex = 0, score = 0, answered = false;
-  let questions = [
-    {q:'Dans « Herbes → Zèbre », que signifie la flèche ?',options:[{id:'wrong_arrow',text:'Le zèbre fournit de l’énergie aux herbes.'},{id:'arrow_resource_consumer',text:'Les herbes peuvent être consommées par le zèbre.'},{id:'arrow_growth',text:'Les herbes se transforment en zèbre.'}],correct:'arrow_resource_consumer',why:'La flèche va de la nourriture vers celui qui la consomme : elle représente le transfert de matière et d’énergie.'},
-    {q:'Tu ne vois pas de lien entre deux organismes dans ce réseau. Que peux-tu conclure ?',options:[{id:'no_relation',text:'Ils n’interagissent jamais dans la nature.'},{id:'not_shown',text:'Le modèle ne montre pas ce lien ; il peut être incomplet.'},{id:'same_diet',text:'Ils mangent forcément la même chose.'}],correct:'not_shown',why:'Ce réseau est une sélection d’exemples. Une relation non dessinée n’est pas une preuve qu’elle n’existe pas.'},
-    {q:'Qu’est-ce que la biodiversité ?',options:[{id:'variety',text:'La variété du vivant : milieux, espèces et individus.'},{id:'animals_only',text:'Le nombre d’animaux dans un seul endroit.'},{id:'food_links',text:'Uniquement les liens entre prédateurs et proies.'}],correct:'variety',why:'La biodiversité concerne plusieurs niveaux, dont les milieux, les espèces et la diversité entre individus d’une même espèce.'},
-    {q:'Que deviennent l’énergie et la matière dans un réseau alimentaire ?',options:[{id:'recycle_both',text:'L’énergie et la matière sont toutes deux recyclées.'},{id:'energy_matter',text:'L’énergie circule puis se dissipe ; la matière peut être recyclée.'},{id:'matter_disappears',text:'La matière disparaît après avoir été consommée.'}],correct:'energy_matter',why:'L’énergie passe d’un organisme à l’autre et une partie se dissipe sous forme de chaleur. La matière organique est transformée et recyclée, notamment par les décomposeurs.'},
-    {q:'Pourquoi relier plusieurs organismes dans un réseau ?',options:[{id:'one_food',text:'Pour montrer qu’un organisme peut avoir plusieurs relations alimentaires.'},{id:'fixed_chain',text:'Pour montrer qu’il n’existe qu’une seule chaîne possible.'},{id:'all_essential',text:'Pour prouver que chaque espèce est toujours indispensable.'}],correct:'one_food',why:'Les chaînes se croisent : un organisme peut consommer plusieurs aliments et être consommé par plusieurs organismes. Le modèle ne prouve pas que chaque espèce a le même rôle partout.'}
-  ];
-
-  const quizSets = [{title:"Réseaux alimentaires",questions},{"title": "Rôles écologiques", "questions": [{"q": "Comment une herbe produit-elle sa matière ?", "options": [{"id": "0", "text": "Grâce à la lumière du Soleil"}, {"id": "1", "text": "En mangeant des insectes"}, {"id": "2", "text": "En absorbant de la viande"}], "correct": "0", "why": "Les plantes utilisent la lumière, l’eau et le dioxyde de carbone pour fabriquer leur matière."}, {"q": "Un vautour mange une carcasse. Quelle relation observes-tu ?", "options": [{"id": "0", "text": "La pollinisation"}, {"id": "1", "text": "Le charognage"}, {"id": "2", "text": "La consommation végétale"}], "correct": "1", "why": "Un charognard consomme un animal déjà mort. Cela ne signifie pas qu’il l’a tué."}, {"q": "Que mange un omnivore ?", "options": [{"id": "0", "text": "Uniquement des feuilles"}, {"id": "1", "text": "Uniquement des animaux"}, {"id": "2", "text": "Des aliments végétaux et animaux"}], "correct": "2", "why": "Son alimentation peut associer végétaux et animaux, selon les ressources disponibles."}, {"q": "Quel rôle jouent les champignons décomposeurs ?", "options": [{"id": "0", "text": "Ils transforment la matière morte"}, {"id": "1", "text": "Ils créent l’énergie du Soleil"}, {"id": "2", "text": "Ils font disparaître toute la matière"}], "correct": "0", "why": "Avec d’autres organismes, ils participent au recyclage de la matière dans les écosystèmes."}, {"q": "Un lion peut-il aussi consommer une carcasse qu’il n’a pas chassée ?", "options": [{"id": "0", "text": "Non, un carnivore chasse toujours"}, {"id": "1", "text": "Oui, chasse et charognage peuvent se combiner"}, {"id": "2", "text": "Seulement s’il devient herbivore"}], "correct": "1", "why": "Un même animal peut avoir plusieurs façons de se nourrir. Les catégories ne sont pas toujours exclusives."}]},{"title": "Biodiversité et esprit critique", "questions": [{"q": "Une espèce est indiquée en Afrique de l’Est. Est-elle présente partout dans cette région ?", "options": [{"id": "0", "text": "Oui, dans chaque village"}, {"id": "1", "text": "Oui, dans tous les milieux"}, {"id": "2", "text": "Non, cela dépend des habitats locaux"}], "correct": "2", "why": "La carte est indicative. Une grande région colorée ne signifie pas une présence continue."}, {"q": "Si les herbes deviennent plus rares, quels animaux peuvent être touchés ?", "options": [{"id": "0", "text": "Seulement les herbivores"}, {"id": "1", "text": "Les herbivores et, indirectement, leurs consommateurs"}, {"id": "2", "text": "Aucun animal"}], "correct": "1", "why": "Une perturbation peut se transmettre par plusieurs relations. Son effet dépend du contexte."}, {"q": "Pourquoi protéger différents habitats ?", "options": [{"id": "0", "text": "Ils abritent des êtres vivants et des relations variés"}, {"id": "1", "text": "Pour supprimer tous les prédateurs"}, {"id": "2", "text": "Pour garder une seule espèce partout"}], "correct": "0", "why": "La diversité des milieux contribue à la biodiversité, en plus de la diversité des espèces et des individus."}, {"q": "Deux espèces dessinées sur le site vivent-elles forcément ensemble ?", "options": [{"id": "0", "text": "Oui, toujours"}, {"id": "1", "text": "Seulement si elles ont la même couleur"}, {"id": "2", "text": "Non, le site rassemble plusieurs contextes de savane"}], "correct": "2", "why": "Ce modèle regroupe des exemples. Les espèces ne coexistent pas nécessairement dans un même lieu."}, {"q": "Un personnage de dessin animé permet-il de connaître le régime réel de son animal ?", "options": [{"id": "0", "text": "Oui, les films sont des observations scientifiques"}, {"id": "1", "text": "Non, il faut consulter des observations et des sources fiables"}, {"id": "2", "text": "Oui, si le personnage est célèbre"}], "correct": "1", "why": "La fiction aide à reconnaître un animal. Son comportement et son alimentation peuvent être inventés."}]}];
+  const quizSets = [
+  {
+    "title": "À table !",
+    "questions": [
+      {
+        "animal": "zebre",
+        "emoji": "🦓",
+        "q": "Que mange surtout le zèbre ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "Des poissons"
+          },
+          {
+            "id": "1",
+            "text": "Des herbes"
+          },
+          {
+            "id": "2",
+            "text": "Des insectes"
+          }
+        ],
+        "correct": "1",
+        "why": "Le zèbre broute surtout des herbes. Ses dents coupent les tiges : c’est un herbivore.",
+        "source": "https://animals.sandiegozoo.org/animals/zebra"
+      },
+      {
+        "animal": "lion",
+        "emoji": "🦁",
+        "q": "Quel repas convient à un lion ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "De la viande"
+          },
+          {
+            "id": "1",
+            "text": "Des feuilles seulement"
+          },
+          {
+            "id": "2",
+            "text": "Du nectar de fleurs"
+          }
+        ],
+        "correct": "0",
+        "why": "Le lion est carnivore. Il chasse notamment de grands herbivores, souvent avec d’autres lions.",
+        "source": "https://kids.nationalgeographic.com/animals/mammals/facts/lion/"
+      },
+      {
+        "animal": "girafe",
+        "emoji": "🦒",
+        "q": "La girafe est herbivore. Quel aliment lui convient ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "Des œufs"
+          },
+          {
+            "id": "1",
+            "text": "Des poissons"
+          },
+          {
+            "id": "2",
+            "text": "Des feuilles"
+          }
+        ],
+        "correct": "2",
+        "why": "La girafe mange des végétaux. Sa grande taille lui permet d’atteindre des feuilles en hauteur.",
+        "source": "https://kids.nationalgeographic.com/animals/mammals/facts/giraffe"
+      },
+      {
+        "animal": "phacochere",
+        "emoji": "🐗",
+        "q": "Avec quoi le phacochère déterre-t-il des racines ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "Sa queue"
+          },
+          {
+            "id": "1",
+            "text": "Son groin"
+          },
+          {
+            "id": "2",
+            "text": "Ses oreilles"
+          }
+        ],
+        "correct": "1",
+        "why": "Son groin puissant lui sert à fouiller le sol. Il mange notamment des herbes et des racines.",
+        "source": "https://animals.sandiegozoo.org/animals/warthog"
+      },
+      {
+        "animal": "suricate",
+        "emoji": "🐾",
+        "q": "Que cherche souvent le suricate en creusant ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "Des insectes"
+          },
+          {
+            "id": "1",
+            "text": "Des algues marines"
+          },
+          {
+            "id": "2",
+            "text": "Des feuilles au sommet des arbres"
+          }
+        ],
+        "correct": "0",
+        "why": "Les insectes occupent une grande place dans son alimentation. Il peut aussi capturer d’autres petits animaux.",
+        "source": "https://animals.sandiegozoo.org/animals/meerkat"
+      }
+    ]
+  },
+  {
+    "title": "Des talents étonnants",
+    "questions": [
+      {
+        "animal": "guepard",
+        "emoji": "🐆",
+        "q": "Quel animal est le plus rapide sur terre sur une courte distance ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "Le zèbre"
+          },
+          {
+            "id": "1",
+            "text": "Le lion"
+          },
+          {
+            "id": "2",
+            "text": "Le guépard"
+          }
+        ],
+        "correct": "2",
+        "why": "Le guépard est un sprinteur : il court très vite sur une courte distance, pas pendant des heures.",
+        "source": "https://kids.nationalgeographic.com/animals/mammals/facts/cheetah"
+      },
+      {
+        "animal": "autruche",
+        "emoji": "🪶",
+        "q": "Comment l’autruche se déplace-t-elle pour fuir rapidement ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "Elle s’envole"
+          },
+          {
+            "id": "1",
+            "text": "Elle court"
+          },
+          {
+            "id": "2",
+            "text": "Elle grimpe aux arbres"
+          }
+        ],
+        "correct": "1",
+        "why": "L’autruche ne vole pas. Ses longues pattes lui permettent de courir vite ; ses ailes l’aident à garder l’équilibre.",
+        "source": "https://kids.nationalgeographic.com/animals/birds/facts/ostrich"
+      },
+      {
+        "animal": "elephant",
+        "emoji": "🐘",
+        "q": "À quoi la trompe de l’éléphant peut-elle servir pendant un repas ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "À saisir des végétaux"
+          },
+          {
+            "id": "1",
+            "text": "À mâcher à la place des dents"
+          },
+          {
+            "id": "2",
+            "text": "À fabriquer des feuilles"
+          }
+        ],
+        "correct": "0",
+        "why": "La trompe saisit des herbes ou des branches et les amène à la bouche. Elle sert aussi à sentir.",
+        "source": "https://kids.nationalgeographic.com/animals/mammals/facts/african-elephant"
+      },
+      {
+        "animal": "girafe",
+        "emoji": "🦒",
+        "q": "Que permet à la girafe sa grande hauteur ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "De voir sous terre"
+          },
+          {
+            "id": "1",
+            "text": "De voler au-dessus des arbres"
+          },
+          {
+            "id": "2",
+            "text": "De repérer un danger de loin"
+          }
+        ],
+        "correct": "2",
+        "why": "Sa hauteur et sa bonne vue lui permettent de surveiller les alentours dans les milieux ouverts.",
+        "source": "https://kids.nationalgeographic.com/animals/mammals/facts/giraffe"
+      },
+      {
+        "animal": "autruche",
+        "emoji": "🪶",
+        "q": "L’autruche cache-t-elle sa tête dans le sable pour fuir ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "Oui, toujours"
+          },
+          {
+            "id": "1",
+            "text": "Non, c’est une idée reçue"
+          },
+          {
+            "id": "2",
+            "text": "Seulement la nuit"
+          }
+        ],
+        "correct": "1",
+        "why": "Elle peut se coucher et allonger son cou près du sol. De loin, cela donne l’impression que sa tête est cachée.",
+        "source": "https://kids.nationalgeographic.com/animals/birds/facts/ostrich"
+      }
+    ]
+  },
+  {
+    "title": "La vie ensemble",
+    "questions": [
+      {
+        "animal": "lion",
+        "emoji": "🦁",
+        "q": "Comment vivent généralement les lions ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "En groupes appelés troupes"
+          },
+          {
+            "id": "1",
+            "text": "Toujours seuls"
+          },
+          {
+            "id": "2",
+            "text": "En colonies souterraines"
+          }
+        ],
+        "correct": "0",
+        "why": "Les lions vivent en groupes. Les membres peuvent chasser, défendre leur territoire et élever les petits ensemble.",
+        "source": "https://kids.nationalgeographic.com/animals/mammals/facts/lion/"
+      },
+      {
+        "animal": "suricate",
+        "emoji": "🐾",
+        "q": "Pourquoi un suricate fait-il le guet pendant que les autres cherchent à manger ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "Pour choisir le plus grand"
+          },
+          {
+            "id": "1",
+            "text": "Pour surveiller les dangers"
+          },
+          {
+            "id": "2",
+            "text": "Pour attirer les prédateurs"
+          }
+        ],
+        "correct": "1",
+        "why": "Une sentinelle surveille les environs et peut donner l’alerte. Les adultes se relaient.",
+        "source": "https://animals.sandiegozoo.org/animals/meerkat"
+      },
+      {
+        "animal": "elephant",
+        "emoji": "🐘",
+        "q": "Avec qui voyagent généralement les jeunes éléphants ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "Toujours seuls"
+          },
+          {
+            "id": "1",
+            "text": "Avec des lions"
+          },
+          {
+            "id": "2",
+            "text": "Avec les femelles du troupeau"
+          }
+        ],
+        "correct": "2",
+        "why": "Les femelles et les jeunes vivent en troupeaux. Les mâles adultes vivent souvent à part.",
+        "source": "https://kids.nationalgeographic.com/animals/mammals/facts/african-elephant"
+      },
+      {
+        "animal": "zebre",
+        "emoji": "🦓",
+        "q": "Pourquoi des troupeaux de zèbres se déplacent-ils quand les herbes sèchent ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "Pour trouver de la nourriture et de l’eau"
+          },
+          {
+            "id": "1",
+            "text": "Pour changer leurs rayures"
+          },
+          {
+            "id": "2",
+            "text": "Pour vivre sous la mer"
+          }
+        ],
+        "correct": "0",
+        "why": "Lorsque les ressources manquent, les zèbres peuvent se déplacer vers de nouveaux pâturages et des points d’eau.",
+        "source": "https://animals.sandiegozoo.org/animals/zebra"
+      },
+      {
+        "animal": "suricate",
+        "emoji": "🐾",
+        "q": "Où les suricates trouvent-ils un abri ?",
+        "options": [
+          {
+            "id": "0",
+            "text": "Dans un nid au sommet d’un arbre"
+          },
+          {
+            "id": "1",
+            "text": "Dans des terriers"
+          },
+          {
+            "id": "2",
+            "text": "Au fond d’un lac"
+          }
+        ],
+        "correct": "1",
+        "why": "Les suricates vivent en groupes et s’abritent dans des terriers souterrains.",
+        "source": "https://animals.sandiegozoo.org/animals/meerkat"
+      }
+    ]
+  }
+];
+  let questions=quizSets[0].questions;
   let seriesIndex = 0;
   const culturalRefs = {lion:'Comme Simba dans Le Roi Lion (Disney).',phacochere:'Comme Pumba dans Le Roi Lion (Disney).',suricate:'Comme Timon dans Le Roi Lion (Disney).',hyene:'Comme Shenzi dans Le Roi Lion (Disney).',zebre:'Comme Marty dans Madagascar.',girafe:'Comme Melman dans Madagascar.',hippopotame:'Comme Gloria dans Madagascar.'};
   const init = () => {
@@ -119,10 +457,11 @@
   }
   function renderRange(x){
     const regions=x.regions||[];
-    for(const [region,id] of Object.entries(regionMapIds))$(id).classList.toggle('is-active',regions.includes(region));
-    $('rangeSummary').textContent=regions.length
-      ? `Pour ${x.name}, les régions indiquées sont : ${regions.map(region=>regionLabels[region]).join(', ')}. Cette présence est discontinue et dépend des habitats locaux.`
-      : `L’aire de présence régionale de ${x.name} n’est pas encore renseignée.`;
+    for(const zone of document.querySelectorAll('[data-map-region]')) zone.classList.toggle('is-active',regions.includes(zone.dataset.mapRegion));
+    $('rangeTitle').textContent=`Où trouver ${x.name.toLowerCase()} ?`;
+    $('rangeSummary').textContent=regions.length ? `À chercher dans ces grandes régions : ${regions.map(r=>regionLabels[r]).join(', ')}.` : 'Ses régions ne sont pas encore indiquées sur cette carte.';
+    $('rangeHabitat').textContent=`Son habitat : ${x.habitat || 'à préciser'}.`;
+    for(const id of ['worldDesc','detailDesc']) $(id).textContent=$('rangeSummary').textContent+' Ces zones donnent des repères, pas une présence partout.';
   }
   function relationCard(r,side){
     const x=r.entity;const action=r.kind==='charognage'?'Charognage':r.kind==='vegetaux'?'Consommation végétale':r.kind==='detritivore'?'Consommation de matière morte':r.kind==='predation'?'Prédation':'Relation alimentaire';
@@ -133,6 +472,8 @@
     $('quizSeries').textContent=`Quiz ${seriesIndex+1} sur 3 · ${quizSets[seriesIndex].title}`;
     $('quizProgress').textContent=`QUESTION ${quizIndex+1} / ${questions.length}`;
     $('quizQuestion').textContent=q.q;
+    $('quizAnimal').textContent=q.emoji;
+    $('quizSource').hidden=true;
     $('quizFeedback').textContent='';
     $('nextQuestion').disabled=true;
     $('nextQuestion').textContent=quizIndex===questions.length-1?`Passer au quiz ${(seriesIndex+1)%3+1} / 3 →`:'Question suivante →';
@@ -150,6 +491,8 @@
       if(btn.dataset.answer===id && !correct)btn.classList.add('wrong');
     }
     $('quizFeedback').textContent=(correct?'✓ Bonne réponse ! ':'Pas tout à fait. ')+q.why+(quizIndex===questions.length-1?` Auto-test terminé : ${score}/${questions.length}. Ce score porte seulement sur ces cinq questions.`:'');
+    $('quizSource').href=q.source;
+    $('quizSource').hidden=false;
     $('nextQuestion').disabled=false;
   }
   init();
