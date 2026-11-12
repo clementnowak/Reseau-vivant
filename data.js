@@ -2,6 +2,11 @@
 window.ECO_DATA = {
   "title": "Réseau vivant — Savane",
   "version": "1.0.0",
+  "validation": {
+    "links": "sources_not_attached_per_link",
+    "scope": "illustrative_examples_across_multiple_savanna_contexts",
+    "note": "Les relations sont illustratives et ne sont pas encore toutes vérifiées ni associées à une source individuelle."
+  },
   "biome": "Savane africaine",
   "species": [
     {
