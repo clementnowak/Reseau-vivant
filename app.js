@@ -11,6 +11,25 @@
   const normalized = s => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
   const animals = data.species.filter(x => x.type === 'animal');
   const resources = data.species.filter(x => x.type === 'resource');
+  const regionLabels = {west:'Afrique de l’Ouest',central:'Afrique centrale',east:'Afrique de l’Est',south:'Afrique australe',sahel:'Sahel'};
+  const regionMapIds = {west:'mapWest',central:'mapCentral',east:'mapEast',south:'mapSouth',sahel:'mapSahel'};
+  function syncScrollHint(contentId,hintId){
+    requestAnimationFrame(()=>{const content=$(contentId),hint=$(hintId);if(content&&hint)hint.hidden=content.scrollHeight<=content.clientHeight+1;});
+  }
+  function syncAllScrollHints(){
+    syncScrollHint('speciesLibrary','speciesScrollHint');
+    syncScrollHint('predList','predScrollHint');
+    syncScrollHint('preyList','preyScrollHint');
+  }
+  function centerNetworkSlide(){
+    requestAnimationFrame(()=>{
+      const web=$('foodWeb'),center=$('centerAnimal')?.closest('.center-column');
+      if(web&&center&&window.matchMedia('(max-width:740px)').matches){
+        web.scrollLeft += center.getBoundingClientRect().left-web.getBoundingClientRect().left-(web.clientWidth-center.clientWidth)/2;
+      }
+      syncAllScrollHints();
+    });
+  }
   let current = (items.has(location.hash.slice(1)) ? location.hash.slice(1) : 'lion');
   let quizIndex = 0, score = 0, answered = false;
   const questions = [
@@ -31,14 +50,24 @@
     $('randomBtn').addEventListener('click',()=>{const options=animals.filter(x=>x.id!==current); select(options[Math.floor(Math.random()*options.length)].id);});
     document.body.addEventListener('click', (event) => { const b=event.target.closest('[data-animal]'); if (b && items.has(b.dataset.animal)) select(b.dataset.animal); });
     window.addEventListener('hashchange',()=>{ const hash=location.hash.slice(1); if(items.has(hash)) select(hash,false); });
+    window.addEventListener('resize',syncAllScrollHints);
     $('nextQuestion').addEventListener('click',()=>{ if (!answered) return; if (quizIndex===questions.length-1) {quizIndex=0;score=0;} else {quizIndex++;}renderQuiz(); });
-    renderLibrary(); renderNetwork(); renderQuiz();
+    renderLibrary(); renderNetwork(); renderQuiz(); syncAllScrollHints();
   };
   function select(id,updateUrl=true){
     if(!items.has(id)) return;
     current=id;
     if (updateUrl) history.replaceState(null,'','#'+id);
+    const active=document.activeElement;
+    const restoreChip=active?.matches?.('.species-chip:focus-visible')===true;
+    const restoreRelation=active?.matches?.('.relation-card:focus-visible')===true;
     renderLibrary();renderNetwork();
+    if(restoreChip){
+      const selectedChip=[...$('speciesLibrary').querySelectorAll('.species-chip')].find(button=>button.dataset.animal===id);
+      selectedChip?.focus({preventScroll:true});
+    }else if(restoreRelation){
+      $('centerAnimal').focus({preventScroll:true});
+    }
     // Keep the reader on the exploration view, not on a missing #id anchor.
   }
   function renderLibrary(){
@@ -47,6 +76,7 @@
     $('speciesLibrary').innerHTML=visible.length
       ? visible.map(x=>`<button type="button" class="species-chip" data-animal="${escapeHtml(x.id)}" aria-pressed="${x.id===current}"><span class="chip-emoji" aria-hidden="true">${escapeHtml(x.emoji)}</span>${escapeHtml(x.name)}</button>`).join('')
       : '<p class="empty-library">Aucun animal trouvé. Essaie un autre mot ou efface les filtres.</p>';
+    syncScrollHint('speciesLibrary','speciesScrollHint');
   }
   function renderNetwork(){
     const x=items.get(current);if(!x)return;
@@ -62,6 +92,24 @@
     $('profileHeading').textContent='Découvre : '+x.name;
     const blocks=[['🔎','À connaître',x.description],['🌿','Habitat',x.habitat],['🌍','Son rôle dans la nature',x.role],['✨','Le savais-tu ?',x.fun],['🌱','Piste de conservation',x.protect]];
     $('profileContent').innerHTML=blocks.map(b=>`<article class="profile-item"><span class="p-icon" aria-hidden="true">${b[0]}</span><h4>${b[1]}</h4><p>${escapeHtml(b[2])}</p></article>`).join('');
+    renderHumanLayer(x);
+    renderRange(x);
+    syncScrollHint('predList','predScrollHint');
+    syncScrollHint('preyList','preyScrollHint');
+    centerNetworkSlide();
+  }
+  function renderHumanLayer(x){
+    const entries=(data.humanInteractions||[]).filter(item=>item.species===x.id);
+    const layer=$('humanLayer');
+    layer.hidden=entries.length===0;
+    $('humanPressureList').innerHTML=entries.map(item=>`<article class="human-pressure-card"><h4>🧑 ${escapeHtml(item.title)}</h4><p><strong>Exemple documenté : ${escapeHtml(item.region)}.</strong> ${escapeHtml(item.note)}</p><a href="${escapeHtml(item.sourceUrl)}" target="_blank" rel="noopener noreferrer">Lire la source TRAFFIC ↗</a></article>`).join('');
+  }
+  function renderRange(x){
+    const regions=x.regions||[];
+    for(const [region,id] of Object.entries(regionMapIds))$(id).classList.toggle('is-active',regions.includes(region));
+    $('rangeSummary').textContent=regions.length
+      ? `Pour ${x.name}, les régions indiquées sont : ${regions.map(region=>regionLabels[region]).join(', ')}. Cette présence est discontinue et dépend des habitats locaux.`
+      : `L’aire de présence régionale de ${x.name} n’est pas encore renseignée.`;
   }
   function relationCard(r,side){
     const x=r.entity;const action=r.kind==='charognage'?'Charognage':r.kind==='vegetaux'?'Consommation végétale':r.kind==='detritivore'?'Consommation de matière morte':r.kind==='predation'?'Prédation':'Relation alimentaire';
