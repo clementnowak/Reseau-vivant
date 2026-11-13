@@ -1,9 +1,8 @@
 # Journal des versions
 
-## 2.2.0 — Silhouettes et mentions légales
-- Les émojis d'animaux sont remplacés par 60 silhouettes dessinées (SVG, originales, légères) : une forme propre à chaque espèce, dont les 11 antilopes.
-- Mentions légales : éditeur et responsable de la publication ajoutés.
-- Générateur des silhouettes : `tools/generer-silhouettes.py`.
+## 2.2.1 — Retrait des silhouettes
+- Les silhouettes dessinées à la main de la 2.2.0 sont retirées (peu ressemblantes) ; retour aux émojis en attendant des illustrations de meilleure qualité.
+- Mentions légales : éditeur ajouté (conservé).
 
 ## 2.1.0 — novembre 2026
 
