@@ -1,5 +1,10 @@
 # Journal des versions
 
+## 2.2.0 — Silhouettes et mentions légales
+- Les émojis d'animaux sont remplacés par 60 silhouettes dessinées (SVG, originales, légères) : une forme propre à chaque espèce, dont les 11 antilopes.
+- Mentions légales : éditeur et responsable de la publication ajoutés.
+- Générateur des silhouettes : `tools/generer-silhouettes.py`.
+
 ## 2.1.0 — novembre 2026
 
 Corrections issues d'un audit indépendant (iPhone SE, iPhone 13 et ordinateur) : voir [`docs/audit-independant-2026-11-13.md`](docs/audit-independant-2026-11-13.md).

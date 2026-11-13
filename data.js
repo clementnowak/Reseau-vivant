@@ -1,7 +1,7 @@
 // Données pédagogiques, à compléter et vérifier lors des futures extensions.
 window.ECO_DATA = {
   "title": "Réseau vivant — Savane",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "validation": {
     "links": "149 relations issues d’ouvrages de référence généraux ; certaines relations rares ou surprenantes ont une source dédiée (champ source).",
     "scope": "illustrative_examples_across_multiple_savanna_contexts",

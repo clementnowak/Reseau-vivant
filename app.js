@@ -10,6 +10,12 @@
 
   /* ---------- Données et utilitaires ---------- */
   const items = new Map(data.species.map((x) => [x.id, x]));
+  // Silhouette dessinée (sprite SVG intégré à index.html) ; repli sur l’émoji si absente.
+  function sil(id, fallback) {
+    return items.has(id) && document.getElementById(`s-${id}`)
+      ? `<svg class="sil" viewBox="0 -14 100 82" aria-hidden="true" focusable="false"><use href="#s-${escapeHtml(id)}"></use></svg>`
+      : escapeHtml(fallback || '•');
+  }
   const animals = data.species.filter((x) => x.type === 'animal');
   const escapeHtml = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const normalized = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
@@ -76,7 +82,7 @@
     const n = visible.length;
     $('searchResults').textContent = filtering ? `${n} ${n > 1 ? 'résultats' : 'résultat'}` : '';
     $('speciesLibrary').innerHTML = n
-      ? visible.map((x) => `<button type="button" class="species-chip" data-animal="${escapeHtml(x.id)}" aria-pressed="${x.id === current}"><span class="chip-emoji" aria-hidden="true">${escapeHtml(x.emoji)}</span>${escapeHtml(shortName(x))}</button>`).join('')
+      ? visible.map((x) => `<button type="button" class="species-chip" data-animal="${escapeHtml(x.id)}" aria-pressed="${x.id === current}"><span class="chip-emoji" aria-hidden="true">${sil(x.id, x.emoji)}</span>${escapeHtml(shortName(x))}</button>`).join('')
       : '<p class="empty-library">Rien trouvé. Essaie un autre mot, comme « antilope », « singe » ou « oiseau » !</p>';
     const lib = $('speciesLibrary');
     const open = libraryOpen || filtering;
@@ -101,7 +107,7 @@
     const generic = (side === 'eaters' ? eaterLabels : foodLabels)[link.kind] || '';
     const note = link.note && !(side === 'eaters' && link.foodSideOnly) ? link.note : generic;
     return `<button type="button" class="relation-card" data-animal="${escapeHtml(x.id)}" aria-label="${escapeHtml(shortName(x))}${note ? ', ' + escapeHtml(note) : ''}. Placer au centre">`
-      + `<span class="animal-emoji" aria-hidden="true">${escapeHtml(x.emoji)}</span>`
+      + `<span class="animal-emoji" aria-hidden="true">${sil(x.id, x.emoji)}</span>`
       + `<span class="rel-meta"><strong>${escapeHtml(shortName(x))}</strong>${note ? `<small>${escapeHtml(note)}</small>` : ''}</span></button>`;
   }
 
@@ -125,7 +131,7 @@
       : `<p class="relation-empty">${isResource ? (x.group === 'Végétaux' ? '☀️ Une plante fabrique sa propre nourriture grâce à la lumière du Soleil, à l’eau et à l’air.' : '♻️ Cette matière vient d’êtres vivants morts. Elle sera recyclée et nourrira à nouveau le sol.') : 'Son alimentation n’est pas encore renseignée.'}</p>`;
 
     const badges = [x.diet, x.group].filter(Boolean).map((b) => `<span class="badge">${escapeHtml(b)}</span>`).join('');
-    $('centerAnimal').innerHTML = `<p class="center-kicker">Au centre du réseau</p><div class="center-icon" aria-hidden="true">${escapeHtml(x.emoji)}</div>`
+    $('centerAnimal').innerHTML = `<p class="center-kicker">Au centre du réseau</p><div class="center-icon" aria-hidden="true">${sil(x.id, x.emoji)}</div>`
       + `<h3>${escapeHtml(x.name)}</h3>${x.scientific ? `<span class="scientific">${escapeHtml(x.scientific)}</span>` : ''}`
       + `<div class="center-badges">${badges}</div>`
       + (culturalRefs[x.id] ? `<p class="culture-bubble">🎬 ${escapeHtml(nbsp(culturalRefs[x.id]))} Ici, découvre le vrai animal !</p>` : '');
@@ -202,7 +208,7 @@
     return '';
   };
   const strictHerbivores = animals.filter((x) => normalized(x.diet).startsWith('herbivore') && !foodsOf(x.id).some((l) => items.get(l.food)?.type === 'animal'));
-  const opt = (x) => ({ id: x.id, text: shortName(x), emoji: x.emoji });
+  const opt = (x) => ({ id: x.id, text: shortName(x), emoji: x.emoji, sil: x.id });
 
   const REGION_QUIZ = ['gazelle', 'springbok', 'suricate'];
   const common = (l) => !l.rare;
@@ -278,7 +284,7 @@
     { emoji: '👂', q: 'Où se trouvent les « oreilles » du criquet ?', options: [['ventre', 'Sur les côtés du ventre', '🦗'], ['tete', 'Sur la tête', '🧠'], ['ailes', 'Sous les ailes', '🪽']], correct: 'ventre', why: 'Le criquet entend grâce à de fines membranes situées sur les côtés de son ventre.', animal: 'criquet' },
     { emoji: '🦁', q: 'Dans une troupe de lions, qui chasse le plus souvent ?', options: [['lionnes', 'Les lionnes', '🦁'], ['bebes', 'Les lionceaux', '🐾'], ['vieux', 'Les vieux mâles', '👴']], correct: 'lionnes', why: 'Les lionnes font la plupart des chasses en équipe, mais les mâles chassent aussi.', animal: 'lion' },
     { emoji: '🐘', q: 'Combien de végétaux un éléphant peut-il manger par jour ?', options: [['100', 'Plus de 100 kg', '🐘'], ['1', 'Environ 1 kg', '🍎'], ['10', 'Environ 10 kg', '🥗']], correct: '100', why: 'Il passe une grande partie de sa journée à manger herbes, feuilles, écorces et fruits.', animal: 'elephant' }
-  ].map((c) => ({ ...c, options: c.options.map(([id, text, emoji]) => ({ id, text, emoji: emoji || items.get(id)?.emoji || '•' })) }));
+  ].map((c) => ({ ...c, options: c.options.map(([id, text, emoji]) => ({ id, text, emoji: emoji || items.get(id)?.emoji || '•', sil: emoji ? '' : id })) }));
 
   const quizzes = [
     { id: 'reseau', title: 'Qui mange qui ?', icon: '🕸️', make: () => [qWhoEats(), qWhatEats(), qPredatorFood(), qWhoEats(), pick([qWhatEats, qPredatorFood])()] },
@@ -308,8 +314,8 @@
     $('quizScore').textContent = `⭐ ${quiz.score}`;
     $('quizBar').style.width = `${(quiz.step / quiz.questions.length) * 100}%`;
     $('quizQuestion').hidden = false;
-    $('quizQuestion').innerHTML = `<span class="quiz-big-emoji" aria-hidden="true">${escapeHtml(q.emoji)}</span>${escapeHtml(nbsp(q.q))}`;
-    $('quizAnswers').innerHTML = q.options.map((o) => `<button type="button" class="answer-btn" data-answer="${escapeHtml(o.id)}"><span class="a-emoji" aria-hidden="true">${escapeHtml(o.emoji)}</span>${escapeHtml(o.text)}</button>`).join('');
+    $('quizQuestion').innerHTML = `<span class="quiz-big-emoji" aria-hidden="true">${q.animal ? sil(q.animal, q.emoji) : escapeHtml(q.emoji)}</span>${escapeHtml(nbsp(q.q))}`;
+    $('quizAnswers').innerHTML = q.options.map((o) => `<button type="button" class="answer-btn" data-answer="${escapeHtml(o.id)}"><span class="a-emoji" aria-hidden="true">${o.sil ? sil(o.sil, o.emoji) : escapeHtml(o.emoji)}</span>${escapeHtml(o.text)}</button>`).join('');
     $('quizFeedback').innerHTML = '';
     $('nextQuestion').hidden = true;
     if (focus) $('quizQuestion').focus({ preventScroll: true });
@@ -327,7 +333,7 @@
     }
     const a = items.get(q.animal);
     $('quizFeedback').innerHTML = `<span class="verdict">${ok ? pick(['Bravo ! 🎉', 'Exact ! 👏', 'Bien joué ! 🌟']) : 'Pas tout à fait… 🤔'}</span>${escapeHtml(nbsp(q.why))}`
-      + (a ? `<br><button type="button" class="see-animal" data-animal="${escapeHtml(a.id)}"><span aria-hidden="true">${escapeHtml(a.emoji)}</span> Voir ${escapeHtml(withArticle(a))} dans le réseau</button>` : '');
+      + (a ? `<br><button type="button" class="see-animal" data-animal="${escapeHtml(a.id)}"><span class="see-ico" aria-hidden="true">${sil(a.id, a.emoji)}</span> Voir ${escapeHtml(withArticle(a))} dans le réseau</button>` : '');
     $('quizScore').textContent = `⭐ ${quiz.score}`;
     $('quizBar').style.width = `${((quiz.step + 1) / quiz.questions.length) * 100}%`;
     const last = quiz.step === quiz.questions.length - 1;

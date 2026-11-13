@@ -402,3 +402,23 @@ button.chain-node:hover { border-color: var(--green); }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+/* Silhouettes dessinées (sprite SVG intégré à index.html) */
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.sil { display: block; width: 100%; height: auto; fill: currentColor; stroke: currentColor; stroke-width: 1; stroke-linejoin: round; color: var(--sil, #3d4a2e); --cut: var(--sil-bg, #fff); }
+.sil .cut { fill: none; stroke: var(--cut); stroke-width: 1.7; }
+.sil .cut circle, .sil .cut ellipse { fill: var(--cut); stroke: none; }
+.sil .line { fill: none; stroke-width: 8; stroke-linecap: round; }
+.sil .line.thin { stroke-width: 2.4; }
+.chip-emoji { width: 30px; height: 24px; display: inline-grid; place-items: center; vertical-align: middle; margin-right: 4px; --sil-bg: #fff; }
+.chip-emoji .sil { width: 30px; }
+.species-chip[aria-pressed="true"] .chip-emoji { --sil-bg: var(--green-soft, #e6f2df); }
+.relation-card .animal-emoji { --sil-bg: var(--green-soft, #e6f2df); padding: 3px; }
+.relation-card .animal-emoji .sil { width: 34px; }
+.eaters .relation-card .animal-emoji { --sil-bg: var(--orange-soft, #fdebd6); }
+.center-icon .sil { width: 130px; margin: 0 auto; --sil: #f1e6c8; --sil-bg: #245a45; }
+.quiz-big-emoji .sil { width: 120px; --sil-bg: #fff; margin-bottom: 2px; }
+.answer-btn .a-emoji { width: 52px; }
+.answer-btn .a-emoji .sil { width: 52px; --sil-bg: #fff; }
+.see-ico { width: 30px; display: inline-block; --sil-bg: #fff; }
+@media (min-width: 960px) { .center-icon .sil { width: 150px; } .quiz-big-emoji .sil { width: 110px; } }
