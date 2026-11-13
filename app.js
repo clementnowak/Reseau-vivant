@@ -408,11 +408,13 @@
     current=id;
     if (updateUrl) history.replaceState(null,'','#'+id);
     const active=document.activeElement;
+    const fromLibrary=!!active?.closest('#speciesLibrary');
     const restoreChip=active?.matches?.('.species-chip:focus-visible')===true;
     const restoreRelation=active?.matches?.('.relation-card:focus-visible')===true;
     renderLibrary();renderNetwork();
+    if(fromLibrary){document.querySelector('.species-disclosure').open=false;$('foodWeb').scrollIntoView({behavior:'auto',block:'start'});$('centerAnimal').focus({preventScroll:true});}
     if(active?.closest('.chain-flow')) $('explorer').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
-    if(restoreChip){
+    if(restoreChip && !fromLibrary){
       const selectedChip=[...$('speciesLibrary').querySelectorAll('.species-chip')].find(button=>button.dataset.animal===id);
       selectedChip?.focus({preventScroll:true});
     }else if(restoreRelation){
@@ -423,7 +425,7 @@
   function renderLibrary(){
     const term=normalized($('speciesSearch').value.trim()); const group=$('groupFilter').value;
     const visible=animals.filter(x=>(!group || x.group===group) && (!term || normalized(x.name+' '+x.scientific+' '+x.group).includes(term)));
-    $('searchResults').textContent=`${visible.length} animal${visible.length>1?'s':''} trouvé${visible.length>1?'s':''}`;
+    $('searchResults').textContent=`${visible.length} ${visible.length>1?'animaux trouvés':'animal trouvé'}`;
     $('speciesLibrary').innerHTML=visible.length
       ? visible.map(x=>`<button type="button" class="species-chip" data-animal="${escapeHtml(x.id)}" aria-pressed="${x.id===current}"><span class="chip-emoji" aria-hidden="true">${escapeHtml(x.emoji)}</span>${escapeHtml(x.name)}</button>`).join('')
       : '<p class="empty-library">Aucun animal trouvé. Essaie un autre mot ou efface les filtres.</p>';
@@ -458,7 +460,7 @@
   function renderRange(x){
     const regions=x.regions||[];
     for(const zone of document.querySelectorAll('[data-map-region]')) zone.classList.toggle('is-active',regions.includes(zone.dataset.mapRegion));
-    $('rangeTitle').textContent=`Où trouver ${x.name.toLowerCase()} ?`;
+    $('rangeTitle').textContent=`${x.name} : où le trouver ?`;
     $('rangeSummary').textContent=regions.length ? `À chercher dans ces grandes régions : ${regions.map(r=>regionLabels[r]).join(', ')}.` : 'Ses régions ne sont pas encore indiquées sur cette carte.';
     $('rangeHabitat').textContent=`Son habitat : ${x.habitat || 'à préciser'}.`;
     for(const id of ['worldDesc','detailDesc']) $(id).textContent=$('rangeSummary').textContent+' Ces zones donnent des repères, pas une présence partout.';
