@@ -1,7 +1,589 @@
-// Données pédagogiques, à compléter et vérifier lors des futures extensions.
-window.ECO_DATA = {
-  "title": "Réseau vivant — Savane",
-  "version": "2.2.1",
+// Univers « savane africaine » : données pédagogiques (espèces, liens, sources) et réglages de l’univers.
+window.RV_DONNEES = window.RV_DONNEES || {};
+window.RV_DONNEES.savane = {
+  "meta": {
+    "id": "savane",
+    "nom": "La savane africaine",
+    "lieu": "dans la savane",
+    "titre": "Réseau vivant — Qui mange qui dans la savane ?",
+    "eyebrow": "🌍 La savane africaine",
+    "animalParDefaut": "zebre",
+    "decor": [
+      "🦅",
+      "🌳",
+      "🦁",
+      "🦓",
+      "🌾"
+    ],
+    "exemplesRecherche": "« antilope », « singe » ou « oiseau »",
+    "aideReseau": "Les émojis sont des symboles : il n’en existe pas pour chaque espèce (🦌 = une antilope, 🐜 = le termite).",
+    "groupesProducteurs": [
+      "Végétaux"
+    ],
+    "texteProducteur": "☀️ Une plante fabrique sa propre nourriture grâce à la lumière du Soleil, à l’eau et à l’air.",
+    "texteRecyclage": "♻️ Cette matière vient d’êtres vivants morts. Elle sera recyclée et nourrira à nouveau le sol.",
+    "filtres": [
+      {
+        "id": "",
+        "label": "Tous",
+        "type": "animal"
+      },
+      {
+        "id": "chasseurs",
+        "label": "🦁 Chasseurs",
+        "type": "animal",
+        "regimeDebut": [
+          "carnivore"
+        ]
+      },
+      {
+        "id": "herbivores",
+        "label": "🌿 Herbivores",
+        "type": "animal",
+        "regimeContient": [
+          "herbivore"
+        ]
+      },
+      {
+        "id": "omnivores",
+        "label": "🍽️ Omnivores",
+        "type": "animal",
+        "regimeDebut": [
+          "omnivore"
+        ]
+      },
+      {
+        "id": "insectes",
+        "label": "🐜 Mangeurs d’insectes",
+        "type": "animal",
+        "regimeContient": [
+          "insectivore"
+        ]
+      },
+      {
+        "id": "oiseaux",
+        "label": "🪶 Oiseaux",
+        "groupes": [
+          "Oiseaux"
+        ]
+      },
+      {
+        "id": "plantes",
+        "label": "🌳 Plantes et restes",
+        "type": "resource"
+      }
+    ],
+    "regions": {
+      "west": {
+        "nom": "Afrique de l’Ouest",
+        "dans": "en Afrique de l’Ouest",
+        "court": "Ouest"
+      },
+      "central": {
+        "nom": "Afrique centrale",
+        "dans": "en Afrique centrale",
+        "court": "Centre"
+      },
+      "east": {
+        "nom": "Afrique de l’Est",
+        "dans": "en Afrique de l’Est",
+        "court": "Est"
+      },
+      "south": {
+        "nom": "Afrique australe (le Sud)",
+        "dans": "en Afrique australe (le Sud)",
+        "court": "Sud"
+      },
+      "sahel": {
+        "nom": "Sahel",
+        "dans": "au Sahel",
+        "court": "Sahel"
+      }
+    },
+    "carte": {
+      "fichier": "univers/savane/cartes.html",
+      "avertissement": "Carte simplifiée : l’animal ne vit pas partout dans la zone orange, seulement là où il trouve son milieu (herbes, arbres, eau…)."
+    },
+    "comprendre": {
+      "cartes": [
+        [
+          "☀️",
+          "Tout commence par le Soleil",
+          "Les plantes utilisent sa lumière pour fabriquer leur nourriture. Elles sont la base du réseau."
+        ],
+        [
+          "🕸️",
+          "Chacun a plusieurs liens",
+          "Un animal mange souvent plusieurs espèces, et peut être mangé par plusieurs prédateurs."
+        ],
+        [
+          "♻️",
+          "Rien ne se perd",
+          "Vautours, termites, champignons et bactéries recyclent les restes. La matière retourne au sol et nourrit les plantes."
+        ],
+        [
+          "🦓",
+          "La biodiversité",
+          "C’est la variété du vivant. Si une espèce disparaît, tous ses voisins dans le réseau peuvent en souffrir."
+        ]
+      ],
+      "chaine": [
+        {
+          "emoji": "☀️",
+          "nom": "Soleil",
+          "role": "donne l’énergie"
+        },
+        {
+          "id": "herbes",
+          "emoji": "🌾",
+          "nom": "Herbes",
+          "role": "producteurs"
+        },
+        {
+          "id": "zebre",
+          "emoji": "🦓",
+          "nom": "Zèbre",
+          "role": "herbivore"
+        },
+        {
+          "id": "lion",
+          "emoji": "🦁",
+          "nom": "Lion",
+          "role": "carnivore"
+        }
+      ],
+      "chaineTexte": "Les flèches montrent le chemin de l’énergie : le Soleil nourrit les herbes, les herbes sont mangées par le zèbre, et le zèbre par le lion. Touche un être vivant pour le retrouver dans le réseau."
+    },
+    "quiz": {
+      "intro": "Trois quiz de 5 questions sur les animaux de la savane. Les questions changent à chaque partie !",
+      "expert": "Parfait ! Tu es un vrai expert de la savane.",
+      "groupeInvertebres": "Invertébrés",
+      "leurresQuiMange": {
+        "vertebre": {
+          "ids": [
+            "proteles",
+            "pangolin",
+            "orycterope"
+          ],
+          "pourquoi": "mangent surtout des termites et des fourmis."
+        },
+        "invertebre": {
+          "ids": [
+            "lion",
+            "crocodile",
+            "guepard",
+            "lycaon",
+            "hyene"
+          ],
+          "pourquoi": "chassent de bien plus grosses proies."
+        }
+      },
+      "grandsChasseurs": [
+        "lion",
+        "crocodile",
+        "guepard",
+        "lycaon",
+        "hyene"
+      ],
+      "petitesProies": [
+        "termite",
+        "criquet"
+      ],
+      "petitesProiesPourquoi": "Les termites et les criquets sont bien trop petits pour un si grand chasseur.",
+      "grossesProies": [
+        "elephant",
+        "rhino_blanc",
+        "rhino_noir"
+      ],
+      "leurresQueMange": [
+        "Mammifères"
+      ],
+      "region": {
+        "mode": "laquelle",
+        "especes": [
+          "gazelle",
+          "springbok",
+          "suricate"
+        ],
+        "question": "Dans quelle région d’Afrique vit {x} ?"
+      },
+      "curiosites": [
+        {
+          "emoji": "💨",
+          "q": "Quel est l’animal terrestre le plus rapide ?",
+          "options": [
+            [
+              "guepard",
+              "Le guépard"
+            ],
+            [
+              "lion",
+              "Le lion"
+            ],
+            [
+              "zebre",
+              "Le zèbre"
+            ]
+          ],
+          "correct": "guepard",
+          "why": "Le guépard peut dépasser 90 km/h, mais seulement pendant quelques secondes.",
+          "animal": "guepard"
+        },
+        {
+          "emoji": "🪶",
+          "q": "Quel oiseau ne vole pas, mais court très vite ?",
+          "options": [
+            [
+              "autruche",
+              "L’autruche"
+            ],
+            [
+              "aigle",
+              "L’aigle martial"
+            ],
+            [
+              "vautour",
+              "Le vautour"
+            ]
+          ],
+          "correct": "autruche",
+          "why": "L’autruche est le plus grand oiseau du monde. Ses longues pattes en font une excellente coureuse.",
+          "animal": "autruche"
+        },
+        {
+          "emoji": "🦏",
+          "q": "De quelle couleur sont les rhinocéros « noir » et « blanc » ?",
+          "options": [
+            [
+              "gris",
+              "Ils sont tous les deux gris",
+              "🩶"
+            ],
+            [
+              "nb",
+              "L’un noir, l’autre blanc",
+              "⚫"
+            ],
+            [
+              "brun",
+              "Marron et beige",
+              "🟤"
+            ]
+          ],
+          "correct": "gris",
+          "why": "Les deux sont gris ! On les reconnaît à la forme de leur lèvre : pointue chez le noir, large chez le blanc.",
+          "animal": "rhino_noir"
+        },
+        {
+          "emoji": "🛡️",
+          "q": "Qu’est-ce qui recouvre le corps du pangolin ?",
+          "options": [
+            [
+              "ecailles",
+              "Des écailles",
+              "🛡️"
+            ],
+            [
+              "plumes",
+              "Des plumes",
+              "🪶"
+            ],
+            [
+              "piquants",
+              "Des piquants",
+              "🌵"
+            ]
+          ],
+          "correct": "ecailles",
+          "why": "Les pangolins sont les seuls mammifères couverts d’écailles, faites de kératine comme nos ongles.",
+          "animal": "pangolin"
+        },
+        {
+          "emoji": "🐜",
+          "q": "Le termite est-il une fourmi ?",
+          "options": [
+            [
+              "non",
+              "Non, c’est un cousin des blattes",
+              "🪳"
+            ],
+            [
+              "oui",
+              "Oui, c’est une sorte de fourmi",
+              "🐜"
+            ],
+            [
+              "arai",
+              "Non, c’est une petite araignée",
+              "🕷️"
+            ]
+          ],
+          "correct": "non",
+          "why": "Ils se ressemblent et vivent tous deux en colonies, mais le termite est un proche cousin des blattes.",
+          "animal": "termite"
+        },
+        {
+          "emoji": "🐜",
+          "q": "Que mange surtout le protèle, cousin de la hyène ?",
+          "options": [
+            [
+              "termite",
+              "Des termites"
+            ],
+            [
+              "zebre",
+              "Des zèbres"
+            ],
+            [
+              "marula",
+              "Des fruits"
+            ]
+          ],
+          "correct": "termite",
+          "why": "Le protèle peut avaler des centaines de milliers de termites en une seule nuit !",
+          "animal": "proteles"
+        },
+        {
+          "emoji": "🌳",
+          "q": "Comment le léopard protège-t-il sa proie des voleurs ?",
+          "options": [
+            [
+              "arbre",
+              "Il la monte dans un arbre",
+              "🌳"
+            ],
+            [
+              "terre",
+              "Il l’enterre",
+              "🕳️"
+            ],
+            [
+              "eau",
+              "Il la cache dans l’eau",
+              "💧"
+            ]
+          ],
+          "correct": "arbre",
+          "why": "En hauteur, sa proie est à l’abri des lions et des hyènes.",
+          "animal": "leopard"
+        },
+        {
+          "emoji": "👀",
+          "q": "Que fait le suricate « sentinelle » ?",
+          "options": [
+            [
+              "garde",
+              "Il surveille les dangers",
+              "👀"
+            ],
+            [
+              "chasse",
+              "Il chasse pour tout le groupe",
+              "🎯"
+            ],
+            [
+              "dort",
+              "Il dort pendant la journée",
+              "😴"
+            ]
+          ],
+          "correct": "garde",
+          "why": "Pendant que les autres cherchent à manger, il monte la garde et donne l’alerte.",
+          "animal": "suricate"
+        },
+        {
+          "emoji": "🦓",
+          "q": "Les rayures des zèbres sont…",
+          "options": [
+            [
+              "unique",
+              "Uniques pour chaque zèbre",
+              "🔍"
+            ],
+            [
+              "pareil",
+              "Les mêmes pour tous",
+              "📋"
+            ],
+            [
+              "change",
+              "Différentes chaque année",
+              "📅"
+            ]
+          ],
+          "correct": "unique",
+          "why": "Comme nos empreintes digitales, les rayures sont propres à chaque zèbre.",
+          "animal": "zebre"
+        },
+        {
+          "emoji": "🦴",
+          "q": "Que mange le vautour ?",
+          "options": [
+            [
+              "carcasses",
+              "Des animaux déjà morts"
+            ],
+            [
+              "herbes",
+              "De l’herbe"
+            ],
+            [
+              "elephant",
+              "Des éléphants vivants"
+            ]
+          ],
+          "correct": "carcasses",
+          "why": "Le vautour est un charognard : il nettoie la savane en mangeant les restes.",
+          "animal": "vautour"
+        },
+        {
+          "emoji": "🗣️",
+          "q": "Pourquoi le vervet a-t-il plusieurs cris d’alarme ?",
+          "options": [
+            [
+              "danger",
+              "Un cri différent pour chaque danger",
+              "🚨"
+            ],
+            [
+              "chanter",
+              "Pour chanter le matin",
+              "🎵"
+            ],
+            [
+              "pluie",
+              "Pour appeler la pluie",
+              "🌧️"
+            ]
+          ],
+          "correct": "danger",
+          "why": "Il ne crie pas pareil pour un aigle, un léopard ou un serpent. Les autres savent ainsi où se cacher !",
+          "animal": "singe_vervet"
+        },
+        {
+          "emoji": "🧭",
+          "q": "Pourquoi les gnous font-ils de grandes migrations ?",
+          "options": [
+            [
+              "herbe",
+              "Pour suivre l’herbe fraîche",
+              "🌱"
+            ],
+            [
+              "froid",
+              "Pour fuir la neige",
+              "❄️"
+            ],
+            [
+              "mer",
+              "Pour aller se baigner à la mer",
+              "🌊"
+            ]
+          ],
+          "correct": "herbe",
+          "why": "Ils suivent les pluies, qui font pousser de l’herbe fraîche. Plus d’un million de gnous migrent en Afrique de l’Est.",
+          "animal": "gnou"
+        },
+        {
+          "emoji": "🍯",
+          "q": "Quelle friandise l’outarde kori adore-t-elle ?",
+          "options": [
+            [
+              "gomme",
+              "La gomme des acacias",
+              "🌳"
+            ],
+            [
+              "miel",
+              "Le miel des abeilles",
+              "🍯"
+            ],
+            [
+              "choco",
+              "Les fruits du baobab",
+              "🥥"
+            ]
+          ],
+          "correct": "gomme",
+          "why": "En afrikaans, on la surnomme même « gompou », le paon à gomme !",
+          "animal": "outarde_kori"
+        },
+        {
+          "emoji": "👂",
+          "q": "Où se trouvent les « oreilles » du criquet ?",
+          "options": [
+            [
+              "ventre",
+              "Sur les côtés du ventre",
+              "🦗"
+            ],
+            [
+              "tete",
+              "Sur la tête",
+              "🧠"
+            ],
+            [
+              "ailes",
+              "Sous les ailes",
+              "🪽"
+            ]
+          ],
+          "correct": "ventre",
+          "why": "Le criquet entend grâce à de fines membranes situées sur les côtés de son ventre.",
+          "animal": "criquet"
+        },
+        {
+          "emoji": "🦁",
+          "q": "Dans une troupe de lions, qui chasse le plus souvent ?",
+          "options": [
+            [
+              "lionnes",
+              "Les lionnes",
+              "🦁"
+            ],
+            [
+              "bebes",
+              "Les lionceaux",
+              "🐾"
+            ],
+            [
+              "vieux",
+              "Les vieux mâles",
+              "👴"
+            ]
+          ],
+          "correct": "lionnes",
+          "why": "Les lionnes font la plupart des chasses en équipe, mais les mâles chassent aussi.",
+          "animal": "lion"
+        },
+        {
+          "emoji": "🐘",
+          "q": "Combien de végétaux un éléphant peut-il manger par jour ?",
+          "options": [
+            [
+              "100",
+              "Plus de 100 kg",
+              "🐘"
+            ],
+            [
+              "1",
+              "Environ 1 kg",
+              "🍎"
+            ],
+            [
+              "10",
+              "Environ 10 kg",
+              "🥗"
+            ]
+          ],
+          "correct": "100",
+          "why": "Il passe une grande partie de sa journée à manger herbes, feuilles, écorces et fruits.",
+          "animal": "elephant"
+        }
+      ]
+    }
+  },
+  "version": "3.0.0",
   "validation": {
     "links": "149 relations issues d’ouvrages de référence généraux ; certaines relations rares ou surprenantes ont une source dédiée (champ source).",
     "scope": "illustrative_examples_across_multiple_savanna_contexts",
@@ -32,7 +614,8 @@ window.ECO_DATA = {
         "south"
       ],
       "noPredator": "Un lion adulte n’a presque pas de prédateur. Ses petits, eux, peuvent être attaqués par des hyènes.",
-      "keywords": "félin chat"
+      "keywords": "félin chat",
+      "culture": "Comme Simba dans « Le Roi Lion »."
     },
     {
       "id": "hyene",
@@ -53,7 +636,9 @@ window.ECO_DATA = {
         "east",
         "south"
       ],
-      "noPredator": "Une hyène adulte a peu de prédateurs, mais les lions la tuent parfois."
+      "noPredator": "Une hyène adulte a peu de prédateurs, mais les lions la tuent parfois.",
+      "genre": "f",
+      "culture": "Comme Shenzi dans « Le Roi Lion »."
     },
     {
       "id": "guepard",
@@ -133,7 +718,8 @@ window.ECO_DATA = {
       "regions": [
         "east",
         "south"
-      ]
+      ],
+      "culture": "Comme Marty dans « Madagascar »."
     },
     {
       "id": "gnou",
@@ -170,7 +756,8 @@ window.ECO_DATA = {
       "regions": [
         "east"
       ],
-      "keywords": "antilope"
+      "keywords": "antilope",
+      "genre": "f"
     },
     {
       "id": "impala",
@@ -210,7 +797,8 @@ window.ECO_DATA = {
         "east",
         "south"
       ],
-      "keywords": "cochon sanglier"
+      "keywords": "cochon sanglier",
+      "culture": "Comme Pumbaa dans « Le Roi Lion »."
     },
     {
       "id": "buffle",
@@ -422,7 +1010,8 @@ window.ECO_DATA = {
         "east",
         "south"
       ],
-      "keywords": "oiseau"
+      "keywords": "oiseau",
+      "genre": "f"
     },
     {
       "id": "herbes",
@@ -444,7 +1033,8 @@ window.ECO_DATA = {
         "south",
         "sahel"
       ],
-      "keywords": "plante"
+      "keywords": "plante",
+      "pluriel": true
     },
     {
       "id": "feuilles",
@@ -465,7 +1055,8 @@ window.ECO_DATA = {
         "east",
         "south"
       ],
-      "keywords": "plante"
+      "keywords": "plante",
+      "pluriel": true
     },
     {
       "id": "detritus",
@@ -485,7 +1076,8 @@ window.ECO_DATA = {
         "central",
         "east",
         "south"
-      ]
+      ],
+      "pluriel": true
     },
     {
       "id": "carcasses",
@@ -505,7 +1097,8 @@ window.ECO_DATA = {
         "central",
         "east",
         "south"
-      ]
+      ],
+      "pluriel": true
     },
     {
       "id": "racines",
@@ -527,7 +1120,8 @@ window.ECO_DATA = {
         "south",
         "sahel"
       ],
-      "keywords": "plante"
+      "keywords": "plante",
+      "pluriel": true
     },
     {
       "id": "girafe",
@@ -546,7 +1140,9 @@ window.ECO_DATA = {
         "west",
         "east",
         "south"
-      ]
+      ],
+      "genre": "f",
+      "culture": "Comme Melman dans « Madagascar »."
     },
     {
       "id": "elephant",
@@ -662,7 +1258,8 @@ window.ECO_DATA = {
       "type": "animal",
       "regions": [
         "south"
-      ]
+      ],
+      "culture": "Comme Timon dans « Le Roi Lion »."
     },
     {
       "id": "serval",
@@ -957,7 +1554,8 @@ window.ECO_DATA = {
         "east",
         "south"
       ],
-      "keywords": "antilope"
+      "keywords": "antilope",
+      "elision": true
     },
     {
       "id": "hippotrague_noir",
@@ -976,7 +1574,8 @@ window.ECO_DATA = {
         "east",
         "south"
       ],
-      "keywords": "antilope"
+      "keywords": "antilope",
+      "elision": true
     },
     {
       "id": "cobe_defassa",
@@ -1095,7 +1694,8 @@ window.ECO_DATA = {
         "south"
       ],
       "source": "https://animaldiversity.org/accounts/Ardeotis_kori/",
-      "keywords": "oiseau"
+      "keywords": "oiseau",
+      "genre": "f"
     },
     {
       "id": "bucorve",
@@ -1219,7 +1819,8 @@ window.ECO_DATA = {
         "south",
         "sahel"
       ],
-      "keywords": "plante"
+      "keywords": "plante",
+      "pluriel": true
     }
   ],
   "links": [
