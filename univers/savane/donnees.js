@@ -16,7 +16,8 @@ window.RV_DONNEES.savane = {
       "🌾"
     ],
     "exemplesRecherche": "« antilope », « singe » ou « oiseau »",
-    "aideReseau": "Les émojis sont des symboles : il n’en existe pas pour chaque espèce (🦌 = une antilope, 🐜 = le termite).",
+    "couleurBarre": "#183e34",
+    "aideReseau": "Les silhouettes sont des dessins d’illustrateurs (PhyloPic). Pour quelques espèces, c’est un proche cousin ; sans silhouette, un émoji la remplace.",
     "groupesProducteurs": [
       "Végétaux"
     ],
@@ -583,7 +584,7 @@ window.RV_DONNEES.savane = {
       ]
     }
   },
-  "version": "3.0.1",
+  "version": "3.1.0",
   "validation": {
     "links": "149 relations issues d’ouvrages de référence généraux ; certaines relations rares ou surprenantes ont une source dédiée (champ source).",
     "scope": "illustrative_examples_across_multiple_savanna_contexts",
@@ -2768,6 +2769,10 @@ window.RV_DONNEES.savane = {
     }
   ],
   "sources": [
+    {
+      "name": "PhyloPic — silhouettes d’animaux (domaine public)",
+      "url": "https://www.phylopic.org/"
+    },
     {
       "name": "Animal Diversity Web (Université du Michigan) — fiches espèces",
       "url": "https://animaldiversity.org/"
