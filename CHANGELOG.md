@@ -1,5 +1,17 @@
 # Journal des versions
 
+## 3.2.0
+- Savane : 28 relations ajoutées avec source pour 11 animaux qui n'avaient aucun prédateur (léopard, suricate, pangolin, serval, caracal, ratel, protèle, renard à oreilles de chauve-souris, outarde kori, bucorve, serpentaire).
+- Récif : 3 relations « parfois » désormais sourcées et marquées rares.
+- Tests automatiques GitHub Actions (cohérence des données + parcours complet) ; `npm test` en local.
+- Checklist `docs/ajouter-un-univers.md` pour préparer « les airs ».
+- Silhouettes ajoutées : léopard, éléphant, corail dur, anémone, holothurie (CC0). Seuls gnou, python, éland, springbok, triton, crocodile, hippotrague, cobe, termite et éponge gardent leur emoji.
+
+## 3.1.0 — Vraies silhouettes et confort
+- Silhouettes d’illustrateurs (PhyloPic, domaine public) à la place des émojis pour 39 animaux de la savane et 22 du récif ; l’émoji reste pour les autres. Crédits : `docs/credits-silhouettes.md`.
+- Recherche plus tolérante (par exemple « mante » trouve la raie manta, « cheval de mer » l’hippocampe).
+- Filtres sur deux lignes sur grand écran, logo plus facile à toucher, couleur de la barre du navigateur selon l’univers.
+
 ## 3.0.1 — Audit de conformité
 - Dugong : la vache (🐄) est remplacée par un phoque (🦭), en attendant de vraies illustrations.
 - Ordinateur : la carte de l’animal central ne reste plus collée en haut de l’écran.

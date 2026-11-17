@@ -16,7 +16,8 @@ window.RV_DONNEES.recif = {
       "🌿"
     ],
     "exemplesRecherche": "« requin », « tortue » ou « poisson »",
-    "aideReseau": "Les émojis sont des symboles : il n’en existe pas pour chaque espèce (🐟 = un poisson, 🐴 = l’hippocampe, 🪽 = la raie manta, 🦭 = le dugong, un mammifère marin).",
+    "couleurBarre": "#123c55",
+    "aideReseau": "Les silhouettes sont des dessins d’illustrateurs (PhyloPic). Pour quelques espèces, c’est un proche cousin ; sans silhouette, un émoji la remplace.",
     "groupesProducteurs": [
       "Plancton",
       "Algues et plantes"
@@ -563,7 +564,7 @@ window.RV_DONNEES.recif = {
       ]
     }
   },
-  "version": "3.0.1",
+  "version": "3.2.0",
   "validation": {
     "links": "Relations issues d’ouvrages de référence généraux ; les relations surprenantes ont une source dédiée (champ source).",
     "rangeMapping": "grandes régions de récifs, approximatives, pas d’aires de répartition précises"
@@ -839,7 +840,7 @@ window.RV_DONNEES.recif = {
       "short": "Étoile couronne d’épines",
       "genre": "f",
       "source": "https://www.aims.gov.au/cots",
-      "keywords": "étoile de mer acanthaster épine"
+      "keywords": "étoile de mer acanthaster épine acanthaster étoile de mer"
     },
     {
       "id": "triton",
@@ -936,7 +937,7 @@ window.RV_DONNEES.recif = {
       ],
       "short": "Poisson-clown",
       "culture": "Comme Marin et Nemo dans « Le Monde de Nemo ».",
-      "keywords": "nemo amphiprion"
+      "keywords": "nemo amphiprion nemo amphiprion"
     },
     {
       "id": "chirurgien_bleu",
@@ -958,7 +959,7 @@ window.RV_DONNEES.recif = {
         "pacifique"
       ],
       "culture": "Comme Dory dans « Le Monde de Nemo ».",
-      "keywords": "dory poisson bleu"
+      "keywords": "dory poisson bleu dory poisson chirurgien"
     },
     {
       "id": "perroquet",
@@ -1076,7 +1077,7 @@ window.RV_DONNEES.recif = {
         "caraibes"
       ],
       "source": "https://oceanservice.noaa.gov/facts/lionfish.html",
-      "keywords": "rascasse volante lion venimeux"
+      "keywords": "rascasse volante lion venimeux rascasse volante"
     },
     {
       "id": "murene",
@@ -1200,7 +1201,7 @@ window.RV_DONNEES.recif = {
       ],
       "elision": true,
       "culture": "Comme Sheldon dans « Le Monde de Nemo ».",
-      "keywords": "cheval de mer"
+      "keywords": "cheval de mer cheval de mer"
     },
     {
       "id": "requin_pb",
@@ -1223,7 +1224,7 @@ window.RV_DONNEES.recif = {
         "pacifique"
       ],
       "short": "Requin à pointes blanches",
-      "keywords": "requin pointe blanche"
+      "keywords": "requin pointe blanche requin de récif"
     },
     {
       "id": "requin_tigre",
@@ -1272,7 +1273,7 @@ window.RV_DONNEES.recif = {
       ],
       "short": "Raie manta",
       "genre": "f",
-      "keywords": "manta raie"
+      "keywords": "manta raie mante manta raie géante diable de mer"
     },
     {
       "id": "tortue_verte",
@@ -1322,7 +1323,7 @@ window.RV_DONNEES.recif = {
       ],
       "genre": "f",
       "source": "https://www.fisheries.noaa.gov/species/hawksbill-turtle",
-      "keywords": "tortue marine écaille"
+      "keywords": "tortue marine écaille caret écaille"
     },
     {
       "id": "dugong",
@@ -1343,7 +1344,7 @@ window.RV_DONNEES.recif = {
         "triangle",
         "australie"
       ],
-      "keywords": "vache marine sirénien lamantin"
+      "keywords": "vache marine sirénien lamantin sirène lamantin"
     }
   ],
   "links": [
@@ -1393,7 +1394,9 @@ window.RV_DONNEES.recif = {
       "eater": "crabe",
       "food": "hippocampe",
       "kind": "predation",
-      "note": "parfois"
+      "note": "parfois, surtout les petits",
+      "source": "https://projectseahorse.org/saving-seahorses/about-seahorses/survival/",
+      "rare": true
     },
     {
       "eater": "acanthaster",
@@ -1661,13 +1664,17 @@ window.RV_DONNEES.recif = {
       "eater": "requin_tigre",
       "food": "raie_manta",
       "kind": "predation",
-      "note": "parfois"
+      "note": "parfois, surtout les jeunes ou les blessées",
+      "source": "https://doi.org/10.2989/1814232X.2010.538152",
+      "rare": true
     },
     {
       "eater": "requin_tigre",
       "food": "requin_pb",
       "kind": "predation",
-      "note": "parfois"
+      "note": "parfois",
+      "rare": true,
+      "source": "https://researchdata.edu.au/size-sex-geographic-australian-waters/3915165"
     },
     {
       "eater": "raie_manta",
@@ -1702,6 +1709,10 @@ window.RV_DONNEES.recif = {
     }
   ],
   "sources": [
+    {
+      "name": "PhyloPic — silhouettes d’animaux (domaine public)",
+      "url": "https://www.phylopic.org/"
+    },
     {
       "name": "Institut australien des sciences marines (AIMS) — étoile couronne d’épines",
       "url": "https://www.aims.gov.au/cots"
