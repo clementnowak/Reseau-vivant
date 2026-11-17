@@ -1,6 +1,6 @@
 {
   "name": "reseau-vivant",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "private": true,
   "description": "Réseau vivant : site éducatif sur les réseaux alimentaires (aucune dépendance au runtime, seulement pour les tests).",
   "scripts": {

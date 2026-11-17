@@ -1,5 +1,8 @@
 # Journal des versions
 
+## 3.2.1
+- Retour aux émojis pour tous les animaux qui ont un émoji représentatif. Les silhouettes ne sont gardées que pour 15 espèces sans émoji correspondant : hyène, oryctérope, autruche, suricate, pangolin, porc-épic, outarde kori, bucorve (savane) ; anémone, oursin, étoile de mer épineuse, holothurie, raie manta, hippocampe, dugong (récif).
+
 ## 3.2.0
 - Savane : 28 relations ajoutées avec source pour 11 animaux qui n'avaient aucun prédateur (léopard, suricate, pangolin, serval, caracal, ratel, protèle, renard à oreilles de chauve-souris, outarde kori, bucorve, serpentaire).
 - Récif : 3 relations « parfois » désormais sourcées et marquées rares.
