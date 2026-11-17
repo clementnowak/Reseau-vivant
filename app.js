@@ -62,6 +62,8 @@
         if (!(window.RV_DONNEES && window.RV_DONNEES[id])) await loadScript(entry.donnees);
         const data = window.RV_DONNEES[id];
         if (!data || !Array.isArray(data.species) || !Array.isArray(data.links)) throw new Error('Données invalides');
+        // Silhouettes (facultatives) : si elles manquent, les émojis prennent le relais.
+        if (!(window.RV_SIL && window.RV_SIL[id])) await loadScript(entry.donnees.replace(/donnees\.js$/, 'silhouettes.js')).catch(() => {});
         const res = await fetch(data.meta.carte.fichier);
         if (!res.ok) throw new Error('Cartes introuvables');
         return build(id, data, await res.text());
@@ -75,13 +77,18 @@
     const items = new Map(data.species.map((x) => [x.id, x]));
     const get = (ids) => (ids || []).map((k) => items.get(k)).filter(Boolean);
     const q = data.meta.quiz;
+    const sil = (window.RV_SIL && window.RV_SIL[id]) || {};
+    // Une silhouette dessinée si on en a une pour l’espèce, sinon l’émoji.
+    const glyph = (key, emoji) => (sil[key] && /^[\d. ]+$/.test(sil[key][0]) && /^[MZ\d. \-]+$/.test(sil[key][1])
+      ? `<span class="pict"><svg viewBox="${sil[key][0]}" aria-hidden="true" focusable="false"><path fill="currentColor" d="${sil[key][1]}"/></svg></span>`
+      : escapeHtml(emoji));
     return {
-      id, meta: data.meta, data, items, mapHtml,
+      id, meta: data.meta, data, items, mapHtml, glyph,
       animals: data.species.filter((x) => x.type === 'animal'),
       eatersOf: (k) => data.links.filter((l) => l.food === k),
       foodsOf: (k) => data.links.filter((l) => l.eater === k),
       bigHunters: get(q.grandsChasseurs), tinyFoods: get(q.petitesProies), bigPrey: get(q.grossesProies),
-      curiosities: (q.curiosites || []).map((c) => ({ ...c, options: c.options.map(([oid, text, emoji]) => ({ id: oid, text, emoji: emoji || items.get(oid)?.emoji || '•' })) }))
+      curiosities: (q.curiosites || []).map((c) => ({ ...c, options: c.options.map(([oid, text, emoji]) => ({ id: oid, text, emoji: emoji || items.get(oid)?.emoji || '•', glyph: emoji ? undefined : (items.has(oid) ? glyph(oid, items.get(oid).emoji) : undefined) })) }))
     };
   }
 
@@ -125,6 +132,8 @@
     const m = U.meta;
     document.documentElement.dataset.univers = U.id;
     document.title = m.titre;
+    const barre = document.querySelector('meta[name="theme-color"]');
+    if (barre && /^#[0-9a-f]{6}$/i.test(m.couleurBarre || '')) barre.setAttribute('content', m.couleurBarre);
     renderSwitch();
     $('universeEyebrow').textContent = m.eyebrow;
     document.querySelectorAll('.hero-art .decor').forEach((el, i) => { el.textContent = m.decor[i] || ''; });
@@ -137,7 +146,7 @@
     const chain = m.comprendre.chaine;
     $('chainFlow').setAttribute('aria-label', `Chaîne alimentaire : ${chain.map((n) => n.nom).join(', puis ')}`);
     $('chainFlow').innerHTML = chain.map((n) => {
-      const inner = `<span aria-hidden="true">${escapeHtml(n.emoji)}</span><strong>${escapeHtml(n.nom)}</strong><small>${escapeHtml(n.role)}</small>`;
+      const inner = `<span aria-hidden="true">${n.id && U.items.has(n.id) ? U.glyph(n.id, n.emoji) : escapeHtml(n.emoji)}</span><strong>${escapeHtml(n.nom)}</strong><small>${escapeHtml(n.role)}</small>`;
       return `<li>${n.id && U.items.has(n.id) ? `<button type="button" data-animal="${escapeHtml(n.id)}" class="chain-node">${inner}</button>` : `<span class="chain-node">${inner}</span>`}</li>`;
     }).join('');
     $('chainFooter').textContent = m.comprendre.chaineTexte;
@@ -171,7 +180,7 @@
     const n = visible.length;
     $('searchResults').textContent = filtering ? `${n} ${n > 1 ? 'résultats' : 'résultat'}` : '';
     $('speciesLibrary').innerHTML = n
-      ? visible.map((x) => `<button type="button" class="species-chip" data-animal="${escapeHtml(x.id)}" aria-pressed="${x.id === current}"><span class="chip-emoji" aria-hidden="true">${escapeHtml(x.emoji)}</span>${escapeHtml(shortName(x))}</button>`).join('')
+      ? visible.map((x) => `<button type="button" class="species-chip" data-animal="${escapeHtml(x.id)}" aria-pressed="${x.id === current}"><span class="chip-emoji" aria-hidden="true">${U.glyph(x.id, x.emoji)}</span>${escapeHtml(shortName(x))}</button>`).join('')
       : `<p class="empty-library">Rien trouvé. Essaie un autre mot, comme ${escapeHtml(U.meta.exemplesRecherche)} !</p>`;
     const lib = $('speciesLibrary');
     const open = libraryOpen || filtering;
@@ -196,7 +205,7 @@
     const generic = (side === 'eaters' ? eaterLabels : foodLabels)[link.kind] || '';
     const note = link.note && !(side === 'eaters' && link.foodSideOnly) ? link.note : generic;
     return `<button type="button" class="relation-card" data-animal="${escapeHtml(x.id)}" aria-label="${escapeHtml(shortName(x))}${note ? ', ' + escapeHtml(note) : ''}. Placer au centre">`
-      + `<span class="animal-emoji" aria-hidden="true">${escapeHtml(x.emoji)}</span>`
+      + `<span class="animal-emoji" aria-hidden="true">${U.glyph(x.id, x.emoji)}</span>`
       + `<span class="rel-meta"><strong>${escapeHtml(shortName(x))}</strong>${note ? `<small>${escapeHtml(note)}</small>` : ''}</span></button>`;
   }
 
@@ -220,7 +229,7 @@
       : `<p class="relation-empty">${escapeHtml(isResource ? (producer ? U.meta.texteProducteur : U.meta.texteRecyclage) : 'Son alimentation n’est pas encore renseignée.')}</p>`;
 
     const badges = [x.diet, x.group].filter(Boolean).map((b) => `<span class="badge">${escapeHtml(b)}</span>`).join('');
-    $('centerAnimal').innerHTML = `<p class="center-kicker">Au centre du réseau</p><div class="center-icon" aria-hidden="true">${escapeHtml(x.emoji)}</div>`
+    $('centerAnimal').innerHTML = `<p class="center-kicker">Au centre du réseau</p><div class="center-icon" aria-hidden="true">${U.glyph(x.id, x.emoji)}</div>`
       + `<h3>${escapeHtml(x.name)}</h3>${x.scientific ? `<span class="scientific">${escapeHtml(x.scientific)}</span>` : ''}`
       + `<div class="center-badges">${badges}</div>`
       + (x.culture ? `<p class="culture-bubble">🎬 ${escapeHtml(nbsp(x.culture))} Ici, découvre le vrai animal !</p>` : '');
@@ -293,7 +302,7 @@
     if (d.startsWith('insectivore')) return 'insectivore';
     return '';
   };
-  const opt = (x) => ({ id: x.id, text: shortName(x), emoji: x.emoji });
+  const opt = (x) => ({ id: x.id, text: shortName(x), emoji: x.emoji, glyph: U.glyph(x.id, x.emoji) });
   const common = (l) => !l.rare;
   const tooBig = (x) => `${capitalize(withArticle(x))} ${isPlural(x) ? 'sont' : 'est'} bien trop ${isFem(x) ? 'grosse' : 'gros'}`;
 
@@ -307,7 +316,7 @@
     const decoy = Q.leurresQuiMange[inv ? 'invertebre' : 'vertebre'];
     const wrong = shuffle(decoy.ids.map((k) => U.items.get(k)).filter((w) => w && !eaterIds.has(w.id) && w.id !== prey.id)).slice(0, 2);
     const why = `${capitalize(withArticle(eater))} ${inv ? 'mange' : 'peut chasser'} ${withArticle(prey)}. ${capitalize(joinFr(wrong.map((w) => withArticle(w))))} ${decoy.pourquoi}`;
-    return { emoji: prey.emoji, q: `Lequel de ces animaux peut manger ${withArticle(prey)} ?`, options: shuffle([opt(eater), ...wrong.map(opt)]), correct: eater.id, why, animal: prey.id };
+    return { emoji: prey.emoji, glyph: U.glyph(prey.id, prey.emoji), q: `Lequel de ces animaux peut manger ${withArticle(prey)} ?`, options: shuffle([opt(eater), ...wrong.map(opt)]), correct: eater.id, why, animal: prey.id };
   }
   function qWhatEats() {
     const Q = U.meta.quiz;
@@ -316,7 +325,7 @@
     const food = U.items.get(pick(U.foodsOf(herb.id)).food);
     const foodIds = new Set(U.foodsOf(herb.id).map((l) => l.food));
     const wrong = shuffle(U.animals.filter((a) => a.id !== herb.id && !foodIds.has(a.id) && Q.leurresQueMange.includes(a.group) && U.eatersOf(a.id).length)).slice(0, 2);
-    return { emoji: herb.emoji, q: `Que mange ${withArticle(herb)} ?`, options: shuffle([opt(food), ...wrong.map(opt)]), correct: food.id,
+    return { emoji: herb.emoji, glyph: U.glyph(herb.id, herb.emoji), q: `Que mange ${withArticle(herb)} ?`, options: shuffle([opt(food), ...wrong.map(opt)]), correct: food.id,
       why: `${capitalize(withArticle(herb))} est herbivore : ${pronoun(herb)} mange ${Q.motsHerbivore || 'des plantes'}, comme ${withArticle(food)}.`, animal: herb.id };
   }
   function qPredatorFood() {
@@ -329,7 +338,7 @@
     const pool = (big ? U.tinyFoods : U.bigPrey).filter((w) => !foodIds.has(w.id) && w.id !== hunter.id);
     const plant = pick(U.data.species.filter((s) => s.type === 'resource' && (U.meta.groupesProducteurs || []).includes(s.group) && !foodIds.has(s.id)));
     const wrong = [pick(pool), plant];
-    return { emoji: hunter.emoji, q: `Lequel de ces repas ${withArticle(hunter)} peut-${pronoun(hunter)} chasser ?`, options: shuffle([opt(prey), ...wrong.map(opt)]), correct: prey.id,
+    return { emoji: hunter.emoji, glyph: U.glyph(hunter.id, hunter.emoji), q: `Lequel de ces repas ${withArticle(hunter)} peut-${pronoun(hunter)} chasser ?`, options: shuffle([opt(prey), ...wrong.map(opt)]), correct: prey.id,
       why: `${capitalize(withArticle(hunter))} chasse notamment ${withArticle(prey)}. ${big ? Q.petitesProiesPourquoi : `${tooBig(wrong[0])} pour ${pronoun(hunter) === 'elle' ? 'elle' : 'lui'}.`}`, animal: hunter.id };
   }
   function qDiet() {
@@ -337,7 +346,7 @@
     const k = dietKind(x);
     const plants = U.meta.quiz.motsHerbivore || 'des plantes';
     const words = { herbivore: plants, carnivore: 'des animaux', omnivore: 'un peu de tout' };
-    return { emoji: x.emoji, q: `${capitalize(withArticle(x))} est plutôt…`, options: [
+    return { emoji: x.emoji, glyph: U.glyph(x.id, x.emoji), q: `${capitalize(withArticle(x))} est plutôt…`, options: [
       { id: 'herbivore', text: `Herbivore (mange ${plants})`, emoji: '🌿' },
       { id: 'carnivore', text: 'Carnivore (mange des animaux)', emoji: '🥩' },
       { id: 'omnivore', text: 'Omnivore (mange de tout)', emoji: '🍽️' }], correct: k,
@@ -357,7 +366,7 @@
     const x = U.items.get(pick(Z.especes));
     const right = pick(x.regions);
     const wrong = shuffle(Object.keys(R).filter((r) => !x.regions.includes(r))).slice(0, 2);
-    return { emoji: x.emoji, q: fill(Z.question, { x: withArticle(x) }), options: shuffle([right, ...wrong].map((r) => ({ id: r, text: R[r].nom, emoji: '🗺️' }))), correct: right,
+    return { emoji: x.emoji, glyph: U.glyph(x.id, x.emoji), q: fill(Z.question, { x: withArticle(x) }), options: shuffle([right, ...wrong].map((r) => ({ id: r, text: R[r].nom, emoji: '🗺️' }))), correct: right,
       why: `On trouve ${withArticle(x)} surtout ${joinFr(x.regions.map((r) => R[r].dans))}. Regarde sa carte !`, animal: x.id };
   }
 
@@ -389,8 +398,8 @@
     $('quizScore').textContent = `⭐ ${quiz.score}`;
     $('quizBar').style.width = `${(quiz.step / quiz.questions.length) * 100}%`;
     $('quizQuestion').hidden = false;
-    $('quizQuestion').innerHTML = `<span class="quiz-big-emoji" aria-hidden="true">${escapeHtml(q.emoji)}</span>${escapeHtml(nbsp(q.q))}`;
-    $('quizAnswers').innerHTML = q.options.map((o) => `<button type="button" class="answer-btn" data-answer="${escapeHtml(o.id)}"><span class="a-emoji" aria-hidden="true">${escapeHtml(o.emoji)}</span>${escapeHtml(o.text)}</button>`).join('');
+    $('quizQuestion').innerHTML = `<span class="quiz-big-emoji" aria-hidden="true">${q.glyph || escapeHtml(q.emoji)}</span>${escapeHtml(nbsp(q.q))}`;
+    $('quizAnswers').innerHTML = q.options.map((o) => `<button type="button" class="answer-btn" data-answer="${escapeHtml(o.id)}"><span class="a-emoji" aria-hidden="true">${o.glyph || escapeHtml(o.emoji)}</span>${escapeHtml(o.text)}</button>`).join('');
     $('quizFeedback').innerHTML = '';
     $('nextQuestion').hidden = true;
     if (focus) $('quizQuestion').focus({ preventScroll: true });
@@ -408,7 +417,7 @@
     }
     const a = U.items.get(q.animal);
     $('quizFeedback').innerHTML = `<span class="verdict">${ok ? pick(['Bravo ! 🎉', 'Exact ! 👏', 'Bien joué ! 🌟']) : 'Pas tout à fait… 🤔'}</span>${escapeHtml(nbsp(q.why))}`
-      + (a ? `<br><button type="button" class="see-animal" data-animal="${escapeHtml(a.id)}"><span aria-hidden="true">${escapeHtml(a.emoji)}</span> Voir ${escapeHtml(withArticle(a))} dans le réseau</button>` : '');
+      + (a ? `<br><button type="button" class="see-animal" data-animal="${escapeHtml(a.id)}"><span aria-hidden="true">${U.glyph(a.id, a.emoji)}</span> Voir ${escapeHtml(withArticle(a))} dans le réseau</button>` : '');
     $('quizScore').textContent = `⭐ ${quiz.score}`;
     $('quizBar').style.width = `${((quiz.step + 1) / quiz.questions.length) * 100}%`;
     const last = quiz.step === quiz.questions.length - 1;

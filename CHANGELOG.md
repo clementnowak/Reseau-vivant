@@ -1,5 +1,10 @@
 # Journal des versions
 
+## 3.1.0 — Vraies silhouettes et confort
+- Silhouettes d’illustrateurs (PhyloPic, domaine public) à la place des émojis pour 39 animaux de la savane et 22 du récif ; l’émoji reste pour les autres. Crédits : `docs/credits-silhouettes.md`.
+- Recherche plus tolérante (par exemple « mante » trouve la raie manta, « cheval de mer » l’hippocampe).
+- Filtres sur deux lignes sur grand écran, logo plus facile à toucher, couleur de la barre du navigateur selon l’univers.
+
 ## 3.0.1 — Audit de conformité
 - Dugong : la vache (🐄) est remplacée par un phoque (🦭), en attendant de vraies illustrations.
 - Ordinateur : la carte de l’animal central ne reste plus collée en haut de l’écran.
