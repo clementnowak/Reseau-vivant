@@ -17,7 +17,7 @@ window.RV_DONNEES.recif = {
     ],
     "exemplesRecherche": "« requin », « tortue » ou « poisson »",
     "couleurBarre": "#123c55",
-    "aideReseau": "Les silhouettes sont des dessins d’illustrateurs (PhyloPic). Pour quelques espèces, c’est un proche cousin ; sans silhouette, un émoji la remplace.",
+    "aideReseau": "Chaque animal est représenté par son émoji. Quand aucun émoji ne lui correspond, une silhouette dessinée par un illustrateur (PhyloPic) le remplace ; pour quelques espèces, c’est un proche cousin.",
     "groupesProducteurs": [
       "Plancton",
       "Algues et plantes"
@@ -564,7 +564,7 @@ window.RV_DONNEES.recif = {
       ]
     }
   },
-  "version": "3.2.0",
+  "version": "3.2.1",
   "validation": {
     "links": "Relations issues d’ouvrages de référence généraux ; les relations surprenantes ont une source dédiée (champ source).",
     "rangeMapping": "grandes régions de récifs, approximatives, pas d’aires de répartition précises"
