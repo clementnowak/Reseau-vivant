@@ -1,0 +1,14 @@
+{
+  "name": "reseau-vivant",
+  "version": "3.2.0",
+  "private": true,
+  "description": "Réseau vivant : site éducatif sur les réseaux alimentaires (aucune dépendance au runtime, seulement pour les tests).",
+  "scripts": {
+    "verifier": "node tools/verifier-univers.js",
+    "test:parcours": "node tests/parcours.js",
+    "test": "npm run verifier && npm run test:parcours"
+  },
+  "devDependencies": {
+    "playwright": "1.49.1"
+  }
+}

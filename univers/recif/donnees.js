@@ -564,7 +564,7 @@ window.RV_DONNEES.recif = {
       ]
     }
   },
-  "version": "3.1.0",
+  "version": "3.2.0",
   "validation": {
     "links": "Relations issues d’ouvrages de référence généraux ; les relations surprenantes ont une source dédiée (champ source).",
     "rangeMapping": "grandes régions de récifs, approximatives, pas d’aires de répartition précises"
@@ -1394,7 +1394,9 @@ window.RV_DONNEES.recif = {
       "eater": "crabe",
       "food": "hippocampe",
       "kind": "predation",
-      "note": "parfois"
+      "note": "parfois, surtout les petits",
+      "source": "https://projectseahorse.org/saving-seahorses/about-seahorses/survival/",
+      "rare": true
     },
     {
       "eater": "acanthaster",
@@ -1662,13 +1664,17 @@ window.RV_DONNEES.recif = {
       "eater": "requin_tigre",
       "food": "raie_manta",
       "kind": "predation",
-      "note": "parfois"
+      "note": "parfois, surtout les jeunes ou les blessées",
+      "source": "https://doi.org/10.2989/1814232X.2010.538152",
+      "rare": true
     },
     {
       "eater": "requin_tigre",
       "food": "requin_pb",
       "kind": "predation",
-      "note": "parfois"
+      "note": "parfois",
+      "rare": true,
+      "source": "https://researchdata.edu.au/size-sex-geographic-australian-waters/3915165"
     },
     {
       "eater": "raie_manta",

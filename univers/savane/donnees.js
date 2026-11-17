@@ -584,9 +584,9 @@ window.RV_DONNEES.savane = {
       ]
     }
   },
-  "version": "3.1.0",
+  "version": "3.2.0",
   "validation": {
-    "links": "149 relations issues d’ouvrages de référence généraux ; certaines relations rares ou surprenantes ont une source dédiée (champ source).",
+    "links": "177 relations issues d’ouvrages de référence généraux ; certaines relations rares ou surprenantes ont une source dédiée (champ source).",
     "scope": "illustrative_examples_across_multiple_savanna_contexts",
     "note": "Les relations sont illustratives et ne sont pas encore toutes vérifiées ni associées à une source individuelle.",
     "rangeMapping": "broad_regions_approximate_not_species_polygons",
@@ -1675,7 +1675,8 @@ window.RV_DONNEES.savane = {
         "south",
         "sahel"
       ],
-      "keywords": "oiseau"
+      "keywords": "oiseau",
+      "noPredator": "Un serpentaire adulte n’a presque pas de prédateur. Ses petits, dans le nid, peuvent être attaqués par des corbeaux ou des hiboux."
     },
     {
       "id": "outarde_kori",
@@ -2766,6 +2767,219 @@ window.RV_DONNEES.savane = {
       "kind": "vegetaux",
       "note": "fruits tombés",
       "foodSideOnly": true
+    },
+    {
+      "eater": "lion",
+      "food": "leopard",
+      "kind": "predation",
+      "note": "parfois, surtout les petits",
+      "rare": true,
+      "source": "https://doi.org/10.1093/beheco/arx098"
+    },
+    {
+      "eater": "aigle",
+      "food": "suricate",
+      "kind": "predation",
+      "note": "",
+      "source": "https://www.eol.org/pages/311580/articles"
+    },
+    {
+      "eater": "chacal",
+      "food": "suricate",
+      "kind": "predation",
+      "note": "",
+      "source": "https://www.eol.org/pages/311580/articles"
+    },
+    {
+      "eater": "lion",
+      "food": "pangolin",
+      "kind": "predation",
+      "note": "rarement : il se roule en boule",
+      "rare": true,
+      "source": "https://mpala.org/field_guide/view/pangolin/"
+    },
+    {
+      "eater": "hyene",
+      "food": "pangolin",
+      "kind": "predation",
+      "note": "rarement : il se roule en boule",
+      "rare": true,
+      "source": "https://mpala.org/field_guide/view/pangolin/"
+    },
+    {
+      "eater": "hyene",
+      "food": "serval",
+      "kind": "predation",
+      "note": "",
+      "source": "https://www.sanbi.org/animal-of-the-week/serval/"
+    },
+    {
+      "eater": "leopard",
+      "food": "serval",
+      "kind": "predation",
+      "note": "",
+      "source": "https://www.sanbi.org/animal-of-the-week/serval/"
+    },
+    {
+      "eater": "lycaon",
+      "food": "serval",
+      "kind": "predation",
+      "note": "",
+      "source": "https://www.sanbi.org/animal-of-the-week/serval/"
+    },
+    {
+      "eater": "lion",
+      "food": "caracal",
+      "kind": "predation",
+      "note": "rarement",
+      "rare": true,
+      "source": "https://www.sanbi.org/animal-of-the-week/caracal/"
+    },
+    {
+      "eater": "leopard",
+      "food": "caracal",
+      "kind": "predation",
+      "note": "rarement",
+      "rare": true,
+      "source": "https://www.sanbi.org/animal-of-the-week/caracal/"
+    },
+    {
+      "eater": "hyene",
+      "food": "caracal",
+      "kind": "predation",
+      "note": "rarement",
+      "rare": true,
+      "source": "https://www.sanbi.org/animal-of-the-week/caracal/"
+    },
+    {
+      "eater": "lion",
+      "food": "blaireau_miel",
+      "kind": "predation",
+      "note": "surtout les vieux ou les affaiblis",
+      "rare": true,
+      "source": "https://www.pbs.org/wnet/nature/group/mammals/honey-badger"
+    },
+    {
+      "eater": "leopard",
+      "food": "blaireau_miel",
+      "kind": "predation",
+      "note": "surtout les vieux ou les affaiblis",
+      "rare": true,
+      "source": "https://www.pbs.org/wnet/nature/group/mammals/honey-badger"
+    },
+    {
+      "eater": "hyene",
+      "food": "blaireau_miel",
+      "kind": "predation",
+      "note": "surtout les vieux ou les affaiblis",
+      "rare": true,
+      "source": "https://www.pbs.org/wnet/nature/group/mammals/honey-badger"
+    },
+    {
+      "eater": "lion",
+      "food": "proteles",
+      "kind": "predation",
+      "note": "rarement",
+      "rare": true,
+      "source": "https://www.nationalgeographic.com/animals/mammals/facts/aardwolves"
+    },
+    {
+      "eater": "leopard",
+      "food": "proteles",
+      "kind": "predation",
+      "note": "rarement",
+      "rare": true,
+      "source": "https://www.nationalgeographic.com/animals/mammals/facts/aardwolves"
+    },
+    {
+      "eater": "hyene",
+      "food": "proteles",
+      "kind": "predation",
+      "note": "rarement",
+      "rare": true,
+      "source": "https://www.nationalgeographic.com/animals/mammals/facts/aardwolves"
+    },
+    {
+      "eater": "chacal",
+      "food": "proteles",
+      "kind": "predation",
+      "note": "surtout les petits",
+      "source": "https://www.nationalgeographic.com/animals/mammals/facts/aardwolves"
+    },
+    {
+      "eater": "chacal",
+      "food": "renard_oreilles",
+      "kind": "predation",
+      "note": "",
+      "source": "https://speciesstatus.sanbi.org/assessment/last-assessment/2162/"
+    },
+    {
+      "eater": "hyene",
+      "food": "renard_oreilles",
+      "kind": "predation",
+      "note": "rarement",
+      "rare": true,
+      "source": "https://www.pbs.org/wnet/nature/animal-guide-bat-eared-fox/3249"
+    },
+    {
+      "eater": "python",
+      "food": "renard_oreilles",
+      "kind": "predation",
+      "note": "rarement",
+      "rare": true,
+      "source": "https://www.pbs.org/wnet/nature/animal-guide-bat-eared-fox/3249"
+    },
+    {
+      "eater": "aigle",
+      "food": "renard_oreilles",
+      "kind": "predation",
+      "note": "surtout les jeunes",
+      "rare": true,
+      "source": "https://www.pbs.org/wnet/nature/animal-guide-bat-eared-fox/3249"
+    },
+    {
+      "eater": "leopard",
+      "food": "outarde_kori",
+      "kind": "predation",
+      "note": "surtout les poussins",
+      "source": "https://stories.sdzwa.org/zoonooz/big-bird/"
+    },
+    {
+      "eater": "chacal",
+      "food": "outarde_kori",
+      "kind": "predation",
+      "note": "surtout les poussins et les œufs",
+      "source": "https://stories.sdzwa.org/zoonooz/big-bird/"
+    },
+    {
+      "eater": "hyene",
+      "food": "outarde_kori",
+      "kind": "predation",
+      "note": "rarement",
+      "rare": true,
+      "source": "https://stories.sdzwa.org/zoonooz/big-bird/"
+    },
+    {
+      "eater": "guepard",
+      "food": "outarde_kori",
+      "kind": "predation",
+      "note": "rarement",
+      "rare": true,
+      "source": "https://stories.sdzwa.org/zoonooz/big-bird/"
+    },
+    {
+      "eater": "leopard",
+      "food": "bucorve",
+      "kind": "predation",
+      "note": "surtout les nids",
+      "source": "https://africageographic.com/stories/leopard-raids-ground-hornbill-nest/"
+    },
+    {
+      "eater": "aigle",
+      "food": "bucorve",
+      "kind": "predation",
+      "note": "",
+      "source": "https://ielc.libguides.com/sdzg/factsheets/southern_groundhornbill"
     }
   ],
   "sources": [
