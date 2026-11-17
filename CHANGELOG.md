@@ -1,5 +1,12 @@
 # Journal des versions
 
+## 3.0.0 — Deuxième univers : le récif corallien
+- Nouvel univers « récif corallien » : 27 animaux, 5 ressources, 57 liens alimentaires, 14 questions « Drôles de bêtes », cartes des grandes régions de récifs (mer Rouge, océan Indien, Triangle de corail, Australie, îles du Pacifique, Caraïbes).
+- Bascule Savane / Récif en haut du site ; couleurs et décor propres à chaque univers.
+- Architecture multi-univers : un dossier par univers, un registre, chargement à la demande. Prévue pour un 3e univers (les airs) et au-delà.
+- Les textes, filtres, chaîne d’exemple, réglages des quiz et accords grammaticaux sont désormais dans les données de chaque univers, plus dans le code.
+- Adresses partageables `#univers/animal`, compatibles avec les anciens liens.
+
 ## 2.2.1 — Retrait des silhouettes
 - Les silhouettes dessinées à la main de la 2.2.0 sont retirées (peu ressemblantes) ; retour aux émojis en attendant des illustrations de meilleure qualité.
 - Mentions légales : éditeur ajouté (conservé).
