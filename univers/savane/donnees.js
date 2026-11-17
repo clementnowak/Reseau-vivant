@@ -583,7 +583,7 @@ window.RV_DONNEES.savane = {
       ]
     }
   },
-  "version": "3.0.0",
+  "version": "3.0.1",
   "validation": {
     "links": "149 relations issues d’ouvrages de référence généraux ; certaines relations rares ou surprenantes ont une source dédiée (champ source).",
     "scope": "illustrative_examples_across_multiple_savanna_contexts",

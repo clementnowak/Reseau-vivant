@@ -1,5 +1,12 @@
 # Journal des versions
 
+## 3.0.1 — Audit de conformité
+- Dugong : la vache (🐄) est remplacée par un phoque (🦭), en attendant de vraies illustrations.
+- Ordinateur : la carte de l’animal central ne reste plus collée en haut de l’écran.
+- Bouton Retour : revient à l’univers précédent ; une adresse d’animal inconnue est corrigée.
+- Contraste du titre de section légèrement renforcé ; tortue imbriquée : affirmation nuancée.
+- Rapport complet et plan d’action : `docs/audit-conformite-2026-11-17.md`.
+
 ## 3.0.0 — Deuxième univers : le récif corallien
 - Nouvel univers « récif corallien » : 27 animaux, 5 ressources, 57 liens alimentaires, 14 questions « Drôles de bêtes », cartes des grandes régions de récifs (mer Rouge, océan Indien, Triangle de corail, Australie, îles du Pacifique, Caraïbes).
 - Bascule Savane / Récif en haut du site ; couleurs et décor propres à chaque univers.

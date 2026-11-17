@@ -47,7 +47,7 @@ button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .skip-link { position: absolute; left: 12px; top: -80px; background: #fff; padding: 12px 16px; border-radius: 10px; z-index: 50; font-weight: 700; }
 .skip-link:focus { top: 12px; }
 
-.eyebrow { font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--green); margin-bottom: 10px; }
+.eyebrow { font-size: 13px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: color-mix(in srgb, var(--green) 88%, #000); margin-bottom: 10px; }
 .block-title { font-size: 22px; line-height: 1.25; letter-spacing: -.02em; margin-bottom: 14px; }
 
 /* ---------- En-tête (collant) ---------- */
@@ -379,7 +379,7 @@ button.chain-node:hover { border-color: var(--green); }
     grid-template-columns: minmax(0, 1fr) 320px minmax(0, 1fr); grid-template-areas: "eaters center foods" "help help help";
     align-items: start; gap: 16px;
   }
-  .eaters { grid-area: eaters; } .center-card { grid-area: center; position: sticky; top: 92px; } .foods { grid-area: foods; } .network-help { grid-area: help; }
+  .eaters { grid-area: eaters; } .center-card { grid-area: center; } .foods { grid-area: foods; } .network-help { grid-area: help; }
   .relation-list { grid-template-columns: minmax(0, 1fr); }
   .relation-list.is-long { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .center-icon { font-size: 96px; }
