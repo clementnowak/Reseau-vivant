@@ -93,14 +93,14 @@
     if (registre.has(a)) return { u: a, animal: b };
     return { u: UNIVERS[0].id, animal: a };
   }
-  const setHash = () => history.replaceState(null, '', `#${U.id}/${current}`);
+  const setHash = (push = false) => history[push ? 'pushState' : 'replaceState'](null, '', `#${U.id}/${current}`);
 
   /* ---------- Bascule entre univers ---------- */
   function renderSwitch(loadingId) {
     $('universeSwitch').innerHTML = UNIVERS.map((u) => `<button type="button" class="universe-btn" data-univers="${escapeHtml(u.id)}" aria-pressed="${U ? u.id === U.id : u.id === loadingId}"${u.id === loadingId && (!U || U.id !== loadingId) ? ' aria-busy="true"' : ''}><span aria-hidden="true">${escapeHtml(u.icone)}</span> ${escapeHtml(u.label)}</button>`).join('');
   }
 
-  async function openUniverse(id, animal, { initial = false } = {}) {
+  async function openUniverse(id, animal, { initial = false, push = false } = {}) {
     if (!registre.has(id)) id = UNIVERS[0].id;
     const token = ++openToken;
     renderSwitch(id);
@@ -117,7 +117,7 @@
     activeGroup = ''; libraryOpen = false;
     $('speciesSearch').value = '';
     applyUniverse();
-    setHash();
+    setHash(push);
     if (!initial) $('liveCenter').textContent = `Tu explores maintenant : ${U.meta.nom.toLowerCase()}.`;
   }
 
@@ -446,7 +446,7 @@
     $('randomBtn').addEventListener('click', () => U && select(pick(U.animals.filter((x) => x.id !== current)).id));
     $('universeSwitch').addEventListener('click', (e) => {
       const b = e.target.closest('[data-univers]');
-      if (b && (!U || b.dataset.univers !== U.id)) openUniverse(b.dataset.univers);
+      if (b && (!U || b.dataset.univers !== U.id)) openUniverse(b.dataset.univers, undefined, { push: true });
     });
 
     document.body.addEventListener('click', (e) => {
@@ -466,6 +466,7 @@
       if (!u) return;
       if (!U || u !== U.id) openUniverse(u, animal);
       else if (animal && animal !== current && U.items.has(animal)) select(animal);
+      else if (animal && !U.items.has(animal)) setHash();
     });
 
     // Les liens du menu font défiler la page sans effacer l’animal choisi dans l’adresse.

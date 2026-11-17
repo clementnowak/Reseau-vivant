@@ -16,7 +16,7 @@ window.RV_DONNEES.recif = {
       "🌿"
     ],
     "exemplesRecherche": "« requin », « tortue » ou « poisson »",
-    "aideReseau": "Les émojis sont des symboles : il n’en existe pas pour chaque espèce (🐟 = un poisson, 🐴 = l’hippocampe, 🪽 = la raie manta, 🐄 = le dugong, la « vache marine »).",
+    "aideReseau": "Les émojis sont des symboles : il n’en existe pas pour chaque espèce (🐟 = un poisson, 🐴 = l’hippocampe, 🪽 = la raie manta, 🦭 = le dugong, un mammifère marin).",
     "groupesProducteurs": [
       "Plancton",
       "Algues et plantes"
@@ -390,7 +390,7 @@ window.RV_DONNEES.recif = {
             ]
           ],
           "correct": "eponge",
-          "why": "C’est la seule tortue marine qui peut vivre en mangeant surtout des éponges.",
+          "why": "C’est l’une des rares tortues marines à manger surtout des éponges.",
           "animal": "tortue_imbriquee"
         },
         {
@@ -466,7 +466,7 @@ window.RV_DONNEES.recif = {
           "animal": "poisson_lion"
         },
         {
-          "emoji": "🐄",
+          "emoji": "🦭",
           "q": "Pourquoi appelle-t-on le dugong « vache marine » ?",
           "options": [
             [
@@ -563,7 +563,7 @@ window.RV_DONNEES.recif = {
       ]
     }
   },
-  "version": "3.0.0",
+  "version": "3.0.1",
   "validation": {
     "links": "Relations issues d’ouvrages de référence généraux ; les relations surprenantes ont une source dédiée (champ source).",
     "rangeMapping": "grandes régions de récifs, approximatives, pas d’aires de répartition précises"
@@ -1309,7 +1309,7 @@ window.RV_DONNEES.recif = {
       "habitat": "Récif corallien",
       "description": "Une tortue marine au bec pointu, qui fouille les trous du récif.",
       "role": "En mangeant des éponges, elle laisse de la place au corail pour pousser.",
-      "fun": "C’est la seule tortue marine qui peut vivre en mangeant surtout des éponges.",
+      "fun": "C’est l’une des rares tortues marines à manger surtout des éponges.",
       "protect": "Ne jamais acheter d’objets en écaille de tortue : c’est interdit.",
       "type": "animal",
       "regions": [
@@ -1329,7 +1329,7 @@ window.RV_DONNEES.recif = {
       "name": "Dugong",
       "scientific": "Dugong dugon",
       "group": "Mammifères",
-      "emoji": "🐄",
+      "emoji": "🦭",
       "diet": "Herbivore",
       "habitat": "Récif corallien",
       "description": "Un gros mammifère marin tranquille, cousin du lamantin, qui respire à la surface.",
