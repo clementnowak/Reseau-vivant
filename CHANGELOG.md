@@ -5,6 +5,7 @@
 - Récif : 3 relations « parfois » désormais sourcées et marquées rares.
 - Tests automatiques GitHub Actions (cohérence des données + parcours complet) ; `npm test` en local.
 - Checklist `docs/ajouter-un-univers.md` pour préparer « les airs ».
+- Silhouettes ajoutées : léopard, éléphant, corail dur, anémone, holothurie (CC0). Seuls gnou, python, éland, springbok, triton, crocodile, hippotrague, cobe, termite et éponge gardent leur emoji.
 
 ## 3.1.0 — Vraies silhouettes et confort
 - Silhouettes d’illustrateurs (PhyloPic, domaine public) à la place des émojis pour 39 animaux de la savane et 22 du récif ; l’émoji reste pour les autres. Crédits : `docs/credits-silhouettes.md`.
