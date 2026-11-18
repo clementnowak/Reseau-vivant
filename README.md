@@ -54,4 +54,4 @@ Les décisions et audits sont dans le dossier [`docs/`](docs/), les évolutions 
 - Sourcer les 30 liens alimentaires restants (204 liens sur 234 ont une source aujourd’hui)
 - Faire relire le contenu par un naturaliste
 - Ajouter un troisième univers : les airs
-- Silhouettes d’illustrateurs sous licence libre (PhyloPic) pour 39 espèces dont l’émoji est faux ou répété : fait ; il en reste à trouver pour dix autres
+- Silhouettes d’illustrateurs sous licence libre (PhyloPic) pour 37 espèces dont l’émoji est faux ou répété : fait ; il en reste à trouver pour dix autres

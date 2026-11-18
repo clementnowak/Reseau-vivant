@@ -16,7 +16,7 @@
   const SOURCE_NOMS = {
     'animaldiversity.org': 'Animal Diversity Web', 'doi.org': 'Article scientifique', 'fishbase.se': 'FishBase',
     'sealifebase.se': 'SeaLifeBase', 'iucnredlist.org': 'Liste rouge UICN', 'noaa.gov': 'NOAA', 'catsg.org': 'Cat Specialist Group',
-    'sanbi.org': 'SANBI', 'sanparks.org': 'SANParks', 'pmc.ncbi.nlm.nih.gov': 'Article scientifique', 'ajol.info': 'Article scientifique'
+    'sanbi.org': 'SANBI', 'iucngisd.org': 'Base des espèces invasives (UICN)', 'wri.org': 'World Resources Institute', 'sanparks.org': 'SANParks', 'pmc.ncbi.nlm.nih.gov': 'Article scientifique', 'ajol.info': 'Article scientifique'
   };
   const sourceLabel = (url) => {
     try {
@@ -171,7 +171,7 @@
       return `${i ? '<li class="hero-arrow" aria-hidden="true">←</li>' : ''}<li><button type="button" class="hero-node" data-animal="${escapeHtml(id)}"><span class="hero-node-icon" aria-hidden="true">${U.glyph(id, it.emoji)}</span><span class="hero-node-name">${escapeHtml(shortName(it))}</span></button></li>`;
     }).join('');
     $('heroChain').setAttribute('aria-label', `Exemple de chaîne, du plus fort au plus faible : ${heroIds.map((id) => shortName(U.items.get(id))).join(', ')}`);
-    $('heroChainText').textContent = m.chaineHeroTexte || '';
+    $('heroChainText').textContent = nbsp(m.chaineHeroTexte || '');
     $('quizIntro').textContent = m.quiz.intro;
     $('sourceList').innerHTML = (U.data.sources || []).map((s) => `<li><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.name)} ↗</a></li>`).join('');
     renderFilters();
@@ -237,8 +237,8 @@
     const eaters = U.eatersOf(current);
     const foods = U.foodsOf(current);
     const isResource = x.type === 'resource';
-    $('predTitle').innerHTML = `<span aria-hidden="true">⬆️</span> ${isResource ? 'Qui en mange ?' : `Qui ${isFem(x) ? 'la' : 'le'} mange ?`}`;
-    $('preyTitle').innerHTML = `<span aria-hidden="true">⬇️</span> ${isResource ? 'D’où vient son énergie ?' : `Que mange-t-${pronoun(x)} ?`}`;
+    $('predTitle').innerHTML = `<span aria-hidden="true">⬆️</span> ${isResource ? 'Qui en mange ?' : `Qui ${isFem(x) ? 'la' : 'le'} mange ?`}`;
+    $('preyTitle').innerHTML = `<span aria-hidden="true">⬇️</span> ${isResource ? 'D’où vient son énergie ?' : `Que mange-t-${pronoun(x)} ?`}`;
     $('preyList').classList.toggle('is-long', foods.length > 8);
     $('predCount').textContent = eaters.length || '';
     $('preyCount').textContent = foods.length || '';
@@ -265,13 +265,13 @@
   function renderProfile(x) {
     $('profileHeading').textContent = `Découvre ${withArticle(x)}`;
     const blocks = [
-      ['🔎', 'Qui est-ce ?', x.description],
+      [x.type === 'resource' ? '🔎' : '🔎', x.type === 'resource' ? 'C’est quoi ?' : 'Qui est-ce ?', x.description],
       ['🏡', 'Son habitat', x.habitat],
       ['🌍', 'Son rôle dans la nature', x.role],
       ['✨', 'Le savais-tu ?', x.fun, 'fun'],
-      ['🌱', 'Comment le protéger ?', x.protect]
+      ['🌱', x.type === 'resource' ? 'Pourquoi c’est important ?' : 'Comment le protéger ?', x.protect]
     ].filter((b) => b[2]);
-    let html = blocks.map((b) => `<article class="profile-item${b[3] ? ' ' + b[3] : ''}"><span class="p-icon" aria-hidden="true">${b[0]}</span><h4>${b[1]}</h4><p>${escapeHtml(b[2])}</p></article>`).join('');
+    let html = blocks.map((b) => `<article class="profile-item${b[3] ? ' ' + b[3] : ''}"><span class="p-icon" aria-hidden="true">${b[0]}</span><h4>${b[1]}</h4><p>${escapeHtml(nbsp(b[2]))}</p></article>`).join('');
     const sourced = U.foodsOf(x.id).concat(U.eatersOf(x.id)).filter((l) => l.source);
     const sources = [...new Set([x.source, ...sourced.map((l) => l.source)].filter(Boolean))];
     if (sources.length) {
@@ -364,14 +364,14 @@
       why: `${capitalize(withArticle(hunter))} chasse notamment ${withArticle(prey)}. ${big ? Q.petitesProiesPourquoi : `${tooBig(wrong[0])} pour ${pronoun(hunter) === 'elle' ? 'elle' : 'lui'}.`}`, animal: hunter.id };
   }
   function qDiet() {
-    const x = pick(U.animals.filter((a) => ['herbivore', 'carnivore', 'omnivore'].includes(dietKind(a))));
+    const x = pick(U.animals.filter((a) => ['herbivore', 'carnivore', 'omnivore'].includes(dietKind(a)) && !/dominante/.test(a.diet || '')));
     const k = dietKind(x);
     const plants = U.meta.quiz.motsHerbivore || 'des plantes';
-    const words = { herbivore: plants, carnivore: 'des animaux', omnivore: 'un peu de tout' };
+    const words = { herbivore: plants, carnivore: 'des animaux', omnivore: 'des plantes et des animaux' };
     return { emoji: x.emoji, glyph: U.glyph(x.id, x.emoji), q: `${capitalize(withArticle(x))} est plutôt…`, options: [
       { id: 'herbivore', text: `Herbivore (mange ${plants})`, emoji: '🌿' },
       { id: 'carnivore', text: 'Carnivore (mange des animaux)', emoji: '🥩' },
-      { id: 'omnivore', text: 'Omnivore (mange de tout)', emoji: '🍽️' }], correct: k,
+      { id: 'omnivore', text: 'Omnivore (mange des plantes et des animaux)', emoji: '🍽️' }], correct: k,
       why: `${capitalize(withArticle(x))} est ${k} : ${pronoun(x)} mange ${words[k]}.`, animal: x.id };
   }
   function qRegion() {
@@ -395,7 +395,7 @@
   const quizzes = [
     { id: 'reseau', title: 'Qui mange qui ?', icon: '🕸️', make: () => [qWhoEats(), qWhatEats(), qPredatorFood(), qWhoEats(), pick([qWhatEats, qPredatorFood])()] },
     { id: 'curieux', title: 'Drôles de bêtes', icon: '✨', make: () => shuffle(U.curiosities).slice(0, 5).map((c) => ({ ...c, options: shuffle(c.options) })) },
-    { id: 'monde', title: 'Menus et cartes', icon: '🗺️', make: () => shuffle([qDiet(), qDiet(), qDiet(), qRegion(), qRegion()]) }
+    { id: 'monde', title: 'Régimes et régions', icon: '🗺️', make: () => shuffle([qDiet(), qDiet(), qDiet(), qRegion(), qRegion()]) }
   ];
   const quiz = { index: 0, questions: [], step: 0, score: 0, answered: false };
 
@@ -438,7 +438,7 @@
       else if (b.dataset.answer === id) b.classList.add('wrong');
     }
     const a = U.items.get(q.animal);
-    $('quizFeedback').innerHTML = `<span class="verdict">${ok ? pick(['Bravo ! 🎉', 'Exact ! 👏', 'Bien joué ! 🌟']) : 'Pas tout à fait… 🤔'}</span>${escapeHtml(nbsp(q.why))}`
+    $('quizFeedback').innerHTML = `<span class="verdict">${ok ? pick(['Bravo ! 🎉', 'Exact ! 👏', 'Bien joué ! 🌟']) : 'Pas tout à fait… 🤔'}</span>${ok ? '' : `La bonne réponse : ${escapeHtml(((q.options || []).find((o) => (Array.isArray(o) ? o[0] : o.id) === q.correct) || {}).text || '')}. `}${escapeHtml(nbsp(q.why))}`
       + (a ? `<br><button type="button" class="see-animal" data-animal="${escapeHtml(a.id)}"><span aria-hidden="true">${U.glyph(a.id, a.emoji)}</span> Voir ${escapeHtml(withArticle(a))} dans le réseau</button>` : '');
     $('quizScore').textContent = `⭐ ${quiz.score}`;
     $('quizBar').style.width = `${((quiz.step + 1) / quiz.questions.length) * 100}%`;

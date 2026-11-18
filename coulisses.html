@@ -41,11 +41,12 @@
       <p class="eyebrow">Les coulisses</p>
       <h1 id="titre">Comment Réseau vivant est <em>conçu, vérifié et amélioré.</em></h1>
       <p class="cl-lead">Un site éducatif gratuit sur les chaînes alimentaires, conçu et mis en ligne de bout en bout&nbsp;: un public précis, des hypothèses à tester, des tests automatisés. Cette page montre comment je travaille.</p>
+      <p class="cl-by">Par Clément Nowak · <a href="index.html">Voir le site</a> · <a href="https://github.com/clementnowak/Reseau-vivant" target="_blank" rel="noopener noreferrer">Code source ↗</a></p>
       <ul class="stat-grid" aria-label="Le projet en chiffres">
         <li><strong data-stat="univers">2</strong><span>univers&nbsp;: la savane africaine et le récif corallien</span></li>
         <li><strong data-stat="especes">92</strong><span>êtres vivants et ressources, de l’herbe au requin</span></li>
         <li><strong data-stat="liens">234</strong><span>relations «&nbsp;qui mange qui&nbsp;» entre eux</span></li>
-        <li><strong data-stat="sources">204</strong><span>relations qui citent leur source, vérifiée en ouvrant la page</span></li>
+        <li><strong data-stat="sources">204</strong><span>relations qui renvoient à une source (parfois générale)</span></li>
       </ul>
       <p class="cl-asof">Chiffres vérifiés automatiquement à chaque modification, version 4.0.0 (18 novembre 2026).</p>
     </section>
@@ -68,7 +69,7 @@
             <li><strong>Pensé pour des enfants.</strong> Gratuit, sans publicité, sans cookies, sans inscription.</li>
             <li><strong>Une science sourcée.</strong> La grande majorité des relations cite sa source, et le site prévient que le réseau est simplifié.</li>
             <li><strong>Mobile-first.</strong> Zones tactiles de 44 pixels, contrastes contrôlés, navigation au clavier.</li>
-            <li><strong>Des tests à chaque modification.</strong> Données, fiches et quiz sont vérifiés avant toute mise en ligne.</li>
+            <li><strong>Des tests à chaque modification.</strong> Les données, les fiches et les quiz sont testés à chaque demande de fusion, avant que je fusionne.</li>
           </ul>
         </aside>
       </div>
@@ -80,9 +81,10 @@
           <tbody>
             <tr><th scope="row">Un réseau, pas une ligne</th><td>Fidèle à la nature, et c’est ce qui rend l’exploration intéressante.</td><td>Plus complexe à comprendre pour un enfant de 8 ans&nbsp;: c’est la première hypothèse à tester.</td></tr>
             <tr><th scope="row">Aucun cookie, aucun compte, aucune publicité</th><td>Le public est mineur&nbsp;: mieux vaut ne rien collecter.</td><td>Aucune statistique d’usage. Je dépends donc de tests en personne pour savoir ce qui fonctionne.</td></tr>
-            <tr><th scope="row">Des émojis, et des silhouettes quand l’émoji est faux ou répété</th><td>Léger, sans droits d’auteur, lisible tout de suite. Les silhouettes libres de droits (PhyloPic) ne remplacent l’émoji que pour 39 espèces, comme le dugong, la murène, les antilopes ou l’hippocampe.</td><td>Quelques silhouettes montrent un proche cousin de l’animal&nbsp;: le site le précise.</td></tr>
-            <tr><th scope="row">Chaque relation est sourcée</th><td>Un enfant fera confiance à ce qu’il lit&nbsp;: le contenu doit pouvoir être vérifié.</td><td>Un travail de recherche long, assisté par IA. Quand une source reste générale (« rongeurs » pour une espèce précise), elle est acceptée et le lien est marqué comme tel dans le code. Les 30 relations restantes sont en cours de sourçage.</td></tr>
-            <tr><th scope="row">Politique de sécurité stricte, aucun service tiers</th><td>Protège le public et garde le site léger.</td><td>Tout est hébergé sur le site, y compris les polices&nbsp;: plus de travail à la mise en place.</td></tr>
+            <tr><th scope="row">Des émojis, et des silhouettes quand l’émoji est faux ou répété</th><td>Léger, sans droits d’auteur, lisible tout de suite. Les silhouettes libres de droits (PhyloPic) ne remplacent l’émoji que pour 37 espèces, comme le dugong, la murène, les antilopes ou l’hippocampe.</td><td>Quelques silhouettes montrent un proche cousin de l’animal&nbsp;: le site le précise.</td></tr>
+            <tr><th scope="row">Des relations sourcées</th><td>Un enfant fera confiance à ce qu’il lit&nbsp;: le contenu doit pouvoir être vérifié.</td><td>Un travail de recherche long, assisté par IA. 204 relations sur 234 renvoient à une source&nbsp;; les 30 autres sont en cours de sourçage. Quand la source ne couvre qu’une catégorie («&nbsp;rongeurs&nbsp;» pour une espèce précise), je la garde.</td></tr>
+            <tr><th scope="row">Politique de sécurité stricte, aucun service tiers</th><td>Protège le public et garde le site léger.</td><td>Rien n’est chargé depuis un autre site&nbsp;: ni script, ni statistique. Les polices prévues ne sont pas encore hébergées&nbsp;: le site utilise celles de l’appareil.</td></tr>
+            <tr><th scope="row">Coût de fonctionnement&nbsp;: 0&nbsp;€</th><td>Un projet personnel doit pouvoir tourner sans budget.</td><td>Hébergement gratuit (Netlify) et aucun service payant&nbsp;: pas de base de données, pas de statistiques.</td></tr>
           </tbody>
         </table>
       </div>
@@ -113,7 +115,6 @@
             <ul>
               <li>Cohérence des données de chaque univers&nbsp;: identifiants, relations, sources, régions.</li>
               <li>Parcours complet&nbsp;: toutes les fiches et 8 parties de chaque quiz, pour chaque univers.</li>
-              <li>Politique de sécurité du contenu&nbsp;: aucun script ni style dans la page.</li>
               <li>Chiffres de cette page, comparés aux données à chaque modification.</li>
             </ul>
           </div>
@@ -127,9 +128,10 @@
           </div>
         </div>
 
-        <h3 class="cl-subtitle">Deux audits en quatre jours</h3>
+        <h3 class="cl-subtitle">Trois audits en six jours</h3>
         <ul class="cl-list cl-audits">
-          <li><strong>13 novembre 2026, audit indépendant</strong> (iPhone SE, iPhone 13 et ordinateur)&nbsp;: quiz aux réponses mélangées, vocabulaire adapté aux enfants, six aires de répartition et deux anecdotes corrigées, focus clavier, contrastes.</li>
+          <li><strong>12 novembre 2026, audit UX, UI et produit</strong>&nbsp;: revue du code et de l’aperçu, sans test sur téléphone réel.</li>
+          <li><strong>13 novembre 2026, audit indépendant</strong> (appareils simulés&nbsp;: iPhone SE, iPhone 13 et ordinateur)&nbsp;: quiz aux réponses mélangées, vocabulaire adapté aux enfants, six aires de répartition et deux anecdotes corrigées, focus clavier, contrastes.</li>
           <li><strong>17 novembre 2026, audit de conformité</strong>&nbsp;: un dugong affiché en vache, la carte centrale qui suivait la page, le bouton Retour, un contraste de titre. <a href="https://github.com/clementnowak/Reseau-vivant/blob/main/docs/audit-conformite-2026-11-17.md" target="_blank" rel="noopener noreferrer">Rapport complet ↗</a></li>
         </ul>
       </div>
@@ -140,14 +142,14 @@
       <h2 id="t-appr">Trois erreurs, <em>trois règles de travail.</em></h2>
       <div class="learn-grid">
         <article class="learn">
-          <h3>Le site marchait, mais il mentait</h3>
+          <h3>Le site marchait, mais il se trompait</h3>
           <p>Un dugong s’affichait en vache, l’hippocampe en cheval. Aucun test n’a bronché&nbsp;: ils vérifient que le site fonctionne, pas que ce qu’il dit est vrai.</p>
-          <p class="learn-take">Depuis, je contrôle le sens de chaque image, et j’écris ce que chaque test garantit.</p>
+          <p class="learn-take">Depuis, je relis le sens de chaque image, et j’écris ce que chaque test garantit. Il reste des émojis approximatifs (le termite, le gnou, le buffle…)&nbsp;: je les corrige au fil des versions.</p>
         </article>
         <article class="learn">
           <h3>Mes silhouettes valaient moins que des émojis</h3>
           <p>Mes premières silhouettes, dessinées à la main, ressemblaient peu aux animaux&nbsp;: je les ai retirées. Les silhouettes libres de droits qui les ont remplacées, je les avais mises partout. À l’usage, l’émoji, plus coloré, était meilleur quand il représente bien l’animal.</p>
-          <p class="learn-take">Les silhouettes ne servent plus que là où l’émoji est faux. Je tranche sur l’usage, pas sur le travail déjà fourni.</p>
+          <p class="learn-take">Les silhouettes ne servent plus que là où l’émoji est faux ou répété (37 espèces). Je tranche sur l’usage, pas sur le travail déjà fourni.</p>
         </article>
         <article class="learn">
           <h3>Trois demandes de fusion, deux perdues</h3>
@@ -192,7 +194,7 @@
         <li><strong>2.1</strong><span>Corrections issues de l’audit indépendant du 13 novembre.</span></li>
         <li><strong>3.0</strong><span>Deuxième univers, le récif corallien, et architecture prévue pour d’autres univers.</span></li>
         <li><strong>3.0.1 à 3.2.1</strong><span>Audit de conformité, silhouettes libres de droits, 28 relations sourcées, tests automatiques sur GitHub.</span></li>
-        <li><strong>4.0</strong><span>Refonte visuelle (une identité par univers) et cette page.</span></li>
+        <li><strong>4.0</strong><span>Refonte visuelle (une identité par univers), cette page, 37 silhouettes et 159 relations sourcées de plus (204 sur 234).</span></li>
         <li class="is-next"><strong>À venir</strong><span>Test avec des enfants et adolescents, puis l’univers «&nbsp;les airs&nbsp;».</span></li>
       </ol>
     </section>

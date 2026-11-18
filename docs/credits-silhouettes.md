@@ -27,9 +27,7 @@ Les fichiers sont simplifiés (tracés allégés, un seul remplissage, aucun scr
 | grand_koudou | Tragelaphus | Matthew Speight | CC0 | [voir](https://www.phylopic.org/images/704d68c2-6873-44e3-97cb-f739de70292e) |
 | topi | Alcelaphinae | Matthew Speight | CC0 | [voir](https://www.phylopic.org/images/e8f56a6c-ad69-4298-903b-bc99cb9e87b6) |
 | hippotrague_rouan | Hippotragus equinus | Augustin BROUILLET | CC0 | [voir](https://www.phylopic.org/images/a363eadc-1b1e-41fb-ba8c-b45cb405a850) |
-| hippotrague_noir | Hippotragus | Augustin BROUILLET | CC0 | [voir](https://www.phylopic.org/images/a363eadc-1b1e-41fb-ba8c-b45cb405a850) |
 | cobe_defassa | Kobus | Augustin BROUILLET | CC0 | [voir](https://www.phylopic.org/images/09f7932f-74d5-4376-a6b0-c413d23dc487) |
-| cobe_roseau | Reduncinae | Augustin BROUILLET | CC0 | [voir](https://www.phylopic.org/images/09f7932f-74d5-4376-a6b0-c413d23dc487) |
 | cephalophe | Sylvicapra grimmia | Robert Hering | CC0 | [voir](https://www.phylopic.org/images/c9aaafb0-bbab-43b7-b2a8-077ae0799b96) |
 | dikdik | Madoqua kirkii | Kai Caspar | CC0 | [voir](https://www.phylopic.org/images/0498d64e-cc5f-4bd6-b385-e7dbb19355b3) |
 | outarde_kori | Ardeotis kori | Chenay Simms | CC0 | [voir](https://www.phylopic.org/images/b46a2d4a-d45f-4d7b-b243-9da2c7153f2b) |

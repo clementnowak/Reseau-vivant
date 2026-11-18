@@ -6,11 +6,11 @@ window.RV_DONNEES.savane = {
     "nom": "La savane africaine",
     "lieu": "dans la savane",
     "titre": "Réseau vivant — Qui mange qui dans la savane ?",
-    "eyebrow": "🌍 La savane africaine",
+    "eyebrow": "🌍 Qui mange qui dans la savane ?",
     "animalParDefaut": "zebre",
     "exemplesRecherche": "« antilope », « singe » ou « oiseau »",
     "couleurBarre": "#183e34",
-    "aideReseau": "Chaque animal est représenté par son émoji. Quand l’émoji est faux ou identique à celui d’autres espèces, une silhouette dessinée par un illustrateur (PhyloPic) le remplace ; pour quelques espèces, c’est un proche cousin.",
+    "aideReseau": "Chaque animal est représenté par un émoji ou par une silhouette dessinée par un illustrateur (PhyloPic). Ce sont des symboles, pas des photos : ils ne montrent pas toujours la bonne espèce, parfois seulement un proche cousin.",
     "groupesProducteurs": [
       "Végétaux"
     ],
@@ -231,7 +231,7 @@ window.RV_DONNEES.savane = {
         },
         {
           "emoji": "🪶",
-          "q": "Quel oiseau ne vole pas, mais court très vite ?",
+          "q": "Quel est le plus grand oiseau du monde ?",
           "options": [
             [
               "autruche",
@@ -242,12 +242,12 @@ window.RV_DONNEES.savane = {
               "L’aigle martial"
             ],
             [
-              "vautour",
-              "Le vautour"
+              "outarde_kori",
+              "L’outarde kori"
             ]
           ],
           "correct": "autruche",
-          "why": "L’autruche est le plus grand oiseau du monde. Ses longues pattes en font une excellente coureuse.",
+          "why": "L’autruche est le plus grand oiseau du monde. Elle ne vole pas, mais ses longues pattes en font une excellente coureuse.",
           "animal": "autruche"
         },
         {
@@ -299,7 +299,7 @@ window.RV_DONNEES.savane = {
           "animal": "pangolin"
         },
         {
-          "emoji": "🐜",
+          "emoji": "❓",
           "q": "Le termite est-il une fourmi ?",
           "options": [
             [
@@ -447,13 +447,13 @@ window.RV_DONNEES.savane = {
             ],
             [
               "chanter",
-              "Pour chanter le matin",
-              "🎵"
+              "Pour se faire entendre de plus loin",
+              "📢"
             ],
             [
               "pluie",
-              "Pour appeler la pluie",
-              "🌧️"
+              "Pour impressionner les rivaux",
+              "💪"
             ]
           ],
           "correct": "danger",
@@ -471,13 +471,13 @@ window.RV_DONNEES.savane = {
             ],
             [
               "froid",
-              "Pour fuir la neige",
-              "❄️"
+              "Pour échapper aux lions",
+              "🦁"
             ],
             [
               "mer",
-              "Pour aller se baigner à la mer",
-              "🌊"
+              "Pour fuir la chaleur",
+              "☀️"
             ]
           ],
           "correct": "herbe",
@@ -485,7 +485,7 @@ window.RV_DONNEES.savane = {
           "animal": "gnou"
         },
         {
-          "emoji": "🍯",
+          "emoji": "🪶",
           "q": "Quelle friandise l’outarde kori adore-t-elle ?",
           "options": [
             [
@@ -505,7 +505,7 @@ window.RV_DONNEES.savane = {
             ]
           ],
           "correct": "gomme",
-          "why": "En afrikaans, on la surnomme même « gompou », le paon à gomme !",
+          "why": "Elle raffole de la gomme qui suinte des acacias. En afrikaans, on la surnomme même « gompou », le paon à gomme !",
           "animal": "outarde_kori"
         },
         {
@@ -603,9 +603,9 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore",
       "habitat": "Savane africaine",
       "description": "Le lion vit en groupes sociaux, souvent appelés troupes. Il chasse de grands herbivores, surtout dans des habitats ouverts.",
-      "role": "Grand prédateur : il influence les populations d’herbivores et interagit avec d’autres carnivores.",
+      "role": "Il chasse de grands herbivores et se dispute les proies avec les hyènes. Presque aucun animal n’ose l’attaquer.",
       "fun": "Son rugissement peut s’entendre à plusieurs kilomètres.",
-      "protect": "Protéger les espaces naturels et limiter les conflits avec l’élevage.",
+      "protect": "Garder de grands espaces sauvages, et aider les éleveurs à protéger leurs troupeaux sans tuer les lions.",
       "type": "animal",
       "regions": [
         "west",
@@ -626,7 +626,7 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore et charognard",
       "habitat": "Savane africaine",
       "description": "L’hyène tachetée est à la fois une chasseuse efficace et une consommatrice de carcasses.",
-      "role": "Elle recycle une partie des restes animaux et rivalise avec les autres carnivores.",
+      "role": "Elle chasse, mais elle mange aussi les restes : elle nettoie la savane. Elle se dispute les proies avec les lions.",
       "fun": "Ses mâchoires très puissantes peuvent broyer des os.",
       "protect": "Éviter les empoisonnements et préserver ses habitats.",
       "type": "animal",
@@ -711,9 +711,9 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Savane africaine",
       "description": "Le zèbre des plaines se nourrit principalement d’herbes. Il vit en groupes et se déplace pour trouver eau et pâturages.",
-      "role": "Il transforme l’énergie des végétaux en nourriture pour de grands prédateurs.",
+      "role": "Il mange de l’herbe, et ce sont les lions, les hyènes ou les crocodiles qui le mangent : il passe l’énergie des plantes aux grands chasseurs.",
       "fun": "Ses rayures sont propres à chaque individu.",
-      "protect": "Préserver les paysages et les voies de déplacement des troupeaux.",
+      "protect": "Garder de grands espaces libres où les troupeaux peuvent voyager.",
       "type": "animal",
       "regions": [
         "east",
@@ -730,9 +730,9 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Savane africaine",
       "description": "Le gnou broute les herbes et effectue, dans certaines régions, d’importantes migrations saisonnières.",
-      "role": "Il joue un rôle majeur dans la circulation des nutriments et nourrit plusieurs carnivores.",
+      "role": "Son immense troupeau broute des kilomètres d’herbe, et il nourrit plusieurs chasseurs.",
       "fun": "En Afrique de l’Est, plus d’un million de gnous migrent chaque année pour suivre l’herbe fraîche.",
-      "protect": "Préserver les corridors de migration et les pâturages.",
+      "protect": "Laisser libre le chemin de sa migration, de pâturage en pâturage.",
       "type": "animal",
       "regions": [
         "east",
@@ -768,7 +768,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Savane africaine",
       "description": "L’impala mange des herbes et des feuilles selon la saison. C’est une antilope agile.",
-      "role": "Il relie herbes et arbustes aux prédateurs.",
+      "role": "Il mange des herbes et des feuilles, et il est lui-même un repas pour plusieurs chasseurs.",
       "fun": "Ses bonds permettent de changer rapidement de direction.",
       "protect": "Conserver une mosaïque de prairies et de buissons.",
       "type": "animal",
@@ -811,7 +811,7 @@ window.RV_DONNEES.savane = {
       "description": "Puissant herbivore grégaire, le buffle broute surtout des herbes. Les adultes peuvent se défendre collectivement.",
       "role": "Grand consommateur de végétation et proie possible des lions.",
       "fun": "Un troupeau peut repousser un prédateur venu attaquer l’un de ses membres.",
-      "protect": "Protéger ses habitats et limiter les maladies transmises par le bétail.",
+      "protect": "Garder ses prairies, et éviter que le bétail des fermes lui passe des maladies.",
       "type": "animal",
       "regions": [
         "west",
@@ -845,7 +845,7 @@ window.RV_DONNEES.savane = {
       "scientific": "Orycteropus afer",
       "group": "Mammifères",
       "emoji": "🦡",
-      "diet": "Insectivore",
+      "diet": "Insectivore (mange des insectes)",
       "habitat": "Savane africaine",
       "description": "L’oryctérope fouille le sol avec ses puissantes griffes pour trouver fourmis et termites.",
       "role": "Il régule les insectes et ses terriers servent d’abris à d’autres espèces.",
@@ -866,7 +866,7 @@ window.RV_DONNEES.savane = {
       "scientific": "Groupe des termites",
       "group": "Invertébrés",
       "emoji": "🐜",
-      "diet": "Détritivore",
+      "diet": "Détritivore (mange des restes de plantes)",
       "habitat": "Savane africaine",
       "description": "De nombreuses espèces de termites vivent en colonies et consomment de la matière végétale, parfois morte.",
       "role": "Elles participent à la décomposition de la matière et à la fertilité des sols.",
@@ -888,7 +888,7 @@ window.RV_DONNEES.savane = {
       "scientific": "Gyps africanus",
       "group": "Oiseaux",
       "emoji": "🦅",
-      "diet": "Charognard",
+      "diet": "Charognard (mange des animaux morts)",
       "habitat": "Savane africaine",
       "description": "Le vautour se nourrit surtout d’animaux déjà morts : il ne chasse pas ses carcasses.",
       "role": "Il élimine rapidement des restes et contribue à la santé des écosystèmes.",
@@ -1069,7 +1069,7 @@ window.RV_DONNEES.savane = {
       "description": "Feuilles et bois morts sont transformés par une diversité d’organismes.",
       "role": "Cette matière alimente les détritivores, dont certains termites.",
       "fun": "Sans les décomposeurs, le sol de la savane serait couvert de feuilles et de bois morts !",
-      "protect": "Préserver les milieux naturels, c’est préserver la nourriture de nombreuses espèces.",
+      "protect": "Les termites et d’autres décomposeurs les transforment : le sol récupère ce qu’ils contenaient.",
       "type": "resource",
       "regions": [
         "west",
@@ -1090,7 +1090,7 @@ window.RV_DONNEES.savane = {
       "description": "Restes d’animaux déjà morts, consommés par les charognards.",
       "role": "Le recyclage de cette matière participe au fonctionnement de l’écosystème.",
       "fun": "Vautours, hyènes et chacals se partagent souvent une même carcasse.",
-      "protect": "Préserver les milieux naturels, c’est préserver la nourriture de nombreuses espèces.",
+      "protect": "Sans charognards, les restes resteraient sur le sol : vautours, hyènes et chacals nettoient la savane.",
       "type": "resource",
       "regions": [
         "west",
@@ -1132,7 +1132,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Savane boisée et plaines d’Afrique subsaharienne",
       "description": "La girafe broute surtout les feuilles et les jeunes pousses en hauteur.",
-      "role": "Elle contribue à la circulation de matière entre les arbres et le sol.",
+      "role": "Elle mange les feuilles des arbres, là où presque aucun autre herbivore n’arrive.",
       "fun": "Sa langue mesure près d’un demi-mètre : pratique pour attraper les feuilles entre les épines.",
       "protect": "Préserver les savanes arborées et les couloirs entre habitats.",
       "type": "animal",
@@ -1170,9 +1170,9 @@ window.RV_DONNEES.savane = {
       "scientific": "Diceros bicornis",
       "group": "Mammifères",
       "emoji": "🦏",
-      "diet": "Herbivore (herbe et feuilles)",
+      "diet": "Herbivore (feuilles et rameaux)",
       "habitat": "Milieux de savane et broussailles d’Afrique orientale et australe",
-      "description": "Il broute et consomme aussi des feuilles, rameaux et arbustes.",
+      "description": "Il mange surtout des feuilles, des rameaux et des arbustes, qu’il attrape avec sa lèvre pointue.",
       "role": "Son alimentation relie la végétation basse aux grands herbivores.",
       "fun": "Noir ou blanc ? Les deux rhinocéros sont gris ! Le noir a une lèvre pointue pour attraper les feuilles.",
       "protect": "Lutter contre le braconnage et protéger les habitats.",
@@ -1192,7 +1192,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore (herbe)",
       "habitat": "Prairies et savanes d’Afrique australe et orientale",
       "description": "Il broute principalement des herbes.",
-      "role": "Le pâturage contribue aux échanges de matière dans les prairies.",
+      "role": "Gros brouteur d’herbe, il façonne les prairies où il passe.",
       "fun": "Sa lèvre large et carrée coupe l’herbe comme une tondeuse.",
       "protect": "Protéger les populations et lutter contre le braconnage.",
       "type": "animal",
@@ -1309,7 +1309,7 @@ window.RV_DONNEES.savane = {
       "scientific": "Otocyon megalotis",
       "group": "Mammifères",
       "emoji": "🦊",
-      "diet": "Insectivore",
+      "diet": "Insectivore (mange des insectes)",
       "habitat": "Savanes ouvertes d’Afrique orientale et australe",
       "description": "Il consomme principalement des termites et d’autres insectes.",
       "role": "Il relie les colonies d’insectes aux petits carnivores.",
@@ -1328,7 +1328,7 @@ window.RV_DONNEES.savane = {
       "scientific": "Proteles cristata",
       "group": "Mammifères",
       "emoji": "🦊",
-      "diet": "Insectivore",
+      "diet": "Insectivore (mange des insectes)",
       "habitat": "Savanes d’Afrique orientale et australe",
       "description": "Il se nourrit surtout de termites, qu’il récolte avec sa langue.",
       "role": "Il dépend des colonies de termites et contribue à leurs relations avec les prédateurs.",
@@ -1346,7 +1346,7 @@ window.RV_DONNEES.savane = {
       "scientific": "Smutsia temminckii",
       "group": "Mammifères",
       "emoji": "🐾",
-      "diet": "Insectivore",
+      "diet": "Insectivore (mange des insectes)",
       "habitat": "Savanes et milieux boisés d’Afrique orientale et australe",
       "description": "Il mange surtout des fourmis et des termites.",
       "role": "Il relie les insectes sociaux aux grands prédateurs et aux humains qui le menacent.",
@@ -1504,7 +1504,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore (herbe)",
       "habitat": "Savanes d’Afrique occidentale et orientale",
       "description": "Il broute principalement des herbes.",
-      "role": "Il transforme la végétation en biomasse accessible aux prédateurs.",
+      "role": "Il mange de l’herbe et devient, à son tour, un repas pour les chasseurs.",
       "fun": "Sa tête allongée porte des cornes chez les deux sexes.",
       "protect": "Préserver les prairies et les populations locales.",
       "type": "animal",
@@ -1606,7 +1606,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore (herbe)",
       "habitat": "Prairies humides d’Afrique orientale et australe",
       "description": "Il broute des herbes hautes, souvent près de l’eau.",
-      "role": "Il relie les prairies humides aux prédateurs.",
+      "role": "Il vit près de l’eau, mange l’herbe haute des prairies humides et nourrit des chasseurs.",
       "fun": "Il émet des sifflements lorsqu’il est inquiet.",
       "protect": "Préserver les prairies et les zones humides.",
       "type": "animal",
@@ -1625,7 +1625,7 @@ window.RV_DONNEES.savane = {
       "diet": "Omnivore à dominante végétale",
       "habitat": "Savanes boisées d’Afrique subsaharienne",
       "description": "Il mange des feuilles, fruits et parfois de petits animaux.",
-      "role": "Il relie les ressources basses des sous-bois aux prédateurs.",
+      "role": "Il mange des feuilles, des fruits et parfois de petits animaux, et il nourrit des chasseurs.",
       "fun": "Il se cache souvent dans les herbes ou les buissons.",
       "protect": "Conserver des milieux en mosaïque.",
       "type": "animal",

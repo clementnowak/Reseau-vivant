@@ -91,3 +91,11 @@
 }
 
 html { scroll-padding-top: 84px; }
+
+.cl-by { margin: -8px 0 22px; font-size: 15px; color: var(--muted); }
+.cl-by a { color: var(--forest); font-weight: 700; }
+@media (max-width: 599px) {
+  .page-coulisses .top-nav a:not(.back-link):not([href="#qualite"]):not([href="#test-enfants"]) { display: none; }
+  .page-coulisses .top-nav { gap: 14px; }
+  .page-coulisses .top-nav .back-link { order: -1; }
+}
