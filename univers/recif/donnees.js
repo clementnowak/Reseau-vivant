@@ -565,7 +565,7 @@ window.RV_DONNEES.recif = {
   },
   "version": "4.0.0",
   "validation": {
-    "links": "57 relations ; chacune ou presque cite sa source dans le champ source (pages de référence, bases de données et articles scientifiques).",
+    "links": "48 relations ; chacune cite sa source dans le champ source (pages de référence, bases de données et articles scientifiques).",
     "rangeMapping": "grandes régions de récifs, approximatives, pas d’aires de répartition précises"
   },
   "biome": "Récif corallien",
@@ -1087,7 +1087,7 @@ window.RV_DONNEES.recif = {
       "diet": "Carnivore",
       "habitat": "Dans les trous du récif",
       "description": "Un poisson très long, sans écailles, qui vit caché dans les trous du récif.",
-      "role": "Chasseuse de nuit, elle mange des poissons, des poulpes et des crabes qui se cachent dans le corail.",
+      "role": "Chasseuse de nuit, elle mange des poissons et des poulpes qui se cachent dans le corail.",
       "fun": "Elle ouvre et ferme sans cesse la bouche : ce n’est pas pour menacer, c’est pour respirer !",
       "protect": "Ne pas mettre la main dans les trous du récif : elle pourrait mordre pour se défendre.",
       "type": "animal",
@@ -1391,12 +1391,6 @@ window.RV_DONNEES.recif = {
     },
     {
       "eater": "crabe",
-      "food": "detritus",
-      "kind": "detritivore",
-      "note": ""
-    },
-    {
-      "eater": "crabe",
       "food": "hippocampe",
       "kind": "predation",
       "note": "parfois, surtout les petits",
@@ -1516,54 +1510,6 @@ window.RV_DONNEES.recif = {
       "source": "https://www.iucngisd.org/gisd/species.php?sc=1050"
     },
     {
-      "eater": "murene",
-      "food": "poulpe",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "murene",
-      "food": "crabe",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "murene",
-      "food": "perroquet",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "murene",
-      "food": "papillon",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "merou",
-      "food": "poisson_clown",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "merou",
-      "food": "chirurgien_bleu",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "merou",
-      "food": "papillon",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "merou",
-      "food": "ange",
-      "kind": "predation",
-      "note": ""
-    },
-    {
       "eater": "merou",
       "food": "demoiselle",
       "kind": "predation",
@@ -1650,12 +1596,6 @@ window.RV_DONNEES.recif = {
     },
     {
       "eater": "requin_pb",
-      "food": "ange",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "requin_pb",
       "food": "poulpe",
       "kind": "predation",
       "note": "",
@@ -1739,6 +1679,13 @@ window.RV_DONNEES.recif = {
       "kind": "vegetaux",
       "note": "",
       "source": "https://animaldiversity.org/accounts/dugong_dugon"
+    },
+    {
+      "eater": "murene",
+      "food": "poulpe",
+      "kind": "predation",
+      "note": "",
+      "source": "https://fishbase.de/summary/4905"
     }
   ],
   "sources": [

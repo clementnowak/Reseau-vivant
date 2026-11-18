@@ -585,9 +585,9 @@ window.RV_DONNEES.savane = {
   },
   "version": "4.0.0",
   "validation": {
-    "links": "177 relations ; chacune ou presque cite sa source dans le champ source (pages de référence, bases de données et articles scientifiques).",
+    "links": "163 relations ; chacune cite sa source dans le champ source (pages de référence, bases de données et articles scientifiques).",
     "scope": "illustrative_examples_across_multiple_savanna_contexts",
-    "note": "Les relations sont illustratives et ne sont pas encore toutes vérifiées ni associées à une source individuelle.",
+    "note": "Chaque relation est associée à une source ; certaines sources restent générales (par exemple « rongeurs »).",
     "rangeMapping": "broad_regions_approximate_not_species_polygons",
     "new_species": "Fiches et régions indicatives; relations alimentaires non ajoutées tant qu’elles ne sont pas vérifiées individuellement",
     "human_interactions": "regional_trade_examples_from_TRAFFIC; distinguish legal hunting and illegal poaching"
@@ -690,7 +690,7 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore",
       "habitat": "Rivières et points d’eau",
       "description": "À proximité des cours d’eau, le crocodile du Nil peut capturer des animaux venus boire ou traverser.",
-      "role": "Il attend au bord de l’eau et attrape les animaux qui viennent boire : zèbres, buffles, antilopes.",
+      "role": "Il attend au bord de l’eau et attrape les animaux qui viennent boire : gnous, buffles, antilopes.",
       "fun": "Il peut rester plusieurs mois sans manger.",
       "protect": "Préserver les rivières et leurs zones humides.",
       "type": "animal",
@@ -1967,29 +1967,11 @@ window.RV_DONNEES.savane = {
       "source": "https://mpala.org/field_guide/view/nile_crocodile/"
     },
     {
-      "eater": "crocodile",
-      "food": "zebre",
-      "kind": "predation",
-      "note": "à proximité des points d’eau"
-    },
-    {
       "eater": "chacal",
       "food": "rongeur",
       "kind": "predation",
       "note": "",
       "source": "https://animaldiversity.org/accounts/Canis_mesomelas"
-    },
-    {
-      "eater": "chacal",
-      "food": "criquet",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "chacal",
-      "food": "termite",
-      "kind": "predation",
-      "note": ""
     },
     {
       "eater": "chacal",
@@ -2018,13 +2000,6 @@ window.RV_DONNEES.savane = {
       "kind": "predation",
       "note": "",
       "source": "https://animaldiversity.org/accounts/Python_sebae"
-    },
-    {
-      "eater": "python",
-      "food": "impala",
-      "kind": "predation",
-      "note": "surtout les jeunes, rarement",
-      "rare": true
     },
     {
       "eater": "aigle",
@@ -2418,19 +2393,6 @@ window.RV_DONNEES.savane = {
       "source": "https://repository.up.ac.za/handle/2263/52212"
     },
     {
-      "eater": "suricate",
-      "food": "criquet",
-      "kind": "predation",
-      "note": "et d’autres insectes",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "suricate",
-      "food": "termite",
-      "kind": "predation",
-      "note": ""
-    },
-    {
       "eater": "blaireau_miel",
       "food": "rongeur",
       "kind": "predation",
@@ -2444,18 +2406,6 @@ window.RV_DONNEES.savane = {
       "note": "insectes et larves",
       "foodSideOnly": true,
       "source": "https://animaldiversity.org/accounts/Mellivora_capensis"
-    },
-    {
-      "eater": "crocodile",
-      "food": "impala",
-      "kind": "predation",
-      "note": "quand il vient boire"
-    },
-    {
-      "eater": "crocodile",
-      "food": "cobe_defassa",
-      "kind": "predation",
-      "note": "près de l’eau"
     },
     {
       "eater": "crocodile",
@@ -2570,27 +2520,6 @@ window.RV_DONNEES.savane = {
     },
     {
       "eater": "babouin",
-      "food": "baobab",
-      "kind": "vegetaux",
-      "note": "fruits",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "babouin",
-      "food": "marula",
-      "kind": "vegetaux",
-      "note": "fruits",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "babouin",
-      "food": "criquet",
-      "kind": "predation",
-      "note": "insectes",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "babouin",
       "food": "gazelle",
       "kind": "predation",
       "note": "faons, occasionnellement",
@@ -2618,13 +2547,6 @@ window.RV_DONNEES.savane = {
       "note": "fleurs et graines",
       "foodSideOnly": true,
       "source": "https://laisbell.faculty.ucdavis.edu/wp-content/uploads/sites/741/2022/04/isbell_and_young_1993_bes.pdf"
-    },
-    {
-      "eater": "singe_vervet",
-      "food": "criquet",
-      "kind": "predation",
-      "note": "insectes",
-      "foodSideOnly": true
     },
     {
       "eater": "autruche",
@@ -2883,20 +2805,6 @@ window.RV_DONNEES.savane = {
       "note": "herbes sèches, pour certaines espèces",
       "foodSideOnly": true,
       "source": "https://academic.oup.com/jinsectscience/article/10/1/65/845403"
-    },
-    {
-      "eater": "impala",
-      "food": "acacia",
-      "kind": "vegetaux",
-      "note": "gousses et feuilles",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "phacochere",
-      "food": "marula",
-      "kind": "vegetaux",
-      "note": "fruits tombés",
-      "foodSideOnly": true
     },
     {
       "eater": "lion",
