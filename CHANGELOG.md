@@ -5,6 +5,10 @@
 - Accueil : le décor dessiné est remplacé par une chaîne d’exemple, lue du plus fort au plus faible comme la frise « Comprendre » ; les flèches montrent le chemin de l’énergie. Nouveau bouton « Jouer au quiz ».
 - Nouvelle page `coulisses.html` (lien dans le pied de page) : démarche, décisions de produit, rôle de l’IA, ce qui est vérifié ou non, apprentissages, protocole du test avec des enfants, historique. Ses chiffres sont comparés aux données par le vérificateur.
 - Le vérificateur contrôle aussi la chaîne de l’accueil. Le test de parcours visite la page des coulisses.
+- Poissons du récif : silhouettes PhyloPic pour 8 d’entre eux (poisson-clown, papillon, ange, poisson-lion, murène, baliste, demoiselle, mérou), car l’émoji poisson était le même pour presque tous.
+- Savane : silhouettes pour les 10 antilopes (toutes avaient le même émoji de cerf), le guépard, le léopard, le serval, le caracal, le chacal, le renard à oreilles et le protèle. 39 espèces au total ont une silhouette.
+- Pangolin : retour à l’émoji, la silhouette ressemblait à un serpent en petit format.
+- Sources : 159 relations alimentaires de plus citent maintenant leur source (204 sur 234 au total). Les sources viennent surtout d’Animal Diversity Web, de FishBase, de la NOAA et d’articles scientifiques. Quand la source reste générale (« rongeurs », « lièvres »), elle est acceptée. 30 relations restent à sourcer.
 - Polices : Playfair Display et Inter sont prévues, avec repli sur les polices du système tant que les fichiers ne sont pas hébergés sur le site.
 
 ## 3.2.1

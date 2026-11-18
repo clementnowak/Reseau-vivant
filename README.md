@@ -51,7 +51,7 @@ Les décisions et audits sont dans le dossier [`docs/`](docs/), les évolutions 
 ## Prochaines étapes
 
 - Tester le site avec 3 à 5 enfants de 8 à 16 ans et mesurer ce qu’ils retiennent
-- Associer une source à chaque lien alimentaire (45 liens sur 234 en ont une aujourd’hui)
+- Sourcer les 30 liens alimentaires restants (204 liens sur 234 ont une source aujourd’hui)
 - Faire relire le contenu par un naturaliste
 - Ajouter un troisième univers : les airs
-- Silhouettes d’illustrateurs sous licence libre (PhyloPic) pour les 15 espèces sans émoji fidèle : fait ; il en reste à trouver pour dix autres
+- Silhouettes d’illustrateurs sous licence libre (PhyloPic) pour 39 espèces dont l’émoji est faux ou répété : fait ; il en reste à trouver pour dix autres

@@ -10,7 +10,7 @@ window.RV_DONNEES.recif = {
     "animalParDefaut": "poisson_clown",
     "exemplesRecherche": "« requin », « tortue » ou « poisson »",
     "couleurBarre": "#123c55",
-    "aideReseau": "Chaque animal est représenté par son émoji. Quand aucun émoji ne lui correspond, une silhouette dessinée par un illustrateur (PhyloPic) le remplace ; pour quelques espèces, c’est un proche cousin.",
+    "aideReseau": "Chaque animal est représenté par son émoji. Quand l’émoji est faux ou identique à celui d’autres espèces, une silhouette dessinée par un illustrateur (PhyloPic) le remplace ; pour quelques espèces, c’est un proche cousin.",
     "groupesProducteurs": [
       "Plancton",
       "Algues et plantes"
@@ -565,7 +565,7 @@ window.RV_DONNEES.recif = {
   },
   "version": "4.0.0",
   "validation": {
-    "links": "Relations issues d’ouvrages de référence généraux ; les relations surprenantes ont une source dédiée (champ source).",
+    "links": "57 relations ; chacune ou presque cite sa source dans le champ source (pages de référence, bases de données et articles scientifiques).",
     "rangeMapping": "grandes régions de récifs, approximatives, pas d’aires de répartition précises"
   },
   "biome": "Récif corallien",
@@ -1351,37 +1351,43 @@ window.RV_DONNEES.recif = {
       "eater": "zooplancton",
       "food": "phytoplancton",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://www.fisheries.noaa.gov/feature-story/copepods-cows-sea"
     },
     {
       "eater": "corail",
       "food": "zooplancton",
       "kind": "predation",
-      "note": "attrapé la nuit avec ses tentacules"
+      "note": "attrapé la nuit avec ses tentacules",
+      "source": "https://oceanservice.noaa.gov/education/tutorial_corals/coral01_intro.html"
     },
     {
       "eater": "eponge",
       "food": "phytoplancton",
       "kind": "vegetaux",
-      "note": "filtré dans l’eau"
+      "note": "filtré dans l’eau",
+      "source": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2021.705053/full"
     },
     {
       "eater": "anemone",
       "food": "zooplancton",
       "kind": "predation",
-      "note": "piqué par ses tentacules"
+      "note": "piqué par ses tentacules",
+      "source": "https://animaldiversity.org/accounts/Heteractis_magnifica"
     },
     {
       "eater": "poulpe",
       "food": "crabe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.sealifebase.se/summary/57253"
     },
     {
       "eater": "crabe",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://www.vliz.be/imisdocs/publications/ocrd/97795.pdf"
     },
     {
       "eater": "crabe",
@@ -1415,43 +1421,50 @@ window.RV_DONNEES.recif = {
       "eater": "oursin",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Diadema_antillarum/"
     },
     {
       "eater": "holothurie",
       "food": "detritus",
       "kind": "detritivore",
-      "note": "trié dans le sable"
+      "note": "trié dans le sable",
+      "source": "https://www.leibniz-zmt.de/en/news-at-zmt/in-focus/sea-cucumbers-the-vacuum-cleaners-of-the-oceans.html"
     },
     {
       "eater": "poisson_clown",
       "food": "zooplancton",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://portfolio.jcu.edu.au/Publications/JCU188660"
     },
     {
       "eater": "poisson_clown",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://portfolio.jcu.edu.au/Publications/JCU188660"
     },
     {
       "eater": "chirurgien_bleu",
       "food": "zooplancton",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.aquariumofpacific.org/onlinelearningcenter/species/palette_surgeonfish"
     },
     {
       "eater": "chirurgien_bleu",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://www.aquariumofpacific.org/onlinelearningcenter/species/palette_surgeonfish"
     },
     {
       "eater": "perroquet",
       "food": "algues",
       "kind": "vegetaux",
-      "note": "raclées sur le corail"
+      "note": "raclées sur le corail",
+      "source": "https://library.oarcloud.noaa.gov/noaa_documents.lib/CoRIS/CRCP_198_Burkepile_2016.pdf"
     },
     {
       "eater": "perroquet",
@@ -1464,37 +1477,43 @@ window.RV_DONNEES.recif = {
       "eater": "papillon",
       "food": "corail",
       "kind": "broutage",
-      "note": "grignote les polypes"
+      "note": "grignote les polypes",
+      "source": "https://animaldiversity.org/accounts/Chaetodontidae/"
     },
     {
       "eater": "ange",
       "food": "eponge",
       "kind": "broutage",
-      "note": ""
+      "note": "",
+      "source": "https://mote.org/animal-encyclopedia/emperor-angelfish/"
     },
     {
       "eater": "ange",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://mote.org/animal-encyclopedia/emperor-angelfish/"
     },
     {
       "eater": "demoiselle",
       "food": "zooplancton",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/mec.15090"
     },
     {
       "eater": "poisson_lion",
       "food": "demoiselle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.iucngisd.org/gisd/species.php?sc=1050"
     },
     {
       "eater": "poisson_lion",
       "food": "crabe",
       "kind": "predation",
-      "note": "les petits"
+      "note": "les petits",
+      "source": "https://www.iucngisd.org/gisd/species.php?sc=1050"
     },
     {
       "eater": "murene",
@@ -1548,19 +1567,22 @@ window.RV_DONNEES.recif = {
       "eater": "merou",
       "food": "demoiselle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.scielo.org.mx/pdf/hbio/v15n1/v15n1a2.pdf"
     },
     {
       "eater": "merou",
       "food": "poulpe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.scielo.org.mx/pdf/hbio/v15n1/v15n1a2.pdf"
     },
     {
       "eater": "merou",
       "food": "crabe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.fishbase.se/summary/6473"
     },
     {
       "eater": "merou",
@@ -1581,25 +1603,29 @@ window.RV_DONNEES.recif = {
       "eater": "napoleon",
       "food": "oursin",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://marinewaters.fish.wa.gov.au/?p=1480"
     },
     {
       "eater": "napoleon",
       "food": "crabe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://marinewaters.fish.wa.gov.au/?p=1480"
     },
     {
       "eater": "baliste",
       "food": "oursin",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://fishbase.se/summary/6026"
     },
     {
       "eater": "baliste",
       "food": "crabe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://fishbase.se/summary/6026"
     },
     {
       "eater": "baliste",
@@ -1612,13 +1638,15 @@ window.RV_DONNEES.recif = {
       "eater": "hippocampe",
       "food": "zooplancton",
       "kind": "predation",
-      "note": "de minuscules crevettes"
+      "note": "de minuscules crevettes",
+      "source": "https://sdnhm.org/oceanoasis/fieldguide/hipp-ing.html"
     },
     {
       "eater": "requin_pb",
       "food": "perroquet",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://spo.nmfs.noaa.gov/sites/default/files/pdf-content/1980/782/randall.pdf"
     },
     {
       "eater": "requin_pb",
@@ -1630,13 +1658,15 @@ window.RV_DONNEES.recif = {
       "eater": "requin_pb",
       "food": "poulpe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.elasmo-research.org/education/ecology/coral-whitetip.htm"
     },
     {
       "eater": "requin_pb",
       "food": "crabe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://fishbase.se/summary/907"
     },
     {
       "eater": "requin_tigre",
@@ -1679,19 +1709,22 @@ window.RV_DONNEES.recif = {
       "eater": "raie_manta",
       "food": "zooplancton",
       "kind": "predation",
-      "note": "filtré dans l’eau"
+      "note": "filtré dans l’eau",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8388554/"
     },
     {
       "eater": "tortue_verte",
       "food": "herbiers",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Chelonia_mydas/"
     },
     {
       "eater": "tortue_verte",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Chelonia_mydas/"
     },
     {
       "eater": "tortue_imbriquee",
@@ -1704,7 +1737,8 @@ window.RV_DONNEES.recif = {
       "eater": "dugong",
       "food": "herbiers",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/dugong_dugon"
     }
   ],
   "sources": [

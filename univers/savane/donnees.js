@@ -10,7 +10,7 @@ window.RV_DONNEES.savane = {
     "animalParDefaut": "zebre",
     "exemplesRecherche": "« antilope », « singe » ou « oiseau »",
     "couleurBarre": "#183e34",
-    "aideReseau": "Chaque animal est représenté par son émoji. Quand aucun émoji ne lui correspond, une silhouette dessinée par un illustrateur (PhyloPic) le remplace ; pour quelques espèces, c’est un proche cousin.",
+    "aideReseau": "Chaque animal est représenté par son émoji. Quand l’émoji est faux ou identique à celui d’autres espèces, une silhouette dessinée par un illustrateur (PhyloPic) le remplace ; pour quelques espèces, c’est un proche cousin.",
     "groupesProducteurs": [
       "Végétaux"
     ],
@@ -585,7 +585,7 @@ window.RV_DONNEES.savane = {
   },
   "version": "4.0.0",
   "validation": {
-    "links": "177 relations issues d’ouvrages de référence généraux ; certaines relations rares ou surprenantes ont une source dédiée (champ source).",
+    "links": "177 relations ; chacune ou presque cite sa source dans le champ source (pages de référence, bases de données et articles scientifiques).",
     "scope": "illustrative_examples_across_multiple_savanna_contexts",
     "note": "Les relations sont illustratives et ne sont pas encore toutes vérifiées ni associées à une source individuelle.",
     "rangeMapping": "broad_regions_approximate_not_species_polygons",
@@ -1829,122 +1829,142 @@ window.RV_DONNEES.savane = {
       "eater": "lion",
       "food": "gnou",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "zebre",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "buffle",
       "kind": "predation",
-      "note": "chasse notamment les individus vulnérables"
+      "note": "chasse notamment les individus vulnérables",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "phacochere",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "impala",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Panthera_leo/"
     },
     {
       "eater": "lion",
       "food": "autruche",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "hyene",
       "food": "gnou",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "hyene",
       "food": "zebre",
       "kind": "predation",
-      "note": "souvent les plus jeunes ou affaiblis"
+      "note": "souvent les plus jeunes ou affaiblis",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "hyene",
       "food": "gazelle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "hyene",
       "food": "impala",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "hyene",
       "food": "phacochere",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "hyene",
       "food": "carcasses",
       "kind": "charognage",
-      "note": "consomme aussi des animaux déjà morts"
+      "note": "consomme aussi des animaux déjà morts",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "guepard",
       "food": "gazelle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Acinonyx_jubatus"
     },
     {
       "eater": "guepard",
       "food": "impala",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Acinonyx_jubatus"
     },
     {
       "eater": "leopard",
       "food": "gazelle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "impala",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "phacochere",
       "kind": "predation",
-      "note": "surtout les plus jeunes"
+      "note": "surtout les plus jeunes",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/panthera_pardus/"
     },
     {
       "eater": "leopard",
       "food": "autruche",
       "kind": "predation",
-      "note": "surtout les jeunes"
+      "note": "surtout les jeunes",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "crocodile",
       "food": "gnou",
       "kind": "predation",
-      "note": "à proximité des points d’eau"
+      "note": "à proximité des points d’eau",
+      "source": "https://mpala.org/field_guide/view/nile_crocodile/"
     },
     {
       "eater": "crocodile",
@@ -1956,7 +1976,8 @@ window.RV_DONNEES.savane = {
       "eater": "chacal",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Canis_mesomelas"
     },
     {
       "eater": "chacal",
@@ -1974,25 +1995,29 @@ window.RV_DONNEES.savane = {
       "eater": "chacal",
       "food": "carcasses",
       "kind": "charognage",
-      "note": "charognage opportuniste"
+      "note": "charognage opportuniste",
+      "source": "https://animaldiversity.org/accounts/Canis_mesomelas"
     },
     {
       "eater": "orycterope",
       "food": "termite",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Orycteropus_afer"
     },
     {
       "eater": "vautour",
       "food": "carcasses",
       "kind": "charognage",
-      "note": "consomme des animaux déjà morts"
+      "note": "consomme des animaux déjà morts",
+      "source": "https://www.peregrinefund.org/explore-raptors-species/vultures/white-backed-vulture"
     },
     {
       "eater": "python",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Python_sebae"
     },
     {
       "eater": "python",
@@ -2005,151 +2030,175 @@ window.RV_DONNEES.savane = {
       "eater": "aigle",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Polemaetus_bellicosus"
     },
     {
       "eater": "autruche",
       "food": "criquet",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://animaldiversity.org/accounts/Struthio_camelus/"
     },
     {
       "eater": "zebre",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://www.sanparks.org/conservation/parks/marakele-national-park/primary-consumers-herbivores/plains-zebra"
     },
     {
       "eater": "gnou",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Connochaetes_taurinus/"
     },
     {
       "eater": "gazelle",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Eudorcas_thomsonii/"
     },
     {
       "eater": "impala",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Aepyceros_melampus"
     },
     {
       "eater": "phacochere",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Phacochoerus_africanus"
     },
     {
       "eater": "buffle",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Syncerus_caffer/"
     },
     {
       "eater": "rongeur",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Arvicanthis_niloticus"
     },
     {
       "eater": "autruche",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Struthio_camelus/"
     },
     {
       "eater": "criquet",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://australian.museum/learn/animals/insects/grasshoppers-crickets-katydids-and-locusts-order-orthoptera/"
     },
     {
       "eater": "impala",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Aepyceros_melampus"
     },
     {
       "eater": "autruche",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Struthio_camelus/"
     },
     {
       "eater": "termite",
       "food": "detritus",
       "kind": "detritivore",
       "note": "matière végétale en décomposition",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://doi.org/10.3389/fevo.2021.657444"
     },
     {
       "eater": "leopard",
       "food": "orycterope",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "phacochere",
       "food": "racines",
       "kind": "vegetaux",
       "note": "racines et bulbes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Phacochoerus_africanus"
     },
     {
       "eater": "lion",
       "food": "girafe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Giraffa_camelopardalis"
     },
     {
       "eater": "lion",
       "food": "eland",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "bubale",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "topi",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "cobe_defassa",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "grand_koudou",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "hippotrague_rouan",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "hippotrague_noir",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
@@ -2163,130 +2212,151 @@ window.RV_DONNEES.savane = {
       "eater": "lion",
       "food": "porc_epic",
       "kind": "predation",
-      "note": "parfois, au risque de se blesser"
+      "note": "parfois, au risque de se blesser",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "carcasses",
       "kind": "charognage",
-      "note": "vole aussi les proies d’autres prédateurs"
+      "note": "vole aussi les proies d’autres prédateurs",
+      "source": "https://animaldiversity.org/accounts/Panthera_leo/"
     },
     {
       "eater": "hyene",
       "food": "topi",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "guepard",
       "food": "springbok",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://koedoe.co.za/index.php/koedoe/article/view/586"
     },
     {
       "eater": "guepard",
       "food": "lievre",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Acinonyx_jubatus"
     },
     {
       "eater": "leopard",
       "food": "babouin",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "singe_vervet",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "cephalophe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "dikdik",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "chacal",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "porc_epic",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "lievre",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "lycaon",
       "food": "impala",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Lycaon_pictus"
     },
     {
       "eater": "lycaon",
       "food": "gazelle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.mpalalive.org/field_guide/view/african_wild_dog"
     },
     {
       "eater": "lycaon",
       "food": "gnou",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Lycaon_pictus"
     },
     {
       "eater": "lycaon",
       "food": "grand_koudou",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.3957/056.051.0001"
     },
     {
       "eater": "lycaon",
       "food": "cobe_roseau",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.3957/056.051.0001"
     },
     {
       "eater": "serval",
       "food": "rongeur",
       "kind": "predation",
       "note": "sa proie favorite",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://www.catsg.org/living-species-serval"
     },
     {
       "eater": "serval",
       "food": "criquet",
       "kind": "predation",
       "note": "et d’autres insectes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://core.ac.uk/download/478465223.pdf"
     },
     {
       "eater": "serval",
       "food": "lievre",
       "kind": "predation",
-      "note": "surtout les jeunes"
+      "note": "surtout les jeunes",
+      "source": "https://www.catsg.org/living-species-serval"
     },
     {
       "eater": "caracal",
       "food": "lievre",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Caracal_caracal"
     },
     {
       "eater": "caracal",
@@ -2298,14 +2368,16 @@ window.RV_DONNEES.savane = {
       "eater": "caracal",
       "food": "cephalophe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://ajol.info/index.php/az/article/view/152296"
     },
     {
       "eater": "chacal",
       "food": "fruits_graines",
       "kind": "vegetaux",
       "note": "fruits tombés au sol",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Canis_mesomelas"
     },
     {
       "eater": "chacal",
@@ -2317,27 +2389,31 @@ window.RV_DONNEES.savane = {
       "eater": "renard_oreilles",
       "food": "termite",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Otocyon_megalotis/"
     },
     {
       "eater": "renard_oreilles",
       "food": "criquet",
       "kind": "predation",
       "note": "et d’autres insectes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://www.stuartonnature.com/resources/Scientific_papers/Diet_of_the_bat-eared_fox.pdf"
     },
     {
       "eater": "proteles",
       "food": "termite",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Proteles_cristata/"
     },
     {
       "eater": "pangolin",
       "food": "termite",
       "kind": "predation",
       "note": "et des fourmis",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://repository.up.ac.za/handle/2263/52212"
     },
     {
       "eater": "suricate",
@@ -2356,14 +2432,16 @@ window.RV_DONNEES.savane = {
       "eater": "blaireau_miel",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doaj.org/article/898a69c9daad464da0add077cd5f953b"
     },
     {
       "eater": "blaireau_miel",
       "food": "criquet",
       "kind": "predation",
       "note": "insectes et larves",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Mellivora_capensis"
     },
     {
       "eater": "crocodile",
@@ -2381,7 +2459,8 @@ window.RV_DONNEES.savane = {
       "eater": "crocodile",
       "food": "buffle",
       "kind": "predation",
-      "note": "près de l’eau"
+      "note": "près de l’eau",
+      "source": "https://ajol.info/index.php/az/article/view/150843/140421"
     },
     {
       "eater": "aigle",
@@ -2395,13 +2474,15 @@ window.RV_DONNEES.savane = {
       "food": "dikdik",
       "kind": "predation",
       "note": "et d’autres petites antilopes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://uknowledge.uky.edu/forestry_etds/44/"
     },
     {
       "eater": "aigle",
       "food": "lievre",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Polemaetus_bellicosus"
     },
     {
       "eater": "serpentaire",
@@ -2413,20 +2494,23 @@ window.RV_DONNEES.savane = {
       "eater": "serpentaire",
       "food": "criquet",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Sagittarius_serpentarius"
     },
     {
       "eater": "bucorve",
       "food": "criquet",
       "kind": "predation",
       "note": "et d’autres insectes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://www.sanbi.org/animal-of-the-week/southern-ground-hornbill/"
     },
     {
       "eater": "bucorve",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.sanbi.org/animal-of-the-week/southern-ground-hornbill/"
     },
     {
       "eater": "outarde_kori",
@@ -2440,14 +2524,16 @@ window.RV_DONNEES.savane = {
       "food": "rongeur",
       "kind": "predation",
       "note": "petits animaux",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Ardeotis_kori/"
     },
     {
       "eater": "outarde_kori",
       "food": "fruits_graines",
       "kind": "vegetaux",
       "note": "graines et baies",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Ardeotis_kori/"
     },
     {
       "eater": "outarde_kori",
@@ -2461,19 +2547,22 @@ window.RV_DONNEES.savane = {
       "eater": "babouin",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Papio/"
     },
     {
       "eater": "babouin",
       "food": "fruits_graines",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Papio/"
     },
     {
       "eater": "babouin",
       "food": "racines",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Papio/"
     },
     {
       "eater": "babouin",
@@ -2508,20 +2597,23 @@ window.RV_DONNEES.savane = {
       "eater": "singe_vervet",
       "food": "fruits_graines",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Chlorocebus_aethiops"
     },
     {
       "eater": "singe_vervet",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Chlorocebus_aethiops"
     },
     {
       "eater": "singe_vervet",
       "food": "acacia",
       "kind": "vegetaux",
       "note": "fleurs et graines",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://laisbell.faculty.ucdavis.edu/wp-content/uploads/sites/741/2022/04/isbell_and_young_1993_bes.pdf"
     },
     {
       "eater": "singe_vervet",
@@ -2535,147 +2627,170 @@ window.RV_DONNEES.savane = {
       "food": "fruits_graines",
       "kind": "vegetaux",
       "note": "graines",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Struthio_camelus/"
     },
     {
       "eater": "elephant",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Loxodonta_africana/"
     },
     {
       "eater": "elephant",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Loxodonta_africana/"
     },
     {
       "eater": "elephant",
       "food": "acacia",
       "kind": "vegetaux",
       "note": "feuilles et branches",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://www.jyi.org/2017-january/2017/2/13/response-of-acacia-tortilis-to-elephant-browsing-in-tarangire-national-park-tanzania-possible-above-ground-compensation"
     },
     {
       "eater": "elephant",
       "food": "baobab",
       "kind": "vegetaux",
       "note": "écorce",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://davieslab.oeb.harvard.edu/publication/limited-elephant-impacts-baobabs-despite-increasing-elephant-densities-newly"
     },
     {
       "eater": "elephant",
       "food": "marula",
       "kind": "vegetaux",
       "note": "fruits",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://www.cambridge.org/core/product/identifier/S0266467411000654/type/journal_article"
     },
     {
       "eater": "elephant",
       "food": "mopane",
       "kind": "vegetaux",
       "note": "feuilles",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://link.springer.com/article/10.1007/s10344-011-0575-1"
     },
     {
       "eater": "elephant",
       "food": "racines",
       "kind": "vegetaux",
       "note": "qu’il déterre",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Loxodonta_africana/"
     },
     {
       "eater": "girafe",
       "food": "acacia",
       "kind": "vegetaux",
       "note": "feuilles, malgré les épines",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Giraffa_camelopardalis"
     },
     {
       "eater": "girafe",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Giraffa_camelopardalis"
     },
     {
       "eater": "rhino_noir",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Diceros_bicornis/"
     },
     {
       "eater": "rhino_noir",
       "food": "acacia",
       "kind": "vegetaux",
       "note": "rameaux",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Diceros_bicornis/"
     },
     {
       "eater": "rhino_blanc",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Ceratotherium_simum/"
     },
     {
       "eater": "grand_koudou",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://ajol.info/index.php/sajas/article/view/139502/129202"
     },
     {
       "eater": "grand_koudou",
       "food": "acacia",
       "kind": "vegetaux",
       "note": "feuilles",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://ajol.info/index.php/sajas/article/view/139502/129202"
     },
     {
       "eater": "eland",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Taurotragus_oryx"
     },
     {
       "eater": "eland",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Taurotragus_oryx"
     },
     {
       "eater": "springbok",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Antidorcas_marsupialis"
     },
     {
       "eater": "springbok",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Antidorcas_marsupialis"
     },
     {
       "eater": "bubale",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Alcelaphus_buselaphus/"
     },
     {
       "eater": "topi",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Damaliscus_lunatus"
     },
     {
       "eater": "hippotrague_rouan",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Hippotragus_equinus"
     },
     {
       "eater": "hippotrague_noir",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Hippotragus_niger/"
     },
     {
       "eater": "hippotrague_noir",
@@ -2687,32 +2802,37 @@ window.RV_DONNEES.savane = {
       "eater": "cobe_defassa",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Kobus_ellipsiprymnus"
     },
     {
       "eater": "cobe_roseau",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Redunca_arundinum"
     },
     {
       "eater": "cephalophe",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Sylvicapra_grimmia"
     },
     {
       "eater": "cephalophe",
       "food": "fruits_graines",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Sylvicapra_grimmia"
     },
     {
       "eater": "dikdik",
       "food": "feuilles",
       "kind": "vegetaux",
       "note": "feuilles et pousses",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Madoqua_kirkii/"
     },
     {
       "eater": "dikdik",
@@ -2724,34 +2844,39 @@ window.RV_DONNEES.savane = {
       "eater": "lievre",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://agris.fao.org/search/es/records/65df9fa37c7033e84bee8c29"
     },
     {
       "eater": "porc_epic",
       "food": "racines",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Hystrix_africaeaustralis"
     },
     {
       "eater": "porc_epic",
       "food": "fruits_graines",
       "kind": "vegetaux",
       "note": "fruits tombés",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Hystrix_africaeaustralis"
     },
     {
       "eater": "rongeur",
       "food": "fruits_graines",
       "kind": "vegetaux",
       "note": "graines",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Arvicanthis_niloticus"
     },
     {
       "eater": "termite",
       "food": "herbes",
       "kind": "vegetaux",
       "note": "herbes sèches, pour certaines espèces",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://academic.oup.com/jinsectscience/article/10/1/65/845403"
     },
     {
       "eater": "impala",

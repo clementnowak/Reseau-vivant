@@ -11,6 +11,20 @@
 
   /* ---------- Utilitaires ---------- */
   const escapeHtml = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  // Nom lisible d’une source à partir de son adresse (sinon : nom du site).
+  const SOURCE_NOMS = {
+    'animaldiversity.org': 'Animal Diversity Web', 'doi.org': 'Article scientifique', 'fishbase.se': 'FishBase',
+    'sealifebase.se': 'SeaLifeBase', 'iucnredlist.org': 'Liste rouge UICN', 'noaa.gov': 'NOAA', 'catsg.org': 'Cat Specialist Group',
+    'sanbi.org': 'SANBI', 'sanparks.org': 'SANParks', 'pmc.ncbi.nlm.nih.gov': 'Article scientifique', 'ajol.info': 'Article scientifique'
+  };
+  const sourceLabel = (url) => {
+    try {
+      const host = new URL(url).hostname.replace(/^www\./, '');
+      const key = Object.keys(SOURCE_NOMS).find((k) => host === k || host.endsWith('.' + k));
+      return key ? SOURCE_NOMS[key] : host;
+    } catch (e) { return 'Source'; }
+  };
   const normalized = (s) => String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   const reducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const shuffle = (arr) => { const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
@@ -261,7 +275,7 @@
     const sourced = U.foodsOf(x.id).concat(U.eatersOf(x.id)).filter((l) => l.source);
     const sources = [...new Set([x.source, ...sourced.map((l) => l.source)].filter(Boolean))];
     if (sources.length) {
-      html += `<article class="profile-item"><span class="p-icon" aria-hidden="true">📚</span><h4>Pour aller plus loin</h4><p>${sources.map((u, i) => `<a href="${escapeHtml(u)}" target="_blank" rel="noopener noreferrer">Source ${i + 1} ↗</a>`).join(' · ')}</p></article>`;
+      html += `<article class="profile-item"><span class="p-icon" aria-hidden="true">📚</span><h4>Pour aller plus loin</h4><p>${sources.map((u, i, all) => { const nom = sourceLabel(u); const n = all.slice(0, i + 1).filter((v) => sourceLabel(v) === nom).length; const doublons = all.filter((v) => sourceLabel(v) === nom).length; return `<a href="${escapeHtml(u)}" target="_blank" rel="noopener noreferrer">${escapeHtml(doublons > 1 ? nom + ' (' + n + ')' : nom)} ↗</a>`; }).join(' · ')}</p></article>`;
     }
     $('profileContent').innerHTML = html;
   }
