@@ -1,7 +1,7 @@
 # Journal des versions
 
 ## Non publié
-- Polices : Inter est maintenant hébergée sur le site (4 graisses, 95 Ko au total, licence SIL OFL), sans appel à un service externe. Les titres en serif restent en Georgia : Playfair Display n’est pas encore hébergée.
+- Polices : Inter (texte) et Lora (titres) sont hébergées sur le site (6 fichiers, 181 Ko au total, licence SIL OFL), sans appel à un service externe : même rendu sur tous les appareils, y compris sur Android, qui n’embarque généralement pas Georgia.
 
 ## 4.0.0 — Refonte visuelle et page « Les coulisses »
 - Identité visuelle : titres en serif avec le mot clé en italique, surfaces claires, une palette par univers (savane : sable, acacia, terre ; récif : écume, bleu profond, corail). Relief réservé aux réponses du quiz et aux filtres.

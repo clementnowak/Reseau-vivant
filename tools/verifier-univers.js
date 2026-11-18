@@ -6,7 +6,7 @@ const vm = require('vm');
 const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync('univers/registre.js', 'utf8'), ctx);
 let errors = 0;
-const totaux = { univers: 0, especes: 0, liens: 0, sources: 0 };
+const totaux = { univers: 0, especes: 0, liens: 0 };
 const err = (u, m) => { errors++; console.log(`✗ ${u} : ${m}`); };
 const warn = (u, m) => console.log(`⚠ ${u} : ${m}`);
 for (const u of ctx.window.RV_UNIVERS) {
@@ -43,7 +43,7 @@ for (const u of ctx.window.RV_UNIVERS) {
   if (!fs.existsSync(m.carte.fichier)) err(u.id, 'fichier de cartes absent');
   else { const html = fs.readFileSync(m.carte.fichier, 'utf8'); for (const r of Object.keys(m.regions)) if (!html.includes(`data-region="${r}"`)) err(u.id, `région ${r} absente des cartes`); if (/style=|<script/i.test(html)) err(u.id, 'cartes : style ou script en ligne (interdit par la politique de sécurité)'); }
   for (const l of d.links) if (!l.source) { console.log(`✗ ${u.id} : relation sans source : ${l.eater} → ${l.food}`); process.exitCode = 1; }
-  totaux.univers++; totaux.especes += d.species.length; totaux.liens += d.links.length; totaux.sources += d.links.filter((l) => l.source).length;
+  totaux.univers++; totaux.especes += d.species.length; totaux.liens += d.links.length;
   console.log(`✓ ${u.id} : ${d.species.length} êtres vivants et ressources, ${d.links.length} liens`);
 }
 // Les chiffres affichés sur la page « coulisses » doivent correspondre aux données.
