@@ -6,18 +6,11 @@ window.RV_DONNEES.savane = {
     "nom": "La savane africaine",
     "lieu": "dans la savane",
     "titre": "Réseau vivant — Qui mange qui dans la savane ?",
-    "eyebrow": "🌍 La savane africaine",
+    "eyebrow": "🌍 Qui mange qui dans la savane ?",
     "animalParDefaut": "zebre",
-    "decor": [
-      "🦅",
-      "🌳",
-      "🦁",
-      "🦓",
-      "🌾"
-    ],
     "exemplesRecherche": "« antilope », « singe » ou « oiseau »",
     "couleurBarre": "#183e34",
-    "aideReseau": "Chaque animal est représenté par son émoji. Quand aucun émoji ne lui correspond, une silhouette dessinée par un illustrateur (PhyloPic) le remplace ; pour quelques espèces, c’est un proche cousin.",
+    "aideReseau": "Chaque animal est représenté par un émoji ou par une silhouette dessinée par un illustrateur (PhyloPic). Ce sont des symboles, pas des photos : ils ne montrent pas toujours la bonne espèce, parfois seulement un proche cousin.",
     "groupesProducteurs": [
       "Végétaux"
     ],
@@ -105,6 +98,12 @@ window.RV_DONNEES.savane = {
       "fichier": "univers/savane/cartes.html",
       "avertissement": "Carte simplifiée : l’animal ne vit pas partout dans la zone orange, seulement là où il trouve son milieu (herbes, arbres, eau…)."
     },
+    "chaineHero": [
+      "lion",
+      "zebre",
+      "herbes"
+    ],
+    "chaineHeroTexte": "Les flèches montrent le chemin de l’énergie : les herbes nourrissent le zèbre, et le zèbre nourrit le lion.",
     "comprendre": {
       "cartes": [
         [
@@ -203,8 +202,7 @@ window.RV_DONNEES.savane = {
         "mode": "laquelle",
         "especes": [
           "gazelle",
-          "springbok",
-          "suricate"
+          "springbok"
         ],
         "question": "Dans quelle région d’Afrique vit {x} ?"
       },
@@ -232,7 +230,7 @@ window.RV_DONNEES.savane = {
         },
         {
           "emoji": "🪶",
-          "q": "Quel oiseau ne vole pas, mais court très vite ?",
+          "q": "Quel est le plus grand oiseau du monde ?",
           "options": [
             [
               "autruche",
@@ -243,12 +241,12 @@ window.RV_DONNEES.savane = {
               "L’aigle martial"
             ],
             [
-              "vautour",
-              "Le vautour"
+              "outarde_kori",
+              "L’outarde kori"
             ]
           ],
           "correct": "autruche",
-          "why": "L’autruche est le plus grand oiseau du monde. Ses longues pattes en font une excellente coureuse.",
+          "why": "L’autruche est le plus grand oiseau du monde. Elle ne vole pas, mais ses longues pattes en font une excellente coureuse.",
           "animal": "autruche"
         },
         {
@@ -300,7 +298,7 @@ window.RV_DONNEES.savane = {
           "animal": "pangolin"
         },
         {
-          "emoji": "🐜",
+          "emoji": "❓",
           "q": "Le termite est-il une fourmi ?",
           "options": [
             [
@@ -369,30 +367,6 @@ window.RV_DONNEES.savane = {
           "animal": "leopard"
         },
         {
-          "emoji": "👀",
-          "q": "Que fait le suricate « sentinelle » ?",
-          "options": [
-            [
-              "garde",
-              "Il surveille les dangers",
-              "👀"
-            ],
-            [
-              "chasse",
-              "Il chasse pour tout le groupe",
-              "🎯"
-            ],
-            [
-              "dort",
-              "Il dort pendant la journée",
-              "😴"
-            ]
-          ],
-          "correct": "garde",
-          "why": "Pendant que les autres cherchent à manger, il monte la garde et donne l’alerte.",
-          "animal": "suricate"
-        },
-        {
           "emoji": "🦓",
           "q": "Les rayures des zèbres sont…",
           "options": [
@@ -448,13 +422,13 @@ window.RV_DONNEES.savane = {
             ],
             [
               "chanter",
-              "Pour chanter le matin",
-              "🎵"
+              "Pour se faire entendre de plus loin",
+              "📢"
             ],
             [
               "pluie",
-              "Pour appeler la pluie",
-              "🌧️"
+              "Pour impressionner les rivaux",
+              "💪"
             ]
           ],
           "correct": "danger",
@@ -472,13 +446,13 @@ window.RV_DONNEES.savane = {
             ],
             [
               "froid",
-              "Pour fuir la neige",
-              "❄️"
+              "Pour échapper aux lions",
+              "🦁"
             ],
             [
               "mer",
-              "Pour aller se baigner à la mer",
-              "🌊"
+              "Pour fuir la chaleur",
+              "☀️"
             ]
           ],
           "correct": "herbe",
@@ -486,7 +460,7 @@ window.RV_DONNEES.savane = {
           "animal": "gnou"
         },
         {
-          "emoji": "🍯",
+          "emoji": "🪶",
           "q": "Quelle friandise l’outarde kori adore-t-elle ?",
           "options": [
             [
@@ -506,7 +480,7 @@ window.RV_DONNEES.savane = {
             ]
           ],
           "correct": "gomme",
-          "why": "En afrikaans, on la surnomme même « gompou », le paon à gomme !",
+          "why": "Elle raffole de la gomme qui suinte des acacias. En afrikaans, on la surnomme même « gompou », le paon à gomme !",
           "animal": "outarde_kori"
         },
         {
@@ -584,11 +558,11 @@ window.RV_DONNEES.savane = {
       ]
     }
   },
-  "version": "3.2.1",
+  "version": "4.0.0",
   "validation": {
-    "links": "177 relations issues d’ouvrages de référence généraux ; certaines relations rares ou surprenantes ont une source dédiée (champ source).",
+    "links": "161 relations ; chacune cite sa source dans le champ source (pages de référence, bases de données et articles scientifiques).",
     "scope": "illustrative_examples_across_multiple_savanna_contexts",
-    "note": "Les relations sont illustratives et ne sont pas encore toutes vérifiées ni associées à une source individuelle.",
+    "note": "Chaque relation est associée à une source ; certaines sources restent générales (par exemple « rongeurs »).",
     "rangeMapping": "broad_regions_approximate_not_species_polygons",
     "new_species": "Fiches et régions indicatives; relations alimentaires non ajoutées tant qu’elles ne sont pas vérifiées individuellement",
     "human_interactions": "regional_trade_examples_from_TRAFFIC; distinguish legal hunting and illegal poaching"
@@ -604,9 +578,9 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore",
       "habitat": "Savane africaine",
       "description": "Le lion vit en groupes sociaux, souvent appelés troupes. Il chasse de grands herbivores, surtout dans des habitats ouverts.",
-      "role": "Grand prédateur : il influence les populations d’herbivores et interagit avec d’autres carnivores.",
+      "role": "Il chasse de grands herbivores et se dispute les proies avec les hyènes. Presque aucun animal n’ose l’attaquer.",
       "fun": "Son rugissement peut s’entendre à plusieurs kilomètres.",
-      "protect": "Protéger les espaces naturels et limiter les conflits avec l’élevage.",
+      "protect": "Garder de grands espaces sauvages, et aider les éleveurs à protéger leurs troupeaux sans tuer les lions.",
       "type": "animal",
       "regions": [
         "west",
@@ -627,7 +601,7 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore et charognard",
       "habitat": "Savane africaine",
       "description": "L’hyène tachetée est à la fois une chasseuse efficace et une consommatrice de carcasses.",
-      "role": "Elle recycle une partie des restes animaux et rivalise avec les autres carnivores.",
+      "role": "Elle chasse, mais elle mange aussi les restes : elle nettoie la savane. Elle se dispute les proies avec les lions.",
       "fun": "Ses mâchoires très puissantes peuvent broyer des os.",
       "protect": "Éviter les empoisonnements et préserver ses habitats.",
       "type": "animal",
@@ -670,7 +644,7 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore",
       "habitat": "Savane africaine",
       "description": "Discret et solitaire, le léopard chasse des proies variées, puis peut les mettre à l’abri dans un arbre.",
-      "role": "Prédateur polyvalent, il relie différents groupes d’animaux dans le réseau alimentaire.",
+      "role": "Il chasse une grande variété de proies, des petites gazelles aux oiseaux, et seul le lion peut le menacer.",
       "fun": "Il peut hisser sa proie en haut d’un arbre pour la mettre à l’abri des lions et des hyènes.",
       "protect": "Réduire la fragmentation de l’habitat et les conflits avec les humains.",
       "type": "animal",
@@ -691,7 +665,7 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore",
       "habitat": "Rivières et points d’eau",
       "description": "À proximité des cours d’eau, le crocodile du Nil peut capturer des animaux venus boire ou traverser.",
-      "role": "Il relie les milieux aquatiques et terrestres.",
+      "role": "Il attend au bord de l’eau et attrape les animaux qui viennent boire : gnous, buffles, antilopes.",
       "fun": "Il peut rester plusieurs mois sans manger.",
       "protect": "Préserver les rivières et leurs zones humides.",
       "type": "animal",
@@ -712,9 +686,9 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Savane africaine",
       "description": "Le zèbre des plaines se nourrit principalement d’herbes. Il vit en groupes et se déplace pour trouver eau et pâturages.",
-      "role": "Il transforme l’énergie des végétaux en nourriture pour de grands prédateurs.",
+      "role": "Il mange de l’herbe, et ce sont les lions, les hyènes ou les crocodiles qui le mangent : il passe l’énergie des plantes aux grands chasseurs.",
       "fun": "Ses rayures sont propres à chaque individu.",
-      "protect": "Préserver les paysages et les voies de déplacement des troupeaux.",
+      "protect": "Garder de grands espaces libres où les troupeaux peuvent voyager.",
       "type": "animal",
       "regions": [
         "east",
@@ -731,9 +705,9 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Savane africaine",
       "description": "Le gnou broute les herbes et effectue, dans certaines régions, d’importantes migrations saisonnières.",
-      "role": "Il joue un rôle majeur dans la circulation des nutriments et nourrit plusieurs carnivores.",
+      "role": "Son immense troupeau broute des kilomètres d’herbe, et il nourrit plusieurs chasseurs.",
       "fun": "En Afrique de l’Est, plus d’un million de gnous migrent chaque année pour suivre l’herbe fraîche.",
-      "protect": "Préserver les corridors de migration et les pâturages.",
+      "protect": "Laisser libre le chemin de sa migration, de pâturage en pâturage.",
       "type": "animal",
       "regions": [
         "east",
@@ -750,7 +724,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Plaines d’Afrique de l’Est",
       "description": "Petite antilope des plaines d’Afrique de l’Est, elle broute les herbes et reste attentive aux prédateurs.",
-      "role": "Elle constitue une proie importante pour plusieurs chasseurs de la savane.",
+      "role": "Elle mange de l’herbe et nourrit de nombreux chasseurs : hyènes, guépards, léopards, lycaons.",
       "fun": "Elle peut bondir très haut lorsqu’elle est en alerte.",
       "protect": "Limiter la perte des prairies naturelles.",
       "type": "animal",
@@ -769,7 +743,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Savane africaine",
       "description": "L’impala mange des herbes et des feuilles selon la saison. C’est une antilope agile.",
-      "role": "Il relie herbes et arbustes aux prédateurs.",
+      "role": "Il mange des herbes et des feuilles, et il est lui-même un repas pour plusieurs chasseurs.",
       "fun": "Ses bonds permettent de changer rapidement de direction.",
       "protect": "Conserver une mosaïque de prairies et de buissons.",
       "type": "animal",
@@ -812,7 +786,7 @@ window.RV_DONNEES.savane = {
       "description": "Puissant herbivore grégaire, le buffle broute surtout des herbes. Les adultes peuvent se défendre collectivement.",
       "role": "Grand consommateur de végétation et proie possible des lions.",
       "fun": "Un troupeau peut repousser un prédateur venu attaquer l’un de ses membres.",
-      "protect": "Protéger ses habitats et limiter les maladies transmises par le bétail.",
+      "protect": "Garder ses prairies, et éviter que le bétail des fermes lui passe des maladies.",
       "type": "animal",
       "regions": [
         "west",
@@ -846,7 +820,7 @@ window.RV_DONNEES.savane = {
       "scientific": "Orycteropus afer",
       "group": "Mammifères",
       "emoji": "🦡",
-      "diet": "Insectivore",
+      "diet": "Insectivore (mange des insectes)",
       "habitat": "Savane africaine",
       "description": "L’oryctérope fouille le sol avec ses puissantes griffes pour trouver fourmis et termites.",
       "role": "Il régule les insectes et ses terriers servent d’abris à d’autres espèces.",
@@ -867,7 +841,7 @@ window.RV_DONNEES.savane = {
       "scientific": "Groupe des termites",
       "group": "Invertébrés",
       "emoji": "🐜",
-      "diet": "Détritivore",
+      "diet": "Détritivore (mange des restes de plantes)",
       "habitat": "Savane africaine",
       "description": "De nombreuses espèces de termites vivent en colonies et consomment de la matière végétale, parfois morte.",
       "role": "Elles participent à la décomposition de la matière et à la fertilité des sols.",
@@ -889,7 +863,7 @@ window.RV_DONNEES.savane = {
       "scientific": "Gyps africanus",
       "group": "Oiseaux",
       "emoji": "🦅",
-      "diet": "Charognard",
+      "diet": "Charognard (mange des animaux morts)",
       "habitat": "Savane africaine",
       "description": "Le vautour se nourrit surtout d’animaux déjà morts : il ne chasse pas ses carcasses.",
       "role": "Il élimine rapidement des restes et contribue à la santé des écosystèmes.",
@@ -914,7 +888,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Savane africaine",
       "description": "Les criquets consomment des végétaux et constituent une ressource alimentaire pour de nombreux animaux.",
-      "role": "Ils transmettent l’énergie des plantes aux insectivores.",
+      "role": "Il mange de l’herbe, et il est mangé par de nombreux oiseaux et petits mammifères : il passe l’énergie des plantes aux insectivores.",
       "fun": "Ses « oreilles » se trouvent sur les côtés de son ventre !",
       "protect": "Maintenir des prairies riches en plantes et insectes.",
       "type": "animal",
@@ -978,7 +952,7 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore",
       "habitat": "Savane africaine",
       "description": "Grand rapace africain qui capture différents animaux, dont des mammifères et des oiseaux.",
-      "role": "Prédateur aérien contribuant aux équilibres de la savane.",
+      "role": "Il chasse depuis le ciel des animaux de taille moyenne ou petite : lièvres, rongeurs, jeunes singes.",
       "fun": "C’est le plus grand aigle d’Afrique.",
       "protect": "Préserver les grands arbres de nidification et réduire les persécutions.",
       "type": "animal",
@@ -1001,7 +975,7 @@ window.RV_DONNEES.savane = {
       "diet": "Omnivore à dominante végétale",
       "habitat": "Savane africaine",
       "description": "L’autruche se nourrit de végétaux et parfois de petits invertébrés.",
-      "role": "Elle relie graines, plantes et insectes à de grands prédateurs.",
+      "role": "Elle mange des plantes, des graines et des insectes, et ses œufs et ses petits attirent les prédateurs.",
       "fun": "C’est le plus grand oiseau du monde. Elle ne vole pas, mais court très vite.",
       "protect": "Préserver les habitats ouverts et les sites de reproduction.",
       "type": "animal",
@@ -1070,7 +1044,7 @@ window.RV_DONNEES.savane = {
       "description": "Feuilles et bois morts sont transformés par une diversité d’organismes.",
       "role": "Cette matière alimente les détritivores, dont certains termites.",
       "fun": "Sans les décomposeurs, le sol de la savane serait couvert de feuilles et de bois morts !",
-      "protect": "Préserver les milieux naturels, c’est préserver la nourriture de nombreuses espèces.",
+      "protect": "Les termites et d’autres décomposeurs les transforment : le sol récupère ce qu’ils contenaient.",
       "type": "resource",
       "regions": [
         "west",
@@ -1091,7 +1065,7 @@ window.RV_DONNEES.savane = {
       "description": "Restes d’animaux déjà morts, consommés par les charognards.",
       "role": "Le recyclage de cette matière participe au fonctionnement de l’écosystème.",
       "fun": "Vautours, hyènes et chacals se partagent souvent une même carcasse.",
-      "protect": "Préserver les milieux naturels, c’est préserver la nourriture de nombreuses espèces.",
+      "protect": "Sans charognards, les restes resteraient sur le sol : vautours, hyènes et chacals nettoient la savane.",
       "type": "resource",
       "regions": [
         "west",
@@ -1133,7 +1107,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Savane boisée et plaines d’Afrique subsaharienne",
       "description": "La girafe broute surtout les feuilles et les jeunes pousses en hauteur.",
-      "role": "Elle contribue à la circulation de matière entre les arbres et le sol.",
+      "role": "Elle mange les feuilles des arbres, là où presque aucun autre herbivore n’arrive.",
       "fun": "Sa langue mesure près d’un demi-mètre : pratique pour attraper les feuilles entre les épines.",
       "protect": "Préserver les savanes arborées et les couloirs entre habitats.",
       "type": "animal",
@@ -1171,10 +1145,10 @@ window.RV_DONNEES.savane = {
       "scientific": "Diceros bicornis",
       "group": "Mammifères",
       "emoji": "🦏",
-      "diet": "Herbivore (herbe et feuilles)",
+      "diet": "Herbivore (feuilles et rameaux)",
       "habitat": "Milieux de savane et broussailles d’Afrique orientale et australe",
-      "description": "Il broute et consomme aussi des feuilles, rameaux et arbustes.",
-      "role": "Son alimentation relie la végétation basse aux grands herbivores.",
+      "description": "Il mange surtout des feuilles, des rameaux et des arbustes, qu’il attrape avec sa lèvre pointue.",
+      "role": "Il mange surtout des feuilles et des branches d’arbustes, ce qui ouvre le paysage pour d’autres herbivores.",
       "fun": "Noir ou blanc ? Les deux rhinocéros sont gris ! Le noir a une lèvre pointue pour attraper les feuilles.",
       "protect": "Lutter contre le braconnage et protéger les habitats.",
       "type": "animal",
@@ -1193,7 +1167,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore (herbe)",
       "habitat": "Prairies et savanes d’Afrique australe et orientale",
       "description": "Il broute principalement des herbes.",
-      "role": "Le pâturage contribue aux échanges de matière dans les prairies.",
+      "role": "Gros brouteur d’herbe, il façonne les prairies où il passe.",
       "fun": "Sa lèvre large et carrée coupe l’herbe comme une tondeuse.",
       "protect": "Protéger les populations et lutter contre le braconnage.",
       "type": "animal",
@@ -1212,7 +1186,7 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore",
       "habitat": "Grandes savanes et mosaïques ouvertes d’Afrique subsaharienne",
       "description": "Il chasse en meute des mammifères de taille petite à moyenne, souvent des antilopes.",
-      "role": "Prédateur social, il dépend de vastes espaces connectés.",
+      "role": "Il chasse en meute de grandes antilopes, en les poursuivant jusqu’à l’épuisement.",
       "fun": "Chaque individu a un pelage à motifs distinctifs.",
       "protect": "Préserver les corridors et limiter les conflits avec l’élevage.",
       "type": "animal",
@@ -1232,7 +1206,7 @@ window.RV_DONNEES.savane = {
       "diet": "Omnivore",
       "habitat": "Savanes, broussailles et milieux semi-arides d’Afrique",
       "description": "Il consomme des invertébrés, petits vertébrés, œufs et autres aliments disponibles.",
-      "role": "Son régime varié le relie à plusieurs niveaux du réseau.",
+      "role": "Il fouille le sol pour trouver des rongeurs et des insectes, et sa peau épaisse le protège de beaucoup d’attaques.",
       "fun": "Sa peau épaisse et souple l’aide à se défendre, même face à de plus gros animaux.",
       "protect": "Préserver les habitats et limiter les persécutions.",
       "type": "animal",
@@ -1243,24 +1217,6 @@ window.RV_DONNEES.savane = {
         "south",
         "sahel"
       ]
-    },
-    {
-      "id": "suricate",
-      "name": "Suricate",
-      "scientific": "Suricata suricatta",
-      "group": "Mammifères",
-      "emoji": "🐾",
-      "diet": "Insectivore et omnivore",
-      "habitat": "Milieux secs d’Afrique australe",
-      "description": "Il mange surtout des invertébrés et peut aussi consommer de petits vertébrés.",
-      "role": "Il participe aux relations alimentaires du sol et des milieux secs.",
-      "fun": "Un membre du groupe peut monter la garde pendant que les autres cherchent de la nourriture.",
-      "protect": "Préserver les habitats semi-arides et éviter l’usage de poisons.",
-      "type": "animal",
-      "regions": [
-        "south"
-      ],
-      "culture": "Comme Timon dans « Le Roi Lion »."
     },
     {
       "id": "serval",
@@ -1292,7 +1248,7 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore",
       "habitat": "Savanes, broussailles et milieux semi-arides d’Afrique",
       "description": "Il chasse des oiseaux et des mammifères de petite ou moyenne taille.",
-      "role": "Il relie plusieurs petites proies aux prédateurs.",
+      "role": "Il chasse des lièvres, des rongeurs et de petites antilopes, et il peut être mangé par les grands carnivores.",
       "fun": "Il peut bondir pour capturer des oiseaux en vol.",
       "protect": "Maintenir des habitats naturels et réduire les persécutions.",
       "type": "animal",
@@ -1310,10 +1266,10 @@ window.RV_DONNEES.savane = {
       "scientific": "Otocyon megalotis",
       "group": "Mammifères",
       "emoji": "🦊",
-      "diet": "Insectivore",
+      "diet": "Insectivore (mange des insectes)",
       "habitat": "Savanes ouvertes d’Afrique orientale et australe",
       "description": "Il consomme principalement des termites et d’autres insectes.",
-      "role": "Il relie les colonies d’insectes aux petits carnivores.",
+      "role": "Il mange surtout des termites et des criquets, et il est lui-même chassé par des rapaces et des carnivores.",
       "fun": "Ses grandes oreilles l’aident à entendre les insectes dans le sol.",
       "protect": "Préserver les sols et limiter les pesticides.",
       "type": "animal",
@@ -1329,7 +1285,7 @@ window.RV_DONNEES.savane = {
       "scientific": "Proteles cristata",
       "group": "Mammifères",
       "emoji": "🦊",
-      "diet": "Insectivore",
+      "diet": "Insectivore (mange des insectes)",
       "habitat": "Savanes d’Afrique orientale et australe",
       "description": "Il se nourrit surtout de termites, qu’il récolte avec sa langue.",
       "role": "Il dépend des colonies de termites et contribue à leurs relations avec les prédateurs.",
@@ -1347,10 +1303,10 @@ window.RV_DONNEES.savane = {
       "scientific": "Smutsia temminckii",
       "group": "Mammifères",
       "emoji": "🐾",
-      "diet": "Insectivore",
+      "diet": "Insectivore (mange des insectes)",
       "habitat": "Savanes et milieux boisés d’Afrique orientale et australe",
       "description": "Il mange surtout des fourmis et des termites.",
-      "role": "Il relie les insectes sociaux aux grands prédateurs et aux humains qui le menacent.",
+      "role": "Il mange des termites, et ses écailles le protègent presque partout, sauf face aux lions et aux hyènes.",
       "fun": "Les pangolins sont les seuls mammifères couverts d’écailles. En cas de danger, ils se roulent en boule.",
       "protect": "Lutter contre le braconnage et le trafic illégal.",
       "type": "animal",
@@ -1369,7 +1325,7 @@ window.RV_DONNEES.savane = {
       "diet": "Principalement herbivore",
       "habitat": "Savanes et broussailles d’Afrique australe",
       "description": "Il consomme des racines, tubercules, écorces et autres végétaux.",
-      "role": "En fouillant le sol, il interagit avec les plantes et les sols.",
+      "role": "Il creuse pour manger des racines et des graines, et ses piquants le protègent des félins.",
       "fun": "Ses piquants sont des poils modifiés.",
       "protect": "Préserver les habitats et éviter les persécutions inutiles.",
       "type": "animal",
@@ -1387,7 +1343,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Prairies et milieux ouverts d’Afrique",
       "description": "Il mange des herbes et d’autres végétaux disponibles.",
-      "role": "Il constitue une proie pour plusieurs carnivores.",
+      "role": "Il mange de l’herbe et sert de repas à des félins et à des aigles.",
       "fun": "Ses oreilles l’aident à détecter les sons autour de lui.",
       "protect": "Maintenir des milieux ouverts diversifiés.",
       "type": "animal",
@@ -1408,7 +1364,7 @@ window.RV_DONNEES.savane = {
       "diet": "Omnivore",
       "habitat": "Savanes boisées et zones riveraines d’Afrique orientale et australe",
       "description": "Il consomme des fruits, feuilles, graines et petits animaux selon les saisons.",
-      "role": "Il relie les ressources végétales et animales au réseau alimentaire.",
+      "role": "Il mange des fruits, des feuilles et des insectes, et il doit surveiller le ciel comme le sol.",
       "fun": "Il pousse un cri d’alarme différent selon le danger : aigle, léopard ou serpent !",
       "protect": "Préserver les arbres et les habitats riverains.",
       "type": "animal",
@@ -1427,7 +1383,7 @@ window.RV_DONNEES.savane = {
       "diet": "Omnivore",
       "habitat": "Savanes et milieux boisés d’Afrique orientale et centrale",
       "description": "Il consomme des végétaux, fruits, graines et petits animaux.",
-      "role": "Son régime varié crée de nombreuses relations alimentaires.",
+      "role": "Il mange presque de tout : herbes, fruits, racines, insectes et parfois de jeunes gazelles.",
       "fun": "Une troupe de babouins peut compter plus de cent individus.",
       "protect": "Protéger les habitats et limiter les conflits avec les cultures.",
       "type": "animal",
@@ -1448,7 +1404,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore (herbe et feuilles)",
       "habitat": "Savanes boisées d’Afrique orientale et australe",
       "description": "Il mange des feuilles, des pousses et parfois des herbes.",
-      "role": "Il relie arbustes et grands prédateurs.",
+      "role": "Il broute des feuilles d’arbustes et peut être chassé par les lions et les lycaons.",
       "fun": "Les mâles portent de longues cornes spiralées.",
       "protect": "Conserver les mosaïques de savane et de broussailles.",
       "type": "animal",
@@ -1467,7 +1423,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Savanes et prairies d’Afrique orientale et australe",
       "description": "Il broute et consomme aussi des feuilles selon les conditions.",
-      "role": "Grand herbivore, il relie la végétation aux carnivores.",
+      "role": "Il mange de l’herbe et des feuilles, et ne craint presque que les lions.",
       "fun": "Malgré sa taille, il peut effectuer de grands bonds.",
       "protect": "Préserver de vastes espaces connectés.",
       "type": "animal",
@@ -1487,7 +1443,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore",
       "habitat": "Prairies et milieux semi-arides d’Afrique australe",
       "description": "Il broute et consomme des feuilles basses selon la saison.",
-      "role": "Il constitue une proie pour plusieurs carnivores.",
+      "role": "Il mange de l’herbe et des feuilles, et peut être chassé par les guépards.",
       "fun": "Il réalise des bonds raides appelés pronking.",
       "protect": "Préserver les milieux ouverts et les migrations.",
       "type": "animal",
@@ -1505,7 +1461,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore (herbe)",
       "habitat": "Savanes d’Afrique occidentale et orientale",
       "description": "Il broute principalement des herbes.",
-      "role": "Il transforme la végétation en biomasse accessible aux prédateurs.",
+      "role": "Il mange de l’herbe et devient, à son tour, un repas pour les chasseurs.",
       "fun": "Sa tête allongée porte des cornes chez les deux sexes.",
       "protect": "Préserver les prairies et les populations locales.",
       "type": "animal",
@@ -1545,7 +1501,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore (herbe)",
       "habitat": "Savanes boisées d’Afrique occidentale, centrale et orientale",
       "description": "Il broute surtout des graminées.",
-      "role": "Il relie la végétation des savanes aux grands prédateurs.",
+      "role": "Il broute l’herbe des savanes boisées, et sa grande taille ne le protège pas totalement des lions.",
       "fun": "Ses longues oreilles pointues se terminent par une touffe de poils.",
       "protect": "Préserver les savanes et limiter la fragmentation.",
       "type": "animal",
@@ -1587,7 +1543,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore (herbe)",
       "habitat": "Prairies et savanes proches de l’eau en Afrique",
       "description": "Il broute principalement des herbes, souvent près des zones humides.",
-      "role": "Il dépend du maintien de prairies et d’accès à l’eau.",
+      "role": "Il broute l’herbe près de l’eau et peut être attrapé par les crocodiles.",
       "fun": "Les mâles adultes portent des cornes en forme de lyre.",
       "protect": "Protéger les zones humides et les plaines inondables.",
       "type": "animal",
@@ -1607,7 +1563,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore (herbe)",
       "habitat": "Prairies humides d’Afrique orientale et australe",
       "description": "Il broute des herbes hautes, souvent près de l’eau.",
-      "role": "Il relie les prairies humides aux prédateurs.",
+      "role": "Il vit près de l’eau, mange l’herbe haute des prairies humides et nourrit des chasseurs.",
       "fun": "Il émet des sifflements lorsqu’il est inquiet.",
       "protect": "Préserver les prairies et les zones humides.",
       "type": "animal",
@@ -1626,7 +1582,7 @@ window.RV_DONNEES.savane = {
       "diet": "Omnivore à dominante végétale",
       "habitat": "Savanes boisées d’Afrique subsaharienne",
       "description": "Il mange des feuilles, fruits et parfois de petits animaux.",
-      "role": "Il relie les ressources basses des sous-bois aux prédateurs.",
+      "role": "Il mange des feuilles, des fruits et parfois de petits animaux, et il nourrit des chasseurs.",
       "fun": "Il se cache souvent dans les herbes ou les buissons.",
       "protect": "Conserver des milieux en mosaïque.",
       "type": "animal",
@@ -1647,7 +1603,7 @@ window.RV_DONNEES.savane = {
       "diet": "Herbivore (herbe et feuilles)",
       "habitat": "Broussailles et savanes sèches d’Afrique orientale",
       "description": "Il mange des feuilles, fruits et pousses de buissons.",
-      "role": "Petit herbivore, il est une proie possible pour plusieurs carnivores.",
+      "role": "Il mange des fruits, des graines et des feuilles, et il est trop petit pour se défendre : léopards et aigles le chassent.",
       "fun": "Il marque son territoire avec des sécrétions odorantes.",
       "protect": "Préserver les broussailles et les habitats fragmentés.",
       "type": "animal",
@@ -1665,7 +1621,7 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore",
       "habitat": "Prairies ouvertes et savanes d’Afrique subsaharienne",
       "description": "Il chasse au sol des insectes, lézards, petits mammifères et serpents.",
-      "role": "Il relie les animaux du sol aux grands oiseaux prédateurs.",
+      "role": "Il marche dans l’herbe pour chasser rongeurs, insectes et serpents, et il frappe avec ses pattes.",
       "fun": "Ses longues pattes lui permettent de marcher et frapper ses proies.",
       "protect": "Préserver les prairies et les grands espaces ouverts.",
       "type": "animal",
@@ -1687,7 +1643,7 @@ window.RV_DONNEES.savane = {
       "diet": "Omnivore",
       "habitat": "Savanes d’Afrique orientale et australe",
       "description": "Elle consomme des graines, insectes et petits animaux.",
-      "role": "Elle relie ressources végétales et proies animales.",
+      "role": "Elle marche dans l’herbe et mange des insectes, des rongeurs, des graines et de la gomme d’acacia.",
       "fun": "C’est l’un des plus lourds oiseaux capables de voler. Elle adore la gomme d’acacia.",
       "protect": "Protéger les prairies et limiter les dérangements.",
       "type": "animal",
@@ -1708,7 +1664,7 @@ window.RV_DONNEES.savane = {
       "diet": "Omnivore à dominante carnivore",
       "habitat": "Savanes d’Afrique orientale et australe",
       "description": "Il consomme des invertébrés, petits vertébrés et parfois des fruits.",
-      "role": "Il relie les animaux du sol à des oiseaux prédateurs.",
+      "role": "Il chasse au sol des insectes et des rongeurs, et peut être attrapé par les léopards ou les aigles.",
       "fun": "Il marche souvent en groupes familiaux.",
       "protect": "Conserver les savanes et les grands arbres de nidification.",
       "type": "animal",
@@ -1830,327 +1786,351 @@ window.RV_DONNEES.savane = {
       "eater": "lion",
       "food": "gnou",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "zebre",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "buffle",
       "kind": "predation",
-      "note": "chasse notamment les individus vulnérables"
+      "note": "chasse notamment les individus vulnérables",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "phacochere",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "impala",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Panthera_leo/"
     },
     {
       "eater": "lion",
       "food": "autruche",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "hyene",
       "food": "gnou",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "hyene",
       "food": "zebre",
       "kind": "predation",
-      "note": "souvent les plus jeunes ou affaiblis"
+      "note": "souvent les plus jeunes ou affaiblis",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "hyene",
       "food": "gazelle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "hyene",
       "food": "impala",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "hyene",
       "food": "phacochere",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "hyene",
       "food": "carcasses",
       "kind": "charognage",
-      "note": "consomme aussi des animaux déjà morts"
+      "note": "consomme aussi des animaux déjà morts",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "guepard",
       "food": "gazelle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Acinonyx_jubatus"
     },
     {
       "eater": "guepard",
       "food": "impala",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Acinonyx_jubatus"
     },
     {
       "eater": "leopard",
       "food": "gazelle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "impala",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "phacochere",
       "kind": "predation",
-      "note": "surtout les plus jeunes"
+      "note": "surtout les plus jeunes",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/panthera_pardus/"
     },
     {
       "eater": "leopard",
       "food": "autruche",
       "kind": "predation",
-      "note": "surtout les jeunes"
+      "note": "surtout les jeunes",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "crocodile",
       "food": "gnou",
       "kind": "predation",
-      "note": "à proximité des points d’eau"
-    },
-    {
-      "eater": "crocodile",
-      "food": "zebre",
-      "kind": "predation",
-      "note": "à proximité des points d’eau"
+      "note": "à proximité des points d’eau",
+      "source": "https://mpala.org/field_guide/view/nile_crocodile/"
     },
     {
       "eater": "chacal",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "chacal",
-      "food": "criquet",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "chacal",
-      "food": "termite",
-      "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Canis_mesomelas"
     },
     {
       "eater": "chacal",
       "food": "carcasses",
       "kind": "charognage",
-      "note": "charognage opportuniste"
+      "note": "charognage opportuniste",
+      "source": "https://animaldiversity.org/accounts/Canis_mesomelas"
     },
     {
       "eater": "orycterope",
       "food": "termite",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Orycteropus_afer"
     },
     {
       "eater": "vautour",
       "food": "carcasses",
       "kind": "charognage",
-      "note": "consomme des animaux déjà morts"
+      "note": "consomme des animaux déjà morts",
+      "source": "https://www.peregrinefund.org/explore-raptors-species/vultures/white-backed-vulture"
     },
     {
       "eater": "python",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "python",
-      "food": "impala",
-      "kind": "predation",
-      "note": "surtout les jeunes, rarement",
-      "rare": true
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Python_sebae"
     },
     {
       "eater": "aigle",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Polemaetus_bellicosus"
     },
     {
       "eater": "autruche",
       "food": "criquet",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://animaldiversity.org/accounts/Struthio_camelus/"
     },
     {
       "eater": "zebre",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://www.sanparks.org/conservation/parks/marakele-national-park/primary-consumers-herbivores/plains-zebra"
     },
     {
       "eater": "gnou",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Connochaetes_taurinus/"
     },
     {
       "eater": "gazelle",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Eudorcas_thomsonii/"
     },
     {
       "eater": "impala",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Aepyceros_melampus"
     },
     {
       "eater": "phacochere",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Phacochoerus_africanus"
     },
     {
       "eater": "buffle",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Syncerus_caffer/"
     },
     {
       "eater": "rongeur",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Arvicanthis_niloticus"
     },
     {
       "eater": "autruche",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Struthio_camelus/"
     },
     {
       "eater": "criquet",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://australian.museum/learn/animals/insects/grasshoppers-crickets-katydids-and-locusts-order-orthoptera/"
     },
     {
       "eater": "impala",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Aepyceros_melampus"
     },
     {
       "eater": "autruche",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Struthio_camelus/"
     },
     {
       "eater": "termite",
       "food": "detritus",
       "kind": "detritivore",
       "note": "matière végétale en décomposition",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://doi.org/10.3389/fevo.2021.657444"
     },
     {
       "eater": "leopard",
       "food": "orycterope",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "phacochere",
       "food": "racines",
       "kind": "vegetaux",
       "note": "racines et bulbes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Phacochoerus_africanus"
     },
     {
       "eater": "lion",
       "food": "girafe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Giraffa_camelopardalis"
     },
     {
       "eater": "lion",
       "food": "eland",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "bubale",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "topi",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "cobe_defassa",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "grand_koudou",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "hippotrague_rouan",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "hippotrague_noir",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
@@ -2164,225 +2144,232 @@ window.RV_DONNEES.savane = {
       "eater": "lion",
       "food": "porc_epic",
       "kind": "predation",
-      "note": "parfois, au risque de se blesser"
+      "note": "parfois, au risque de se blesser",
+      "source": "https://doi.org/10.1017/S0952836905007508"
     },
     {
       "eater": "lion",
       "food": "carcasses",
       "kind": "charognage",
-      "note": "vole aussi les proies d’autres prédateurs"
+      "note": "vole aussi les proies d’autres prédateurs",
+      "source": "https://animaldiversity.org/accounts/Panthera_leo/"
     },
     {
       "eater": "hyene",
       "food": "topi",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/site/accounts/information/Crocuta_crocuta.html"
     },
     {
       "eater": "guepard",
       "food": "springbok",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://koedoe.co.za/index.php/koedoe/article/view/586"
     },
     {
       "eater": "guepard",
       "food": "lievre",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Acinonyx_jubatus"
     },
     {
       "eater": "leopard",
       "food": "babouin",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "singe_vervet",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "cephalophe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "dikdik",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "chacal",
       "kind": "predation",
       "note": "occasionnellement",
-      "rare": true
+      "rare": true,
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "porc_epic",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "leopard",
       "food": "lievre",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/j.1469-7998.2006.00139.x"
     },
     {
       "eater": "lycaon",
       "food": "impala",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Lycaon_pictus"
     },
     {
       "eater": "lycaon",
       "food": "gazelle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.mpalalive.org/field_guide/view/african_wild_dog"
     },
     {
       "eater": "lycaon",
       "food": "gnou",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Lycaon_pictus"
     },
     {
       "eater": "lycaon",
       "food": "grand_koudou",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.3957/056.051.0001"
     },
     {
       "eater": "lycaon",
       "food": "cobe_roseau",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.3957/056.051.0001"
     },
     {
       "eater": "serval",
       "food": "rongeur",
       "kind": "predation",
       "note": "sa proie favorite",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://www.catsg.org/living-species-serval"
     },
     {
       "eater": "serval",
       "food": "criquet",
       "kind": "predation",
       "note": "et d’autres insectes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://core.ac.uk/download/478465223.pdf"
     },
     {
       "eater": "serval",
       "food": "lievre",
       "kind": "predation",
-      "note": "surtout les jeunes"
+      "note": "surtout les jeunes",
+      "source": "https://www.catsg.org/living-species-serval"
     },
     {
       "eater": "caracal",
       "food": "lievre",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Caracal_caracal"
     },
     {
       "eater": "caracal",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Caracal_caracal"
     },
     {
       "eater": "caracal",
       "food": "cephalophe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://ajol.info/index.php/az/article/view/152296"
     },
     {
       "eater": "chacal",
       "food": "fruits_graines",
       "kind": "vegetaux",
       "note": "fruits tombés au sol",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Canis_mesomelas"
     },
     {
       "eater": "chacal",
       "food": "gazelle",
       "kind": "predation",
-      "note": "surtout les faons"
+      "note": "surtout les faons",
+      "source": "https://www.zobodat.at/pdf/Zeitschrift-Saeugetierkunde_43_0210-0223.pdf"
     },
     {
       "eater": "renard_oreilles",
       "food": "termite",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Otocyon_megalotis/"
     },
     {
       "eater": "renard_oreilles",
       "food": "criquet",
       "kind": "predation",
       "note": "et d’autres insectes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://www.stuartonnature.com/resources/Scientific_papers/Diet_of_the_bat-eared_fox.pdf"
     },
     {
       "eater": "proteles",
       "food": "termite",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Proteles_cristata/"
     },
     {
       "eater": "pangolin",
       "food": "termite",
       "kind": "predation",
       "note": "et des fourmis",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "suricate",
-      "food": "criquet",
-      "kind": "predation",
-      "note": "et d’autres insectes",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "suricate",
-      "food": "termite",
-      "kind": "predation",
-      "note": ""
+      "foodSideOnly": true,
+      "source": "https://repository.up.ac.za/handle/2263/52212"
     },
     {
       "eater": "blaireau_miel",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doaj.org/article/898a69c9daad464da0add077cd5f953b"
     },
     {
       "eater": "blaireau_miel",
       "food": "criquet",
       "kind": "predation",
       "note": "insectes et larves",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "crocodile",
-      "food": "impala",
-      "kind": "predation",
-      "note": "quand il vient boire"
-    },
-    {
-      "eater": "crocodile",
-      "food": "cobe_defassa",
-      "kind": "predation",
-      "note": "près de l’eau"
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Mellivora_capensis"
     },
     {
       "eater": "crocodile",
       "food": "buffle",
       "kind": "predation",
-      "note": "près de l’eau"
+      "note": "près de l’eau",
+      "source": "https://ajol.info/index.php/az/article/view/150843/140421"
     },
     {
       "eater": "aigle",
@@ -2396,59 +2383,68 @@ window.RV_DONNEES.savane = {
       "food": "dikdik",
       "kind": "predation",
       "note": "et d’autres petites antilopes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://uknowledge.uky.edu/forestry_etds/44/"
     },
     {
       "eater": "aigle",
       "food": "lievre",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Polemaetus_bellicosus"
     },
     {
       "eater": "serpentaire",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Sagittarius_serpentarius"
     },
     {
       "eater": "serpentaire",
       "food": "criquet",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Sagittarius_serpentarius"
     },
     {
       "eater": "bucorve",
       "food": "criquet",
       "kind": "predation",
       "note": "et d’autres insectes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://www.sanbi.org/animal-of-the-week/southern-ground-hornbill/"
     },
     {
       "eater": "bucorve",
       "food": "rongeur",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.sanbi.org/animal-of-the-week/southern-ground-hornbill/"
     },
     {
       "eater": "outarde_kori",
       "food": "criquet",
       "kind": "predation",
       "note": "et d’autres insectes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://speciesstatus.sanbi.org/taxa/detail/2986"
     },
     {
       "eater": "outarde_kori",
       "food": "rongeur",
       "kind": "predation",
       "note": "petits animaux",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Ardeotis_kori/"
     },
     {
       "eater": "outarde_kori",
       "food": "fruits_graines",
       "kind": "vegetaux",
       "note": "graines et baies",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Ardeotis_kori/"
     },
     {
       "eater": "outarde_kori",
@@ -2462,40 +2458,22 @@ window.RV_DONNEES.savane = {
       "eater": "babouin",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Papio/"
     },
     {
       "eater": "babouin",
       "food": "fruits_graines",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Papio/"
     },
     {
       "eater": "babouin",
       "food": "racines",
       "kind": "vegetaux",
-      "note": ""
-    },
-    {
-      "eater": "babouin",
-      "food": "baobab",
-      "kind": "vegetaux",
-      "note": "fruits",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "babouin",
-      "food": "marula",
-      "kind": "vegetaux",
-      "note": "fruits",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "babouin",
-      "food": "criquet",
-      "kind": "predation",
-      "note": "insectes",
-      "foodSideOnly": true
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Papio/"
     },
     {
       "eater": "babouin",
@@ -2509,264 +2487,281 @@ window.RV_DONNEES.savane = {
       "eater": "singe_vervet",
       "food": "fruits_graines",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Chlorocebus_aethiops"
     },
     {
       "eater": "singe_vervet",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Chlorocebus_aethiops"
     },
     {
       "eater": "singe_vervet",
       "food": "acacia",
       "kind": "vegetaux",
       "note": "fleurs et graines",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "singe_vervet",
-      "food": "criquet",
-      "kind": "predation",
-      "note": "insectes",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://laisbell.faculty.ucdavis.edu/wp-content/uploads/sites/741/2022/04/isbell_and_young_1993_bes.pdf"
     },
     {
       "eater": "autruche",
       "food": "fruits_graines",
       "kind": "vegetaux",
       "note": "graines",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Struthio_camelus/"
     },
     {
       "eater": "elephant",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Loxodonta_africana/"
     },
     {
       "eater": "elephant",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Loxodonta_africana/"
     },
     {
       "eater": "elephant",
       "food": "acacia",
       "kind": "vegetaux",
       "note": "feuilles et branches",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://www.jyi.org/2017-january/2017/2/13/response-of-acacia-tortilis-to-elephant-browsing-in-tarangire-national-park-tanzania-possible-above-ground-compensation"
     },
     {
       "eater": "elephant",
       "food": "baobab",
       "kind": "vegetaux",
       "note": "écorce",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://davieslab.oeb.harvard.edu/publication/limited-elephant-impacts-baobabs-despite-increasing-elephant-densities-newly"
     },
     {
       "eater": "elephant",
       "food": "marula",
       "kind": "vegetaux",
       "note": "fruits",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://www.cambridge.org/core/product/identifier/S0266467411000654/type/journal_article"
     },
     {
       "eater": "elephant",
       "food": "mopane",
       "kind": "vegetaux",
       "note": "feuilles",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://link.springer.com/article/10.1007/s10344-011-0575-1"
     },
     {
       "eater": "elephant",
       "food": "racines",
       "kind": "vegetaux",
       "note": "qu’il déterre",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Loxodonta_africana/"
     },
     {
       "eater": "girafe",
       "food": "acacia",
       "kind": "vegetaux",
       "note": "feuilles, malgré les épines",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Giraffa_camelopardalis"
     },
     {
       "eater": "girafe",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Giraffa_camelopardalis"
     },
     {
       "eater": "rhino_noir",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Diceros_bicornis/"
     },
     {
       "eater": "rhino_noir",
       "food": "acacia",
       "kind": "vegetaux",
       "note": "rameaux",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Diceros_bicornis/"
     },
     {
       "eater": "rhino_blanc",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Ceratotherium_simum/"
     },
     {
       "eater": "grand_koudou",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://ajol.info/index.php/sajas/article/view/139502/129202"
     },
     {
       "eater": "grand_koudou",
       "food": "acacia",
       "kind": "vegetaux",
       "note": "feuilles",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://ajol.info/index.php/sajas/article/view/139502/129202"
     },
     {
       "eater": "eland",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Taurotragus_oryx"
     },
     {
       "eater": "eland",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Taurotragus_oryx"
     },
     {
       "eater": "springbok",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Antidorcas_marsupialis"
     },
     {
       "eater": "springbok",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Antidorcas_marsupialis"
     },
     {
       "eater": "bubale",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Alcelaphus_buselaphus/"
     },
     {
       "eater": "topi",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Damaliscus_lunatus"
     },
     {
       "eater": "hippotrague_rouan",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Hippotragus_equinus"
     },
     {
       "eater": "hippotrague_noir",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Hippotragus_niger/"
     },
     {
       "eater": "hippotrague_noir",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Hippotragus_niger/"
     },
     {
       "eater": "cobe_defassa",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Kobus_ellipsiprymnus"
     },
     {
       "eater": "cobe_roseau",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Redunca_arundinum"
     },
     {
       "eater": "cephalophe",
       "food": "feuilles",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Sylvicapra_grimmia"
     },
     {
       "eater": "cephalophe",
       "food": "fruits_graines",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Sylvicapra_grimmia"
     },
     {
       "eater": "dikdik",
       "food": "feuilles",
       "kind": "vegetaux",
       "note": "feuilles et pousses",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Madoqua_kirkii/"
     },
     {
       "eater": "dikdik",
       "food": "fruits_graines",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://encyclopedia.com/environment/encyclopedias-almanacs-transcripts-and-maps/bovids-iv-dikdiks-beiras-grysboks-and-steenboks-neotraginae"
     },
     {
       "eater": "lievre",
       "food": "herbes",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://agris.fao.org/search/es/records/65df9fa37c7033e84bee8c29"
     },
     {
       "eater": "porc_epic",
       "food": "racines",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Hystrix_africaeaustralis"
     },
     {
       "eater": "porc_epic",
       "food": "fruits_graines",
       "kind": "vegetaux",
       "note": "fruits tombés",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Hystrix_africaeaustralis"
     },
     {
       "eater": "rongeur",
       "food": "fruits_graines",
       "kind": "vegetaux",
       "note": "graines",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://animaldiversity.org/accounts/Arvicanthis_niloticus"
     },
     {
       "eater": "termite",
       "food": "herbes",
       "kind": "vegetaux",
       "note": "herbes sèches, pour certaines espèces",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "impala",
-      "food": "acacia",
-      "kind": "vegetaux",
-      "note": "gousses et feuilles",
-      "foodSideOnly": true
-    },
-    {
-      "eater": "phacochere",
-      "food": "marula",
-      "kind": "vegetaux",
-      "note": "fruits tombés",
-      "foodSideOnly": true
+      "foodSideOnly": true,
+      "source": "https://academic.oup.com/jinsectscience/article/10/1/65/845403"
     },
     {
       "eater": "lion",
@@ -2775,20 +2770,6 @@ window.RV_DONNEES.savane = {
       "note": "parfois, surtout les petits",
       "rare": true,
       "source": "https://doi.org/10.1093/beheco/arx098"
-    },
-    {
-      "eater": "aigle",
-      "food": "suricate",
-      "kind": "predation",
-      "note": "",
-      "source": "https://www.eol.org/pages/311580/articles"
-    },
-    {
-      "eater": "chacal",
-      "food": "suricate",
-      "kind": "predation",
-      "note": "",
-      "source": "https://www.eol.org/pages/311580/articles"
     },
     {
       "eater": "lion",

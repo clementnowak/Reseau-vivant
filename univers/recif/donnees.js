@@ -6,18 +6,11 @@ window.RV_DONNEES.recif = {
     "nom": "Le récif corallien",
     "lieu": "sur le récif corallien",
     "titre": "Réseau vivant — Qui mange qui sur le récif corallien ?",
-    "eyebrow": "🪸 Le récif corallien",
+    "eyebrow": "🪸 Qui mange qui sur le récif ?",
     "animalParDefaut": "poisson_clown",
-    "decor": [
-      "🐟",
-      "🪸",
-      "🐢",
-      "🐠",
-      "🌿"
-    ],
     "exemplesRecherche": "« requin », « tortue » ou « poisson »",
     "couleurBarre": "#123c55",
-    "aideReseau": "Chaque animal est représenté par son émoji. Quand aucun émoji ne lui correspond, une silhouette dessinée par un illustrateur (PhyloPic) le remplace ; pour quelques espèces, c’est un proche cousin.",
+    "aideReseau": "Chaque animal est représenté par un émoji ou par une silhouette dessinée par un illustrateur (PhyloPic). Ce sont des symboles, pas des photos : ils ne montrent pas toujours la bonne espèce, parfois seulement un proche cousin.",
     "groupesProducteurs": [
       "Plancton",
       "Algues et plantes"
@@ -112,6 +105,12 @@ window.RV_DONNEES.recif = {
       "fichier": "univers/recif/cartes.html",
       "avertissement": "Carte simplifiée : l’animal ne vit pas partout dans la zone colorée, seulement près des récifs, dans les eaux chaudes et peu profondes."
     },
+    "chaineHero": [
+      "requin_tigre",
+      "dugong",
+      "herbiers"
+    ],
+    "chaineHeroTexte": "Les flèches montrent le chemin de l’énergie : les herbiers nourrissent le dugong, que le requin-tigre peut chasser.",
     "comprendre": {
       "cartes": [
         [
@@ -564,9 +563,9 @@ window.RV_DONNEES.recif = {
       ]
     }
   },
-  "version": "3.2.1",
+  "version": "4.0.0",
   "validation": {
-    "links": "Relations issues d’ouvrages de référence généraux ; les relations surprenantes ont une source dédiée (champ source).",
+    "links": "48 relations ; chacune cite sa source dans le champ source (pages de référence, bases de données et articles scientifiques).",
     "rangeMapping": "grandes régions de récifs, approximatives, pas d’aires de répartition précises"
   },
   "biome": "Récif corallien",
@@ -581,7 +580,7 @@ window.RV_DONNEES.recif = {
       "habitat": "Eau de mer, près de la surface",
       "description": "Des algues minuscules, souvent invisibles à l’œil nu, qui flottent dans l’eau par milliards.",
       "role": "Il fabrique sa nourriture avec la lumière du Soleil. C’est le premier maillon de presque tout le réseau marin.",
-      "fun": "Le plancton végétal des océans produit environ la moitié de l’oxygène que nous respirons.",
+      "fun": "Le plancton végétal des océans produit environ la moitié de l’oxygène fabriqué chaque année sur Terre.",
       "protect": "Limiter la pollution des rivières qui se jettent dans la mer.",
       "type": "resource",
       "regions": [
@@ -629,7 +628,7 @@ window.RV_DONNEES.recif = {
       "habitat": "Récif corallien",
       "description": "Elles poussent sur les rochers et sur le corail mort, en fins gazons ou en touffes.",
       "role": "Elles nourrissent les brouteurs. Si personne ne les mange, elles peuvent recouvrir et étouffer le corail.",
-      "fun": "Les algues n’ont pas de vraies racines : elles s’accrochent aux rochers avec une sorte de ventouse.",
+      "fun": "Les algues n’ont pas de vraies racines : beaucoup s’accrochent aux rochers par un petit crampon.",
       "protect": "Protéger les poissons brouteurs, comme le poisson-perroquet, qui les gardent à la bonne taille.",
       "type": "resource",
       "regions": [
@@ -776,7 +775,7 @@ window.RV_DONNEES.recif = {
       "group": "Invertébrés",
       "emoji": "🐙",
       "diet": "Carnivore",
-      "habitat": "Récif corallien",
+      "habitat": "Dans les trous du corail",
       "description": "Ce mollusque à huit bras chasse le jour sur le récif et se cache dans les trous du corail.",
       "role": "Chasseur malin, il mange beaucoup de crabes et sert lui-même de repas aux grands poissons.",
       "fun": "Il a trois cœurs, du sang bleu, et peut changer de couleur en un instant pour se camoufler.",
@@ -800,7 +799,7 @@ window.RV_DONNEES.recif = {
       "group": "Invertébrés",
       "emoji": "🦀",
       "diet": "Omnivore",
-      "habitat": "Récif corallien",
+      "habitat": "Dans les trous du corail",
       "description": "Les crabes du récif vivent cachés dans les fentes du corail et sortent surtout la nuit.",
       "role": "Ils grignotent algues et restes : ce sont de petits nettoyeurs du récif.",
       "fun": "Pour grandir, le crabe doit abandonner sa vieille carapace et en fabriquer une nouvelle.",
@@ -828,7 +827,7 @@ window.RV_DONNEES.recif = {
       "description": "Une grande étoile de mer couverte d’épines venimeuses, qui peut avoir jusqu’à 21 bras.",
       "role": "Elle se nourrit de corail. Quand elles deviennent trop nombreuses, elles détruisent de grandes surfaces de récif.",
       "fun": "Une seule étoile couronne d’épines peut manger jusqu’à 10 m² de corail en un an.",
-      "protect": "Protéger ses prédateurs, comme le triton géant et le napoléon, pour éviter qu’elle ne pullule.",
+      "protect": "Protéger le triton géant et le napoléon, qui la mangent : des chercheurs pensent que cela peut aider à limiter ses invasions.",
       "type": "animal",
       "regions": [
         "mer_rouge",
@@ -851,7 +850,7 @@ window.RV_DONNEES.recif = {
       "diet": "Carnivore",
       "habitat": "Récif corallien",
       "description": "Un très grand escargot de mer, dont la coquille peut dépasser 40 cm.",
-      "role": "Il fait partie des rares animaux capables de manger l’étoile couronne d’épines : il aide à protéger le corail.",
+      "role": "Il fait partie des rares animaux capables de manger l’étoile couronne d’épines, qui dévore le corail.",
       "fun": "Il attaque lentement l’étoile de mer couronne d’épines, sans craindre ses épines venimeuses.",
       "protect": "Ne jamais ramasser ni acheter sa coquille : la collecte l’a rendu rare.",
       "type": "animal",
@@ -896,10 +895,10 @@ window.RV_DONNEES.recif = {
       "scientific": "Holothuria",
       "group": "Invertébrés",
       "emoji": "🥒",
-      "diet": "Détritivore",
+      "diet": "Détritivore (mange des restes de plantes)",
       "habitat": "Récif corallien",
       "description": "Un animal mou en forme de concombre, qui rampe lentement sur le sable.",
-      "role": "Elle avale le sable, digère les restes qu’il contient et rejette du sable propre : c’est une décomposeuse.",
+      "role": "Elle avale le sable, digère les restes qu’il contient et rejette du sable propre : c’est une recycleuse.",
       "fun": "Pour se défendre, certaines holothuries projettent des filaments collants sur leurs ennemis.",
       "protect": "Éviter la pêche excessive : on en ramasse beaucoup pour les vendre.",
       "type": "animal",
@@ -924,11 +923,11 @@ window.RV_DONNEES.recif = {
       "group": "Poissons",
       "emoji": "🐠",
       "diet": "Omnivore",
-      "habitat": "Récif corallien",
+      "habitat": "Entre les tentacules d’une anémone de mer",
       "description": "Un petit poisson orange à bandes blanches qui vit toujours près de son anémone.",
       "role": "Il nettoie son anémone et la défend contre certains poissons ; en échange, elle l’abrite.",
       "fun": "Tous les poissons-clowns naissent mâles. Le plus gros du groupe devient la femelle.",
-      "protect": "Ne pas en acheter pour un aquarium s’il a été pêché dans la nature.",
+      "protect": "Choisir un aquarium sans poisson pêché dans la nature, ou le regarder sur le récif.",
       "type": "animal",
       "regions": [
         "indien",
@@ -946,7 +945,7 @@ window.RV_DONNEES.recif = {
       "group": "Poissons",
       "emoji": "🐟",
       "diet": "Omnivore",
-      "habitat": "Récif corallien",
+      "habitat": "Dans les branches du corail",
       "description": "Un poisson bleu vif à queue jaune, qui se cache dans les branches du corail.",
       "role": "Il mange du plancton et des algues, et aide ainsi à garder le récif propre.",
       "fun": "Près de sa queue, il cache une petite lame tranchante, comme le scalpel d’un chirurgien.",
@@ -972,7 +971,7 @@ window.RV_DONNEES.recif = {
       "description": "Un poisson très coloré dont les dents soudées forment un bec, comme celui d’un perroquet.",
       "role": "En broutant les algues sur le corail, il empêche qu’elles n’étouffent le récif.",
       "fun": "En broutant, il croque aussi du corail et rejette du sable blanc : une partie du sable des plages tropicales vient de lui !",
-      "protect": "Ne pas le pêcher : sans lui, les algues envahissent le corail.",
+      "protect": "Le laisser brouter : il garde les algues à la bonne taille.",
       "type": "animal",
       "regions": [
         "mer_rouge",
@@ -1038,7 +1037,7 @@ window.RV_DONNEES.recif = {
       "group": "Poissons",
       "emoji": "🐟",
       "diet": "Mange du plancton",
-      "habitat": "Récif corallien",
+      "habitat": "Au-dessus des coraux branchus",
       "description": "Un petit poisson vert-bleu qui vit en bancs au-dessus des coraux branchus.",
       "role": "Très nombreuse, elle transforme le plancton en repas pour les poissons chasseurs.",
       "fun": "Au moindre danger, tout le banc plonge en même temps se cacher dans les branches du corail.",
@@ -1086,9 +1085,9 @@ window.RV_DONNEES.recif = {
       "group": "Poissons",
       "emoji": "🐟",
       "diet": "Carnivore",
-      "habitat": "Récif corallien",
+      "habitat": "Dans les trous du récif",
       "description": "Un poisson très long, sans écailles, qui vit caché dans les trous du récif.",
-      "role": "Chasseuse de nuit, elle mange des poissons, des poulpes et des crabes qui se cachent dans le corail.",
+      "role": "Chasseuse de nuit, elle mange des poissons et des poulpes qui se cachent dans le corail.",
       "fun": "Elle ouvre et ferme sans cesse la bouche : ce n’est pas pour menacer, c’est pour respirer !",
       "protect": "Ne pas mettre la main dans les trous du récif : elle pourrait mordre pour se défendre.",
       "type": "animal",
@@ -1114,7 +1113,7 @@ window.RV_DONNEES.recif = {
       "habitat": "Récif corallien",
       "description": "Un gros poisson trapu à grande bouche, qui guette ses proies près de son abri.",
       "role": "Grand chasseur du récif, il garde l’équilibre entre les petits poissons.",
-      "fun": "Certains mérous chassent en équipe avec la murène : l’un bloque la sortie, l’autre fouille les trous du récif.",
+      "fun": "Certains mérous chassent en équipe avec la murène géante : elle fouille les trous du récif, lui chasse en pleine eau les poissons qui s’enfuient.",
       "protect": "Respecter les tailles et les périodes de pêche, et les réserves marines.",
       "type": "animal",
       "regions": [
@@ -1286,7 +1285,7 @@ window.RV_DONNEES.recif = {
       "description": "Une grande tortue marine qui broute les herbiers et les algues.",
       "role": "En broutant, elle entretient les herbiers, comme une tondeuse.",
       "fun": "Elle doit son nom à la couleur verte de sa graisse, qui vient des plantes qu’elle mange.",
-      "protect": "Ne jamais jeter de plastique en mer : elle peut confondre un sac avec une méduse.",
+      "protect": "Garder le plastique hors de l’eau : une tortue peut prendre un sac pour une méduse.",
       "type": "animal",
       "regions": [
         "mer_rouge",
@@ -1352,43 +1351,43 @@ window.RV_DONNEES.recif = {
       "eater": "zooplancton",
       "food": "phytoplancton",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://www.fisheries.noaa.gov/feature-story/copepods-cows-sea"
     },
     {
       "eater": "corail",
       "food": "zooplancton",
       "kind": "predation",
-      "note": "attrapé la nuit avec ses tentacules"
+      "note": "attrapé la nuit avec ses tentacules",
+      "source": "https://oceanservice.noaa.gov/education/tutorial_corals/coral01_intro.html"
     },
     {
       "eater": "eponge",
       "food": "phytoplancton",
       "kind": "vegetaux",
-      "note": "filtré dans l’eau"
+      "note": "filtré dans l’eau",
+      "source": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2021.705053/full"
     },
     {
       "eater": "anemone",
       "food": "zooplancton",
       "kind": "predation",
-      "note": "piqué par ses tentacules"
+      "note": "piqué par ses tentacules",
+      "source": "https://animaldiversity.org/accounts/Heteractis_magnifica"
     },
     {
       "eater": "poulpe",
       "food": "crabe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.sealifebase.se/summary/57253"
     },
     {
       "eater": "crabe",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
-    },
-    {
-      "eater": "crabe",
-      "food": "detritus",
-      "kind": "detritivore",
-      "note": ""
+      "note": "",
+      "source": "https://www.vliz.be/imisdocs/publications/ocrd/97795.pdf"
     },
     {
       "eater": "crabe",
@@ -1416,43 +1415,50 @@ window.RV_DONNEES.recif = {
       "eater": "oursin",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Diadema_antillarum/"
     },
     {
       "eater": "holothurie",
       "food": "detritus",
       "kind": "detritivore",
-      "note": "trié dans le sable"
+      "note": "trié dans le sable",
+      "source": "https://www.leibniz-zmt.de/en/news-at-zmt/in-focus/sea-cucumbers-the-vacuum-cleaners-of-the-oceans.html"
     },
     {
       "eater": "poisson_clown",
       "food": "zooplancton",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://portfolio.jcu.edu.au/Publications/JCU188660"
     },
     {
       "eater": "poisson_clown",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://portfolio.jcu.edu.au/Publications/JCU188660"
     },
     {
       "eater": "chirurgien_bleu",
       "food": "zooplancton",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.aquariumofpacific.org/onlinelearningcenter/species/palette_surgeonfish"
     },
     {
       "eater": "chirurgien_bleu",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://www.aquariumofpacific.org/onlinelearningcenter/species/palette_surgeonfish"
     },
     {
       "eater": "perroquet",
       "food": "algues",
       "kind": "vegetaux",
-      "note": "raclées sur le corail"
+      "note": "raclées sur le corail",
+      "source": "https://library.oarcloud.noaa.gov/noaa_documents.lib/CoRIS/CRCP_198_Burkepile_2016.pdf"
     },
     {
       "eater": "perroquet",
@@ -1465,103 +1471,64 @@ window.RV_DONNEES.recif = {
       "eater": "papillon",
       "food": "corail",
       "kind": "broutage",
-      "note": "grignote les polypes"
+      "note": "grignote les polypes",
+      "source": "https://animaldiversity.org/accounts/Chaetodontidae/"
     },
     {
       "eater": "ange",
       "food": "eponge",
       "kind": "broutage",
-      "note": ""
+      "note": "",
+      "source": "https://mote.org/animal-encyclopedia/emperor-angelfish/"
     },
     {
       "eater": "ange",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://mote.org/animal-encyclopedia/emperor-angelfish/"
     },
     {
       "eater": "demoiselle",
       "food": "zooplancton",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://doi.org/10.1111/mec.15090"
     },
     {
       "eater": "poisson_lion",
       "food": "demoiselle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.iucngisd.org/gisd/species.php?sc=1050"
     },
     {
       "eater": "poisson_lion",
       "food": "crabe",
       "kind": "predation",
-      "note": "les petits"
-    },
-    {
-      "eater": "murene",
-      "food": "poulpe",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "murene",
-      "food": "crabe",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "murene",
-      "food": "perroquet",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "murene",
-      "food": "papillon",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "merou",
-      "food": "poisson_clown",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "merou",
-      "food": "chirurgien_bleu",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "merou",
-      "food": "papillon",
-      "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "merou",
-      "food": "ange",
-      "kind": "predation",
-      "note": ""
+      "note": "les petits",
+      "source": "https://www.iucngisd.org/gisd/species.php?sc=1050"
     },
     {
       "eater": "merou",
       "food": "demoiselle",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.scielo.org.mx/pdf/hbio/v15n1/v15n1a2.pdf"
     },
     {
       "eater": "merou",
       "food": "poulpe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.scielo.org.mx/pdf/hbio/v15n1/v15n1a2.pdf"
     },
     {
       "eater": "merou",
       "food": "crabe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.fishbase.se/summary/6473"
     },
     {
       "eater": "merou",
@@ -1582,25 +1549,29 @@ window.RV_DONNEES.recif = {
       "eater": "napoleon",
       "food": "oursin",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://marinewaters.fish.wa.gov.au/?p=1480"
     },
     {
       "eater": "napoleon",
       "food": "crabe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://marinewaters.fish.wa.gov.au/?p=1480"
     },
     {
       "eater": "baliste",
       "food": "oursin",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://fishbase.se/summary/6026"
     },
     {
       "eater": "baliste",
       "food": "crabe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://fishbase.se/summary/6026"
     },
     {
       "eater": "baliste",
@@ -1613,31 +1584,29 @@ window.RV_DONNEES.recif = {
       "eater": "hippocampe",
       "food": "zooplancton",
       "kind": "predation",
-      "note": "de minuscules crevettes"
+      "note": "de minuscules crevettes",
+      "source": "https://sdnhm.org/oceanoasis/fieldguide/hipp-ing.html"
     },
     {
       "eater": "requin_pb",
       "food": "perroquet",
       "kind": "predation",
-      "note": ""
-    },
-    {
-      "eater": "requin_pb",
-      "food": "ange",
-      "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://spo.nmfs.noaa.gov/sites/default/files/pdf-content/1980/782/randall.pdf"
     },
     {
       "eater": "requin_pb",
       "food": "poulpe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://www.elasmo-research.org/education/ecology/coral-whitetip.htm"
     },
     {
       "eater": "requin_pb",
       "food": "crabe",
       "kind": "predation",
-      "note": ""
+      "note": "",
+      "source": "https://fishbase.se/summary/907"
     },
     {
       "eater": "requin_tigre",
@@ -1680,19 +1649,22 @@ window.RV_DONNEES.recif = {
       "eater": "raie_manta",
       "food": "zooplancton",
       "kind": "predation",
-      "note": "filtré dans l’eau"
+      "note": "filtré dans l’eau",
+      "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8388554/"
     },
     {
       "eater": "tortue_verte",
       "food": "herbiers",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Chelonia_mydas/"
     },
     {
       "eater": "tortue_verte",
       "food": "algues",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/Chelonia_mydas/"
     },
     {
       "eater": "tortue_imbriquee",
@@ -1705,7 +1677,15 @@ window.RV_DONNEES.recif = {
       "eater": "dugong",
       "food": "herbiers",
       "kind": "vegetaux",
-      "note": ""
+      "note": "",
+      "source": "https://animaldiversity.org/accounts/dugong_dugon"
+    },
+    {
+      "eater": "murene",
+      "food": "poulpe",
+      "kind": "predation",
+      "note": "",
+      "source": "https://fishbase.de/summary/4905"
     }
   ],
   "sources": [

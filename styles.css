@@ -3,21 +3,27 @@
    les media queries min-width enrichissent la mise en page pour tablette et ordinateur. */
 
 :root {
-  --forest: #183e34;
-  --forest-2: #214b3e;
-  --cream: #faf8f1;
-  --sage: #f1f5ea;
-  --border: #dde6d6;
-  --text: #20372f;
-  --muted: #4f675b;
-  --green: #4f7d56;
-  --green-soft: #e6f0dc;
+  --forest: #2f5233;
+  --forest-2: #3b6340;
+  --cream: #f6f0e4;
+  --sage: #efe6d3;
+  --border: #dacdb0;
+  --text: #2b2a22;
+  --muted: #5c5443;
+  --green: #3f6b46;
+  --green-soft: #e9ddc2;
+  --surface: #fffbf2;
+  --accent: #9c4824;
+  --footer: #1e3722;
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
+  --shadow-d: rgba(120, 96, 56, .28);
+  --shadow-l: rgba(255, 255, 255, .9);
   --orange: #e2873a;
   --orange-soft: #fdeedd;
   --sea: #dcecf0;
   --land: #ece6cf;
   --radius: 16px;
-  --shadow: 0 10px 30px rgba(27, 65, 48, .08);
+  --shadow: 0 10px 30px rgba(90, 70, 30, .10);
   --tap: 44px;
 }
 
@@ -27,7 +33,7 @@ body {
   margin: 0;
   background: var(--cream);
   color: var(--text);
-  font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -86,20 +92,6 @@ button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .intro-pills { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .intro-pills li { border: 1px solid var(--border); background: #fff; border-radius: 999px; padding: 6px 12px; font-size: 13px; color: var(--muted); }
 .intro-pills strong { color: var(--forest); }
-.hero-art {
-  height: 180px; position: relative; overflow: hidden; border-radius: 22px;
-  background: linear-gradient(180deg, #e3efda 0%, #f5edce 100%); box-shadow: var(--shadow);
-}
-.sun { position: absolute; top: 18px; right: 30px; width: 70px; height: 70px; border-radius: 50%; background: #f5d48f; box-shadow: 0 0 0 22px rgba(245, 212, 143, .2); }
-.hill { position: absolute; left: -10%; width: 125%; height: 160px; border-radius: 50% 50% 0 0; }
-.hill-back { background: #b1cba5; top: 110px; transform: rotate(-7deg); }
-.hill-front { background: #73987b; top: 145px; transform: rotate(4deg); }
-.decor { position: absolute; line-height: 1; filter: drop-shadow(0 6px 4px rgba(36, 71, 44, .18)); }
-.deco-lion { font-size: 64px; top: 70px; left: 26%; }
-.deco-zebra { font-size: 54px; top: 88px; right: 12%; }
-.deco-tree { font-size: 58px; top: 44px; left: 4%; }
-.deco-bird { font-size: 26px; top: 22px; left: 42%; transform: rotate(-12deg); }
-.deco-grass { font-size: 34px; bottom: 6px; left: 55%; }
 
 /* ---------- Explorer ---------- */
 .explorer-wrap { background: var(--sage); padding: 34px 0 40px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -314,7 +306,7 @@ button.chain-node:hover { border-color: var(--green); }
 .quiz-end .secondary { background: #fff; color: var(--forest); border: 1.5px solid var(--forest); }
 
 /* ---------- Pied de page ---------- */
-.site-footer { background: #112e26; color: #c4d6c8; padding: 30px 0 calc(30px + env(safe-area-inset-bottom)); }
+.site-footer { background: var(--footer); color: #c4d6c8; padding: 30px 0 calc(30px + env(safe-area-inset-bottom)); }
 .footer-inner { display: grid; gap: 16px; }
 .footer-logo { font-size: 21px; color: #fff; font-weight: 850; }
 .footer-brand p { font-size: 14px; margin: 6px 0 0; color: #a9bfb1; }
@@ -344,9 +336,6 @@ button.chain-node:hover { border-color: var(--green); }
   .shell { padding: 0 24px; }
   .brand-name { display: inline; }
   .cta { width: auto; }
-  .hero-art { height: 240px; }
-  .deco-lion { font-size: 84px; top: 90px; } .deco-zebra { font-size: 70px; top: 112px; } .deco-tree { font-size: 76px; }
-  .hill-back { top: 150px; } .hill-front { top: 195px; }
   .relation-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .profile-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .profile-item.fun { grid-column: 1 / -1; }
@@ -367,11 +356,6 @@ button.chain-node:hover { border-color: var(--green); }
   .top-nav { gap: 8px; }
   .top-nav a { font-size: 15px; padding: 0 12px; }
   .intro { grid-template-columns: 1.1fr .9fr; align-items: center; padding-top: 56px; padding-bottom: 60px; gap: 40px; }
-  .hero-art { height: 360px; }
-  .sun { width: 120px; height: 120px; top: 40px; right: 60px; }
-  .deco-lion { font-size: 110px; top: 140px; } .deco-zebra { font-size: 92px; top: 180px; } .deco-tree { font-size: 100px; top: 90px; } .deco-bird { font-size: 38px; top: 50px; }
-  .deco-grass { font-size: 52px; }
-  .hill-back { top: 230px; height: 200px; } .hill-front { top: 290px; height: 200px; }
   .explorer-wrap { padding: 60px 0 70px; }
   .picker { padding: 16px; }
   .species-library { max-height: 100px; }
@@ -434,18 +418,15 @@ html { scroll-padding-top: 124px; }
 
 /* ---------- Univers « récif corallien » : couleurs et décor ---------- */
 html[data-univers="recif"] {
-  --forest: #123c55; --forest-2: #1a4d6c; --sage: #edf6f8; --border: #d2e5eb; --text: #16323f; --muted: #46616e;
-  --green: #2c7b98; --green-soft: #dcf0f5; --orange: #ef7a5d; --orange-soft: #fde8e2; --sea: #cfe7ef; --land: #efe6cf;
+  --forest: #0f4c5c; --forest-2: #176074; --cream: #eaf4f6; --sage: #dcedf1; --border: #b9d6de; --text: #10303b; --muted: #3f5c66;
+  --green: #0e6f80; --green-soft: #cfe6ec; --orange: #ef7a5d; --orange-soft: #fde8e2; --sea: #cfe7ef; --land: #efe6cf;
+  --surface: #f9fdfe; --accent: #b23a25; --footer: #0a3340;
+  --shadow-d: rgba(40, 96, 112, .26); --shadow-l: rgba(255, 255, 255, .95);
 }
-html[data-univers="recif"] .brand-emphasis { color: #2c7b98; }
+html[data-univers="recif"] .brand-emphasis { color: var(--green); }
 html[data-univers="recif"] .example-chain { border-color: #c2dfe8; }
 html[data-univers="recif"] .chain-node { border-color: #c2dfe8; }
 html[data-univers="recif"] .eaters .count-pill { color: #8a2e17; }
-html[data-univers="recif"] .hero-art { background: linear-gradient(180deg, #bfe6f0 0%, #6fb8cf 55%, #2f7f9e 100%); }
-html[data-univers="recif"] .sun { background: rgba(255, 255, 255, .55); box-shadow: 0 0 0 22px rgba(255, 255, 255, .18); }
-html[data-univers="recif"] .hill-back { background: #f0d9a8; }
-html[data-univers="recif"] .hill-front { background: #e5c487; }
-html[data-univers="recif"] .decor { filter: drop-shadow(0 6px 4px rgba(10, 50, 70, .25)); }
 
 /* Cartes du récif : les zones de récifs restent visibles en clair, celles de l’animal en couleur. */
 .recif-map .range-region { opacity: .45; fill: #7cb7c6; }
@@ -458,8 +439,6 @@ html[data-univers="recif"] .decor { filter: drop-shadow(0 6px 4px rgba(10, 50, 7
 .region-label.small { font-size: 10px; }
 .recif-map .region-label { stroke: #fff; }
 .recif-map .region-label.is-active { fill: #6b1c08; stroke: #fde1d7; }
-html[data-univers="recif"] .center-card { background: radial-gradient(circle at 50% 30%, #2b6f8c 0%, #123c55 72%); }
-html[data-univers="recif"] .site-footer { background: #0e2b3c; }
 
 /* Silhouettes d’animaux (PhyloPic, domaine public) : dessin d’une seule couleur, sinon émoji */
 .pict { display: inline-block; width: 1.5em; height: 1.2em; vertical-align: -.25em; }
@@ -483,3 +462,111 @@ html[data-univers="recif"] .eaters .relation-card .animal-emoji { color: #8a2e17
 .species-chip[aria-pressed="true"] .chip-emoji { color: #fff; }
 .answer-btn .a-emoji { width: 42px; }
 .relation-card .animal-emoji .pict { width: 32px; height: 28px; }
+
+/* =====================================================================
+   Refonte visuelle 4.0 : titres en serif, surfaces claires, une palette par univers,
+   relief réservé aux réponses du quiz et aux filtres (le reste reste à plat, avec bordure).
+   ===================================================================== */
+.site-header { background: color-mix(in srgb, var(--cream) 94%, transparent); border-bottom-color: var(--border); }
+.brand-emphasis { color: var(--accent); }
+.eyebrow { color: var(--accent); }
+.intro h1, .section-heading h2, .understand-wrap h2, .quiz-wrap h2, .block-title, .center-card h3, .quiz-card h3 { font-family: var(--serif); }
+.intro h1 { font-weight: 700; letter-spacing: -.03em; color: var(--forest); }
+.intro h1 em, .understand-wrap h2 em { font-weight: 600; color: var(--accent); }
+.section-heading h2, .understand-wrap h2, .quiz-wrap h2 { font-weight: 700; letter-spacing: -.02em; color: var(--forest); }
+.block-title { font-weight: 700; letter-spacing: -.01em; color: var(--forest); }
+.intro-subtitle strong { color: var(--forest); }
+
+/* Surfaces */
+.picker, .relation-block, .map-card, .profile-item, .idea, .human-pressure-card, .chain-node, .intro-pills li,
+.species-chip, .filter-chip, .universe-btn, .see-animal, .quiz-end .secondary { background: var(--surface); }
+.picker, .relation-block, .map-card, .profile-item, .idea, .human-pressure-card { border-radius: 20px; }
+.explorer-wrap { background: var(--sage); border-color: var(--border); }
+.searchbox { background: var(--surface); }
+.species-library.is-clipped::after { background: linear-gradient(transparent, var(--surface)); }
+.relation-card { background: var(--cream); border-color: var(--border); }
+.relation-card:hover { background: var(--green-soft); border-color: var(--forest-2); }
+.relation-empty { background: var(--cream); }
+.example-chain { background: var(--sage); border-color: var(--border); border-radius: 28px; }
+.chain-node { border-color: var(--border); }
+html[data-univers="recif"] .example-chain, html[data-univers="recif"] .chain-node { border-color: var(--border); }
+.count-pill { background: var(--green-soft); color: var(--forest); }
+.eaters .count-pill { color: #7a3517; }
+html[data-univers="recif"] .eaters .count-pill { color: #8a2e17; }
+
+/* Accueil : boutons et carte de chaîne */
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.cta { border-radius: 16px; }
+.cta-secondary { background: transparent; color: var(--forest); border: 2px solid var(--forest); }
+.cta-secondary:hover { background: var(--green-soft); }
+.hero-chain {
+  background: var(--sage); border: 1px solid var(--border); border-radius: 32px; padding: 28px 12px 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+}
+.hero-chain-title { margin: 0; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.hero-chain-flow { list-style: none; margin: 0; padding: 0; display: flex; align-items: flex-start; justify-content: center; gap: 4px; }
+.hero-arrow { font-size: 22px; font-weight: 800; color: var(--accent); align-self: center; width: 22px; text-align: center; margin-bottom: 22px; }
+.hero-node {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; width: 80px; padding: 0; border: 0; background: transparent; text-align: center;
+}
+.hero-node-icon {
+  width: 68px; height: 68px; border-radius: 20px; background: var(--surface); border: 1px solid var(--border); color: var(--forest);
+  display: flex; align-items: center; justify-content: center; font-size: 34px; line-height: 1;
+  box-shadow: 6px 6px 14px var(--shadow-d), -6px -6px 14px var(--shadow-l);
+}
+.hero-node-icon .pict { width: 2.1em; height: 1.4em; }
+.hero-node:hover .hero-node-icon { border-color: var(--forest); }
+.hero-node-name { font-size: 13px; font-weight: 700; line-height: 1.2; color: var(--text); overflow-wrap: anywhere; }
+.hero-chain-text { margin: 0; font-size: 14px; color: var(--muted); text-align: center; max-width: 340px; padding: 0 8px; }
+@media (min-width: 600px) {
+  .hero-chain { padding: 40px 28px 32px; }
+  .hero-chain-flow { gap: 14px; }
+  .hero-node { width: 100px; }
+  .hero-node-icon { width: 84px; height: 84px; font-size: 40px; border-radius: 24px; }
+  .hero-arrow { margin-bottom: 26px; }
+}
+
+/* Carte centrale */
+.center-card { background: var(--forest); border-radius: 32px; box-shadow: 0 24px 48px var(--shadow-d); }
+.center-card h3 { font-weight: 700; font-size: 30px; }
+.center-card .scientific { font-family: var(--serif); font-size: 16px; }
+
+/* Filtres : relief léger, enfoncés quand ils sont actifs */
+.filter-chip { box-shadow: 3px 3px 8px var(--shadow-d), -3px -3px 8px var(--shadow-l); }
+.filter-chip[aria-pressed="true"] {
+  background: var(--green-soft); color: var(--forest); border: 2px solid var(--forest);
+  box-shadow: inset 3px 3px 7px var(--shadow-d), inset -3px -3px 7px var(--shadow-l);
+}
+.species-chip[aria-pressed="true"] { background: var(--forest); border-color: var(--forest); }
+.universe-btn { border-color: var(--border); color: var(--forest); }
+.universe-btn[aria-pressed="true"] { background: var(--forest); border-color: var(--forest); color: #fff; }
+
+/* Quiz : panneau clair, réponses en relief */
+.quiz-wrap { background: var(--sage); color: var(--text); border-top: 1px solid var(--border); }
+.quiz-wrap .eyebrow { color: var(--accent); }
+.quiz-intro p:not(.eyebrow) { color: var(--muted); }
+.quiz-tab { background: var(--surface); color: var(--forest); border: 1px solid var(--border); }
+.quiz-tab[aria-pressed="true"] { background: var(--forest); border-color: var(--forest); color: #fff; }
+.quiz-card { background: var(--surface); border: 1px solid var(--border); border-radius: 28px; }
+.quiz-card-top { color: var(--muted); }
+.quiz-bar { background: var(--sage); }
+.quiz-card h3 { font-weight: 700; }
+.answer-btn {
+  background: var(--cream); border: 1px solid var(--border); border-radius: 16px; min-height: 56px;
+  box-shadow: 6px 6px 14px var(--shadow-d), -6px -6px 14px var(--shadow-l);
+  transition: box-shadow .15s, border-color .15s;
+}
+.answer-btn:hover:not([aria-disabled="true"]) { background: var(--cream); border-color: var(--forest); }
+.answer-btn:active:not([aria-disabled="true"]) { box-shadow: inset 4px 4px 10px var(--shadow-d), inset -4px -4px 10px var(--shadow-l); }
+.answer-btn[aria-disabled="true"] { box-shadow: none; }
+.answer-btn.correct { background: #def0d4; border: 2px solid #3f7d49; color: #1f5a2c; box-shadow: none; }
+.answer-btn.wrong { background: #fbe7da; border: 2px solid #b4613f; color: #7a3a22; box-shadow: none; }
+.quiz-next { background: var(--forest); border-radius: 16px; }
+.quiz-end .secondary { color: var(--forest); border-color: var(--forest); }
+
+/* Pied de page */
+.footer-logo { font-family: var(--serif); font-weight: 700; }
+.footer-links { list-style: none; margin: 14px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 18px; }
+.footer-links a { color: #e8f1de; font-weight: 700; font-size: 14px; min-height: var(--tap); display: inline-flex; align-items: center; }
+.footer-links a:hover { color: #fff; }
+.footer-links a:focus-visible { outline-color: #fff; }

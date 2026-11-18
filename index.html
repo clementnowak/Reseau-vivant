@@ -45,18 +45,22 @@
       <div class="intro-copy">
         <p class="eyebrow" id="universeEyebrow"></p>
         <h1 id="introTitle">Dans la nature,<br><em>tout est lié.</em></h1>
-        <p class="intro-subtitle">Choisis un animal et découvre <strong>qui le mange</strong>, <strong>ce qu’il mange</strong> et <strong>où il vit</strong>. Clique sur ses voisins pour voyager dans le réseau !</p>
-        <a class="cta" href="#explorer">Commencer l’exploration ↓</a>
+        <p class="intro-subtitle">Choisis un animal et découvre <strong>qui le mange</strong>, <strong>ce qu’il mange</strong> et <strong>où il vit</strong>. Touche un de ses voisins, et le voyage continue&nbsp;!</p>
+        <div class="cta-row">
+          <a class="cta" href="#explorer">Commencer l’exploration ↓</a>
+          <a class="cta cta-secondary" href="#quiz">Jouer au quiz</a>
+        </div>
         <ul class="intro-pills" aria-label="Le site en chiffres">
           <li>🐾 <strong id="animalCount"></strong> animaux</li>
           <li>🔗 <strong id="linkCount"></strong> liens</li>
-          <li>🆓 Gratuit, sans pub</li>
+          <li>✅ Gratuit, sans pub, sans cookies</li>
         </ul>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="sun"></div><div class="hill hill-back"></div><div class="hill hill-front"></div>
-        <span class="decor deco-bird"></span><span class="decor deco-tree"></span><span class="decor deco-lion"></span><span class="decor deco-zebra"></span><span class="decor deco-grass"></span>
-      </div>
+      <aside class="hero-chain" aria-labelledby="heroChainTitle">
+        <p class="hero-chain-title" id="heroChainTitle">Un exemple de chaîne</p>
+        <ol class="hero-chain-flow" id="heroChain"></ol>
+        <p class="hero-chain-text" id="heroChainText"></p>
+      </aside>
     </section>
 
     <section id="explorer" class="explorer-wrap" aria-labelledby="explorerTitle">
@@ -86,14 +90,14 @@
           <p id="liveCenter" class="visually-hidden" aria-live="polite"></p>
 
           <section class="relation-block eaters" aria-labelledby="predTitle">
-            <div class="block-heading"><h4 id="predTitle"><span aria-hidden="true">⬆️</span> Qui le mange ?</h4><span id="predCount" class="count-pill"></span></div>
+            <div class="block-heading"><h4 id="predTitle"><span aria-hidden="true">⬆️</span> Qui le mange&nbsp;?</h4><span id="predCount" class="count-pill"></span></div>
             <div id="predList" class="relation-list"></div>
           </section>
 
           <article id="centerAnimal" class="center-card" tabindex="-1" aria-label="Animal choisi"></article>
 
           <section class="relation-block foods" aria-labelledby="preyTitle">
-            <div class="block-heading"><h4 id="preyTitle"><span aria-hidden="true">⬇️</span> Que mange-t-il ?</h4><span id="preyCount" class="count-pill"></span></div>
+            <div class="block-heading"><h4 id="preyTitle"><span aria-hidden="true">⬇️</span> Que mange-t-il&nbsp;?</h4><span id="preyCount" class="count-pill"></span></div>
             <div id="preyList" class="relation-list"></div>
           </section>
           <p class="network-help">Touche ou clique sur un animal pour le placer au centre. <span id="networkHelp"></span></p>
@@ -159,10 +163,14 @@
         <span class="footer-logo">réseauvivant.</span>
         <p>Un projet éducatif gratuit pour découvrir le vivant avec curiosité.</p>
         <p>Sans publicité, sans cookies, sans inscription.</p>
+        <ul class="footer-links">
+          <li><a href="coulisses.html">Les coulisses du projet</a></li>
+          <li><a href="https://github.com/clementnowak/Reseau-vivant" target="_blank" rel="noopener noreferrer">Code source sur GitHub ↗</a></li>
+        </ul>
       </div>
       <details class="about">
         <summary>Sources et limites du site</summary>
-        <p>Les sources ci-dessous concernent l’univers affiché. Les relations alimentaires viennent d’ouvrages de référence généraux. Les relations rares ou surprenantes ont leur propre source, affichée dans la fiche de l’animal.</p>
+        <p>Les sources ci-dessous concernent l’univers affiché. Chaque relation alimentaire renvoie à une source, indiquée à la fin de la fiche de l’animal (rubrique «&nbsp;Pour aller plus loin&nbsp;»). Quand la source ne parle que d’une catégorie (« rongeurs », par exemple), elle est tout de même citée.</p>
         <p>Le réseau est simplifié : il ne montre pas toutes les relations qui existent dans la nature, et les animaux présentés ne vivent pas tous au même endroit. Ce qu’un animal mange peut changer selon le lieu, la saison et son âge. Les émojis sont des symboles, pas des photos.</p>
         <ul id="sourceList" class="source-list"></ul>
       </details>

@@ -1,5 +1,21 @@
 # Journal des versions
 
+## 4.0.0 — Refonte visuelle et page « Les coulisses »
+- Identité visuelle : titres en serif avec le mot clé en italique, surfaces claires, une palette par univers (savane : sable, acacia, terre ; récif : écume, bleu profond, corail). Relief réservé aux réponses du quiz et aux filtres.
+- Accueil : le décor dessiné est remplacé par une chaîne d’exemple, lue du plus fort au plus faible comme la frise « Comprendre » ; les flèches montrent le chemin de l’énergie. Nouveau bouton « Jouer au quiz ».
+- Nouvelle page `coulisses.html` (lien dans le pied de page) : démarche, décisions de produit, rôle de l’IA, ce qui est vérifié ou non, apprentissages, protocole du test avec des enfants, historique. Ses chiffres sont comparés aux données par le vérificateur.
+- Le vérificateur contrôle aussi la chaîne de l’accueil. Le test de parcours visite la page des coulisses.
+- Poissons du récif : silhouettes PhyloPic pour 8 d’entre eux (poisson-clown, papillon, ange, poisson-lion, murène, baliste, demoiselle, mérou), car l’émoji poisson était le même pour presque tous.
+- Savane : silhouettes pour les 10 antilopes (toutes avaient le même émoji de cerf), le guépard, le léopard, le serval, le caracal, le chacal, le renard à oreilles et le protèle. 36 espèces au total ont une silhouette.
+- Pangolin : retour à l’émoji, la silhouette ressemblait à un serpent en petit format.
+- Sources : Toutes les relations alimentaires (209) citent maintenant leur source ; les 24 relations impossibles à sourcer ont été retirées. Les sources viennent surtout d’Animal Diversity Web, de FishBase, de la NOAA et d’articles scientifiques. Quand la source reste générale (« rongeurs », « lièvres »), elle est acceptée. Le suricate est retiré de la savane : aucune source acceptable pour ce qu’il mange.
+- Revue produit et rédaction : fiches de la savane réécrites pour 8-16 ans (10 rôles, 4 consignes de protection), textes plus concrets au récif, régimes expliqués (« Détritivore (mange des restes de plantes) »), habitats précisés pour 6 espèces du récif.
+- Corrections scientifiques : rhinocéros noir (il mange surtout des feuilles), mérou et murène (chasse en équipe), étoile couronne d’épines et triton, plancton et oxygène, algues (crampon), holothurie.
+- Quiz : « Menus et cartes » devient « Régimes et régions », la bonne réponse est rappelée en toutes lettres, les régimes « à dominante » ne sont plus posés, leurres plus plausibles, question sur le plus grand oiseau du monde.
+- Interface : accroche « Qui mange qui ? » sous le titre de chaque univers, espaces insécables avant ? ! : ; sur les fiches, étiquettes de sources lisibles (Animal Diversity Web, FishBase…), texte d’aide des silhouettes plus honnête.
+- Page coulisses : signature et lien vers le site en haut de page, ligne « coût de fonctionnement 0 € », trois audits au lieu de deux (appareils simulés), affirmations alignées sur ce que le code fait vraiment, menu lisible sur mobile.
+- Polices : Playfair Display et Inter sont prévues, avec repli sur les polices du système tant que les fichiers ne sont pas hébergés sur le site.
+
 ## 3.2.1
 - Retour aux émojis pour tous les animaux qui ont un émoji représentatif. Les silhouettes ne sont gardées que pour 15 espèces sans émoji correspondant : hyène, oryctérope, autruche, suricate, pangolin, porc-épic, outarde kori, bucorve (savane) ; anémone, oursin, étoile de mer épineuse, holothurie, raie manta, hippocampe, dugong (récif).
 
