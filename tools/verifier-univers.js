@@ -6,6 +6,7 @@ const vm = require('vm');
 const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync('univers/registre.js', 'utf8'), ctx);
 let errors = 0;
+const totaux = { univers: 0, especes: 0, liens: 0, sources: 0 };
 const err = (u, m) => { errors++; console.log(`✗ ${u} : ${m}`); };
 const warn = (u, m) => console.log(`⚠ ${u} : ${m}`);
 for (const u of ctx.window.RV_UNIVERS) {
@@ -31,8 +32,27 @@ for (const u of ctx.window.RV_UNIVERS) {
     if (!c.options.some((o) => o[0] === c.correct)) err(u.id, `curiosité sans bonne réponse (${c.q})`);
   }
   for (const n of m.comprendre.chaine) if (n.id && !ids.has(n.id)) err(u.id, `chaîne : ${n.id} inconnu`);
+  // Chaîne de l’accueil : du plus fort au plus faible, chaque maillon mange le suivant.
+  const ch = m.chaineHero || [];
+  if (ch.length < 2) err(u.id, 'chaineHero : au moins 2 maillons');
+  for (let i = 0; i < ch.length; i++) {
+    if (!ids.has(ch[i])) err(u.id, `chaineHero : ${ch[i]} inconnu`);
+    else if (i && !d.links.some((l) => l.eater === ch[i - 1] && l.food === ch[i])) err(u.id, `chaineHero : ${ch[i - 1]} ne mange pas ${ch[i]}`);
+  }
+  if (!m.chaineHeroTexte) err(u.id, 'chaineHeroTexte absent');
   if (!fs.existsSync(m.carte.fichier)) err(u.id, 'fichier de cartes absent');
   else { const html = fs.readFileSync(m.carte.fichier, 'utf8'); for (const r of Object.keys(m.regions)) if (!html.includes(`data-region="${r}"`)) err(u.id, `région ${r} absente des cartes`); if (/style=|<script/i.test(html)) err(u.id, 'cartes : style ou script en ligne (interdit par la politique de sécurité)'); }
+  totaux.univers++; totaux.especes += d.species.length; totaux.liens += d.links.length; totaux.sources += d.links.filter((l) => l.source).length;
   console.log(`✓ ${u.id} : ${d.species.length} êtres vivants et ressources, ${d.links.length} liens`);
+}
+// Les chiffres affichés sur la page « coulisses » doivent correspondre aux données.
+if (fs.existsSync('coulisses.html')) {
+  const page = fs.readFileSync('coulisses.html', 'utf8');
+  for (const [cle, attendu] of Object.entries(totaux)) {
+    const m = page.match(new RegExp(`data-stat="${cle}">(\\d+)<`));
+    if (!m) err('coulisses', `chiffre « ${cle} » absent de coulisses.html`);
+    else if (Number(m[1]) !== attendu) err('coulisses', `« ${cle} » affiche ${m[1]}, les données donnent ${attendu}`);
+  }
+  console.log('✓ coulisses : chiffres cohérents avec les données');
 }
 process.exit(errors ? 1 : 0);

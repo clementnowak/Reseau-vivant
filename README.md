@@ -4,6 +4,8 @@
 
 👉 **Site en ligne : https://reseau-vivant-education.netlify.app**
 
+📖 **Les coulisses du projet** (démarche, qualité, apprentissages) : https://reseau-vivant-education.netlify.app/coulisses.html
+
 ## Le produit
 
 | | |
@@ -14,11 +16,11 @@
 | **Contraintes** | Coût de fonctionnement : 0 €. Sans publicité, sans cookies, sans compte. Pensé d’abord pour le téléphone. |
 | **Ton** | Curiosité et émerveillement, sans discours moralisateur. |
 
-## Ce que contient la version 3
+## Ce que contient la version 4
 
 Deux univers, qu’on choisit avec la bascule en haut du site :
 
-- **Savane africaine** : 50 animaux, 10 ressources, 149 liens alimentaires
+- **Savane africaine** : 50 animaux, 10 ressources, 177 liens alimentaires
 - **Récif corallien** : 27 animaux, 5 ressources (plancton, algues, herbiers, restes), 57 liens alimentaires
 
 Dans chaque univers :
@@ -37,6 +39,7 @@ Les décisions et audits sont dans le dossier [`docs/`](docs/), les évolutions 
 
 ## Technique
 
+- Tests : `npm install`, puis `npm test` (cohérence des données et parcours complet de chaque univers). Ils tournent aussi sur GitHub à chaque demande de fusion.
 - HTML, CSS et JavaScript sans framework ni dépendance, hébergés sur Netlify (offre gratuite)
 - Un dossier par univers dans `univers/` (`donnees.js` : espèces, liens, sources, textes et réglages du quiz ; `cartes.html` : les deux cartes). Le registre `univers/registre.js` liste les univers : en ajouter un ne demande pas de toucher au code de l’application.
 - Les données d’un univers ne sont chargées que lorsqu’on l’ouvre, pour que le site reste léger avec 3 ou 4 univers
@@ -48,6 +51,7 @@ Les décisions et audits sont dans le dossier [`docs/`](docs/), les évolutions 
 ## Prochaines étapes
 
 - Tester le site avec 3 à 5 enfants de 8 à 16 ans et mesurer ce qu’ils retiennent
-- Associer une source à chaque lien alimentaire
+- Associer une source à chaque lien alimentaire (45 liens sur 234 en ont une aujourd’hui)
+- Faire relire le contenu par un naturaliste
 - Ajouter un troisième univers : les airs
-- Remplacer les émojis approximatifs par des silhouettes d’illustrateurs sous licence libre (PhyloPic)
+- Silhouettes d’illustrateurs sous licence libre (PhyloPic) pour les 15 espèces sans émoji fidèle : fait ; il en reste à trouver pour dix autres

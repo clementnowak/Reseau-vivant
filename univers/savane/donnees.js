@@ -8,13 +8,6 @@ window.RV_DONNEES.savane = {
     "titre": "Réseau vivant — Qui mange qui dans la savane ?",
     "eyebrow": "🌍 La savane africaine",
     "animalParDefaut": "zebre",
-    "decor": [
-      "🦅",
-      "🌳",
-      "🦁",
-      "🦓",
-      "🌾"
-    ],
     "exemplesRecherche": "« antilope », « singe » ou « oiseau »",
     "couleurBarre": "#183e34",
     "aideReseau": "Chaque animal est représenté par son émoji. Quand aucun émoji ne lui correspond, une silhouette dessinée par un illustrateur (PhyloPic) le remplace ; pour quelques espèces, c’est un proche cousin.",
@@ -105,6 +98,12 @@ window.RV_DONNEES.savane = {
       "fichier": "univers/savane/cartes.html",
       "avertissement": "Carte simplifiée : l’animal ne vit pas partout dans la zone orange, seulement là où il trouve son milieu (herbes, arbres, eau…)."
     },
+    "chaineHero": [
+      "lion",
+      "zebre",
+      "herbes"
+    ],
+    "chaineHeroTexte": "Les flèches montrent le chemin de l’énergie : les herbes nourrissent le zèbre, et le zèbre nourrit le lion.",
     "comprendre": {
       "cartes": [
         [
@@ -584,7 +583,7 @@ window.RV_DONNEES.savane = {
       ]
     }
   },
-  "version": "3.2.1",
+  "version": "4.0.0",
   "validation": {
     "links": "177 relations issues d’ouvrages de référence généraux ; certaines relations rares ou surprenantes ont une source dédiée (champ source).",
     "scope": "illustrative_examples_across_multiple_savanna_contexts",

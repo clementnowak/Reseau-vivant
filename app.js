@@ -136,7 +136,6 @@
     if (barre && /^#[0-9a-f]{6}$/i.test(m.couleurBarre || '')) barre.setAttribute('content', m.couleurBarre);
     renderSwitch();
     $('universeEyebrow').textContent = m.eyebrow;
-    document.querySelectorAll('.hero-art .decor').forEach((el, i) => { el.textContent = m.decor[i] || ''; });
     $('animalCount').textContent = U.animals.length;
     $('linkCount').textContent = U.data.links.length;
     $('networkHelp').textContent = m.aideReseau || '';
@@ -150,6 +149,15 @@
       return `<li>${n.id && U.items.has(n.id) ? `<button type="button" data-animal="${escapeHtml(n.id)}" class="chain-node">${inner}</button>` : `<span class="chain-node">${inner}</span>`}</li>`;
     }).join('');
     $('chainFooter').textContent = m.comprendre.chaineTexte;
+    // Chaîne de l’accueil : du plus fort (à gauche) au plus faible, comme la frise « Comprendre » (le fort en haut).
+    // Les flèches pointent vers celui qui mange : elles montrent le chemin de l’énergie.
+    const heroIds = (m.chaineHero || []).filter((id) => U.items.has(id));
+    $('heroChain').innerHTML = heroIds.map((id, i) => {
+      const it = U.items.get(id);
+      return `${i ? '<li class="hero-arrow" aria-hidden="true">←</li>' : ''}<li><button type="button" class="hero-node" data-animal="${escapeHtml(id)}"><span class="hero-node-icon" aria-hidden="true">${U.glyph(id, it.emoji)}</span><span class="hero-node-name">${escapeHtml(shortName(it))}</span></button></li>`;
+    }).join('');
+    $('heroChain').setAttribute('aria-label', `Exemple de chaîne, du plus fort au plus faible : ${heroIds.map((id) => shortName(U.items.get(id))).join(', ')}`);
+    $('heroChainText').textContent = m.chaineHeroTexte || '';
     $('quizIntro').textContent = m.quiz.intro;
     $('sourceList').innerHTML = (U.data.sources || []).map((s) => `<li><a href="${escapeHtml(s.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(s.name)} ↗</a></li>`).join('');
     renderFilters();

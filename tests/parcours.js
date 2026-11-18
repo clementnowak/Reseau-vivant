@@ -61,6 +61,16 @@ server.listen(0, '127.0.0.1', async () => {
     console.log(`\n=== ${uni} : ${ids.length} fiches, ${uniq.length} questions différentes`);
     if (process.argv[3] === 'v') for (const q of uniq.slice(0, 70)) console.log('-', q.q.replace(/\n/g, ' '), '||', q.opts.map(o => o.split('|')[1].replace(/\n/g, ' ')).join(' / '), '=>', q.fb);
   }
+  // Page « Les coulisses » : accessible depuis le pied de page, sans erreur, avec des ancres valides.
+  await page.goto(`http://127.0.0.1:${PORT}/`, { waitUntil: 'networkidle' });
+  const lien = await page.locator('footer a[href="coulisses.html"]').count();
+  if (lien !== 1) errors.push('COULISSES : lien du pied de page absent');
+  await page.goto(`http://127.0.0.1:${PORT}/coulisses.html`, { waitUntil: 'networkidle' });
+  if (!(await page.locator('h1').innerText()).includes('conçu, vérifié et amélioré')) errors.push('COULISSES : titre absent');
+  const ancres = await page.$$eval('a[href^="#"]', (as) => as.map((a) => a.getAttribute('href')).filter((h) => h.length > 1 && !document.querySelector(h)));
+  for (const h of ancres) errors.push('COULISSES : ancre cassée ' + h);
+  const debord = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);
+  if (debord) errors.push('COULISSES : débordement horizontal');
   console.log('errors', JSON.stringify(errors, null, 1));
   await browser.close();
   server.close();

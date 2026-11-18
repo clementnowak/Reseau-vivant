@@ -1,5 +1,12 @@
 # Journal des versions
 
+## 4.0.0 — Refonte visuelle et page « Les coulisses »
+- Identité visuelle : titres en serif avec le mot clé en italique, surfaces claires, une palette par univers (savane : sable, acacia, terre ; récif : écume, bleu profond, corail). Relief réservé aux réponses du quiz et aux filtres.
+- Accueil : le décor dessiné est remplacé par une chaîne d’exemple, lue du plus fort au plus faible comme la frise « Comprendre » ; les flèches montrent le chemin de l’énergie. Nouveau bouton « Jouer au quiz ».
+- Nouvelle page `coulisses.html` (lien dans le pied de page) : démarche, décisions de produit, rôle de l’IA, ce qui est vérifié ou non, apprentissages, protocole du test avec des enfants, historique. Ses chiffres sont comparés aux données par le vérificateur.
+- Le vérificateur contrôle aussi la chaîne de l’accueil. Le test de parcours visite la page des coulisses.
+- Polices : Playfair Display et Inter sont prévues, avec repli sur les polices du système tant que les fichiers ne sont pas hébergés sur le site.
+
 ## 3.2.1
 - Retour aux émojis pour tous les animaux qui ont un émoji représentatif. Les silhouettes ne sont gardées que pour 15 espèces sans émoji correspondant : hyène, oryctérope, autruche, suricate, pangolin, porc-épic, outarde kori, bucorve (savane) ; anémone, oursin, étoile de mer épineuse, holothurie, raie manta, hippocampe, dugong (récif).
 

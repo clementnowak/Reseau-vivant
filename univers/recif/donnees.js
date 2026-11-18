@@ -8,13 +8,6 @@ window.RV_DONNEES.recif = {
     "titre": "Réseau vivant — Qui mange qui sur le récif corallien ?",
     "eyebrow": "🪸 Le récif corallien",
     "animalParDefaut": "poisson_clown",
-    "decor": [
-      "🐟",
-      "🪸",
-      "🐢",
-      "🐠",
-      "🌿"
-    ],
     "exemplesRecherche": "« requin », « tortue » ou « poisson »",
     "couleurBarre": "#123c55",
     "aideReseau": "Chaque animal est représenté par son émoji. Quand aucun émoji ne lui correspond, une silhouette dessinée par un illustrateur (PhyloPic) le remplace ; pour quelques espèces, c’est un proche cousin.",
@@ -112,6 +105,12 @@ window.RV_DONNEES.recif = {
       "fichier": "univers/recif/cartes.html",
       "avertissement": "Carte simplifiée : l’animal ne vit pas partout dans la zone colorée, seulement près des récifs, dans les eaux chaudes et peu profondes."
     },
+    "chaineHero": [
+      "requin_tigre",
+      "dugong",
+      "herbiers"
+    ],
+    "chaineHeroTexte": "Les flèches montrent le chemin de l’énergie : les herbiers nourrissent le dugong, que le requin-tigre peut chasser.",
     "comprendre": {
       "cartes": [
         [
@@ -564,7 +563,7 @@ window.RV_DONNEES.recif = {
       ]
     }
   },
-  "version": "3.2.1",
+  "version": "4.0.0",
   "validation": {
     "links": "Relations issues d’ouvrages de référence généraux ; les relations surprenantes ont une source dédiée (champ source).",
     "rangeMapping": "grandes régions de récifs, approximatives, pas d’aires de répartition précises"
