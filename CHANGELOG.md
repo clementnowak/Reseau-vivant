@@ -1,5 +1,8 @@
 # Journal des versions
 
+## Non publié
+- Polices : Inter (texte) et Lora (titres) sont hébergées sur le site (6 fichiers, 181 Ko au total, licence SIL OFL), sans appel à un service externe : même rendu sur tous les appareils, y compris sur Android, qui n’embarque généralement pas Georgia.
+
 ## 4.0.0 — Refonte visuelle et page « Les coulisses »
 - Identité visuelle : titres en serif avec le mot clé en italique, surfaces claires, une palette par univers (savane : sable, acacia, terre ; récif : écume, bleu profond, corail). Relief réservé aux réponses du quiz et aux filtres.
 - Accueil : le décor dessiné est remplacé par une chaîne d’exemple, lue du plus fort au plus faible comme la frise « Comprendre » ; les flèches montrent le chemin de l’énergie. Nouveau bouton « Jouer au quiz ».
@@ -14,7 +17,6 @@
 - Quiz : « Menus et cartes » devient « Régimes et régions », la bonne réponse est rappelée en toutes lettres, les régimes « à dominante » ne sont plus posés, leurres plus plausibles, question sur le plus grand oiseau du monde.
 - Interface : accroche « Qui mange qui ? » sous le titre de chaque univers, espaces insécables avant ? ! : ; sur les fiches, étiquettes de sources lisibles (Animal Diversity Web, FishBase…), texte d’aide des silhouettes plus honnête.
 - Page coulisses : signature et lien vers le site en haut de page, ligne « coût de fonctionnement 0 € », trois audits au lieu de deux (appareils simulés), affirmations alignées sur ce que le code fait vraiment, menu lisible sur mobile.
-- Polices : Playfair Display et Inter sont prévues, avec repli sur les polices du système tant que les fichiers ne sont pas hébergés sur le site.
 
 ## 3.2.1
 - Retour aux émojis pour tous les animaux qui ont un émoji représentatif. Les silhouettes ne sont gardées que pour 15 espèces sans émoji correspondant : hyène, oryctérope, autruche, suricate, pangolin, porc-épic, outarde kori, bucorve (savane) ; anémone, oursin, étoile de mer épineuse, holothurie, raie manta, hippocampe, dugong (récif).
