@@ -1,3 +1,7 @@
+@font-face { font-family: Inter; font-style: normal; font-weight: 400; font-display: swap; src: url("assets/fonts/inter-400.woff") format("woff"); }
+@font-face { font-family: Inter; font-style: normal; font-weight: 600; font-display: swap; src: url("assets/fonts/inter-600.woff") format("woff"); }
+@font-face { font-family: Inter; font-style: normal; font-weight: 700; font-display: swap; src: url("assets/fonts/inter-700.woff") format("woff"); }
+@font-face { font-family: Inter; font-style: normal; font-weight: 800; font-display: swap; src: url("assets/fonts/inter-800.woff") format("woff"); }
 /* Réseau vivant — feuille de style mobile first.
    Les styles de base visent un téléphone (dès 320 px) ;
    les media queries min-width enrichissent la mise en page pour tablette et ordinateur. */
