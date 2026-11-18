@@ -202,8 +202,7 @@ window.RV_DONNEES.savane = {
         "mode": "laquelle",
         "especes": [
           "gazelle",
-          "springbok",
-          "suricate"
+          "springbok"
         ],
         "question": "Dans quelle région d’Afrique vit {x} ?"
       },
@@ -366,30 +365,6 @@ window.RV_DONNEES.savane = {
           "correct": "arbre",
           "why": "En hauteur, sa proie est à l’abri des lions et des hyènes.",
           "animal": "leopard"
-        },
-        {
-          "emoji": "👀",
-          "q": "Que fait le suricate « sentinelle » ?",
-          "options": [
-            [
-              "garde",
-              "Il surveille les dangers",
-              "👀"
-            ],
-            [
-              "chasse",
-              "Il chasse pour tout le groupe",
-              "🎯"
-            ],
-            [
-              "dort",
-              "Il dort pendant la journée",
-              "😴"
-            ]
-          ],
-          "correct": "garde",
-          "why": "Pendant que les autres cherchent à manger, il monte la garde et donne l’alerte.",
-          "animal": "suricate"
         },
         {
           "emoji": "🦓",
@@ -585,7 +560,7 @@ window.RV_DONNEES.savane = {
   },
   "version": "4.0.0",
   "validation": {
-    "links": "163 relations ; chacune cite sa source dans le champ source (pages de référence, bases de données et articles scientifiques).",
+    "links": "161 relations ; chacune cite sa source dans le champ source (pages de référence, bases de données et articles scientifiques).",
     "scope": "illustrative_examples_across_multiple_savanna_contexts",
     "note": "Chaque relation est associée à une source ; certaines sources restent générales (par exemple « rongeurs »).",
     "rangeMapping": "broad_regions_approximate_not_species_polygons",
@@ -977,7 +952,7 @@ window.RV_DONNEES.savane = {
       "diet": "Carnivore",
       "habitat": "Savane africaine",
       "description": "Grand rapace africain qui capture différents animaux, dont des mammifères et des oiseaux.",
-      "role": "Il chasse depuis le ciel des animaux de taille moyenne ou petite : lièvres, suricates, jeunes singes.",
+      "role": "Il chasse depuis le ciel des animaux de taille moyenne ou petite : lièvres, rongeurs, jeunes singes.",
       "fun": "C’est le plus grand aigle d’Afrique.",
       "protect": "Préserver les grands arbres de nidification et réduire les persécutions.",
       "type": "animal",
@@ -1242,24 +1217,6 @@ window.RV_DONNEES.savane = {
         "south",
         "sahel"
       ]
-    },
-    {
-      "id": "suricate",
-      "name": "Suricate",
-      "scientific": "Suricata suricatta",
-      "group": "Mammifères",
-      "emoji": "🐾",
-      "diet": "Insectivore et omnivore",
-      "habitat": "Milieux secs d’Afrique australe",
-      "description": "Il mange surtout des invertébrés et peut aussi consommer de petits vertébrés.",
-      "role": "Il participe aux relations alimentaires du sol et des milieux secs.",
-      "fun": "Un membre du groupe peut monter la garde pendant que les autres cherchent de la nourriture.",
-      "protect": "Préserver les habitats semi-arides et éviter l’usage de poisons.",
-      "type": "animal",
-      "regions": [
-        "south"
-      ],
-      "culture": "Comme Timon dans « Le Roi Lion »."
     },
     {
       "id": "serval",
@@ -2813,20 +2770,6 @@ window.RV_DONNEES.savane = {
       "note": "parfois, surtout les petits",
       "rare": true,
       "source": "https://doi.org/10.1093/beheco/arx098"
-    },
-    {
-      "eater": "aigle",
-      "food": "suricate",
-      "kind": "predation",
-      "note": "",
-      "source": "https://www.eol.org/pages/311580/articles"
-    },
-    {
-      "eater": "chacal",
-      "food": "suricate",
-      "kind": "predation",
-      "note": "",
-      "source": "https://www.eol.org/pages/311580/articles"
     },
     {
       "eater": "lion",

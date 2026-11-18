@@ -18,7 +18,6 @@ Les fichiers sont simplifiés (tracés allégés, un seul remplissage, aucun scr
 | chacal | Lupulella mesomelas | Margot Michaud | CC0 | [voir](https://www.phylopic.org/images/97fb22c0-66a6-4e1b-a921-adfaa70204a9) |
 | orycterope | Orycteropus afer | Kai Caspar | CC0 | [voir](https://www.phylopic.org/images/5d3926b8-53b9-4382-8dd6-eaa273c79113) |
 | autruche | Struthio camelus | Marie Attard | PDM | [voir](https://www.phylopic.org/images/31789d9c-30e0-4f40-8c21-6f76cd5d339b) |
-| suricate | Suricata suricatta | Andy Wilson | CC0 | [voir](https://www.phylopic.org/images/a7243ae1-4147-45a1-a42e-fd4c95b85d4a) |
 | serval | Leptailurus serval | Margot Michaud | CC0 | [voir](https://www.phylopic.org/images/01895510-7c27-489d-b441-6f72b1f562d2) |
 | caracal | Caracal caracal | Lisa Nicvert | CC0 | [voir](https://www.phylopic.org/images/22f9f707-172a-4795-9092-c11120ace165) |
 | renard_oreilles | Otocyon megalotis | Margot Michaud | CC0 | [voir](https://www.phylopic.org/images/e3216994-9ab7-481d-a56e-13c5957cb0b5) |
