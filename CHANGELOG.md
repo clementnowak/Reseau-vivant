@@ -1,6 +1,7 @@
 # Journal des versions
 
 ## Non publié
+- Page « Les coulisses » condensée (de 19 à 14 Ko) : décisions réduites à cinq, cycle de travail et historique retirés, apprentissages et test en une ligne chacun, tuile « 7 jours » ajoutée.
 - Polices : Inter (texte) et Lora (titres) sont hébergées sur le site (6 fichiers, 181 Ko au total, licence SIL OFL), sans appel à un service externe : même rendu sur tous les appareils, y compris sur Android, qui n’embarque généralement pas Georgia.
 
 ## 4.0.0 — Refonte visuelle et page « Les coulisses »
