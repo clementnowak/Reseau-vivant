@@ -21,7 +21,7 @@ server.listen(0, '127.0.0.1', async () => {
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', e => errors.push('PAGEERROR ' + e.message));
-  page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('console', m => { if (m.type() === 'error') errors.push(m.text() + ' @ ' + (m.location().url||'') + ' | page ' + page.url()); });
   await page.goto('http://127.0.0.1:'+PORT+'/', { waitUntil: 'networkidle' });
   const only = process.argv[2];
   for (const uni of ['savane', 'recif']) {
@@ -66,7 +66,7 @@ server.listen(0, '127.0.0.1', async () => {
   const lien = await page.locator('footer a[href="coulisses.html"]').count();
   if (lien !== 1) errors.push('COULISSES : lien du pied de page absent');
   await page.goto(`http://127.0.0.1:${PORT}/coulisses.html`, { waitUntil: 'networkidle' });
-  if (!(await page.locator('h1').innerText()).includes('conçu, vérifié et amélioré')) errors.push('COULISSES : titre absent');
+  if (!(await page.locator('h1').innerText()).includes('conçu, vérifié et mis en ligne')) errors.push('COULISSES : titre absent');
   const ancres = await page.$$eval('a[href^="#"]', (as) => as.map((a) => a.getAttribute('href')).filter((h) => h.length > 1 && !document.querySelector(h)));
   for (const h of ancres) errors.push('COULISSES : ancre cassée ' + h);
   const debord = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);

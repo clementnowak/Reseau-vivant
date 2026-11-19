@@ -1,5 +1,7 @@
 # Audit indépendant de « Réseau vivant » (v2.0.0), 13 novembre 2026
 
+> Audit réalisé sur la v2.0.0 : le verdict ci-dessous décrit l’état de l’époque. Les corrections qui en découlent sont dans la 2.1.0 (voir le CHANGELOG).
+
 Périmètre : site local (serveur local), Chrome avec Playwright. Appareils testés : iPhone 13 (390 px), iPhone SE (320 px), ordinateur 1440×900, et un essai sans JavaScript. Points vérifiés : parcours complet, 13 fiches ouvertes (lion, zèbre, girafe, guépard, herbes, rhino_blanc, hyène, termite, pangolin, carcasses, détritus, baobab, gazelle), 375 réponses de quiz automatisées (121 questions différentes), navigation au clavier, débordements, contrastes calculés, en-têtes de sécurité du contenu (CSP) de `netlify.toml` injectés.
 Captures : `audit/shots/`. Scripts : `audit/*.js`.
 Limites : pas de lecteur d'écran réel, pas d'appareil physique, pas de test avec des enfants. Le site en ligne n'a pas été testé, seulement la copie locale.
