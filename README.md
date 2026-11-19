@@ -20,8 +20,8 @@
 
 Deux univers, qu’on choisit avec la bascule en haut du site :
 
-- **Savane africaine** : 50 animaux, 10 ressources, 177 liens alimentaires
-- **Récif corallien** : 27 animaux, 5 ressources (plancton, algues, herbiers, restes), 57 liens alimentaires
+- **Savane africaine** : 49 animaux, 10 ressources, 161 liens alimentaires, chacun avec sa source
+- **Récif corallien** : 27 animaux, 5 ressources (plancton, algues, herbiers, restes), 48 liens alimentaires, chacun avec sa source
 
 Dans chaque univers :
 

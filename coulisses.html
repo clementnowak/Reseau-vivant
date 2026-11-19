@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#2f5233">
-  <meta name="description" content="Les coulisses de Réseau vivant : le problème, les choix de produit, la méthode, les contrôles qualité et ce que le projet m’a appris.">
+  <meta name="description" content="Les coulisses de Réseau vivant : décisions de produit, contrôles qualité et erreurs d’un site éducatif conçu, vérifié et mis en ligne par une seule personne.">
   <meta property="og:title" content="Les coulisses de Réseau vivant">
-  <meta property="og:description" content="Comment un site éducatif sur les chaînes alimentaires est conçu, vérifié et amélioré : méthode, décisions, qualité et apprentissages.">
+  <meta property="og:description" content="209 relations «&nbsp;qui mange qui&nbsp;» sourcées, 7 jours entre le premier commit et la version 4.0, et ce que le projet m’a appris.">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:url" content="https://reseau-vivant-education.netlify.app/coulisses.html">
@@ -28,7 +28,6 @@
       </a>
       <nav class="top-nav" aria-label="Navigation de la page">
         <a href="#demarche">Démarche</a>
-        <a href="#qualite">Qualité</a>
         <a href="#apprentissages">Apprentissages</a>
         <a href="#test-enfants">Test enfants</a>
         <a href="index.html" class="back-link">← Le site</a>
@@ -39,113 +38,71 @@
   <main id="contenu">
     <section class="cl-hero shell" aria-labelledby="titre">
       <p class="eyebrow">Les coulisses</p>
-      <h1 id="titre">Comment Réseau vivant est <em>conçu, vérifié et amélioré.</em></h1>
-      <p class="cl-lead">Un site éducatif gratuit sur les chaînes alimentaires, pour les 8-16 ans. Conçu, testé et mis en ligne par un seul product builder&nbsp;: cette page montre la méthode, le détail est dans le code.</p>
-      <p class="cl-by">Par Clément Nowak · <a href="index.html">Voir le site</a> · <a href="https://github.com/clementnowak/Reseau-vivant" target="_blank" rel="noopener noreferrer">Code source ↗</a></p>
+      <h1 id="titre">Un produit éducatif <em>conçu, vérifié et mis en ligne par une seule personne.</em></h1>
+      <p class="cl-lead">Réseau vivant explique les chaînes alimentaires aux 8-16 ans. Je l’ai conçu avec des assistants IA et relu moi-même, pour un coût de fonctionnement de 0&nbsp;€. Cette page montre mes décisions et mes erreurs.</p>
+      <p class="cl-by">Par Clément Nowak · <a href="index.html">Voir le site</a> · <a href="https://github.com/clementnowak/Reseau-vivant" target="_blank" rel="noopener noreferrer">Code source ↗</a> · <a href="https://github.com/clementnowak/Reseau-vivant/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Journal des versions ↗</a></p>
       <ul class="stat-grid" aria-label="Le projet en chiffres">
-        <li><strong data-stat="univers">2</strong><span>univers&nbsp;: la savane et le récif corallien</span></li>
-        <li><strong data-stat="especes">91</strong><span>êtres vivants et ressources, de l’herbe au requin</span></li>
-        <li><strong data-stat="liens">209</strong><span>relations «&nbsp;qui mange qui&nbsp;», chacune avec sa source</span></li>
         <li><strong>7 jours</strong><span>entre le premier commit du dépôt et la version 4.0 en ligne</span></li>
+        <li><strong data-stat="liens">209</strong><span>relations «&nbsp;qui mange qui&nbsp;», chacune avec sa source</span></li>
+        <li><strong data-stat="especes">91</strong><span>êtres vivants et ressources, de l’herbe au requin</span></li>
+        <li><strong data-stat="univers">2</strong><span>univers&nbsp;: la savane et le récif corallien</span></li>
       </ul>
-      <p class="cl-asof">Chiffres vérifiés automatiquement à chaque modification, version 4.0.0 (18 novembre 2026).</p>
+      <p class="cl-asof">Chiffres contrôlés par un script à chaque modification · version 4.0.0, 18 novembre 2026. Pas encore fait&nbsp;: test avec des enfants, relecture par un naturaliste.</p>
     </section>
 
     <section id="demarche" class="cl-section shell" aria-labelledby="t-demarche">
       <p class="eyebrow">01 · Démarche</p>
       <h2 id="t-demarche">Le problème, le public, <em>les choix.</em></h2>
-      <div class="cl-two">
-        <div class="cl-prose">
-          <h3>Le problème</h3>
-          <p>À l’école, une chaîne alimentaire est une ligne droite. La nature est un réseau&nbsp;: un animal en mange plusieurs et est mangé par plusieurs.</p>
-          <h3>Le public</h3>
-          <p>Les 8-16 ans, en mobile-first. On choisit un animal, on voit ce qu’il mange et qui le mange, et on voyage de voisin en voisin.</p>
-          <h3>Mon rôle de product builder</h3>
-          <p>Je pars d’un besoin, je décide de ce qui entre dans le produit et je le mets en ligne. Des assistants IA écrivent le code&nbsp;; je relis chaque changement avant de le fusionner.</p>
-        </div>
-        <aside class="cl-card" aria-labelledby="t-principes">
-          <h3 id="t-principes">Quatre principes</h3>
-          <ul class="cl-list">
-            <li><strong>Pensé pour des enfants.</strong> Gratuit, sans publicité, sans cookies, sans inscription.</li>
-            <li><strong>Sourcé.</strong> Chaque relation renvoie à une source.</li>
-            <li><strong>Mobile-first.</strong> Zones tactiles de 44 pixels, contrastes contrôlés, clavier.</li>
-            <li><strong>Testé à chaque modification.</strong> Données, fiches et quiz, avant chaque fusion.</li>
-          </ul>
-        </aside>
+      <div class="cl-prose">
+        <h3>Le problème</h3>
+        <p>À l’école, une chaîne alimentaire est une ligne droite. La nature est un réseau&nbsp;: un animal en mange plusieurs et est mangé par plusieurs.</p>
+        <h3>Le public</h3>
+        <p>Les 8-16 ans, en mobile-first (zones tactiles de 44 pixels, contrastes contrôlés, clavier). On choisit un animal, on voit ce qu’il mange et qui le mange, et on voyage de voisin en voisin.</p>
+        <h3>Mon rôle et celui de l’IA</h3>
+        <p>Je pars d’un besoin, je fixe ce qui entre dans le produit et ce qui doit être vrai, je mets en ligne. ChatGPT puis Claude écrivent le code et m’aident à chercher des sources&nbsp;; je relis chaque changement avant de le fusionner. Une IA peut se tromper avec aplomb&nbsp;: je m’appuie donc sur des tests automatiques, des sources citées et des audits.</p>
       </div>
 
-      <h3 class="cl-subtitle">Cinq décisions, et ce qu’elles coûtent</h3>
+      <h3 class="cl-subtitle">Quatre décisions, et ce qu’elles coûtent</h3>
       <div class="table-scroll" role="region" aria-label="Tableau des décisions de produit" tabindex="0">
         <table class="cl-table">
           <thead><tr><th scope="col">Décision</th><th scope="col">Arbitrage assumé</th></tr></thead>
           <tbody>
             <tr><th scope="row">Un réseau, pas une ligne</th><td>Plus complexe pour un enfant de 8 ans&nbsp;: c’est la première hypothèse à tester.</td></tr>
-            <tr><th scope="row">Aucun cookie, aucun compte</th><td>Public mineur, donc rien n’est collecté. En contrepartie, aucune statistique d’usage&nbsp;: je dépends de tests en personne.</td></tr>
-            <tr><th scope="row">Des émojis, des silhouettes seulement quand l’émoji est faux</th><td>Léger et lisible tout de suite. Quelques silhouettes montrent un proche cousin&nbsp;: le site le précise.</td></tr>
+            <tr><th scope="row">Aucun cookie, aucun compte, 0&nbsp;€ de coût</th><td>Public mineur&nbsp;: rien n’est collecté, aucun service tiers. En contrepartie, aucune statistique d’usage&nbsp;: je dépends de tests en personne.</td></tr>
             <tr><th scope="row">Chaque relation sourcée</th><td>J’ai retiré les 24 relations que je n’ai pas pu sourcer. Certaines sources restent générales («&nbsp;rongeurs&nbsp;»).</td></tr>
-            <tr><th scope="row">Aucun service tiers, coût de fonctionnement&nbsp;: 0&nbsp;€</th><td>Hébergement gratuit, polices hébergées, pas de base de données.</td></tr>
+            <tr><th scope="row">Des émojis, des silhouettes seulement quand l’émoji est faux</th><td>Lisible tout de suite. Quelques silhouettes montrent un proche cousin&nbsp;: le site le précise.</td></tr>
           </tbody>
         </table>
       </div>
-
-      <div class="cl-callout">
-        <h3>La place de l’IA</h3>
-        <p>ChatGPT, puis Claude, écrivent le code et m’aident à auditer et à chercher des sources. Je fixe les critères d’acceptation. Une IA peut se tromper avec aplomb&nbsp;: je m’appuie donc sur des tests automatiques, des sources citées, des audits et des tests avec de vrais enfants et adolescents.</p>
-      </div>
+      <p class="cl-intro cl-audits-line"><strong>Ce que les tests contrôlent&nbsp;:</strong> cohérence des données, relations et sources&nbsp;; parcours complet des fiches et des quiz pour chaque univers. Trois audits en six jours (12, 13 et 17 novembre)&nbsp;: produit, indépendant sur appareils simulés, conformité. <a href="https://github.com/clementnowak/Reseau-vivant/blob/main/docs/audit-conformite-2026-11-17.md" target="_blank" rel="noopener noreferrer">Dernier rapport ↗</a></p>
     </section>
 
-    <section id="qualite" class="cl-section cl-band" aria-labelledby="t-qualite">
+    <section id="apprentissages" class="cl-section cl-band" aria-labelledby="t-appr">
       <div class="shell">
-        <p class="eyebrow">02 · Qualité</p>
-        <h2 id="t-qualite">Ce que les tests <em>garantissent.</em></h2>
-        <div class="check-grid">
-          <div class="check-col check-yes">
-            <h3>Contrôlé automatiquement</h3>
-            <ul>
-              <li>Cohérence des données, relations et sources.</li>
-              <li>Parcours complet des fiches et des quiz, pour chaque univers.</li>
-              <li>Les chiffres de cette page.</li>
-            </ul>
-          </div>
-          <div class="check-col check-no">
-            <h3>Hors du champ des tests</h3>
-            <ul>
-              <li>Exactitude scientifique&nbsp;: relecture par un naturaliste à prévoir.</li>
-              <li>Compréhension par les 8-16 ans&nbsp;: test décrit plus bas.</li>
-            </ul>
-          </div>
+        <p class="eyebrow">02 · Apprentissages</p>
+        <h2 id="t-appr">Deux erreurs, <em>deux règles.</em></h2>
+        <div class="learn-grid">
+          <article class="learn">
+            <h3>Le site marchait, mais il se trompait</h3>
+            <p>Des images fausses ont passé tous les tests&nbsp;: ils vérifient que le site fonctionne, pas qu’il dit vrai.</p>
+            <p class="learn-take">Je relis le sens de chaque image et j’écris ce que chaque test garantit.</p>
+          </article>
+          <article class="learn">
+            <h3>Mes silhouettes IA valaient moins que des émojis</h3>
+            <p>Mes premières silhouettes, générées par IA, ressemblaient peu aux animaux&nbsp;: retirées. Celles d’illustrateurs (PhyloPic) étaient parfois moins lisibles que l’émoji, alors que je les avais mises partout.</p>
+            <p class="learn-take">Je tranche sur l’usage, pas sur le travail déjà fourni.</p>
+          </article>
         </div>
-        <p class="cl-intro cl-audits-line">Trois audits en six jours (12, 13 et 17 novembre)&nbsp;: produit, indépendant sur appareils simulés, puis conformité. <a href="https://github.com/clementnowak/Reseau-vivant/blob/main/docs/audit-conformite-2026-11-17.md" target="_blank" rel="noopener noreferrer">Rapport complet ↗</a></p>
+        <p class="cl-intro cl-audits-line">Aussi&nbsp;: deux demandes de fusion mal ordonnées n’ont jamais atteint la version en ligne. Depuis, je vérifie la branche principale après chaque fusion.</p>
       </div>
     </section>
 
-    <section id="apprentissages" class="cl-section shell" aria-labelledby="t-appr">
-      <p class="eyebrow">03 · Apprentissages</p>
-      <h2 id="t-appr">Trois erreurs, <em>trois règles de travail.</em></h2>
-      <div class="learn-grid">
-        <article class="learn">
-          <h3>Le site marchait, mais il se trompait</h3>
-          <p>Des images fausses ont passé tous les tests&nbsp;: ils vérifient que le site fonctionne, pas qu’il dit vrai.</p>
-          <p class="learn-take">Je relis le sens de chaque image et j’écris ce que chaque test garantit.</p>
-        </article>
-        <article class="learn">
-          <h3>Mes silhouettes IA valaient moins que des émojis</h3>
-          <p>Mes premières silhouettes, générées par IA, ressemblaient peu aux animaux&nbsp;: retirées. Celles d’illustrateurs (PhyloPic) étaient parfois moins lisibles que l’émoji, alors que je les avais mises partout.</p>
-          <p class="learn-take">Je tranche sur l’usage, pas sur le travail déjà fourni.</p>
-        </article>
-        <article class="learn">
-          <h3>Deux demandes de fusion perdues</h3>
-          <p>Mal ordonnées, elles ont atterri sur des branches intermédiaires&nbsp;: leur contenu n’est jamais arrivé en ligne.</p>
-          <p class="learn-take">Je vérifie la branche principale après chaque fusion.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="test-enfants" class="cl-section cl-band" aria-labelledby="t-test">
-      <div class="shell">
-        <p class="eyebrow">04 · Test avec des enfants et adolescents</p>
-        <h2 id="t-test">Un protocole de test <em>prêt à lancer.</em></h2>
-        <p class="status-line"><span class="status-badge">À venir</span> Séances avec 3 enfants ou adolescents (8-10, 11-13 et 14-16 ans). Les résultats seront publiés ici, y compris s’ils sont mauvais.</p>
+    <section id="test-enfants" class="cl-section shell" aria-labelledby="t-test">
+      <p class="eyebrow">03 · Test avec des enfants et adolescents</p>
+      <h2 id="t-test">Test avec des enfants&nbsp;: <em>à venir.</em></h2>
+      <p class="status-line"><span class="status-badge">À venir</span> 3 séances (8-10, 11-13 et 14-16 ans). Les résultats seront publiés ici, y compris s’ils sont mauvais. Le lancement de l’univers «&nbsp;les airs&nbsp;» dépendra de H1 à H4, pas de l’apparence.</p>
+      <details class="cl-details">
+        <summary>Les 5 hypothèses et le cadre du test</summary>
         <div class="table-scroll" role="region" aria-label="Tableau des hypothèses à tester" tabindex="0">
           <table class="cl-table">
             <thead><tr><th scope="col">Hypothèse</th><th scope="col">Critère de réussite</th></tr></thead>
@@ -158,19 +115,8 @@
             </tbody>
           </table>
         </div>
-        <p class="cl-intro cl-audits-line">Le lancement de l’univers «&nbsp;les airs&nbsp;» dépendra de H1 à H4, pas de l’apparence. Cadre&nbsp;: accord d’un parent, adulte présent, ni enregistrement ni photo, participants anonymes.</p>
-      </div>
-    </section>
-
-    <section id="credits" class="cl-section shell" aria-labelledby="t-credits">
-      <p class="eyebrow">05 · Pour aller plus loin</p>
-      <h2 id="t-credits">Code, sources <em>et crédits.</em></h2>
-      <ul class="cl-list">
-        <li><a href="https://github.com/clementnowak/Reseau-vivant" target="_blank" rel="noopener noreferrer">Code source sur GitHub ↗</a>&nbsp;: historique complet, demandes de fusion et tests.</li>
-        <li><a href="https://github.com/clementnowak/Reseau-vivant/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Journal des versions ↗</a></li>
-        <li><a href="https://github.com/clementnowak/Reseau-vivant/blob/main/docs/credits-silhouettes.md" target="_blank" rel="noopener noreferrer">Crédits des silhouettes ↗</a> (<a href="https://www.phylopic.org" target="_blank" rel="noopener noreferrer">PhyloPic</a>, CC0 ou domaine public). Fonds de carte&nbsp;: Natural Earth.</li>
-      </ul>
-      <p class="cl-back"><a class="cta" href="index.html">← Retourner explorer le réseau</a></p>
+        <p>Cadre&nbsp;: accord d’un parent, adulte présent, ni enregistrement ni photo, participants anonymes.</p>
+      </details>
     </section>
   </main>
 
@@ -179,11 +125,7 @@
       <div class="footer-brand">
         <span class="footer-logo">réseauvivant.</span>
         <p>Un projet éducatif gratuit pour découvrir le vivant avec curiosité.</p>
-        <p>Sans publicité, sans cookies, sans inscription.</p>
-        <ul class="footer-links">
-          <li><a href="index.html">Retour au site</a></li>
-          <li><a href="https://github.com/clementnowak/Reseau-vivant" target="_blank" rel="noopener noreferrer">Code source sur GitHub ↗</a></li>
-        </ul>
+        <p class="footer-credits"><a href="https://github.com/clementnowak/Reseau-vivant/blob/main/docs/credits-silhouettes.md" target="_blank" rel="noopener noreferrer">Silhouettes</a> : PhyloPic (CC0 ou domaine public) · Fonds de carte : Natural Earth.</p>
       </div>
       <details class="about">
         <summary>Mentions légales</summary>

@@ -100,3 +100,15 @@ html { scroll-padding-top: 84px; }
   .page-coulisses .top-nav .back-link { order: -1; }
 }
 .cl-audits-line { margin: 22px 0 0; font-size: 16px; }
+.cl-details { margin: 8px 0 0; }
+.cl-details summary { cursor: pointer; font-weight: 800; color: var(--forest); padding: 10px 0; }
+.cl-details p { margin: 14px 0 0; }
+@media (max-width: 640px) {
+  .cl-table thead { display: none; }
+  .cl-table, .cl-table tbody, .cl-table tr, .cl-table th, .cl-table td { display: block; width: 100%; }
+  .cl-table tr { padding: 12px 14px; border-bottom: 1px solid var(--border); }
+  .cl-table tbody th, .cl-table th[scope="row"] { width: 100%; margin-bottom: 2px; padding: 0; border: 0; }
+  .cl-table td { padding: 0; border: 0; }
+  .cl-table { min-width: 0; }
+  .table-scroll { overflow: visible; }
+}

@@ -316,6 +316,7 @@ button.chain-node:hover { border-color: var(--green); }
 .footer-inner { display: grid; gap: 16px; }
 .footer-logo { font-size: 21px; color: #fff; font-weight: 850; }
 .footer-brand p { font-size: 14px; margin: 6px 0 0; color: #a9bfb1; }
+.footer-credits a { color: #d6e4d9; text-decoration: underline; }
 .about { border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 10px; }
 .about summary { cursor: pointer; font-weight: 750; min-height: var(--tap); display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #e2eedd; list-style: none; }
 .about summary::-webkit-details-marker { display: none; }
@@ -576,3 +577,5 @@ html[data-univers="recif"] .eaters .count-pill { color: #8a2e17; }
 .footer-links a { color: #e8f1de; font-weight: 700; font-size: 14px; min-height: var(--tap); display: inline-flex; align-items: center; }
 .footer-links a:hover { color: #fff; }
 .footer-links a:focus-visible { outline-color: #fff; }
+.intro-by { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+.intro-by a { color: var(--green); font-weight: 700; }
