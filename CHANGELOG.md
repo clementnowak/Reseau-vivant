@@ -1,6 +1,7 @@
 # Journal des versions
 
 ## Non publié
+- Page « Les coulisses » : identité visuelle propre, plus professionnelle (en-tête vert profond, titres en colonne latérale, filets fins, tableaux sans cartes), avec les mêmes polices et les mêmes verts que le site.
 - Page « Les coulisses » condensée (de 19 à 13 Ko) à la suite d’un audit « recruteur Product Builder » : titre qui dit le résultat, rôle de l’IA fusionné avec le rôle du product builder, tableau de 4 décisions, deux apprentissages, test enfants replié, tuile « 7 jours », tableaux lisibles sur mobile.
 - Accueil : lien « Coulisses » dans le menu et ligne de signature. README aligné sur les chiffres vérifiés (209 relations).
 - Polices : Inter (texte) et Lora (titres) sont hébergées sur le site (6 fichiers, 181 Ko au total, licence SIL OFL), sans appel à un service externe : même rendu sur tous les appareils, y compris sur Android, qui n’embarque généralement pas Georgia.
