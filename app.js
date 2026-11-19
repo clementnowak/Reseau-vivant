@@ -16,7 +16,12 @@
   const SOURCE_NOMS = {
     'animaldiversity.org': 'Animal Diversity Web', 'doi.org': 'Article scientifique', 'fishbase.se': 'FishBase',
     'sealifebase.se': 'SeaLifeBase', 'iucnredlist.org': 'Liste rouge UICN', 'noaa.gov': 'NOAA', 'catsg.org': 'Cat Specialist Group',
-    'sanbi.org': 'SANBI', 'iucngisd.org': 'Base des espèces invasives (UICN)', 'wri.org': 'World Resources Institute', 'sanparks.org': 'SANParks', 'pmc.ncbi.nlm.nih.gov': 'Article scientifique', 'ajol.info': 'Article scientifique'
+    'sanbi.org': 'SANBI', 'iucngisd.org': 'Base des espèces invasives (UICN)', 'wri.org': 'World Resources Institute', 'sanparks.org': 'SANParks', 'pmc.ncbi.nlm.nih.gov': 'Article scientifique', 'ajol.info': 'Article scientifique',
+    'inpn.mnhn.fr': 'INPN (MNHN)', 'lpo.fr': 'LPO', 'allaboutbirds.org': 'Cornell Lab — All About Birds', 'birdsoftheworld.org': 'Birds of the World',
+    'biokids.umich.edu': 'BioKIDS (Université du Michigan)', 'ofb.gouv.fr': 'Office français de la biodiversité', 'british-dragonflies.org.uk': 'British Dragonfly Society', 'parcduluberon.fr': 'Parc naturel régional du Luberon',
+    'riviste.unimi.it': 'Article scientifique', 'research.brighton.ac.uk': 'Article scientifique', 'iop.krakow.pl': 'Article scientifique', 'woodlandtrust.org.uk': 'Woodland Trust', 'eurekalert.org': 'EurekAlert',
+    'oiseaux.net': 'Oiseaux.net', 'bio-scene.org': 'Bio-Scène', 'pyrenees-parcnational.fr': 'Parc national des Pyrénées', 'gwct.org.uk': 'Game & Wildlife Conservation Trust', 'ohioline.osu.edu': 'Ohio State University Extension',
+    'mdc.mo.gov': 'Missouri Department of Conservation', 'grasses.cfans.umn.edu': 'Université du Minnesota', 'food.ec.europa.eu': 'Commission européenne', 'tourduvalat.org': 'Tour du Valat', 'reserves-naturelles.strasbourg.eu': 'Réserves naturelles de Strasbourg', 'developpement-durable.gouv.fr': 'DREAL (État)', 'parc-du-vercors.fr': 'Parc naturel régional du Vercors'
   };
   const sourceLabel = (url) => {
     try {
@@ -48,7 +53,9 @@
     if (isFem(x)) return (de ? 'de la ' : 'la ') + n;
     return (de ? 'du ' : 'le ') + n;
   }
-  const pronoun = (x) => (isFem(x) ? 'elle' : 'il');
+  const pronoun = (x) => (isPlural(x) ? (isFem(x) ? 'elles' : 'ils') : (isFem(x) ? 'elle' : 'il'));
+  const isAre = (x) => (isPlural(x) ? 'sont' : 'est');
+  const doesEat = (x) => (isPlural(x) ? 'mangent' : 'mange');
   const eaterLabels = { predation: 'prédateur', charognage: 'mange les restes', vegetaux: 'en mange', detritivore: 'décomposeur', broutage: 'en mange' };
   const foodLabels = { predation: '', charognage: 'restes d’animaux', vegetaux: '', detritivore: 'matière morte', broutage: '' };
 
@@ -139,7 +146,7 @@
     $('speciesSearch').value = '';
     applyUniverse();
     setHash(push);
-    if (!initial) $('liveCenter').textContent = `Tu explores maintenant : ${U.meta.nom.toLowerCase()}.`;
+    if (!initial) $('liveCenter').textContent = `Tu explores maintenant : ${lowerFirst(U.meta.nom)}.`;
   }
 
   function applyUniverse() {
@@ -193,11 +200,12 @@
   }
 
   function renderLibrary() {
-    const term = normalized($('speciesSearch').value.trim());
+    const flat = (t) => normalized(t).replace(/[-’']/g, ' ').replace(/(\w{3,})[sx]\b/g, '$1');
+    const term = flat($('speciesSearch').value.trim());
     const filter = filters().find((f) => f.id === activeGroup) || filters()[0];
     const test = filterTest(filter);
     const pool = term ? U.data.species : U.data.species.filter(test);
-    const visible = pool.filter((x) => (!activeGroup || test(x)) && (!term || normalized(`${x.name} ${x.scientific} ${x.group} ${x.keywords || ''}`).includes(term)));
+    const visible = pool.filter((x) => (!activeGroup || test(x)) && (!term || flat(`${x.name} ${x.scientific} ${x.group} ${x.keywords || ''}`).includes(term)));
     const filtering = Boolean(term || activeGroup);
     const n = visible.length;
     $('searchResults').textContent = filtering ? `${n} ${n > 1 ? 'résultats' : 'résultat'}` : '';
@@ -237,8 +245,8 @@
     const eaters = U.eatersOf(current);
     const foods = U.foodsOf(current);
     const isResource = x.type === 'resource';
-    $('predTitle').innerHTML = `<span aria-hidden="true">⬆️</span> ${isResource ? 'Qui en mange ?' : `Qui ${isFem(x) ? 'la' : 'le'} mange ?`}`;
-    $('preyTitle').innerHTML = `<span aria-hidden="true">⬇️</span> ${isResource ? 'D’où vient son énergie ?' : `Que mange-t-${pronoun(x)} ?`}`;
+    $('predTitle').innerHTML = `<span aria-hidden="true">⬆️</span> ${isResource ? 'Qui en mange ?' : `Qui ${isPlural(x) ? 'les' : (isFem(x) ? 'la' : 'le')} mange ?`}`;
+    $('preyTitle').innerHTML = `<span aria-hidden="true">⬇️</span> ${isResource ? 'D’où vient son énergie ?' : `Que ${isPlural(x) ? 'mangent-' : 'mange-t-'}${pronoun(x)} ?`}`;
     $('preyList').classList.toggle('is-long', foods.length > 8);
     $('predCount').textContent = eaters.length || '';
     $('preyCount').textContent = foods.length || '';
@@ -286,11 +294,11 @@
     for (const el of $('maps').querySelectorAll('[data-region]')) el.classList.toggle('is-active', regions.includes(el.dataset.region));
     const res = x.type === 'resource';
     $('rangeTitle').textContent = res ? `Où trouve-t-on ${withArticle(x)} ?` : `Où vit ${withArticle(x)} ?`;
-    if ($('mapCaption')) $('mapCaption').textContent = res ? 'Les régions où on en trouve' : `Les régions où ${pronoun(x)} vit`;
-    if ($('mapLegend')) $('mapLegend').textContent = res ? 'On en trouve dans ces régions' : `${capitalize(pronoun(x))} vit dans ces régions`;
+    if ($('mapCaption')) $('mapCaption').textContent = res ? 'Les régions où on en trouve' : `Les régions où ${pronoun(x)} ${isPlural(x) ? 'vivent' : 'vit'}`;
+    if ($('mapLegend')) $('mapLegend').textContent = res ? 'On en trouve dans ces régions' : `${capitalize(pronoun(x))} ${isPlural(x) ? 'vivent' : 'vit'} dans ces régions`;
     const list = joinFr(regions.filter((r) => R[r]).map((r) => R[r].dans));
     $('rangeSummary').innerHTML = regions.length
-      ? `${res ? 'On en trouve' : (isFem(x) ? 'On la trouve' : 'On le trouve')} surtout <strong>${escapeHtml(list)}</strong>.`
+      ? `${res ? 'On en trouve' : (isPlural(x) ? 'On les trouve' : (isFem(x) ? 'On la trouve' : 'On le trouve'))} surtout <strong>${escapeHtml(list)}</strong>.`
       : 'Sa répartition n’est pas encore renseignée.';
     const desc = $('maps').querySelector('#zoomDesc');
     if (desc) desc.textContent = regions.length ? `Régions coloriées : ${regions.filter((r) => R[r]).map((r) => R[r].court).join(', ')}.` : 'Aucune région coloriée.';
@@ -299,7 +307,7 @@
   function renderHumanLayer(x) {
     const entries = (U.data.humanInteractions || []).filter((h) => h.species === x.id);
     $('humanLayer').hidden = entries.length === 0;
-    $('humanPressureList').innerHTML = entries.map((h) => `<article class="human-pressure-card"><h4>🧑 ${escapeHtml(h.title)} — ${escapeHtml(h.region)}</h4><p>${escapeHtml(h.note)}</p><a href="${escapeHtml(h.sourceUrl)}" target="_blank" rel="noopener noreferrer">En savoir plus (en anglais) ↗</a></article>`).join('');
+    $('humanPressureList').innerHTML = entries.map((h) => `<article class="human-pressure-card"><h4>🧑 ${escapeHtml(h.title)} — ${escapeHtml(h.region)}</h4><p>${escapeHtml(h.note)}</p><a href="${escapeHtml(h.sourceUrl)}" target="_blank" rel="noopener noreferrer">En savoir plus${h.langue === 'fr' ? '' : ' (en anglais)'} ↗</a></article>`).join('');
   }
 
   function select(id, { scroll = true } = {}) {
@@ -347,8 +355,8 @@
     const food = U.items.get(pick(U.foodsOf(herb.id)).food);
     const foodIds = new Set(U.foodsOf(herb.id).map((l) => l.food));
     const wrong = shuffle(U.animals.filter((a) => a.id !== herb.id && !foodIds.has(a.id) && Q.leurresQueMange.includes(a.group) && U.eatersOf(a.id).length)).slice(0, 2);
-    return { emoji: herb.emoji, glyph: U.glyph(herb.id, herb.emoji), q: `Que mange ${withArticle(herb)} ?`, options: shuffle([opt(food), ...wrong.map(opt)]), correct: food.id,
-      why: `${capitalize(withArticle(herb))} est herbivore : ${pronoun(herb)} mange ${Q.motsHerbivore || 'des plantes'}, comme ${withArticle(food)}.`, animal: herb.id };
+    return { emoji: herb.emoji, glyph: U.glyph(herb.id, herb.emoji), q: `Que ${doesEat(herb)} ${withArticle(herb)} ?`, options: shuffle([opt(food), ...wrong.map(opt)]), correct: food.id,
+      why: `${capitalize(withArticle(herb))} ${isPlural(herb) ? 'sont herbivores' : 'est herbivore'} : ${pronoun(herb)} ${doesEat(herb)} ${Q.motsHerbivore || 'des plantes'}, comme ${withArticle(food)}.`, animal: herb.id };
   }
   function qPredatorFood() {
     const Q = U.meta.quiz;
@@ -368,11 +376,11 @@
     const k = dietKind(x);
     const plants = U.meta.quiz.motsHerbivore || 'des plantes';
     const words = { herbivore: plants, carnivore: 'des animaux', omnivore: 'des plantes et des animaux' };
-    return { emoji: x.emoji, glyph: U.glyph(x.id, x.emoji), q: `${capitalize(withArticle(x))} est plutôt…`, options: [
+    return { emoji: x.emoji, glyph: U.glyph(x.id, x.emoji), q: `${capitalize(withArticle(x))} ${isAre(x)} plutôt…`, options: [
       { id: 'herbivore', text: `Herbivore (mange ${plants})`, emoji: '🌿' },
       { id: 'carnivore', text: 'Carnivore (mange des animaux)', emoji: '🥩' },
       { id: 'omnivore', text: 'Omnivore (mange des plantes et des animaux)', emoji: '🍽️' }], correct: k,
-      why: `${capitalize(withArticle(x))} est ${k} : ${pronoun(x)} mange ${words[k]}.`, animal: x.id };
+      why: `${capitalize(withArticle(x))} ${isAre(x)} ${k}${isPlural(x) ? 's' : ''} : ${pronoun(x)} ${doesEat(x)} ${words[k]}.`, animal: x.id };
   }
   function qRegion() {
     const R = U.meta.regions;
