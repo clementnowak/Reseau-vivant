@@ -240,4 +240,74 @@ zoom_recif = (f'<svg id="zoomMap" class="zoom-map recif-map" viewBox="0 0 {ZW} {
               f'<desc id="zoomDesc">Les mers où vit l’animal choisi sont coloriées.</desc><rect class="sea" width="{ZW}" height="{ZH}" rx="14"/>'
               f'{equator(ZW, zeq, 0, ZW - 6)}<g class="ranges">{zones_zoom}</g><path class="land" d="{zland}"/>{zlabels}{compass(ZW - 24, 34)}</svg>')
 open(SITE + '/univers/recif/cartes.html', 'w', encoding='utf-8').write(fragment('Les récifs dans le monde', world_recif, zoom_recif, 'Il vit dans ces mers'))
+# =====================================================================
+# Univers « les airs » (ciel d’Europe, avec l’Afrique où migrent certains oiseaux)
+# =====================================================================
+def in_europe(poly):
+    xs = [p[0] for p in poly[0]]; ys = [p[1] for p in poly[0]]
+    return -25 < min(xs) and max(xs) < 45 and min(ys) > 33
+
+
+eu_focus = [f for f in wfeat if f['properties']['CONTINENT'] == 'Europe' and f['properties']['ADM0_A3'] != 'RUS']
+eu_polys = [p for p in multi(eu_focus) if in_europe(p)]
+eu_rest = [f for f in wfeat if f not in eu_focus]
+world_airs = (f'<svg class="world-map airs-map" viewBox="0 0 {W} {H}" role="img" aria-labelledby="worldTitle"><title id="worldTitle">Carte du monde : l’Europe est mise en couleur</title>'
+              f'<rect class="sea" x="0" y="0" width="{W}" height="{H}" rx="14"/>{equator(W, eq_y)}'
+              f'<path class="land" d="{path(multi(wfeat), wproj, 0.6, 1.5)}"/><path class="land focus" d="{path(eu_polys, wproj, 0.6, 1.5)}"/>'
+              f'{zoom_box(-15, 71, 47, 0)}{france()}'
+              f'<text class="africa-label" x="{wproj(16, 78)[0]:.1f}" y="{wproj(16, 78)[1] + 4:.1f}" text-anchor="middle">Europe</text></svg>')
+
+BX0, BX1, BY0, BY1 = -15, 47, 71, -2
+KA = 5.2
+
+
+def eproj(lon, lat):
+    return (lon - BX0) * KA, (BY0 - lat) * KA
+
+
+EW = round((BX1 - BX0) * KA); EH = round((BY0 - BY1) * KA)
+efeat = [f for f in d50['features'] if f['properties']['CONTINENT'] in ('Europe', 'Africa', 'Asia') and f['properties']['ADM0_A3'] not in ('CPV', 'STP', 'COM')]
+ecode = {f['properties']['ADM0_A3']: f for f in efeat}
+EREG = {'atlantique': 'PRT ESP FRA GBR IRL BEL NLD LUX'.split(),
+        'nord': 'NOR SWE FIN DNK ISL EST LVA LTU'.split(),
+        'mediterranee': 'ITA GRC ALB HRV SVN BIH MNE MKD MLT CYP SRB'.split(),
+        'est': 'DEU POL CZE SVK AUT HUN ROU BGR UKR BLR MDA RUS CHE'.split()}
+AFR = 'SEN GMB GNB GIN SLE LBR CIV MLI BFA GHA TGO BEN NER NGA MRT CMR TCD CAF SDN SDS ETH ERI DJI SOM SOL KEN UGA COD COG GAB GNQ'.split()
+
+
+def clip_europe(polys):
+    # Garde seulement les morceaux du continent (pas la Guyane, ni les îles lointaines)
+    return [p for p in polys if min(x for x, _ in p[0]) > -25 and max(x for x, _ in p[0]) < 120 and max(y for _, y in p[0]) > 25]
+
+
+def cut(ring):
+    # Ramène tout ce qui dépasse à l’est de la carte sur son bord (la Russie s’étend très loin)
+    return [(min(lon, 52), lat) for lon, lat in ring]
+
+
+all_land = path(multi(efeat), eproj, 0.75, 1.2, cut)
+eclips = f'<path id="eu-land" d="{all_land}"/><clipPath id="clip-eland"><use href="#eu-land"/></clipPath>'
+eregions = ''
+for r, codes in EREG.items():
+    p = path(clip_europe(multi([ecode[c] for c in codes if c in ecode])), eproj, 0.75, 1.2, cut)
+    eregions += f'<path data-region="{r}" class="range-region" d="{p}"/>'
+af_p = path(multi([ecode[c] for c in AFR if c in ecode]), eproj, 0.75, 1.2)
+top = eproj(0, 17.5)[1]
+eclips += f'<clipPath id="clip-afr"><rect x="0" y="{top:.1f}" width="{EW}" height="{EH}"/></clipPath>'
+eregions += f'<path data-region="afrique" class="range-region" clip-path="url(#clip-afr)" d="{af_p}"/>'
+ALPS = [[(5.6, 44.2), (6.4, 45.6), (7.2, 46.4), (9, 47.1), (11, 47.4), (13.5, 47.6), (15.8, 47.3), (14.2, 46.1), (12.2, 46.0), (10, 45.7), (8, 45.2), (7.3, 44.2)],
+        [(-1.9, 43.3), (0, 42.9), (3.2, 42.6), (3.2, 42.3), (0, 42.5), (-1.7, 42.8)]]
+for poly in ALPS:
+    eregions += f'<path data-region="alpes" class="range-region" d="{poly_path(poly, eproj)}"/>'
+ex = eproj(0, 0)[1]
+elabels = (lab(eproj, 'region-label', 'Ouest', -3.5, 46.6, ' data-region="atlantique"') + lab(eproj, 'region-label', 'Nord', 17, 62.5, ' data-region="nord"') +
+           lab(eproj, 'region-label', 'Méditerranée', 17.5, 39.4, ' data-region="mediterranee"') + lab(eproj, 'region-label', 'Est', 28, 51, ' data-region="est"') +
+           lab(eproj, 'region-label small', 'Alpes', 10.4, 48.3, ' data-region="alpes"') +
+           lab(eproj, 'region-label', 'Afrique (hiver)', 14, 10, ' data-region="afrique"') + lab(eproj, 'desert-label', 'Sahara', 12, 26) +
+           lab(eproj, 'ocean-label', 'Océan Atlantique', -14.5, 44, '', 'start'))
+europe = (f'<svg id="zoomMap" class="zoom-map airs-map" viewBox="0 0 {EW} {EH}" role="img" aria-labelledby="zoomTitle zoomDesc"><title id="zoomTitle">Carte de l’Europe et de l’Afrique</title>'
+          f'<desc id="zoomDesc">Les régions où vit l’animal choisi sont coloriées en orange.</desc><defs>{eclips}</defs><rect class="sea" width="{EW}" height="{EH}" rx="14"/>'
+          f'{equator(EW, ex, 0, 6, "start")}<use class="land-outline" href="#eu-land"/><use class="land" href="#eu-land"/><g class="ranges">{eregions}</g>{elabels}{compass(EW - 28, 34)}</svg>')
+open(SITE + '/univers/airs/cartes.html', 'w', encoding='utf-8').write(fragment('L’Europe dans le monde', world_airs, europe, 'Il vit dans ces régions'))
+
 print('savane', len(world_savane) + len(africa), 'récif', len(world_recif) + len(zoom_recif), (W, H), (ZW, ZH))

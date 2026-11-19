@@ -51,3 +51,33 @@ Les fichiers sont simplifiés (tracés allégés, un seul remplissage, aucun scr
 | hippocampe | Hippocampus | Matthew Speight | CC0 | [voir](https://www.phylopic.org/images/47badac3-c4be-407c-93f7-e7218f81321a) |
 | raie_manta | Mobula alfredi | Matt Kolmann | CC0 | [voir](https://www.phylopic.org/images/2cfff31f-b593-4888-9e8f-e2a3c26bc054) |
 | dugong | Dugong dugon | Matthew Speight | CC0 | [voir](https://www.phylopic.org/images/5584723d-1756-48a0-8a0d-9bdb703d62ce) |
+
+## Les airs
+
+| Espèce du site | Animal dessiné | Auteur | Licence | Image |
+|---|---|---|---|---|
+| faucon_pelerin | Falco peregrinus peregrinus | Ferran Sayol | CC0 | [voir](https://www.phylopic.org/images/1d5f26b6-4a9a-48ad-b799-a83eadb078ca) |
+| faucon_hobereau | Falco subbuteo | Andy Wilson | CC0 | [voir](https://www.phylopic.org/images/25cbb3aa-3f66-4ab1-912e-e42f4a2e4af2) |
+| faucon_crecerelle | Falco tinnunculus | Ferran Sayol | CC0 | [voir](https://www.phylopic.org/images/c80f693c-3abd-4813-b8a5-280ff37c93bd) |
+| epervier | Accipiter nisus | Andy Wilson | CC0 | [voir](https://www.phylopic.org/images/2cc4c508-2a2e-459d-bcc7-5a40c0ed8ffb) |
+| buse | Buteo buteo | Andy Wilson | CC0 | [voir](https://www.phylopic.org/images/673ec775-5d61-46dd-8606-a21edcbbb823) |
+| aigle_royal | Aquila chrysaetos | Patricia Holroyd | CC0 | [voir](https://www.phylopic.org/images/20f92e20-e65b-4efd-b40f-b3aa8fde6011) |
+| vautour_fauve | Gyps fulvus | Ferran Sayol | CC0 | [voir](https://www.phylopic.org/images/609b0780-ac19-45a6-93e4-d50c0f7809ac) |
+| gypaete | Gypaetus barbatus | Bruno Maggia | CC0 | [voir](https://www.phylopic.org/images/86ee99ca-0279-4a75-beb9-176e29622432) |
+| chouette_effraie | Tyto alba | Sharon Wegner-Larsen | CC0 | [voir](https://www.phylopic.org/images/088bc660-44e4-4717-b5fc-13ee15ade62b) |
+| grand_duc | Bubo bubo | T. Michael Keesey | PDM | [voir](https://www.phylopic.org/images/d7d457c1-4c08-4e7e-9af4-f537020c2775) |
+| hirondelle | Hirundo rustica | Andy Wilson | CC0 | [voir](https://www.phylopic.org/images/26c55043-54c5-4d88-9478-1f2073fe5e71) |
+| martinet | Apus apus | Ferran Sayol | CC0 | [voir](https://www.phylopic.org/images/3e6b9118-7aff-4b64-8c95-38b2ee49d922) |
+| mesange_bleue | Cyanistes caeruleus | Wouter Koch | CC0 | [voir](https://www.phylopic.org/images/069c4833-e1ac-48e7-90d5-f7bd11000588) |
+| moineau | Passer domesticus | Andy Wilson | CC0 | [voir](https://www.phylopic.org/images/3a4cdd72-e553-40ad-838e-3b23037b2010) |
+| chardonneret | Carduelis carduelis | Andy Wilson | CC0 | [voir](https://www.phylopic.org/images/0fb8f5c4-3191-4bb8-a5aa-c1cb3fe17eb2) |
+| merle | Turdus merula | Anthony Caravaggi | CC0 | [voir](https://www.phylopic.org/images/ec11f62e-ed3e-49bb-bcff-4e47b281d378) |
+| etourneau | Sturnus vulgaris | Oier | PDM | [voir](https://www.phylopic.org/images/2ba17be0-2ff4-4a82-9e63-b61f4bda6ec4) |
+| pigeon_ramier | Columba palumbus | Andy Wilson | CC0 | [voir](https://www.phylopic.org/images/2537ef77-46e5-47c8-864e-f126cd37a109) |
+| guepier | Merops apiaster | Matthew Speight | CC0 | [voir](https://www.phylopic.org/images/37df7041-de35-461d-bf1a-aec5b6f6ba8b) |
+| cigogne | Ciconia ciconia | Bruno Maggia | CC0 | [voir](https://www.phylopic.org/images/7b0a6f36-ffe9-45b7-a095-a5f7a09b9104) |
+| papillon_nuit | Luperina testacea | Andy Wilson | CC0 | [voir](https://www.phylopic.org/images/1f102f53-ed3d-49d7-b787-99b159509f07) |
+| libellule | Anax imperator | Guillaume Dera | CC0 | [voir](https://www.phylopic.org/images/2ef6d810-dc60-4dd2-aaba-bc0313c66ff6) |
+| campagnol | Microtus pennsylvanicus | Edwin Price | CC0 | [voir](https://www.phylopic.org/images/fcc26dae-bc5d-47c8-8117-a7e6245e45f5) |
+
+Pour le campagnol, l’animal dessiné est un proche cousin (même genre *Microtus*, d’Amérique du Nord) ; pour les papillons de nuit, une noctuelle d’Europe (*Luperina testacea*) représente toute la famille.
