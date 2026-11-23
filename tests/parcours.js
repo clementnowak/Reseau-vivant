@@ -21,10 +21,10 @@ server.listen(0, '127.0.0.1', async () => {
   const page = await ctx.newPage();
   const errors = [];
   page.on('pageerror', e => errors.push('PAGEERROR ' + e.message));
-  page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
+  page.on('console', m => { if (m.type() === 'error') errors.push(m.text() + ' @ ' + (m.location().url||'') + ' | page ' + page.url()); });
   await page.goto('http://127.0.0.1:'+PORT+'/', { waitUntil: 'networkidle' });
   const only = process.argv[2];
-  for (const uni of ['savane', 'recif']) {
+  for (const uni of ['savane', 'recif', 'airs']) {
     if (only && only !== uni) continue;
     await page.click(`[data-univers="${uni}"]`);
     await page.waitForFunction(u => document.documentElement.dataset.univers === u, uni);
@@ -37,6 +37,11 @@ server.listen(0, '127.0.0.1', async () => {
       if (t !== want) errors.push(`CENTRE ${uni}/${id}: ${t}`);
       const sum = await page.$eval('#rangeSummary', e => e.textContent);
       if (/undefined/.test(sum)) errors.push('RANGE ' + id + sum);
+      const plur = await page.evaluate(([u, id]) => { const x = window.RV_DONNEES[u].species.find(s => s.id === id); return x.type !== 'resource' && Boolean(x.pluriel); }, [uni, id]);
+      if (plur) {
+        const titres = await page.$eval('#predTitle', e => e.textContent) + ' ' + await page.$eval('#preyTitle', e => e.textContent) + ' ' + sum;
+        if (/Qui le mange|Que mange-t-il|On le trouve/.test(titres)) errors.push('GRAMMAIRE PLURIEL ' + id + ' : ' + titres);
+      }
     }
     const qs = [];
     for (let round = 0; round < 8; round++) for (let qi = 0; qi < 3; qi++) {
@@ -47,6 +52,7 @@ server.listen(0, '127.0.0.1', async () => {
         if (info.opts.length !== 3) errors.push('NB OPTIONS ' + JSON.stringify(info));
         if (new Set(info.opts.map(o => o.split('|')[0])).size !== info.opts.length) errors.push('DUP OPTION ' + JSON.stringify(info));
         if (/undefined|null|NaN|\{/.test(info.q + info.opts.join())) errors.push('TEXTE ' + JSON.stringify(info));
+        if (/Que mange (les|des) |(criquets|chenilles|papillons de nuit) est /i.test(info.q)) errors.push('GRAMMAIRE QUIZ ' + info.q);
         await page.click('#quizAnswers [data-answer] >> nth=0');
         const correct = await page.$$eval('#quizAnswers .correct', e => e.length);
         if (correct !== 1) errors.push('NO CORRECT ' + JSON.stringify(info));
@@ -57,6 +63,27 @@ server.listen(0, '127.0.0.1', async () => {
       const end = await page.$eval('#quizAnswers', e => e.innerText.slice(0, 40));
       if (!/\/ 5/.test(end)) errors.push('END MISSING ' + end);
     }
+    // Navigation : cliquer d'animal en animal, fil d'Ariane, retour du navigateur, liens dans les textes.
+    await page.evaluate(([u, id]) => { location.hash = `${u}/${id}`; }, [uni, ids[0]]);
+    await page.waitForTimeout(100);
+    const center = () => page.$eval('#centerAnimal h3', e => e.textContent);
+    const start = await center();
+    if (await page.$eval('#trail', e => !e.hidden)) await page.locator('[data-trail="reset"]').click();
+    if (await page.$eval('#trail', e => !e.hidden)) errors.push('NAV ' + uni + ' : « Recommencer » ne vide pas le parcours');
+    await page.locator('#preyList .relation-card, #predList .relation-card').first().click();
+    await page.waitForTimeout(100);
+    const second = await center();
+    if (second === start) errors.push('NAV ' + uni + ' : clic sans effet');
+    if (await page.$eval('#trail', e => e.hidden)) errors.push('NAV ' + uni + ' : parcours absent après un clic');
+    await page.locator('#preyList .relation-card, #predList .relation-card').first().click();
+    await page.waitForTimeout(100);
+    await page.goBack(); await page.waitForTimeout(150);
+    if ((await center()) !== second) errors.push('NAV ' + uni + ' : retour du navigateur ne revient pas à ' + second);
+    await page.locator('.trail-back').click(); await page.waitForTimeout(100);
+    if ((await center()) !== start) errors.push('NAV ' + uni + ' : bouton Retour ne revient pas à ' + start);
+    await page.locator('[data-trail="reset"]').click().catch(() => {});
+    const inline = await page.$$eval('#profileContent .inline-link', els => els.length);
+    console.log(`navigation ${uni} : OK (liens dans le texte de la 1re fiche : ${inline})`);
     const uniq = [...new Map(qs.map(q => [q.q + q.opts.join(), q])).values()];
     console.log(`\n=== ${uni} : ${ids.length} fiches, ${uniq.length} questions différentes`);
     if (process.argv[3] === 'v') for (const q of uniq.slice(0, 70)) console.log('-', q.q.replace(/\n/g, ' '), '||', q.opts.map(o => o.split('|')[1].replace(/\n/g, ' ')).join(' / '), '=>', q.fb);
@@ -66,7 +93,7 @@ server.listen(0, '127.0.0.1', async () => {
   const lien = await page.locator('footer a[href="coulisses.html"]').count();
   if (lien !== 1) errors.push('COULISSES : lien du pied de page absent');
   await page.goto(`http://127.0.0.1:${PORT}/coulisses.html`, { waitUntil: 'networkidle' });
-  if (!(await page.locator('h1').innerText()).includes('conçu, vérifié et amélioré')) errors.push('COULISSES : titre absent');
+  if (!(await page.locator('h1').innerText()).includes('conçu, vérifié et mis en ligne')) errors.push('COULISSES : titre absent');
   const ancres = await page.$$eval('a[href^="#"]', (as) => as.map((a) => a.getAttribute('href')).filter((h) => h.length > 1 && !document.querySelector(h)));
   for (const h of ancres) errors.push('COULISSES : ancre cassée ' + h);
   const debord = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth);

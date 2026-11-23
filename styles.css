@@ -146,6 +146,23 @@ button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .empty-library { font-size: 14px; color: var(--muted); padding: 8px 2px; margin: 0; }
 
 /* Réseau : prédateurs en haut, animal au centre, nourriture en bas (l’énergie monte). */
+/* Parcours : où je suis passé, et comment revenir */
+.trail { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 0 0 12px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.trail[hidden] { display: none; }
+.trail-back, .trail-reset, .trail-chip { font: inherit; font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border); background: #fff; color: var(--text); cursor: pointer; }
+.trail-back { font-weight: 700; background: var(--forest-2); border-color: var(--forest-2); color: #fff; }
+.trail-back:hover { background: var(--forest); }
+.trail-chip:hover, .trail-reset:hover { border-color: #9fbf9c; background: #f6faf2; }
+.trail-chip.is-current { background: var(--orange-soft); border-color: var(--orange); font-weight: 700; cursor: default; }
+.trail-reset { color: var(--muted); border-style: dashed; margin-left: auto; }
+.trail-list { display: flex; flex-wrap: nowrap; align-items: center; gap: 4px 6px; list-style: none; margin: 0; padding: 2px 0 6px; flex: 1 1 100%; order: 3; overflow-x: auto; scrollbar-width: thin; }
+.trail-list li { flex: none; }
+.trail-reset { order: 2; flex: none; margin-left: 0; }
+.trail-back { order: 1; flex: 1 1 0; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: block; text-align: left; }
+@media (min-width: 960px) { .trail-back { flex: none; display: inline-flex; } .trail-reset { margin-left: auto; } .trail-list { flex: 1 1 0; order: 2; overflow: visible; flex-wrap: wrap; } .trail-reset { order: 3; } }
+.trail-sep { color: var(--muted); }
+.inline-link { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; margin: 0; cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; text-decoration-thickness: 2px; }
+.inline-link:hover { text-decoration-style: solid; }
 .network { display: grid; gap: 12px; scroll-margin-top: 70px; }
 .relation-block { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; }
 .eaters { border-top: 5px solid var(--orange); }
@@ -316,6 +333,7 @@ button.chain-node:hover { border-color: var(--green); }
 .footer-inner { display: grid; gap: 16px; }
 .footer-logo { font-size: 21px; color: #fff; font-weight: 850; }
 .footer-brand p { font-size: 14px; margin: 6px 0 0; color: #a9bfb1; }
+.footer-credits a { color: #d6e4d9; text-decoration: underline; }
 .about { border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 10px; }
 .about summary { cursor: pointer; font-weight: 750; min-height: var(--tap); display: flex; align-items: center; justify-content: space-between; gap: 8px; color: #e2eedd; list-style: none; }
 .about summary::-webkit-details-marker { display: none; }
@@ -445,6 +463,23 @@ html[data-univers="recif"] .eaters .count-pill { color: #8a2e17; }
 .region-label.small { font-size: 10px; }
 .recif-map .region-label { stroke: #fff; }
 .recif-map .region-label.is-active { fill: #6b1c08; stroke: #fde1d7; }
+
+
+/* ---------- Univers « les airs » : couleurs et décor ---------- */
+html[data-univers="airs"] {
+  --forest: #1d3557; --forest-2: #2a4d7a; --cream: #eef3f9; --sage: #e0e9f4; --border: #bccce0; --text: #172a3f; --muted: #465b75;
+  --green: #2a6f97; --green-soft: #d3e3f1; --orange: #f0954a; --orange-soft: #fdebd9; --sea: #d6e6f2; --land: #ebe5d2;
+  --surface: #fafcff; --accent: #b5481f; --footer: #14263f;
+  --shadow-d: rgba(40, 70, 112, .26); --shadow-l: rgba(255, 255, 255, .95);
+}
+html[data-univers="airs"] .brand-emphasis { color: var(--green); }
+html[data-univers="airs"] .eaters .count-pill, html[data-univers="airs"] .eaters .relation-card .animal-emoji { color: #8a2e17; }
+.airs-map .land { stroke: #fff; stroke-width: .3; }
+.zoom-map.airs-map .land { stroke: #c9bf9f; stroke-width: .4; }
+.airs-map .region-label.small { font-size: 10px; }
+.airs-map .region-label { stroke: #fff; }
+.airs-map .region-label.is-active { fill: #4a1f00; stroke: #f7c595; }
+.world-map .focus { fill: var(--orange); }
 
 /* Silhouettes d’animaux (PhyloPic, domaine public) : dessin d’une seule couleur, sinon émoji */
 .pict { display: inline-block; width: 1.5em; height: 1.2em; vertical-align: -.25em; }
@@ -576,3 +611,5 @@ html[data-univers="recif"] .eaters .count-pill { color: #8a2e17; }
 .footer-links a { color: #e8f1de; font-weight: 700; font-size: 14px; min-height: var(--tap); display: inline-flex; align-items: center; }
 .footer-links a:hover { color: #fff; }
 .footer-links a:focus-visible { outline-color: #fff; }
+.intro-by { margin: 14px 0 0; font-size: 14px; color: var(--muted); }
+.intro-by a { color: var(--green); font-weight: 700; }

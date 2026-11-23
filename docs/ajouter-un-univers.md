@@ -15,6 +15,9 @@ Checklist pour créer un nouvel univers sans casser les autres. Ne fusionner qu'
 - [ ] Thème : ajouter les variables CSS sous `html[data-univers="<id>"]` dans `styles.css`.
 - [ ] Silhouettes (facultatif mais recommandé) : suivre `tools/silhouettes/README.md`, ne garder que les licences CC0 / domaine public, et compléter `docs/credits-silhouettes.md`.
 - [ ] Sources : ajouter chaque ouvrage ou site dans `sources`.
+- [ ] Animaux au pluriel (`"pluriel": true`, `"genre": "f"` si besoin) : gérés par `app.js` (« Que mangent-ils ? »). Nom propre dans `meta.nom` : la casse est conservée.
+- [ ] Liens « En savoir plus » : `"langue": "fr"` dans `humanInteractions` si la page est en français (sinon « (en anglais) » est affiché).
+- [ ] Chaque domaine de source cité : ajouté à `SOURCE_NOMS` dans `app.js`, sinon le nom de domaine brut est affiché.
 
 ## 3. Contrôles automatiques
 - [ ] `npm install && npx playwright install chromium`

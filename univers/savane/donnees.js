@@ -2954,13 +2954,6 @@ window.RV_DONNEES.savane = {
       "kind": "predation",
       "note": "surtout les nids",
       "source": "https://africageographic.com/stories/leopard-raids-ground-hornbill-nest/"
-    },
-    {
-      "eater": "aigle",
-      "food": "bucorve",
-      "kind": "predation",
-      "note": "",
-      "source": "https://ielc.libguides.com/sdzg/factsheets/southern_groundhornbill"
     }
   ],
   "sources": [

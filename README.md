@@ -18,10 +18,11 @@
 
 ## Ce que contient la version 4
 
-Deux univers, qu’on choisit avec la bascule en haut du site :
+Trois univers, qu’on choisit avec la bascule en haut du site :
 
-- **Savane africaine** : 50 animaux, 10 ressources, 177 liens alimentaires
-- **Récif corallien** : 27 animaux, 5 ressources (plancton, algues, herbiers, restes), 57 liens alimentaires
+- **Savane africaine** : 49 animaux, 10 ressources, 160 liens alimentaires, chacun avec sa source
+- **Récif corallien** : 27 animaux, 5 ressources (plancton, algues, herbiers, restes), 48 liens alimentaires, chacun avec sa source
+- **Ciel d’Europe** : 29 animaux, 5 ressources, 78 liens alimentaires, chacun avec sa source ; une carte de l’Europe et de l’Afrique où migrent certains oiseaux
 
 Dans chaque univers :
 
@@ -52,5 +53,4 @@ Les décisions et audits sont dans le dossier [`docs/`](docs/), les évolutions 
 
 - Tester le site avec 3 à 5 enfants de 8 à 16 ans et mesurer ce qu’ils retiennent
 - Faire relire le contenu par un naturaliste
-- Ajouter un troisième univers : les airs
-- Silhouettes d’illustrateurs sous licence libre (PhyloPic) pour 36 espèces dont l’émoji est faux ou répété : fait ; il en reste à trouver pour dix autres
+- Silhouettes d’illustrateurs sous licence libre (PhyloPic) pour 59 espèces dont l’émoji est faux ou répété : fait ; il en reste à trouver pour dix autres

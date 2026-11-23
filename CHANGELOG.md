@@ -1,6 +1,14 @@
 # Journal des versions
 
 ## Non publié
+- Navigation : le bouton « Retour » du navigateur suit maintenant les animaux visités (avant, l’historique n’enregistrait rien) ; fil d’Ariane « Ton parcours » avec « Retour : … » et « Recommencer » ; les noms d’êtres vivants cités dans les fiches (habitat, rôle, anecdote, protection) deviennent des liens vers leur fiche (un lien par nom et par texte, jamais vers la fiche en cours).
+- Troisième univers : « le ciel d’Europe » (29 animaux, 5 ressources, 78 liens alimentaires, chacun avec sa source, 15 questions « Drôles de bêtes », carte de l’Europe et de l’Afrique d’hivernage, 5 exemples d’interactions humaines). 23 silhouettes PhyloPic (21 CC0, 2 domaine public) ; crédits dans `docs/credits-silhouettes.md`. Textes relus par trois audits (naturaliste, rédaction, produit).
+- Application : accords au pluriel pour les animaux (« Que mangent-ils ? »), nom d’univers avec majuscule conservée, langue des liens « En savoir plus » (champ `langue`), recherche tolérante aux pluriels et aux traits d’union.
+- Savane : relation aigle → bucorve retirée (seule source : fiche de zoo).
+- Page « Les coulisses » : 286 relations, 125 êtres vivants, 3 univers.
+- Page « Les coulisses » : identité visuelle propre, plus professionnelle (en-tête vert profond, titres en colonne latérale, filets fins, tableaux sans cartes), avec les mêmes polices et les mêmes verts que le site.
+- Page « Les coulisses » condensée (de 19 à 13 Ko) à la suite d’un audit « recruteur Product Builder » : titre qui dit le résultat, rôle de l’IA fusionné avec le rôle du product builder, tableau de 4 décisions, deux apprentissages, test enfants replié, tuile « 7 jours », tableaux lisibles sur mobile.
+- Accueil : lien « Coulisses » dans le menu et ligne de signature. README aligné sur les chiffres vérifiés (209 relations).
 - Polices : Inter (texte) et Lora (titres) sont hébergées sur le site (6 fichiers, 181 Ko au total, licence SIL OFL), sans appel à un service externe : même rendu sur tous les appareils, y compris sur Android, qui n’embarque généralement pas Georgia.
 
 ## 4.0.0 — Refonte visuelle et page « Les coulisses »
@@ -48,7 +56,7 @@
 - Adresses partageables `#univers/animal`, compatibles avec les anciens liens.
 
 ## 2.2.1 — Retrait des silhouettes
-- Les silhouettes dessinées à la main de la 2.2.0 sont retirées (peu ressemblantes) ; retour aux émojis en attendant des illustrations de meilleure qualité.
+- Les silhouettes générées par IA de la 2.2.0 sont retirées (peu ressemblantes) ; retour aux émojis en attendant des illustrations de meilleure qualité.
 - Mentions légales : éditeur ajouté (conservé).
 
 ## 2.1.0 — novembre 2026
