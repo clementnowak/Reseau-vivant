@@ -15,6 +15,7 @@ Checklist pour créer un nouvel univers sans casser les autres. Ne fusionner qu'
 - [ ] Thème : ajouter les variables CSS sous `html[data-univers="<id>"]` dans `styles.css`.
 - [ ] Silhouettes (facultatif mais recommandé) : suivre `tools/silhouettes/README.md`, ne garder que les licences CC0 / domaine public, et compléter `docs/credits-silhouettes.md`.
 - [ ] Sources : ajouter chaque ouvrage ou site dans `sources`.
+- [ ] Fiche d’identité (facultative, tout ou rien par univers) : champ `stats` sur chaque animal (`taille`, `adulte`, `vie`, `repro`, `rythme`, chacun `{ v: "texte", s: "https://…" }`, `s` pouvant être une liste). Jamais de chiffre de mémoire ni sans source ; un champ non sourcé est omis. `groupe: true` pour un nom qui désigne plusieurs espèces. Chaque domaine de source cité : ajouté à `SOURCE_NOMS`.
 - [ ] Animaux au pluriel (`"pluriel": true`, `"genre": "f"` si besoin) : gérés par `app.js` (« Que mangent-ils ? »). Nom propre dans `meta.nom` : la casse est conservée.
 - [ ] Liens « En savoir plus » : `"langue": "fr"` dans `humanInteractions` si la page est en français (sinon « (en anglais) » est affiché).
 - [ ] Chaque domaine de source cité : ajouté à `SOURCE_NOMS` dans `app.js`, sinon le nom de domaine brut est affiché.

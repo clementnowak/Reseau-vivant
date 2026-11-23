@@ -21,6 +21,23 @@ for (const u of ctx.window.RV_UNIVERS) {
     if (!d.links.some((l) => l.eater === x.id)) err(u.id, `animal sans nourriture : ${x.id}`);
     if (!d.links.some((l) => l.food === x.id) && !x.noPredator) warn(u.id, `pas encore de prédateur renseigné : ${x.id}`);
   }
+  // Fiche d’identité (champ « stats ») : si un univers l’utilise, tous ses animaux doivent l’avoir ; chaque chiffre porte au moins une source https.
+  const animauxStats = d.species.filter((s) => s.type === 'animal');
+  if (animauxStats.some((s) => s.stats)) {
+    for (const x of animauxStats) {
+      if (!x.stats) { err(u.id, `fiche d’identité absente : ${x.id}`); continue; }
+      const champs = Object.keys(x.stats).filter((k) => k !== 'groupe');
+      if (!champs.length) err(u.id, `fiche d’identité vide : ${x.id}`);
+      for (const k of champs) {
+        if (!['taille', 'adulte', 'vie', 'repro', 'rythme'].includes(k)) { err(u.id, `fiche : champ inconnu « ${k} » (${x.id})`); continue; }
+        const f = x.stats[k];
+        if (!f || typeof f.v !== 'string' || !f.v.trim()) err(u.id, `fiche : valeur vide « ${k} » (${x.id})`);
+        else if (f.v.length > 160) err(u.id, `fiche : valeur trop longue « ${k} » (${x.id})`);
+        const src = [].concat(f && f.s || []);
+        if (!src.length || src.some((l) => !/^https:\/\/[^\s]+$/.test(l))) err(u.id, `fiche : source https manquante ou invalide « ${k} » (${x.id})`);
+      }
+    }
+  }
   if (!ids.has(m.animalParDefaut)) err(u.id, 'animalParDefaut inconnu');
   const q = m.quiz;
   for (const k of [...q.grandsChasseurs, ...q.petitesProies, ...q.grossesProies, ...q.leurresQuiMange.vertebre.ids, ...q.leurresQuiMange.invertebre.ids,

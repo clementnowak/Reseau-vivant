@@ -1,6 +1,7 @@
 # Journal des versions
 
 ## Non publié
+- Fiche d’identité (pilote sur le récif corallien) : sur chaque animal, un encart repliable avec taille et poids, âge adulte, espérance de vie dans la nature, reproduction et rythme de vie. Chaque chiffre porte sa source (lien cliquable) ; un champ non sourcé reste vide. Les noms qui désignent un groupe d’espèces (mérou, perroquet, hippocampe…) le signalent. Contrôle ajouté dans `tools/verifier-univers.js` et dans le test de parcours.
 - Navigation : le bouton « Retour » du navigateur suit maintenant les animaux visités (avant, l’historique n’enregistrait rien) ; fil d’Ariane « Ton parcours » avec « Retour : … » et « Recommencer » ; les noms d’êtres vivants cités dans les fiches (habitat, rôle, anecdote, protection) deviennent des liens vers leur fiche (un lien par nom et par texte, jamais vers la fiche en cours).
 - Troisième univers : « le ciel d’Europe » (29 animaux, 5 ressources, 78 liens alimentaires, chacun avec sa source, 15 questions « Drôles de bêtes », carte de l’Europe et de l’Afrique d’hivernage, 5 exemples d’interactions humaines). 23 silhouettes PhyloPic (21 CC0, 2 domaine public) ; crédits dans `docs/credits-silhouettes.md`. Textes relus par trois audits (naturaliste, rédaction, produit).
 - Application : accords au pluriel pour les animaux (« Que mangent-ils ? »), nom d’univers avec majuscule conservée, langue des liens « En savoir plus » (champ `langue`), recherche tolérante aux pluriels et aux traits d’union.

@@ -716,7 +716,18 @@ window.RV_DONNEES.recif = {
         "caraibes"
       ],
       "short": "Corail",
-      "keywords": "polype madrépore récif"
+      "keywords": "polype madrépore récif",
+      "stats": {
+        "groupe": true,
+        "repro": {
+          "v": "Ponte de masse : plusieurs nuits après la pleine lune, des colonies libèrent œufs et spermatozoïdes en même temps",
+          "s": "https://aims.gov.au/node/3029"
+        },
+        "rythme": {
+          "v": "Sort ses tentacules la nuit pour se nourrir",
+          "s": "https://aims.gov.au/node/3029"
+        }
+      }
     },
     {
       "id": "eponge",
@@ -741,7 +752,18 @@ window.RV_DONNEES.recif = {
       ],
       "short": "Éponge",
       "genre": "f",
-      "keywords": "porifère filtreur"
+      "keywords": "porifère filtreur",
+      "stats": {
+        "groupe": true,
+        "taille": {
+          "v": "Les plus gros spécimens des récifs profonds font 0,8 à 2,5 m de diamètre",
+          "s": "https://hoopermuseum.carleton.ca/Bermuda/Porifera/BERM8-1A.HTML"
+        },
+        "vie": {
+          "v": "De quelques mois à 10 ans ; les géantes, estimées entre 50 et 100 ans",
+          "s": "https://hoopermuseum.carleton.ca/Bermuda/Porifera/BERM8-1A.HTML"
+        }
+      }
     },
     {
       "id": "anemone",
@@ -766,7 +788,24 @@ window.RV_DONNEES.recif = {
       "short": "Anémone",
       "genre": "f",
       "noPredator": "Ses tentacules piquants la protègent : peu d’animaux osent la manger.",
-      "keywords": "actinie fleur"
+      "keywords": "actinie fleur",
+      "stats": {
+        "taille": {
+          "v": "Disque de 30 à 50 cm en général ; jusqu’à 1 m",
+          "s": "https://animaldiversity.org/accounts/Heteractis_magnifica"
+        },
+        "repro": {
+          "v": "Se multiplie surtout en se divisant en deux, en hiver",
+          "s": [
+            "https://www.sealifebase.se/summary/42394",
+            "https://link.springer.com/doi/10.1007/s00338-004-0432-8"
+          ]
+        },
+        "rythme": {
+          "v": "Vit fixée au récif, solitaire",
+          "s": "https://www.sealifebase.se/summary/42394"
+        }
+      }
     },
     {
       "id": "poulpe",
@@ -790,7 +829,31 @@ window.RV_DONNEES.recif = {
       ],
       "short": "Poulpe",
       "culture": "Comme Hank dans « Le Monde de Dory ».",
-      "keywords": "pieuvre octopus mollusque"
+      "keywords": "pieuvre octopus mollusque",
+      "stats": {
+        "taille": {
+          "v": "Corps jusqu’à 16 cm, bras jusqu’à 80 cm",
+          "s": "https://en.wikipedia.org/wiki/Octopus_cyanea"
+        },
+        "vie": {
+          "v": "Très courte : environ 1 an après la naissance",
+          "s": [
+            "https://pmc.ncbi.nlm.nih.gov/articles/PMC3422261",
+            "https://en.wikipedia.org/wiki/Octopus_cyanea"
+          ]
+        },
+        "repro": {
+          "v": "600 à 1 200 œufs couvés 45 à 61 jours dans une cache ; la femelle meurt peu après",
+          "s": [
+            "https://swfsc-publications.fisheries.noaa.gov/publications/CR/1986/8649.PDF",
+            "https://animaldiversity.org/accounts/Octopus_cyanea/"
+          ]
+        },
+        "rythme": {
+          "v": "Active le jour",
+          "s": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3422261"
+        }
+      }
     },
     {
       "id": "crabe",
@@ -814,7 +877,14 @@ window.RV_DONNEES.recif = {
         "caraibes"
       ],
       "short": "Crabe",
-      "keywords": "crustacé"
+      "keywords": "crustacé",
+      "stats": {
+        "groupe": true,
+        "repro": {
+          "v": "La femelle porte les œufs jusqu’à l’éclosion ; les larves (zoés) vivent dans le plancton",
+          "s": "https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/crab"
+        }
+      }
     },
     {
       "id": "acanthaster",
@@ -839,7 +909,24 @@ window.RV_DONNEES.recif = {
       "short": "Étoile couronne d’épines",
       "genre": "f",
       "source": "https://www.aims.gov.au/cots",
-      "keywords": "étoile de mer acanthaster épine acanthaster étoile de mer"
+      "keywords": "étoile de mer acanthaster épine acanthaster étoile de mer",
+      "stats": {
+        "taille": {
+          "v": "25 à 35 cm de diamètre, parfois plus de 70 cm",
+          "s": "https://animaldiversity.org/accounts/Acanthaster_planci"
+        },
+        "vie": {
+          "v": "Mal connue en pleine nature (estimations de 5 à 17 ans)",
+          "s": [
+            "https://eol.org/pages/598484/articles",
+            "https://www.aquariumofpacific.org/onlinelearningcenter/species/crown_of_thorns_sea_star"
+          ]
+        },
+        "repro": {
+          "v": "Libère ses œufs dans l’eau en été : plus de 200 millions par an pour une grande femelle",
+          "s": "https://www.aims.gov.au/cots"
+        }
+      }
     },
     {
       "id": "triton",
@@ -863,7 +950,17 @@ window.RV_DONNEES.recif = {
       ],
       "source": "https://www.aims.gov.au/cots",
       "noPredator": "Sa grosse coquille le protège bien. Son plus grand danger, c’est l’humain qui le ramasse.",
-      "keywords": "escargot coquillage conque gastéropode"
+      "keywords": "escargot coquillage conque gastéropode",
+      "stats": {
+        "taille": {
+          "v": "Coquille jusqu’à 50 cm",
+          "s": "https://www.sealifebase.ca/summary/SpeciesSummary.php?id=4974"
+        },
+        "repro": {
+          "v": "Fécondation interne ; la femelle pond des œufs collants sur le sable",
+          "s": "https://oceana.org/?p=16335"
+        }
+      }
     },
     {
       "id": "oursin",
@@ -887,7 +984,30 @@ window.RV_DONNEES.recif = {
         "caraibes"
       ],
       "short": "Oursin",
-      "keywords": "piquant échinoderme"
+      "keywords": "piquant échinoderme",
+      "stats": {
+        "groupe": true,
+        "taille": {
+          "v": "Corps d’environ 10 cm ; piquants jusqu’à 30 cm",
+          "s": "https://www.aquariumofpacific.org/onlinelearningcenter/species/black_longspine_urchin"
+        },
+        "adulte": {
+          "v": "Taille maximale atteinte en 3 à 4 ans",
+          "s": "https://www.osti.gov/biblio/5892615-species-profiles-life-histories-environmental-requirements-coastal-fishes-invertebrates-south-florida-long-spined-black-sea-urchin-diadema-antillarum"
+        },
+        "vie": {
+          "v": "4 à 8 ans dans la nature",
+          "s": "https://eol.org/pt-BR/pages/598194/articles"
+        },
+        "repro": {
+          "v": "Pond à la pleine lune",
+          "s": "https://sealifebase.se/summary/speciessummary.php?id=49970"
+        },
+        "rythme": {
+          "v": "Broute surtout la nuit",
+          "s": "https://sealifebase.se/summary/Diadema-antillarum"
+        }
+      }
     },
     {
       "id": "holothurie",
@@ -914,7 +1034,29 @@ window.RV_DONNEES.recif = {
       "genre": "f",
       "elision": true,
       "noPredator": "Beaucoup d’holothuries sont toxiques : peu d’animaux les mangent.",
-      "keywords": "concombre de mer bêche"
+      "keywords": "concombre de mer bêche",
+      "stats": {
+        "groupe": true,
+        "taille": {
+          "v": "Selon l’espèce : de 25 à 48 cm de longueur maximale, jusqu’à 2,8 kg",
+          "s": [
+            "https://sealifebase.ca/summary/SpeciesSummary.php?id=81853",
+            "https://sealifebase.org/summary/SpeciesSummary.php?id=2380910"
+          ]
+        },
+        "vie": {
+          "v": "5 à 10 ans dans la nature (pour l’ensemble des holothuries)",
+          "s": "https://animals.nationalgeographic.com/animals/invertebrates/sea-cucumber/"
+        },
+        "repro": {
+          "v": "Mâles et femelles séparés ; fécondation dans l’eau, larves qui flottent dans le plancton",
+          "s": "https://sealifebase.ca/summary/SpeciesSummary.php?id=81853"
+        },
+        "rythme": {
+          "v": "Certaines espèces se cachent le jour et sortent la nuit",
+          "s": "https://sealifebase.org/summary/SpeciesSummary.php?id=2380910"
+        }
+      }
     },
     {
       "id": "poisson_clown",
@@ -936,7 +1078,25 @@ window.RV_DONNEES.recif = {
       ],
       "short": "Poisson-clown",
       "culture": "Comme Marin et Nemo dans « Le Monde de Nemo ».",
-      "keywords": "nemo amphiprion nemo amphiprion"
+      "keywords": "nemo amphiprion nemo amphiprion",
+      "stats": {
+        "taille": {
+          "v": "Jusqu’à 11 cm",
+          "s": "https://fishbase.org/summary/6509"
+        },
+        "vie": {
+          "v": "6 à 10 ans environ (estimation dans la nature)",
+          "s": "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/amphiprion-ocellaris"
+        },
+        "repro": {
+          "v": "La femelle pond 100 à 1 000 œufs, que le mâle garde",
+          "s": "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/amphiprion-ocellaris"
+        },
+        "rythme": {
+          "v": "Vit en couple fidèle dans une anémone",
+          "s": "https://fishbase.org/summary/6509"
+        }
+      }
     },
     {
       "id": "chirurgien_bleu",
@@ -958,7 +1118,25 @@ window.RV_DONNEES.recif = {
         "pacifique"
       ],
       "culture": "Comme Dory dans « Le Monde de Nemo ».",
-      "keywords": "dory poisson bleu dory poisson chirurgien"
+      "keywords": "dory poisson bleu dory poisson chirurgien",
+      "stats": {
+        "taille": {
+          "v": "Jusqu’à 31 cm",
+          "s": "https://www.fishbase.se/summary/6017"
+        },
+        "adulte": {
+          "v": "Les mâles sont matures vers 11 cm : c’est la taille, et non l’âge, qui compte",
+          "s": "https://www.aquariumofpacific.org/onlinelearningcenter/species/palette_surgeonfish"
+        },
+        "repro": {
+          "v": "Les œufs fécondés éclosent après 25 à 28 heures",
+          "s": "https://www.aquariumofpacific.org/onlinelearningcenter/species/palette_surgeonfish"
+        },
+        "rythme": {
+          "v": "Vit en bancs lâches, 1 à 2 m au-dessus du fond",
+          "s": "https://www.fishbase.se/summary/6017"
+        }
+      }
     },
     {
       "id": "perroquet",
@@ -982,7 +1160,26 @@ window.RV_DONNEES.recif = {
         "caraibes"
       ],
       "source": "https://www.nhm.ac.uk/discover/parrotfish-and-sand.html",
-      "keywords": "perroquet sable bec"
+      "keywords": "perroquet sable bec",
+      "stats": {
+        "groupe": true,
+        "taille": {
+          "v": "De 30 cm à 1,20 m selon l’espèce",
+          "s": "https://www.nationalgeographic.com/animals/fish/facts/parrotfish"
+        },
+        "vie": {
+          "v": "Jusqu’à 7 ans en moyenne dans la nature",
+          "s": "https://www.nationalgeographic.com/animals/fish/facts/parrotfish"
+        },
+        "repro": {
+          "v": "Beaucoup d’espèces changent de sexe : des femelles deviennent des mâles très colorés",
+          "s": "https://fishbase.org/summary/FamilySummary.php?ID=364"
+        },
+        "rythme": {
+          "v": "Certaines espèces dorment la nuit dans un cocon de mucus",
+          "s": "https://fishbase.org/summary/FamilySummary.php?ID=364"
+        }
+      }
     },
     {
       "id": "papillon",
@@ -1005,7 +1202,22 @@ window.RV_DONNEES.recif = {
         "pacifique",
         "caraibes"
       ],
-      "keywords": "papillon jaune"
+      "keywords": "papillon jaune",
+      "stats": {
+        "groupe": true,
+        "taille": {
+          "v": "De 9 à 30 cm selon l’espèce",
+          "s": "https://api.eol.org/pages/5352/articles"
+        },
+        "repro": {
+          "v": "Forme des couples stables d’au moins 3 ans, parfois pour la vie",
+          "s": "https://animaldiversity.org/accounts/Chaetodontidae/"
+        },
+        "rythme": {
+          "v": "Active le jour uniquement",
+          "s": "https://www.encyclopedia.com/science/encyclopedias-almanacs-transcripts-and-maps/butterfly-fish-0"
+        }
+      }
     },
     {
       "id": "ange",
@@ -1028,7 +1240,21 @@ window.RV_DONNEES.recif = {
         "pacifique"
       ],
       "short": "Poisson-ange",
-      "keywords": "ange empereur"
+      "keywords": "ange empereur",
+      "stats": {
+        "taille": {
+          "v": "Jusqu’à 40 cm",
+          "s": "https://fishbase.org/summary/6504"
+        },
+        "adulte": {
+          "v": "Adulte vers 25 cm environ",
+          "s": "https://nrm-fishbaselinux01.nrm.se/summary/6504"
+        },
+        "vie": {
+          "v": "Jusqu’à 14 ans (âge maximal rapporté)",
+          "s": "https://fishbase.org/summary/6504"
+        }
+      }
     },
     {
       "id": "demoiselle",
@@ -1052,7 +1278,25 @@ window.RV_DONNEES.recif = {
       ],
       "short": "Demoiselle",
       "genre": "f",
-      "keywords": "chromis banc"
+      "keywords": "chromis banc",
+      "stats": {
+        "taille": {
+          "v": "Jusqu’à 10 cm",
+          "s": "https://www.fishbase.se/summary/Chromis_viridis.html"
+        },
+        "adulte": {
+          "v": "Adulte à partir d’environ 5,8 cm",
+          "s": "https://www.fishbase.se/summary/Chromis_viridis.html"
+        },
+        "repro": {
+          "v": "Œufs collés au fond ; le mâle les garde et les aère",
+          "s": "https://fishbase.org/summary/5679"
+        },
+        "rythme": {
+          "v": "Active le jour, en grands groupes au-dessus des coraux Acropora",
+          "s": "https://fishbase.org/summary/5679"
+        }
+      }
     },
     {
       "id": "poisson_lion",
@@ -1076,7 +1320,21 @@ window.RV_DONNEES.recif = {
         "caraibes"
       ],
       "source": "https://oceanservice.noaa.gov/facts/lionfish.html",
-      "keywords": "rascasse volante lion venimeux rascasse volante"
+      "keywords": "rascasse volante lion venimeux rascasse volante",
+      "stats": {
+        "taille": {
+          "v": "Jusqu’à 46 cm et 1,4 kg",
+          "s": "https://fishbase.se/summary/5195"
+        },
+        "vie": {
+          "v": "Jusqu’à 10 ans (âge maximal rapporté)",
+          "s": "https://fishbase.se/summary/5195"
+        },
+        "rythme": {
+          "v": "Chasse la nuit ; le jour, souvent seul et presque immobile",
+          "s": "https://www.fishbase.se/summary/5195"
+        }
+      }
     },
     {
       "id": "murene",
@@ -1101,7 +1359,13 @@ window.RV_DONNEES.recif = {
       "short": "Murène",
       "genre": "f",
       "noPredator": "Adulte, elle a peu de prédateurs. Les jeunes peuvent être mangés par de grands poissons.",
-      "keywords": "anguille serpent"
+      "keywords": "anguille serpent",
+      "stats": {
+        "taille": {
+          "v": "Jusqu’à 3 m et 30 kg",
+          "s": "https://nrm-fishbaselinux01.nrm.se/summary/Gymnothorax-javanicus"
+        }
+      }
     },
     {
       "id": "merou",
@@ -1126,7 +1390,29 @@ window.RV_DONNEES.recif = {
       ],
       "source": "https://doi.org/10.1371/journal.pbio.0040431",
       "noPredator": "Un gros mérou a peu de prédateurs, à part les grands requins et l’humain.",
-      "keywords": "loche"
+      "keywords": "loche",
+      "stats": {
+        "groupe": true,
+        "taille": {
+          "v": "Du mérou rouge (1,25 m, 23 kg) au mérou géant (2,7 m, 400 kg)",
+          "s": [
+            "https://fishbase.se/summary/17",
+            "https://pressbooks.lib.vt.edu/fishandconservation/chapter/grouper-and-spawning-aggregations/"
+          ]
+        },
+        "adulte": {
+          "v": "Chez le mérou rouge : femelles à 4-6 ans, mâles vers 10 ans",
+          "s": "https://www.floridamuseum.ufl.edu/discover-fish/species-profiles/red-grouper"
+        },
+        "vie": {
+          "v": "Jusqu’à 25 ans chez le mérou rouge",
+          "s": "https://fishbase.se/summary/17"
+        },
+        "repro": {
+          "v": "Naissent femelles, deviennent mâles plus tard ; se rassemblent pour pondre",
+          "s": "https://pressbooks.lib.vt.edu/fishandconservation/chapter/grouper-and-spawning-aggregations/"
+        }
+      }
     },
     {
       "id": "napoleon",
@@ -1151,7 +1437,29 @@ window.RV_DONNEES.recif = {
       "short": "Napoléon",
       "source": "https://www.aims.gov.au/cots",
       "noPredator": "Adulte, il est si grand qu’il a peu de prédateurs. Sa plus grande menace : la pêche.",
-      "keywords": "labre bosse"
+      "keywords": "labre bosse",
+      "stats": {
+        "taille": {
+          "v": "Souvent 60 cm ; jusqu’à 2,3 m et 190 kg",
+          "s": "https://fishbase.net.br/summary/5604"
+        },
+        "adulte": {
+          "v": "Adulte vers 35 à 50 cm, avant 5 ans",
+          "s": "https://link.springer.com/article/10.1023/B:RFBF.0000033122.90679.97"
+        },
+        "vie": {
+          "v": "Au moins 30 ans (record rapporté : 32 ans)",
+          "s": "https://fishbase.net.br/summary/5604"
+        },
+        "repro": {
+          "v": "Se rassemble par dizaines pour pondre ; les femelles peuvent devenir mâles",
+          "s": "https://link.springer.com/article/10.1023/B:RFBF.0000033122.90679.97"
+        },
+        "rythme": {
+          "v": "Parcourt le récif le jour, dort dans une grotte la nuit",
+          "s": "https://fishbase.ca/summary/5604"
+        }
+      }
     },
     {
       "id": "baliste",
@@ -1175,7 +1483,21 @@ window.RV_DONNEES.recif = {
       ],
       "source": "https://www.aims.gov.au/cots",
       "noPredator": "Il a peu de prédateurs : caché dans un trou, il bloque une épine de son dos pour qu’on ne puisse pas le sortir.",
-      "keywords": "baliste titan"
+      "keywords": "baliste titan",
+      "stats": {
+        "taille": {
+          "v": "Jusqu’à 75 cm",
+          "s": "https://fishbase.se/summary/SpeciesSummary.php?id=6026"
+        },
+        "repro": {
+          "v": "Pond dans un nid, que la femelle défend parfois jusqu’à attaquer des plongeurs",
+          "s": "https://www.fishbase.de/summary/balistoides-viridescens"
+        },
+        "rythme": {
+          "v": "Adulte seul ou en couple sur les pentes du récif",
+          "s": "https://fishbase.se/summary/SpeciesSummary.php?id=6026"
+        }
+      }
     },
     {
       "id": "hippocampe",
@@ -1200,7 +1522,22 @@ window.RV_DONNEES.recif = {
       ],
       "elision": true,
       "culture": "Comme Sheldon dans « Le Monde de Nemo ».",
-      "keywords": "cheval de mer cheval de mer"
+      "keywords": "cheval de mer cheval de mer",
+      "stats": {
+        "groupe": true,
+        "taille": {
+          "v": "De 1,3 cm à 35 cm selon l’espèce",
+          "s": "https://ebsco.com/research-starters/zoology/seahorses"
+        },
+        "vie": {
+          "v": "1 à 5 ans dans la nature",
+          "s": "https://www.nationalgeographic.com/animals/fish/facts/seahorse"
+        },
+        "repro": {
+          "v": "La femelle dépose ses œufs dans la poche du mâle, qui les porte 2 à 4 semaines",
+          "s": "https://www.nationalgeographic.com/animals/fish/group/seahorses/"
+        }
+      }
     },
     {
       "id": "requin_pb",
@@ -1223,7 +1560,29 @@ window.RV_DONNEES.recif = {
         "pacifique"
       ],
       "short": "Requin à pointes blanches",
-      "keywords": "requin pointe blanche requin de récif"
+      "keywords": "requin pointe blanche requin de récif",
+      "stats": {
+        "taille": {
+          "v": "1,6 m et 20 kg en moyenne ; jusqu’à 2,1 m et 28 kg",
+          "s": "https://eol.org/pages/46559826/articles"
+        },
+        "adulte": {
+          "v": "Vers 5 ans environ",
+          "s": "https://animaldiversity.org/accounts/Triaenodon_obesus"
+        },
+        "vie": {
+          "v": "Jusqu’à 25 ans",
+          "s": "https://animaldiversity.org/accounts/Triaenodon_obesus"
+        },
+        "repro": {
+          "v": "1 à 5 petits (souvent 2 ou 3) après plus de 5 mois de gestation",
+          "s": "https://fishbase.se/summary/907"
+        },
+        "rythme": {
+          "v": "Active la nuit ; le jour, dort dans des grottes ou des crevasses",
+          "s": "https://maralliance.org/species/whitetip-reef-shark/"
+        }
+      }
     },
     {
       "id": "requin_tigre",
@@ -1248,7 +1607,32 @@ window.RV_DONNEES.recif = {
       ],
       "source": "https://researchdata.edu.au/size-sex-geographic-australian-waters/3915165",
       "noPredator": "Adulte, il est au sommet du réseau : presque aucun animal ne le chasse.",
-      "keywords": "requin tigre"
+      "keywords": "requin tigre",
+      "stats": {
+        "taille": {
+          "v": "3 à 4,3 m et 385 à 635 kg en moyenne",
+          "s": "https://www.pbs.org/wnet/nature/blog/tiger-shark-fact-sheet/"
+        },
+        "adulte": {
+          "v": "Entre 4 et 10 ans selon les sources",
+          "s": [
+            "https://www.pbs.org/wnet/nature/blog/tiger-shark-fact-sheet/",
+            "https://myfwc.com/wildlifehabitats/profiles/saltwater/sharks/tiger-shark/"
+          ]
+        },
+        "vie": {
+          "v": "Mal connue : estimée entre 20 et 50 ans",
+          "s": "https://www.pbs.org/wnet/nature/blog/tiger-shark-fact-sheet/"
+        },
+        "repro": {
+          "v": "Gestation de 13 à 16 mois ; 10 à 82 petits par portée",
+          "s": "https://www.pbs.org/wnet/nature/blog/tiger-shark-fact-sheet/"
+        },
+        "rythme": {
+          "v": "Vit seul",
+          "s": "https://www.pbs.org/wnet/nature/blog/tiger-shark-fact-sheet/"
+        }
+      }
     },
     {
       "id": "raie_manta",
@@ -1272,7 +1656,20 @@ window.RV_DONNEES.recif = {
       ],
       "short": "Raie manta",
       "genre": "f",
-      "keywords": "manta raie mante manta raie géante diable de mer"
+      "keywords": "manta raie mante manta raie géante diable de mer",
+      "stats": {
+        "taille": {
+          "v": "Envergure moyenne de 3,9 m (femelles) et 3 m (mâles) ; jusqu’à 5,5 m",
+          "s": "https://animaldiversity.org/accounts/Manta_alfredi"
+        },
+        "repro": {
+          "v": "Un seul petit à la fois, après environ 12 à 13 mois de gestation",
+          "s": [
+            "https://fishbase.ca/summary/Manta-alfredi",
+            "https://animaldiversity.org/accounts/Manta_alfredi"
+          ]
+        }
+      }
     },
     {
       "id": "tortue_verte",
@@ -1297,7 +1694,32 @@ window.RV_DONNEES.recif = {
       ],
       "genre": "f",
       "culture": "Comme Crush dans « Le Monde de Nemo ».",
-      "keywords": "tortue marine"
+      "keywords": "tortue marine",
+      "stats": {
+        "taille": {
+          "v": "Carapace d’environ 1 m ; plus de 110 kg, jusqu’à 180 kg",
+          "s": [
+            "https://maralliance.org/species/green-turtle/",
+            "https://seamap.env.duke.edu/species/173833/html"
+          ]
+        },
+        "adulte": {
+          "v": "Vers 25 à 35 ans",
+          "s": "https://maralliance.org/species/green-turtle/"
+        },
+        "vie": {
+          "v": "Mal connue : probablement au moins 70 ans",
+          "s": "https://maralliance.org/species/green-turtle/"
+        },
+        "repro": {
+          "v": "Nids de 75 à 200 œufs ; éclosion après 48 à 70 jours",
+          "s": "https://portal.ct.gov/DEEP/Wildlife/Fact-Sheets/Atlantic-Green-Sea-Turtle"
+        },
+        "rythme": {
+          "v": "Peut rester jusqu’à 5 heures sous l’eau au repos ; se chauffe parfois au soleil sur le sable",
+          "s": "https://kids.nationalgeographic.com/animals/reptiles/green-sea-turtle/"
+        }
+      }
     },
     {
       "id": "tortue_imbriquee",
@@ -1322,7 +1744,32 @@ window.RV_DONNEES.recif = {
       ],
       "genre": "f",
       "source": "https://www.fisheries.noaa.gov/species/hawksbill-turtle",
-      "keywords": "tortue marine écaille caret écaille"
+      "keywords": "tortue marine écaille caret écaille",
+      "stats": {
+        "taille": {
+          "v": "Carapace de 65 à 100 cm ; 45 à 90 kg",
+          "s": "https://home.nps.gov/pais/learn/nature/hawksbill.htm"
+        },
+        "adulte": {
+          "v": "Vers 20 ans ou plus",
+          "s": [
+            "https://www.fws.gov/species/hawksbill-sea-turtle-eretmochelys-imbricata",
+            "https://dar.hawaii.gov/?p=14232"
+          ]
+        },
+        "vie": {
+          "v": "50 à 60 ans (estimation)",
+          "s": "https://dwr.virginia.gov/wildlife/information/hawksbill-sea-turtle/"
+        },
+        "repro": {
+          "v": "Environ 140 œufs par nid ; éclosion après environ 60 jours",
+          "s": "https://www.fws.gov/species/hawksbill-sea-turtle-eretmochelys-imbricata"
+        },
+        "rythme": {
+          "v": "Vient pondre la nuit",
+          "s": "https://www.fws.gov/node/29427"
+        }
+      }
     },
     {
       "id": "dugong",
@@ -1343,7 +1790,25 @@ window.RV_DONNEES.recif = {
         "triangle",
         "australie"
       ],
-      "keywords": "vache marine sirénien lamantin sirène lamantin"
+      "keywords": "vache marine sirénien lamantin sirène lamantin",
+      "stats": {
+        "taille": {
+          "v": "2,4 à 3 m et 230 à 500 kg",
+          "s": "https://www.nationalgeographic.com/animals/mammals/facts/dugong"
+        },
+        "adulte": {
+          "v": "Vers 20 ans (fin de la croissance)",
+          "s": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7666544"
+        },
+        "vie": {
+          "v": "Jusqu’à 70 ans, mais la plupart meurent plus jeunes",
+          "s": "https://www2.gbrmpa.gov.au/node/65"
+        },
+        "repro": {
+          "v": "Un seul petit après 13 à 15 mois de gestation, tous les 3 à 7 ans",
+          "s": "https://www.gbrmpa.gov.au/learn/animals/dugong"
+        }
+      }
     }
   ],
   "links": [
