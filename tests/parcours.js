@@ -63,6 +63,27 @@ server.listen(0, '127.0.0.1', async () => {
       const end = await page.$eval('#quizAnswers', e => e.innerText.slice(0, 40));
       if (!/\/ 5/.test(end)) errors.push('END MISSING ' + end);
     }
+    // Navigation : cliquer d'animal en animal, fil d'Ariane, retour du navigateur, liens dans les textes.
+    await page.evaluate(([u, id]) => { location.hash = `${u}/${id}`; }, [uni, ids[0]]);
+    await page.waitForTimeout(100);
+    const center = () => page.$eval('#centerAnimal h3', e => e.textContent);
+    const start = await center();
+    if (await page.$eval('#trail', e => !e.hidden)) await page.locator('[data-trail="reset"]').click();
+    if (await page.$eval('#trail', e => !e.hidden)) errors.push('NAV ' + uni + ' : « Recommencer » ne vide pas le parcours');
+    await page.locator('#preyList .relation-card, #predList .relation-card').first().click();
+    await page.waitForTimeout(100);
+    const second = await center();
+    if (second === start) errors.push('NAV ' + uni + ' : clic sans effet');
+    if (await page.$eval('#trail', e => e.hidden)) errors.push('NAV ' + uni + ' : parcours absent après un clic');
+    await page.locator('#preyList .relation-card, #predList .relation-card').first().click();
+    await page.waitForTimeout(100);
+    await page.goBack(); await page.waitForTimeout(150);
+    if ((await center()) !== second) errors.push('NAV ' + uni + ' : retour du navigateur ne revient pas à ' + second);
+    await page.locator('.trail-back').click(); await page.waitForTimeout(100);
+    if ((await center()) !== start) errors.push('NAV ' + uni + ' : bouton Retour ne revient pas à ' + start);
+    await page.locator('[data-trail="reset"]').click().catch(() => {});
+    const inline = await page.$$eval('#profileContent .inline-link', els => els.length);
+    console.log(`navigation ${uni} : OK (liens dans le texte de la 1re fiche : ${inline})`);
     const uniq = [...new Map(qs.map(q => [q.q + q.opts.join(), q])).values()];
     console.log(`\n=== ${uni} : ${ids.length} fiches, ${uniq.length} questions différentes`);
     if (process.argv[3] === 'v') for (const q of uniq.slice(0, 70)) console.log('-', q.q.replace(/\n/g, ' '), '||', q.opts.map(o => o.split('|')[1].replace(/\n/g, ' ')).join(' / '), '=>', q.fb);

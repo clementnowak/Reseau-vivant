@@ -121,6 +121,50 @@
     if (registre.has(a)) return { u: a, animal: b };
     return { u: UNIVERS[0].id, animal: a };
   }
+  /* ---------- Parcours (fil d’Ariane) : les animaux visités, du plus ancien au plus récent ---------- */
+  let trail = [];
+  function track(id) {
+    const i = trail.indexOf(id);
+    trail = i >= 0 ? trail.slice(0, i + 1) : [...trail, id].slice(-7);
+  }
+  function renderTrail() {
+    const nav = $('trail');
+    if (!nav) return;
+    nav.hidden = trail.length < 2;
+    if (trail.length < 2) { nav.innerHTML = ''; return; }
+    const prev = U.items.get(trail[trail.length - 2]);
+    const chips = trail.map((id, i) => {
+      const x = U.items.get(id);
+      const inner = `<span aria-hidden="true">${U.glyph(x.id, x.emoji)}</span> ${escapeHtml(shortName(x))}`;
+      return i === trail.length - 1
+        ? `<li><span class="trail-chip is-current" aria-current="step">${inner}</span></li>`
+        : `<li><button type="button" class="trail-chip" data-animal="${escapeHtml(id)}">${inner}</button></li>`;
+    }).join('<li class="trail-sep" aria-hidden="true">›</li>');
+    nav.innerHTML = `<button type="button" class="trail-back" data-animal="${escapeHtml(prev.id)}"><span aria-hidden="true">←</span> Retour : ${escapeHtml(shortName(prev))}</button>`
+      + `<ol class="trail-list" aria-label="Ton parcours">${chips}</ol>`
+      + `<button type="button" class="trail-reset" data-trail="reset">Recommencer</button>`;
+    const list = nav.querySelector('.trail-list');
+    list.scrollLeft = list.scrollWidth;
+  }
+
+  /* ---------- Noms d’êtres vivants cités dans un texte : chacun devient un lien vers sa fiche ---------- */
+  const reEsc = (t) => t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  function linkify(text, selfId) {
+    if (!U.linkRe) {
+      const names = U.data.species.map((x) => ({ id: x.id, n: lowerFirst(shortName(x)) })).filter((e) => e.n.length >= 4);
+      U.linkMap = new Map(names.map((e) => [e.n.toLowerCase(), e.id]));
+      U.linkRe = new RegExp(`(?<![\\p{L}-])(${names.sort((a, b) => b.n.length - a.n.length).map((e) => reEsc(e.n)).join('|')})s?(?![\\p{L}-])`, 'giu');
+    }
+    const seen = new Set([selfId]);
+    return escapeHtml(nbsp(text)).replace(U.linkRe, (m) => {
+      const k = m.toLowerCase();
+      const id = U.linkMap.get(k) || U.linkMap.get(k.replace(/s$/, ''));
+      if (!id || seen.has(id)) return m;
+      seen.add(id);
+      return `<button type="button" class="inline-link" data-animal="${escapeHtml(id)}">${m}</button>`;
+    });
+  }
+
   const setHash = (push = false) => history[push ? 'pushState' : 'replaceState'](null, '', `#${U.id}/${current}`);
 
   /* ---------- Bascule entre univers ---------- */
@@ -143,8 +187,10 @@
     U = u;
     current = U.items.has(animal) ? animal : U.meta.animalParDefaut;
     activeGroup = ''; libraryOpen = false;
+    trail = [current];
     $('speciesSearch').value = '';
     applyUniverse();
+    renderTrail();
     setHash(push);
     if (!initial) $('liveCenter').textContent = `Tu explores maintenant : ${lowerFirst(U.meta.nom)}.`;
   }
@@ -279,7 +325,7 @@
       ['✨', 'Le savais-tu ?', x.fun, 'fun'],
       ['🌱', x.type === 'resource' ? 'Pourquoi c’est important ?' : 'Comment le protéger ?', x.protect]
     ].filter((b) => b[2]);
-    let html = blocks.map((b) => `<article class="profile-item${b[3] ? ' ' + b[3] : ''}"><span class="p-icon" aria-hidden="true">${b[0]}</span><h4>${b[1]}</h4><p>${escapeHtml(nbsp(b[2]))}</p></article>`).join('');
+    let html = blocks.map((b) => `<article class="profile-item${b[3] ? ' ' + b[3] : ''}"><span class="p-icon" aria-hidden="true">${b[0]}</span><h4>${b[1]}</h4><p>${linkify(b[2], x.id)}</p></article>`).join('');
     const sourced = U.foodsOf(x.id).concat(U.eatersOf(x.id)).filter((l) => l.source);
     const sources = [...new Set([x.source, ...sourced.map((l) => l.source)].filter(Boolean))];
     if (sources.length) {
@@ -310,10 +356,13 @@
     $('humanPressureList').innerHTML = entries.map((h) => `<article class="human-pressure-card"><h4>🧑 ${escapeHtml(h.title)} — ${escapeHtml(h.region)}</h4><p>${escapeHtml(h.note)}</p><a href="${escapeHtml(h.sourceUrl)}" target="_blank" rel="noopener noreferrer">En savoir plus${h.langue === 'fr' ? '' : ' (en anglais)'} ↗</a></article>`).join('');
   }
 
-  function select(id, { scroll = true } = {}) {
+  function select(id, { scroll = true, push = false } = {}) {
     if (!U.items.has(id)) return;
+    const changed = id !== current;
     current = id;
-    setHash();
+    track(id);
+    setHash(push && changed);
+    renderTrail();
     renderLibrary();
     renderNetwork();
     if (scroll) {
@@ -482,7 +531,7 @@
     });
     $('speciesSearch').addEventListener('input', () => U && renderLibrary());
     $('toggleLibrary').addEventListener('click', () => { if (!U) return; libraryOpen = !libraryOpen; renderLibrary(); });
-    $('randomBtn').addEventListener('click', () => U && select(pick(U.animals.filter((x) => x.id !== current)).id));
+    $('randomBtn').addEventListener('click', () => U && select(pick(U.animals.filter((x) => x.id !== current)).id, { push: true }));
     $('universeSwitch').addEventListener('click', (e) => {
       const b = e.target.closest('[data-univers]');
       if (b && (!U || b.dataset.univers !== U.id)) openUniverse(b.dataset.univers, undefined, { push: true });
@@ -491,7 +540,8 @@
     document.body.addEventListener('click', (e) => {
       if (!U) return;
       const b = e.target.closest('[data-animal]');
-      if (b && U.items.has(b.dataset.animal)) { e.preventDefault(); select(b.dataset.animal); return; }
+      if (b && U.items.has(b.dataset.animal)) { e.preventDefault(); select(b.dataset.animal, { push: true }); return; }
+      if (e.target.closest('[data-trail="reset"]')) { trail = [current]; renderTrail(); $('centerAnimal').focus({ preventScroll: true }); return; }
       const tab = e.target.closest('[data-quiz]');
       if (tab) { startQuiz(Number(tab.dataset.quiz), true); return; }
       const ans = e.target.closest('[data-answer]');

@@ -146,6 +146,23 @@ button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .empty-library { font-size: 14px; color: var(--muted); padding: 8px 2px; margin: 0; }
 
 /* Réseau : prédateurs en haut, animal au centre, nourriture en bas (l’énergie monte). */
+/* Parcours : où je suis passé, et comment revenir */
+.trail { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 0 0 12px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); }
+.trail[hidden] { display: none; }
+.trail-back, .trail-reset, .trail-chip { font: inherit; font-size: 14px; min-height: 44px; display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border); background: #fff; color: var(--text); cursor: pointer; }
+.trail-back { font-weight: 700; background: var(--forest-2); border-color: var(--forest-2); color: #fff; }
+.trail-back:hover { background: var(--forest); }
+.trail-chip:hover, .trail-reset:hover { border-color: #9fbf9c; background: #f6faf2; }
+.trail-chip.is-current { background: var(--orange-soft); border-color: var(--orange); font-weight: 700; cursor: default; }
+.trail-reset { color: var(--muted); border-style: dashed; margin-left: auto; }
+.trail-list { display: flex; flex-wrap: nowrap; align-items: center; gap: 4px 6px; list-style: none; margin: 0; padding: 2px 0 6px; flex: 1 1 100%; order: 3; overflow-x: auto; scrollbar-width: thin; }
+.trail-list li { flex: none; }
+.trail-reset { order: 2; flex: none; margin-left: 0; }
+.trail-back { order: 1; flex: 1 1 0; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: block; text-align: left; }
+@media (min-width: 960px) { .trail-back { flex: none; display: inline-flex; } .trail-reset { margin-left: auto; } .trail-list { flex: 1 1 0; order: 2; overflow: visible; flex-wrap: wrap; } .trail-reset { order: 3; } }
+.trail-sep { color: var(--muted); }
+.inline-link { font: inherit; color: var(--accent); background: none; border: 0; padding: 0; margin: 0; cursor: pointer; text-decoration: underline dotted; text-underline-offset: 3px; text-decoration-thickness: 2px; }
+.inline-link:hover { text-decoration-style: solid; }
 .network { display: grid; gap: 12px; scroll-margin-top: 70px; }
 .relation-block { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 12px; }
 .eaters { border-top: 5px solid var(--orange); }
