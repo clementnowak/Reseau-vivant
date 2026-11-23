@@ -3,7 +3,8 @@
 ## Non publié
 - Troisième univers : « le ciel d’Europe » (29 animaux, 5 ressources, 78 liens alimentaires, chacun avec sa source, 15 questions « Drôles de bêtes », carte de l’Europe et de l’Afrique d’hivernage, 5 exemples d’interactions humaines). 23 silhouettes PhyloPic (21 CC0, 2 domaine public) ; crédits dans `docs/credits-silhouettes.md`. Textes relus par trois audits (naturaliste, rédaction, produit).
 - Application : accords au pluriel pour les animaux (« Que mangent-ils ? »), nom d’univers avec majuscule conservée, langue des liens « En savoir plus » (champ `langue`), recherche tolérante aux pluriels et aux traits d’union.
-- Page « Les coulisses » : 287 relations, 125 êtres vivants, 3 univers.
+- Savane : relation aigle → bucorve retirée (seule source : fiche de zoo).
+- Page « Les coulisses » : 286 relations, 125 êtres vivants, 3 univers.
 - Page « Les coulisses » : identité visuelle propre, plus professionnelle (en-tête vert profond, titres en colonne latérale, filets fins, tableaux sans cartes), avec les mêmes polices et les mêmes verts que le site.
 - Page « Les coulisses » condensée (de 19 à 13 Ko) à la suite d’un audit « recruteur Product Builder » : titre qui dit le résultat, rôle de l’IA fusionné avec le rôle du product builder, tableau de 4 décisions, deux apprentissages, test enfants replié, tuile « 7 jours », tableaux lisibles sur mobile.
 - Accueil : lien « Coulisses » dans le menu et ligne de signature. README aligné sur les chiffres vérifiés (209 relations).

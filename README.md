@@ -20,7 +20,7 @@
 
 Trois univers, qu’on choisit avec la bascule en haut du site :
 
-- **Savane africaine** : 49 animaux, 10 ressources, 161 liens alimentaires, chacun avec sa source
+- **Savane africaine** : 49 animaux, 10 ressources, 160 liens alimentaires, chacun avec sa source
 - **Récif corallien** : 27 animaux, 5 ressources (plancton, algues, herbiers, restes), 48 liens alimentaires, chacun avec sa source
 - **Ciel d’Europe** : 29 animaux, 5 ressources, 78 liens alimentaires, chacun avec sa source ; une carte de l’Europe et de l’Afrique où migrent certains oiseaux
 
