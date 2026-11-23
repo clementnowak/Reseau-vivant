@@ -210,6 +210,16 @@ button { cursor: pointer; -webkit-tap-highlight-color: transparent; }
 .profile-item h4 { font-size: 15px; margin: 0 0 2px; color: var(--forest); }
 .profile-item p { font-size: 15px; color: var(--muted); margin: 0; }
 .profile-item.fun { background: #fff8e8; border-color: #f1dfb4; }
+.identity { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 16px; grid-column: 1 / -1; }
+.identity summary { cursor: pointer; font-size: 16px; font-weight: 800; color: var(--forest); }
+.id-list { margin: 10px 0 0; display: grid; gap: 10px; }
+.id-row { display: grid; gap: 2px; }
+.id-row dt { font-size: 13px; font-weight: 800; color: var(--forest); }
+.id-row dd { margin: 0; font-size: 15px; color: var(--text); }
+.id-sources { display: block; font-size: 12px; color: var(--muted); margin-top: 2px; }
+.id-sources a { color: var(--muted); }
+.id-note { font-size: 12px; color: var(--muted); margin: 10px 0 0; }
+@media (min-width: 720px) { .id-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 20px; } }
 .profile-item a { color: var(--forest); font-weight: 700; }
 
 /* Cartes */

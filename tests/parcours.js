@@ -37,6 +37,11 @@ server.listen(0, '127.0.0.1', async () => {
       if (t !== want) errors.push(`CENTRE ${uni}/${id}: ${t}`);
       const sum = await page.$eval('#rangeSummary', e => e.textContent);
       if (/undefined/.test(sum)) errors.push('RANGE ' + id + sum);
+      // Fiche d’identité : présente si l’espèce a des stats, avec une ligne et un lien de source par champ.
+      const idn = await page.evaluate(([u, id]) => { const x = window.RV_DONNEES[u].species.find(s => s.id === id); const attendu = x.stats ? Object.keys(x.stats).filter(k => k !== 'groupe').length : 0; const rows = document.querySelectorAll('#profileContent details.identity .id-row').length; const srcs = document.querySelectorAll('#profileContent details.identity .id-src').length; const txt = document.querySelector('#profileContent')?.textContent || ''; return { attendu, rows, srcs, undef: /undefined|\[object/.test(txt) }; }, [uni, id]);
+      if (idn.rows !== idn.attendu) errors.push(`FICHE ${uni}/${id}: ${idn.rows} lignes pour ${idn.attendu} champs`);
+      if (idn.srcs < idn.rows) errors.push(`FICHE ${uni}/${id}: source manquante`);
+      if (idn.undef) errors.push(`FICHE ${uni}/${id}: texte invalide`);
       const plur = await page.evaluate(([u, id]) => { const x = window.RV_DONNEES[u].species.find(s => s.id === id); return x.type !== 'resource' && Boolean(x.pluriel); }, [uni, id]);
       if (plur) {
         const titres = await page.$eval('#predTitle', e => e.textContent) + ' ' + await page.$eval('#preyTitle', e => e.textContent) + ' ' + sum;

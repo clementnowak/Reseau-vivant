@@ -14,8 +14,8 @@
 
   // Nom lisible d’une source à partir de son adresse (sinon : nom du site).
   const SOURCE_NOMS = {
-    'animaldiversity.org': 'Animal Diversity Web', 'doi.org': 'Article scientifique', 'fishbase.se': 'FishBase',
-    'sealifebase.se': 'SeaLifeBase', 'iucnredlist.org': 'Liste rouge UICN', 'noaa.gov': 'NOAA', 'catsg.org': 'Cat Specialist Group',
+    'animaldiversity.org': 'Animal Diversity Web', 'doi.org': 'Article scientifique', 'fishbase.se': 'FishBase', 'fishbase.org': 'FishBase', 'fishbase.ca': 'FishBase', 'fishbase.de': 'FishBase', 'fishbase.net.br': 'FishBase', 'nrm.se': 'FishBase',
+    'sealifebase.se': 'SeaLifeBase', 'sealifebase.ca': 'SeaLifeBase', 'sealifebase.org': 'SeaLifeBase', 'aims.gov.au': 'AIMS (Institut australien des sciences marines)', 'gbrmpa.gov.au': 'Grande Barrière de corail (GBRMPA)', 'floridamuseum.ufl.edu': 'Florida Museum', 'nationalgeographic.com': 'National Geographic', 'aquariumofpacific.org': 'Aquarium of the Pacific', 'eol.org': 'Encyclopedia of Life', 'encyclopedia.com': 'Encyclopedia.com', 'maralliance.org': 'MAR Alliance', 'pbs.org': 'PBS Nature', 'fws.gov': 'US Fish & Wildlife Service', 'nps.gov': 'US National Park Service', 'myfwc.com': 'Floride (FWC)', 'portal.ct.gov': 'Connecticut (DEEP)', 'dar.hawaii.gov': 'Hawaï (DAR)', 'dwr.virginia.gov': 'Virginie (DWR)', 'seamap.env.duke.edu': 'OBIS-SEAMAP (Duke)', 'link.springer.com': 'Article scientifique', 'oceana.org': 'Oceana', 'osti.gov': 'OSTI (US DOE)', 'ebsco.com': 'EBSCO', 'hoopermuseum.carleton.ca': 'Hooper Museum (Carleton)', 'pressbooks.lib.vt.edu': 'Virginia Tech', 'wikipedia.org': 'Wikipédia', 'iucnredlist.org': 'Liste rouge UICN', 'noaa.gov': 'NOAA', 'catsg.org': 'Cat Specialist Group',
     'sanbi.org': 'SANBI', 'iucngisd.org': 'Base des espèces invasives (UICN)', 'wri.org': 'World Resources Institute', 'sanparks.org': 'SANParks', 'pmc.ncbi.nlm.nih.gov': 'Article scientifique', 'ajol.info': 'Article scientifique',
     'inpn.mnhn.fr': 'INPN (MNHN)', 'lpo.fr': 'LPO', 'allaboutbirds.org': 'Cornell Lab — All About Birds', 'birdsoftheworld.org': 'Birds of the World',
     'biokids.umich.edu': 'BioKIDS (Université du Michigan)', 'ofb.gouv.fr': 'Office français de la biodiversité', 'british-dragonflies.org.uk': 'British Dragonfly Society', 'parcduluberon.fr': 'Parc naturel régional du Luberon',
@@ -316,6 +316,21 @@
     renderHumanLayer(x);
   }
 
+  /* Fiche d’identité : chiffres clés de l’animal, chacun avec sa source (champ « stats » des données). */
+  const IDENTITE = [['📏', 'Taille et poids', 'taille'], ['🎂', 'Devient adulte', 'adulte'], ['⏳', 'Espérance de vie dans la nature', 'vie'], ['🥚', 'Reproduction', 'repro'], ['🌙', 'Rythme de vie', 'rythme']];
+  function renderIdentity(x) {
+    const st = x.stats;
+    if (!st) return '';
+    const rows = IDENTITE.filter((r) => st[r[2]]).map((r) => {
+      const f = st[r[2]];
+      const liens = [].concat(f.s).map((u) => `<a class="id-src" href="${escapeHtml(u)}" target="_blank" rel="noopener noreferrer">${escapeHtml(sourceLabel(u))} ↗</a>`).join(' · ');
+      return `<div class="id-row"><dt><span aria-hidden="true">${r[0]}</span> ${r[1]}</dt><dd>${escapeHtml(f.v)}<span class="id-sources">Source : ${liens}</span></dd></div>`;
+    }).join('');
+    if (!rows) return '';
+    const note = st.groupe ? 'Ce nom désigne un groupe d’espèces : les chiffres varient d’une espèce à l’autre.' : 'Ce sont des ordres de grandeur : les chiffres varient selon les individus et les régions.';
+    return `<details class="identity" open><summary>🪪 Fiche d’identité</summary><dl class="id-list">${rows}</dl><p class="id-note">${note}</p></details>`;
+  }
+
   function renderProfile(x) {
     $('profileHeading').textContent = `Découvre ${withArticle(x)}`;
     const blocks = [
@@ -325,7 +340,7 @@
       ['✨', 'Le savais-tu ?', x.fun, 'fun'],
       ['🌱', x.type === 'resource' ? 'Pourquoi c’est important ?' : 'Comment le protéger ?', x.protect]
     ].filter((b) => b[2]);
-    let html = blocks.map((b) => `<article class="profile-item${b[3] ? ' ' + b[3] : ''}"><span class="p-icon" aria-hidden="true">${b[0]}</span><h4>${b[1]}</h4><p>${linkify(b[2], x.id)}</p></article>`).join('');
+    let html = renderIdentity(x) + blocks.map((b) => `<article class="profile-item${b[3] ? ' ' + b[3] : ''}"><span class="p-icon" aria-hidden="true">${b[0]}</span><h4>${b[1]}</h4><p>${linkify(b[2], x.id)}</p></article>`).join('');
     const sourced = U.foodsOf(x.id).concat(U.eatersOf(x.id)).filter((l) => l.source);
     const sources = [...new Set([x.source, ...sourced.map((l) => l.source)].filter(Boolean))];
     if (sources.length) {
